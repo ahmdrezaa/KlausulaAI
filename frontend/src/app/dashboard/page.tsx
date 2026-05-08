@@ -1,0 +1,728 @@
+// src/app/dashboard/page.tsx
+// Halaman Dashboard Chat Utama — Mockup 06 & 07
+// Letakkan di: frontend/src/app/dashboard/page.tsx
+
+"use client";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import UploadModal from "@/components/modals/UploadModal";
+import Image from "next/image";
+
+// ─── Data dummy untuk preview ────────────────────────────────────────────────
+const DUMMY_PROJECTS = [
+  { id: "1", name: "Projek Usaha Makanan 1" },
+  { id: "2", name: "Projek Usaha Pakaian 1" },
+  { id: "3", name: "Projek Usaha Makanan 2" },
+  { id: "4", name: "Projek Usaha Minuman 1" },
+];
+
+const DUMMY_SOURCES = [
+  { id: "1", name: "Deskripsi_Projek.pdf", checked: false },
+  { id: "2", name: "Kontrak_Vendor_Final.pdf", checked: true },
+];
+
+const DUMMY_MESSAGES = [
+  {
+    id: "1",
+    role: "user" as const,
+    content:
+      "Tolong analisis draf kontrak vendor yang baru saja saya unggah di sidebar kanan. Fokus pada pasal mengenai ganti rugi dan pembatalan sepihak. Apakah sudah sesuai dengan KUHPerdata?",
+  },
+  {
+    id: "2",
+    role: "assistant" as const,
+    content: `Berdasarkan tinjauan saya terhadap Kontrak_Vendor_Final.pdf, berikut adalah poin-poin krusial yang perlu Anda perhatikan:
+1. Ganti Rugi (Pasal 7): Klausul ini menyebutkan denda keterlambatan sebesar 1% per hari. Secara hukum, ini bisa dianggap exorbitant. Saya sarankan diturunkan menjadi 0,1% sesuai standar kebiasaan bisnis agar tidak berisiko dibatalkan hakim jika terjadi sengketa.
+2. Pembatalan Sepihak (Pasal 12): Kontrak ini belum mencantumkan pengesampingan Pasal 1266 KUHPerdata. Tanpa pengesampingan ini, Anda harus melalui putusan pengadilan hanya untuk memutus kontrak.
+Rekomendasi: Tambahkan kalimat 'Para pihak sepakat untuk mengesampingkan ketentuan Pasal 1266 dan 1267 KUHPerdata terkait syarat pemutusan perjanjian' agar proses lebih cepat.`,
+  },
+];
+
+export default function DashboardPage() {
+  const router = useRouter();
+  const [activeProject, setActiveProject] = useState(DUMMY_PROJECTS[0]);
+  const [messages, setMessages] = useState(DUMMY_MESSAGES);
+  const [input, setInput] = useState("");
+  const [sources, setSources] = useState(DUMMY_SOURCES);
+  const [allSources, setAllSources] = useState(false);
+  const [showUpload, setShowUpload] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sourcesPanelOpen, setSourcesPanelOpen] = useState(false);
+
+  const handleSend = () => {
+    if (!input.trim()) return;
+    // TODO: Kirim ke backend FastAPI /api/v1/chat/ask
+    setMessages((prev) => [
+      ...prev,
+      { id: Date.now().toString(), role: "user", content: input },
+    ]);
+    setInput("");
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      handleSend();
+    }
+  };
+
+  const toggleSource = (id: string) => {
+    setSources((prev) =>
+      prev.map((s) => (s.id === id ? { ...s, checked: !s.checked } : s)),
+    );
+  };
+
+  const toggleAllSources = () => {
+    const next = !allSources;
+    setAllSources(next);
+    setSources((prev) => prev.map((s) => ({ ...s, checked: next })));
+  };
+
+  // TODO: Tambah projek baru ke Supabase
+  const handleNewProject = () => router.push("/new-project");
+
+  return (
+    <div
+      className="flex h-screen overflow-hidden"
+      style={{ background: "var(--bg-base)" }}
+    >
+      {/* ── Sidebar (left) ─────────────────────────────── */}
+      {/* Mobile overlay */}
+      {sidebarOpen && (
+        <div
+          className="fixed inset-0 bg-black/60 z-20 md:hidden"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
+
+      <aside
+        className={`
+          fixed md:relative z-30 md:z-auto
+          flex flex-col h-full w-64 flex-shrink-0
+          transition-transform duration-300
+          ${sidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}
+        `}
+        style={{
+          background: "var(--bg-input)",
+          // borderColor: "var(--border)",
+        }}
+      >
+        {/* Logo */}
+        <div
+          className="flex items-center gap-2 px-5 py-4"
+          // style={{ borderColor: "var(--border)" }}
+        >
+          <Image
+            src="/icons/Logo_KlausulaAI.svg"
+            alt="KlausulaAI Logo"
+            width={28}
+            height={28}
+            style={{ color: "var(--accent)" }}
+          />
+          <span
+            className="font-display text-2xl font-regular"
+            style={{ color: "var(--text-secondary)" }}
+          >
+            KlausulaAI
+          </span>
+        </div>
+
+        {/* Actions */}
+        <div
+          className="px-4 py-3"
+          // style={{ borderColor: "var(--border)" }}
+        >
+          <button
+            onClick={handleNewProject}
+            className="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-sm font-medium transition-all hover:bg-white/5"
+            style={{ color: "var(--text-secondary)" }}
+          >
+            
+              <span
+                className="text-lg leading-none"
+                style={{ color: "var(--accent)" }}
+              ><div className="flex items-center justify-center align-center h-6 w-6 rounded-full" style={ { background: "var(--bg-upload)" } } >+</div>
+                
+              </span>
+            Tambah Projek
+          </button>
+          <button
+            className="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-sm font-medium transition-all hover:bg-white/5"
+            style={{ color: "var(--text-secondary)" }}
+          >
+            <SearchIcon />
+            Cari Projek
+          </button>
+        </div>
+
+        {/* Project list */}
+        <div className="flex-1 overflow-y-auto px-4 py-3">
+          <p
+            className="text-xs font-semibold uppercase tracking-wider px-3 mb-2"
+            style={{ color: "var(--text-muted)" }}
+          >
+            Projek Aktif
+          </p>
+          <div className="space-y-0.5">
+            {DUMMY_PROJECTS.map((p) => (
+              <button
+                key={p.id}
+                onClick={() => {
+                  setActiveProject(p);
+                  setSidebarOpen(false);
+                }}
+                className="w-full text-left px-3 py-2.5 rounded-lg text-sm transition-all hover:bg-white/5"
+                style={{
+                  color:
+                    activeProject.id === p.id
+                      ? "var(--text-primary)"
+                      : "var(--text-secondary)",
+                  background:
+                    activeProject.id === p.id
+                      ? "rgba(201,139,122,0.12)"
+                      : "transparent",
+                }}
+              >
+                {p.name}
+              </button>
+            ))}
+          </div>
+        </div>
+      </aside>
+
+      {/* ── Main area ──────────────────────────────────── */}
+      <div className="flex-1 flex flex-col min-w-0 w-full overflow-hidden">
+        {/* Mobile topbar */}
+        <div
+          className="flex md:hidden items-center justify-between px-4 py-3"
+          style={{
+            // borderColor: "var(--border)",
+            background: "var(--bg-surface)",
+          }}
+        >
+          <button onClick={() => setSidebarOpen(true)}>
+            <MenuIcon />
+          </button>
+          <span
+            className="font-display text-base font-semibold"
+            style={{ color: "var(--text-primary)" }}
+          >
+            {activeProject.name}
+          </span>
+          <button onClick={() => setSourcesPanelOpen(true)}>
+            <FolderIcon />
+          </button>
+        </div>
+
+        <div className="flex flex-1 overflow-hidden">
+          {/* Chat area */}
+          <div className="flex-1 flex flex-col overflow-hidden">
+            {/* Project header */}
+            <div className="px-6 md:px-8 pt-6 pb-4 hidden md:block">
+              {/* TODO: Ambil data projek aktif dari Supabase */}
+              <h2
+                className="font-display text-5xl font-regular"
+                style={{ color: "var(--accent)" }}
+              >
+                Bantuan Analisis
+              </h2>
+              <h2
+                className="font-display text-3xl font-regular mb-2"
+                style={{ color: "var(--text-primary)" }}
+              >
+                {activeProject.name}
+              </h2>
+              <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
+                Peninjauan klausul ganti rugi dan pengesampingan Pasal 1266
+                KUHPerdata untuk kontrak vendor restoran.
+              </p>
+            </div>
+
+            {/* Messages */}
+            <div className="flex-1 overflow-y-auto px-4 md:px-8 py-6 space-y-6">
+              {/* Welcome message (only if no messages) */}
+              {messages.length === 0 && (
+                <div className="text-center py-16">
+                  <p className="text-sm" style={{ color: "var(--text-muted)" }}>
+                    Saat ini, saya juga telah tersambung dengan dokumen sumber
+                    yang Anda unggah di sidebar kanan. Silakan ajukan pertanyaan
+                    atau berikan instruksi khusus untuk memulai analisis.
+                  </p>
+                </div>
+              )}
+
+              {messages.map((msg) => (
+                <MessageBubble key={msg.id} message={msg} />
+              ))}
+            </div>
+
+            {/* Input area */}
+            <div className="px-4 md:px-8 py-4">
+              <div
+                className="flex items-center gap-3 rounded-xl border px-4"
+                style={{
+                  background: "var(--bg-input)",
+                  borderColor: "var(--border)",
+                }}
+              >
+                <textarea
+                  rows={1}
+                  value={input}
+                  onChange={(e) => {
+                    setInput(e.target.value);
+                    // Auto-resize textarea
+                    e.target.style.height = "auto";
+                    e.target.style.height = e.target.scrollHeight + "px";
+                  }}
+                  onKeyDown={handleKeyDown}
+                  placeholder="Mulai mengetik"
+                  className="flex-1 bg-transparent text-sm outline-none resize-none"
+                  style={{
+                    color: "var(--text-primary)",
+                    lineHeight: "1.5",
+                    padding: "12px 0",
+                    height: "45px", // Set fixed height
+                    maxHeight: "120px", // Optional: max height before scroll
+                  }}
+                />
+                <button
+                  onClick={handleSend}
+                  disabled={!input.trim()}
+                  className="p-2 rounded-lg transition-all active:scale-90 flex-shrink-0 self-center"
+                  style={{
+                    background: input.trim()
+                      ? "var(--accent)"
+                      : "var(--bg-elevated)",
+                    color: input.trim()
+                      ? "var(--bg-base)"
+                      : "var(--text-disabled)",
+                  }}
+                >
+                  <SendIcon />
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* ── Sources panel (right) ─── Desktop */}
+          <aside
+            className="hidden md:flex w-96 flex-col"
+            style={{
+              background: "var(--bg-surface)",
+              borderColor: "var(--border)",
+            }}
+          >
+            <SourcesPanel
+              sources={sources}
+              allSources={allSources}
+              onToggleAll={toggleAllSources}
+              onToggleSource={toggleSource}
+              onAddSource={() => setShowUpload(true)}
+            />
+          </aside>
+        </div>
+      </div>
+
+      {/* ── Sources panel — Mobile drawer ────────────── */}
+      {sourcesPanelOpen && (
+        <div
+          className="fixed inset-0 z-40 md:hidden"
+          onClick={() => setSourcesPanelOpen(false)}
+        >
+          <div className="absolute inset-0 bg-black/60" />
+          <div
+            className="absolute right-0 top-0 h-full w-72 flex flex-col border-l"
+            style={{
+              background: "var(--bg-surface)",
+              borderColor: "var(--border)",
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <SourcesPanel
+              sources={sources}
+              allSources={allSources}
+              onToggleAll={toggleAllSources}
+              onToggleSource={toggleSource}
+              onAddSource={() => {
+                setShowUpload(true);
+                setSourcesPanelOpen(false);
+              }}
+            />
+          </div>
+        </div>
+      )}
+
+      {/* ── Upload Modal ─────────────────────────────── */}
+      {showUpload && (
+        <UploadModal
+          onClose={() => setShowUpload(false)}
+          onUpload={(files) => {
+            // TODO: Upload file ke backend /api/v1/knowledge/upload
+            console.log("Upload files:", files);
+            setShowUpload(false);
+          }}
+        />
+      )}
+    </div>
+  );
+}
+
+// ─── Sub-components ───────────────────────────────────────────────────────────
+
+function MessageBubble({
+  message,
+}: {
+  message: { id: string; role: "user" | "assistant"; content: string };
+}) {
+  const isUser = message.role === "user";
+
+  const formattedContent = message.content.replace(/\n\s*\n/g, "\n\n");
+
+  return (
+    <div className={`flex ${isUser ? "justify-end" : "justify-start"}`}>
+      <div
+        className={`${isUser ? "max-w-2xl" : "w-full"} rounded-2xl px-5 py-4 text-sm leading-relaxed whitespace-pre-wrap`}
+        style={{
+          background: isUser ? "var(--bg-card)" : "transparent",
+          color: "var(--text-primary)",
+          // border: isUser ? `1px solid var(--border)` : "none",
+        }}
+      >
+        {message.content}
+
+        {/* Action buttons (only for assistant) */}
+        {!isUser && (
+          <div className="flex items-center gap-3 mt-3">
+            {[ThumbUpIcon, ThumbDownIcon, RefreshIcon, CopyIcon].map(
+              (Icon, i) => (
+                <button
+                  key={i}
+                  className="opacity-40 hover:opacity-80 transition-opacity"
+                >
+                  <Icon />
+                </button>
+              ),
+            )}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function SourcesPanel({
+  sources,
+  allSources,
+  onToggleAll,
+  onToggleSource,
+  onAddSource,
+}: {
+  sources: { id: string; name: string; checked: boolean }[];
+  allSources: boolean;
+  onToggleAll: () => void;
+  onToggleSource: (id: string) => void;
+  onAddSource: () => void;
+}) {
+  return (
+    <div className="w-full h-full p-4 pl-0">
+      {/* Container card yang rounded */}
+      <div
+        className="rounded-2xl h-full overflow-hidden"
+        style={{
+          background: "var(--bg-elevated)",
+          // border: `1px solid var(--border)`,
+        }}
+      >
+        {/* Header dengan background berbeda */}
+        <div
+          className="px-5 py-4"
+          style={{
+            // borderColor: "var(--border)",
+            background: "var(--bg-elevated)",
+          }}
+        >
+          <div className="flex items-center">
+            <h3
+              className="text-lg font-regular"
+              style={{ color: "var(--text-primary)" }}
+            >
+              Sumber
+            </h3>
+          </div>
+        </div>
+
+        {/* Konten dalam card */}
+        <div className="px-4 space-y-3">
+          {/* Add source button */}
+          <button
+            onClick={onAddSource}
+            className="w-full flex items-center justify-center gap-2 py-2 px-4 rounded-full border text-sm font-regular transition-all hover:opacity-80"
+            style={{
+              borderColor: "var(--border-light)",
+              color: "var(--text-primary)",
+              background: "var(--bg-upload)",
+            }}
+          >
+            <PlusIcon />
+            Tambahkan Sumber
+          </button>
+
+          {/* Divider */}
+          <div className="h-px" style={{ background: "var(--border-light)" }} />
+
+          {/* Select all */}
+          <label
+            className="flex items-center justify-between gap-3 cursor-pointer"
+            onClick={onToggleAll}
+          >
+            <span
+              className="text-xs font-regular"
+              style={{ color: "var(--text-secondary)" }}
+            >
+              Pilih semua sumber
+            </span>
+            <Checkbox checked={allSources} />
+          </label>
+
+          {/* Source list */}
+          <div className="space-y-2">
+            {sources.map((s) => (
+              <label
+                key={s.id}
+                className="flex items-center justify-between gap-3 cursor-pointer group py-1 rounded-lg transition-all hover:bg-white/5"
+                onClick={() => onToggleSource(s.id)}
+              >
+                <div className="flex-shrink-0">
+                  <PdfIcon />
+                </div>
+                <span
+                  className="flex-1 text-sm truncate group-hover:text-[var(--text-primary)] transition-colors"
+                  style={{ color: "var(--text-primary)" }}
+                >
+                  {s.name}
+                </span>
+                <Checkbox checked={s.checked} accent />
+              </label>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Tambah icon Plus
+function PlusIcon() {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <line x1="12" y1="5" x2="12" y2="19" />
+      <line x1="5" y1="12" x2="19" y2="12" />
+    </svg>
+  );
+}
+
+function Checkbox({ checked, accent }: { checked: boolean; accent?: boolean }) {
+  return (
+    <div
+      className="w-5 h-5 rounded flex-shrink-0 border flex items-center justify-center transition-all"
+      style={{
+        background: checked
+          ? accent
+            ? "var(--accent)"
+            : "var(--accent)"
+          : "transparent",
+        borderColor: checked ? "var(--accent)" : "var(--border-light)",
+      }}
+    >
+      {checked && (
+        <svg width="11" height="9" viewBox="0 0 12 10" fill="none">
+          <path
+            d="M1 5l3.5 3.5L11 1"
+            stroke="var(--bg-base)"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      )}
+    </div>
+  );
+}
+
+// ─── Icons ────────────────────────────────────────────────────────────────────
+function ScaleIcon() {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="var(--accent)"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M12 3v1M3 9h18M7 9l-3 6a3 3 0 006 0L7 9zM17 9l-3 6a3 3 0 006 0L17 9zM12 4l8 5M12 4L4 9M12 21v-6M9 21h6" />
+    </svg>
+  );
+}
+function SearchIcon() {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="11" cy="11" r="8" />
+      <line x1="21" y1="21" x2="16.65" y2="16.65" />
+    </svg>
+  );
+}
+function SendIcon() {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <line x1="22" y1="2" x2="11" y2="13" />
+      <polygon points="22 2 15 22 11 13 2 9 22 2" />
+    </svg>
+  );
+}
+function PdfIcon() {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="var(--accent)"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+      <polyline points="14 2 14 8 20 8" />
+    </svg>
+  );
+}
+function MenuIcon() {
+  return (
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="var(--text-secondary)"
+      strokeWidth="2"
+      strokeLinecap="round"
+    >
+      <line x1="3" y1="6" x2="21" y2="6" />
+      <line x1="3" y1="12" x2="21" y2="12" />
+      <line x1="3" y1="18" x2="21" y2="18" />
+    </svg>
+  );
+}
+function FolderIcon() {
+  return (
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="var(--text-secondary)"
+      strokeWidth="2"
+      strokeLinecap="round"
+    >
+      <path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z" />
+    </svg>
+  );
+}
+function ThumbUpIcon() {
+  return (
+    <svg
+      width="15"
+      height="15"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3H14z" />
+      <path d="M7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3" />
+    </svg>
+  );
+}
+function ThumbDownIcon() {
+  return (
+    <svg
+      width="15"
+      height="15"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M10 15v4a3 3 0 003 3l4-9V2H5.72a2 2 0 00-2 1.7l-1.38 9a2 2 0 002 2.3H10z" />
+      <path d="M17 2h2.67A2.31 2.31 0 0122 4v7a2.31 2.31 0 01-2.33 2H17" />
+    </svg>
+  );
+}
+function RefreshIcon() {
+  return (
+    <svg
+      width="15"
+      height="15"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <polyline points="1 4 1 10 7 10" />
+      <path d="M3.51 15a9 9 0 102.13-9.36L1 10" />
+    </svg>
+  );
+}
+function CopyIcon() {
+  return (
+    <svg
+      width="15"
+      height="15"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+      <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
+    </svg>
+  );
+}

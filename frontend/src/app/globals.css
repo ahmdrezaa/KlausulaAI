@@ -1,0 +1,82 @@
+/* src/app/globals.css */
+
+/* Import font setelah Tailwind */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Judson:ital,wght@0,400;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  /* Core palette — dark warm brown */
+  --bg-base:      #241414;
+  --bg-surface:   #231515;
+  --bg-card:      #3F2525;
+  --bg-upload:    #653E3E;
+  --bg-elevated:  #3a2020;
+  --bg-input:     #3F2525;
+
+  /* Borders */
+  --border:       #FFA0A0;
+  --border-light: #FFA0A0;
+
+  /* Accent — salmon/dusty rose */
+  --accent:       #c98b7a;
+  --accent-light: #e4a898;
+  --accent-muted: #a06855;
+
+  /* Text */
+  --text-primary:   #f5ede8;
+  --text-secondary: #FFA0A0;
+  --text-muted:     #B26F6F;
+  --text-disabled:  #5a3535;
+
+  /* Fonts */
+  --font-display: 'Judson', serif;
+  --font-body:    'Inter', sans-serif;
+}
+
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+html, body {
+  height: 100%;
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-body, sans-serif);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-surface); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-muted); }
+
+/* Utility classes */
+.font-display { font-family: var(--font-display); }
+
+/* Page transition */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.page-enter { animation: fadeIn 0.35s ease forwards; }
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.slide-up { animation: slideUp 0.4s ease forwards; }
+
+/* Stagger children */
+.stagger > * { opacity: 0; animation: fadeIn 0.4s ease forwards; }
+.stagger > *:nth-child(1) { animation-delay: 0.05s; }
+.stagger > *:nth-child(2) { animation-delay: 0.12s; }
+.stagger > *:nth-child(3) { animation-delay: 0.19s; }
+.stagger > *:nth-child(4) { animation-delay: 0.26s; }
+.stagger > *:nth-child(5) { animation-delay: 0.33s; }
