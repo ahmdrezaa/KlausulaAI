@@ -1,0 +1,21 @@
+{
+  "extraction_date": "2026-05-12T14:39:32.051339",
+  "total_files": 2,
+  "success_count": 2,
+  "failed_count": 0,
+  "failed_files": [],
+  "documents": [
+    {
+      "file_name": "uu_20_2008_umkm.pdf",
+      "total_pages": 31,
+      "success_rate": 100.0,
+      "total_chars": 202871
+    },
+    {
+      "file_name": "uu_20_2008_umkm.pdf",
+      "total_pages": 31,
+      "success_rate": 100.0,
+      "total_chars": 202871
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+2026-05-12 14:39:24,228 [INFO] PDFExtractor: [pdfplumber] Memproses: uu_20_2008_umkm.pdf
+2026-05-12 14:39:25,731 [INFO] PDFExtractor:   Progress: 10/31 halaman
+2026-05-12 14:39:27,101 [INFO] PDFExtractor:   Progress: 20/31 halaman
+2026-05-12 14:39:28,193 [INFO] PDFExtractor:   Progress: 30/31 halaman
+2026-05-12 14:39:28,210 [INFO] PDFExtractor: Tersimpan: 02_extracted_text\uu_20_2008_umkm_extracted.json
+2026-05-12 14:39:28,211 [INFO] PDFExtractor: [pdfplumber] Memproses: uu_20_2008_umkm.pdf
+2026-05-12 14:39:29,711 [INFO] PDFExtractor:   Progress: 10/31 halaman
+2026-05-12 14:39:30,977 [INFO] PDFExtractor:   Progress: 20/31 halaman
+2026-05-12 14:39:32,025 [INFO] PDFExtractor:   Progress: 30/31 halaman
+2026-05-12 14:39:32,047 [INFO] PDFExtractor: Tersimpan: 02_extracted_text\uu_20_2008_umkm_extracted.json

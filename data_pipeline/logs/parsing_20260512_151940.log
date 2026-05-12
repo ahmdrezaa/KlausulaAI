@@ -1,0 +1,7 @@
+2026-05-12 15:19:41,094 [INFO] StructureParser: 
+Memproses: uu_20_2008_umkm_cleaned.json → slug: uu_umkm
+2026-05-12 15:19:41,094 [INFO] StructureParser: 📖 Parsing struktur: uu_20_2008_umkm_cleaned.json
+2026-05-12 15:19:41,104 [INFO] StructureParser: ✂️  Memotong bagian Penjelasan di akhir dokumen.
+2026-05-12 15:19:41,106 [INFO] StructureParser:   📑 Ditemukan 44 pasal
+2026-05-12 15:19:41,108 [INFO] StructureParser:   ✅ Parsed: 44 pasal, 10 bab
+2026-05-12 15:19:41,115 [INFO] StructureParser: 💾 Tersimpan: uu_umkm_parsed.json, uu_umkm_pasal_list.json, uu_umkm_stats.json
