@@ -74,33 +74,112 @@ class UUDocument:
 
 # ─── UU Metadata Catalog ─────────────────────────────────────
 UU_CATALOG = {
+    # ── Undang-Undang ──────────────────────────────────────
     "uu_ketenagakerjaan": {
         "name": "Undang-Undang Nomor 13 Tahun 2003 tentang Ketenagakerjaan",
-        "number": "13", "year": "2003", "topic": "Ketenagakerjaan",
-        "keywords": ["ketenagakerjaan", "tenaga kerja", "buruh"]
+        "number": "13", "year": "2003", "type": "UU",
+        "topic": "Ketenagakerjaan",
+        "keywords": ["ketenagakerjaan", "tenaga kerja"]
     },
     "uu_ite": {
-        "name": "Undang-Undang Nomor 11 Tahun 2008 tentang Informasi dan Transaksi Elektronik",
-        "number": "11", "year": "2008", "topic": "Informasi dan Transaksi Elektronik",
-        "keywords": ["ite", "informasi elektronik", "transaksi elektronik"]
+        "name": "Undang-Undang Nomor 1 Tahun 2024 tentang ITE",
+        "number": "1", "year": "2024", "type": "UU",
+        "topic": "Informasi dan Transaksi Elektronik",
+        "keywords": ["ite", "informasi elektronik"]
+    },
+    "uu_cipta_kerja": {
+        "name": "Undang-Undang Nomor 6 Tahun 2023 tentang Cipta Kerja",
+        "number": "6", "year": "2023", "type": "UU",
+        "topic": "Cipta Kerja",
+        "keywords": ["cipta kerja"]
+    },
+    "uu_harmonisasi_perpajakan": {
+        "name": "Undang-Undang Nomor 7 Tahun 2021 tentang Harmonisasi Peraturan Perpajakan",
+        "number": "7", "year": "2021", "type": "UU",
+        "topic": "Perpajakan",
+        "keywords": ["harmonisasi", "perpajakan", "pajak"]
     },
     "uu_perlindungan_konsumen": {
         "name": "Undang-Undang Nomor 8 Tahun 1999 tentang Perlindungan Konsumen",
-        "number": "8", "year": "1999", "topic": "Perlindungan Konsumen",
-        "keywords": ["konsumen", "perlindungan konsumen"]
+        "number": "8", "year": "1999", "type": "UU",
+        "topic": "Perlindungan Konsumen",
+        "keywords": ["perlindungan konsumen", "konsumen"]
     },
     "uu_umkm": {
-        "name": "Undang-Undang Nomor 20 Tahun 2008 tentang Usaha Mikro, Kecil, dan Menengah",
-        "number": "20", "year": "2008", "topic": "Usaha Mikro, Kecil, dan Menengah",
-        "keywords": ["umkm", "usaha mikro", "usaha kecil", "usaha menengah"]
+        "name": "Undang-Undang Nomor 20 Tahun 2008 tentang UMKM",
+        "number": "20", "year": "2008", "type": "UU",
+        "topic": "UMKM",
+        "keywords": ["umkm", "usaha mikro", "usaha kecil"]
     },
-    # ... Tambahkan UU lainnya sesuai kebutuhan
+    "uu_merek_indikasi_geografis": {
+        "name": "Undang-Undang Nomor 20 Tahun 2016 tentang Merek dan Indikasi Geografis",
+        "number": "20", "year": "2016", "type": "UU",
+        "topic": "Merek dan Indikasi Geografis",
+        "keywords": ["merek", "indikasi geografis"]
+    },
+    "uu_perlindungan_data_pribadi": {
+        "name": "Undang-Undang Nomor 27 Tahun 2022 tentang Pelindungan Data Pribadi",
+        "number": "27", "year": "2022", "type": "UU",
+        "topic": "Pelindungan Data Pribadi",
+        "keywords": ["data pribadi", "pdp"]
+    },
+    "uu_hak_cipta": {
+        "name": "Undang-Undang Nomor 28 Tahun 2014 tentang Hak Cipta",
+        "number": "28", "year": "2014", "type": "UU",
+        "topic": "Hak Cipta",
+        "keywords": ["hak cipta"]
+    },
+    "uu_jaminan_produk_halal": {
+        "name": "Undang-Undang Nomor 33 Tahun 2014 tentang Jaminan Produk Halal",
+        "number": "33", "year": "2014", "type": "UU",
+        "topic": "Jaminan Produk Halal",
+        "keywords": ["halal", "jaminan produk halal"]
+    },
+    "uu_pajak_penghasilan": {
+        "name": "Undang-Undang Nomor 36 Tahun 2008 tentang Pajak Penghasilan",
+        "number": "36", "year": "2008", "type": "UU",
+        "topic": "Pajak Penghasilan",
+        "keywords": ["pajak penghasilan", "pph"]
+    },
+
+    # ── Peraturan Pemerintah ───────────────────────────────
+    "pp_perizinan_berbasis_risiko": {
+        "name": "Peraturan Pemerintah Nomor 5 Tahun 2021 tentang Penyelenggaraan Perizinan Berbasis Risiko",
+        "number": "5", "year": "2021", "type": "PP",
+        "topic": "Perizinan Berbasis Risiko",
+        "keywords": ["perizinan", "berbasis risiko", "oss"]
+    },
+    "pp_kemudahan_umkm": {
+        "name": "Peraturan Pemerintah Nomor 7 Tahun 2021 tentang Kemudahan, Pelindungan, dan Pemberdayaan UMKM",
+        "number": "7", "year": "2021", "type": "PP",
+        "topic": "Kemudahan UMKM",
+        "keywords": ["kemudahan umkm", "pemberdayaan umkm"]
+    },
+    "pp_pajak_umkm": {
+        "name": "Peraturan Pemerintah Nomor 23 Tahun 2018 tentang Pajak Penghasilan UMKM",
+        "number": "23", "year": "2018", "type": "PP",
+        "topic": "Pajak UMKM",
+        "keywords": ["pajak umkm", "pph umkm"]
+    },
+    "pp_pajak_penghasilan": {
+        "name": "Peraturan Pemerintah Nomor 55 Tahun 2022 tentang Pajak Penghasilan",
+        "number": "55", "year": "2022", "type": "PP",
+        "topic": "Pajak Penghasilan",
+        "keywords": ["pajak penghasilan", "pph"]
+    },
+
+    # ── Peraturan Menteri ──────────────────────────────────
+    "permendag_perdagangan_elektronik": {
+        "name": "Peraturan Menteri Perdagangan Nomor 31 Tahun 2023 tentang Perizinan Berusaha, Periklanan, Pembinaan, dan Pengawasan Pelaku Usaha dalam Perdagangan Melalui Sistem Elektronik",
+        "number": "31", "year": "2023", "type": "Permendag",
+        "topic": "Perdagangan Elektronik",
+        "keywords": ["perdagangan elektronik", "e-commerce", "pmse"]
+    },
 }
 
 
 # ─── Structure Parser ─────────────────────────────────────────
 class UUStructureParser:
-    # REVISI 1: Tambahkan \s* di awal untuk mentoleransi spasi hasil extract PDF
     RE_BAB = re.compile(r'^\s*(?:BAB)\s+([IVXLCDM]+|\d+)(?:\s*\n\s*(.+))?', re.IGNORECASE | re.MULTILINE)
     RE_BAGIAN = re.compile(r'^\s*Bagian\s+(Kesatu|Kedua|Ketiga|Keempat|Kelima|Keenam|Ketujuh|Kedelapan|Kesembilan|Kesepuluh|ke-\w+|\w+)(?:\s*\n\s*(.+))?', re.IGNORECASE | re.MULTILINE)
     RE_PARAGRAF = re.compile(r'^\s*Paragraf\s+(\d+)(?:\s*\n\s*(.+))?', re.IGNORECASE | re.MULTILINE)
@@ -115,10 +194,9 @@ class UUStructureParser:
         })
 
     def truncate_penjelasan(self, full_text: str) -> str:
-        """REVISI 2: Memotong bagian lampiran PENJELASAN agar tidak ikut ter-parse menjadi pasal."""
         penjelasan_match = re.search(r'\n\s*PENJELASAN\s+ATAS\s+', full_text, re.IGNORECASE)
         if penjelasan_match:
-            logger.info("✂️  Memotong bagian Penjelasan di akhir dokumen.")
+            logger.info("[TRUNCATE] Memotong bagian Penjelasan di akhir dokumen.")
             return full_text[:penjelasan_match.start()]
         return full_text
 
@@ -127,7 +205,6 @@ class UUStructureParser:
         current_bab_num, current_bab_title = "", ""
         current_bagian, current_paragraf = "", ""
 
-        # Gunakan regex yang sudah direlaksasi
         parts = self.RE_PASAL_SPLIT.split(full_text)
         
         pre_text = parts[0] if parts else ""
@@ -159,7 +236,7 @@ class UUStructureParser:
                 "paragraf": current_paragraf,
             })
 
-        logger.info(f"  📑 Ditemukan {len(pasal_blocks)} pasal")
+        logger.info(f"  [INFO] Ditemukan {len(pasal_blocks)} pasal")
         return pasal_blocks
 
     def _extract_bab_from_text(self, text: str, current_num: str, current_title: str) -> tuple[str, str]:
@@ -209,7 +286,7 @@ class UUStructureParser:
         return f"uu_{num}_{year}_pasal_{pasal_number}"
 
     def parse_document(self, cleaned_json_path: str) -> UUDocument:
-        logger.info(f"📖 Parsing struktur: {Path(cleaned_json_path).name}")
+        logger.info(f"[PROCESS] Parsing struktur: {Path(cleaned_json_path).name}")
 
         with open(cleaned_json_path, "r", encoding="utf-8") as f:
             doc = json.load(f)
@@ -222,10 +299,8 @@ class UUStructureParser:
 
         full_text = "\n\n".join(full_text_parts)
         
-        # Bersihkan bagian lampiran
         full_text = self.truncate_penjelasan(full_text)
 
-        # REVISI 3: Selalu utamakan data dari UU_CATALOG
         uu_doc = UUDocument(
             uu_id=self.uu_slug,
             uu_name=self.uu_meta.get("name", self.uu_slug),
@@ -261,7 +336,7 @@ class UUStructureParser:
         bab_numbers = set(p.bab_number for p in uu_doc.pasal_list if p.bab_number)
         uu_doc.total_bab = len(bab_numbers)
 
-        logger.info(f"  ✅ Parsed: {uu_doc.total_pasal} pasal, {uu_doc.total_bab} bab")
+        logger.info(f"  [SUCCESS] Parsed: {uu_doc.total_pasal} pasal, {uu_doc.total_bab} bab")
         return uu_doc
 
 
@@ -307,7 +382,7 @@ def save_parsed_document(uu_doc: UUDocument, output_dir: Path):
     with open(stats_path, "w", encoding="utf-8") as f:
         json.dump(stats, f, ensure_ascii=False, indent=2)
 
-    logger.info(f"💾 Tersimpan: {full_path.name}, {pasal_only_path.name}, {stats_path.name}")
+    logger.info(f"[SAVED] Tersimpan: {full_path.name}, {pasal_only_path.name}, {stats_path.name}")
 
 
 # ─── CLI ───────────────────────────────────────────────────────
@@ -327,10 +402,10 @@ def main():
         json_files = list(input_path.glob("*_cleaned.json"))
 
     if not json_files:
-        print(f"❌ Tidak ada file *_cleaned.json di: {input_path}")
+        print(f"[ERROR] Tidak ada file *_cleaned.json di: {input_path}")
         return
 
-    print(f"\n📖 Parsing {len(json_files)} dokumen...")
+    print(f"\n[START] Parsing {len(json_files)} dokumen...")
 
     for json_file in json_files:
         slug = args.slug
@@ -343,20 +418,20 @@ def main():
             if slug == "auto":
                 slug = stem
 
-        logger.info(f"\nMemproses: {json_file.name} → slug: {slug}")
+        logger.info(f"\n[PROCESS] Memproses: {json_file.name} -> slug: {slug}")
         struct_parser = UUStructureParser(uu_slug=slug)
 
         try:
             uu_doc = struct_parser.parse_document(str(json_file))
             save_parsed_document(uu_doc, output_dir)
 
-            print(f"\n✅ {uu_doc.uu_name}")
+            print(f"\n[SUCCESS] {uu_doc.uu_name}")
             print(f"   Total Pasal: {uu_doc.total_pasal} | Total Bab: {uu_doc.total_bab}")
 
         except Exception as e:
-            logger.error(f"❌ Gagal parsing {json_file.name}: {e}", exc_info=True)
+            logger.error(f"[ERROR] Gagal parsing {json_file.name}: {e}", exc_info=True)
 
-    print(f"\n✅ Output tersimpan di: {output_dir}")
+    print(f"\n[DONE] Output tersimpan di: {output_dir}")
 
 if __name__ == "__main__":
     main()

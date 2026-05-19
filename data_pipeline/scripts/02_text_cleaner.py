@@ -45,7 +45,10 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
     handlers=[
-        logging.FileHandler(LOG_DIR / f"cleaning_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"),
+        logging.FileHandler(
+            LOG_DIR / f"cleaning_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log", 
+            encoding="utf-8"
+        ),
         logging.StreamHandler()
     ]
 )
@@ -266,7 +269,7 @@ class TextCleaner:
         Returns:
             Dict dokumen yang sudah dibersihkan
         """
-        logger.info(f"🧹 Membersihkan: {Path(extracted_json_path).name}")
+        logger.info(f"[CLEANING] Membersihkan: {Path(extracted_json_path).name}")
 
         with open(extracted_json_path, "r", encoding="utf-8") as f:
             doc = json.load(f)
@@ -326,9 +329,9 @@ class TextCleaner:
             "pages": cleaned_pages
         }
 
-        logger.info(f"  ✅ Selesai: {total_stats['total_original_chars']:,} → {total_stats['total_cleaned_chars']:,} chars "
+        logger.info(f"  [SUCCESS] Selesai: {total_stats['total_original_chars']:,} -> {total_stats['total_cleaned_chars']:,} chars "
                     f"(berkurang {total_stats['overall_reduction_pct']}%)")
-        logger.info(f"  📄 {total_stats['pages_with_content']} halaman berkonten, "
+        logger.info(f"  [INFO] {total_stats['pages_with_content']} halaman berkonten, "
                     f"{total_stats['pages_empty_after_cleaning']} halaman kosong setelah cleaning")
 
         return cleaned_doc
@@ -375,10 +378,10 @@ def main():
         json_files = [f for f in input_path.glob("*_extracted.json")]
 
     if not json_files:
-        print(f"❌ Tidak ada file JSON ditemukan di: {input_path}")
+        print(f"[ERROR] Tidak ada file JSON ditemukan di: {input_path}")
         return
 
-    print(f"\n🧹 Membersihkan {len(json_files)} dokumen...")
+    print(f"\n[START] Membersihkan {len(json_files)} dokumen...")
     print("="*60)
 
     all_stats = []
@@ -400,18 +403,18 @@ def main():
                 txt_path = output_dir / f"{stem}_full.txt"
                 with open(txt_path, "w", encoding="utf-8") as f:
                     f.write(full_text)
-                logger.info(f"  📄 Full text: {txt_path}")
+                logger.info(f"  [INFO] Full text: {txt_path}")
 
             stats = cleaned_doc["cleaning_stats"]
             stats["file_name"] = json_file.name
             all_stats.append(stats)
 
         except Exception as e:
-            logger.error(f"❌ Gagal membersihkan {json_file.name}: {e}")
+            logger.error(f"[ERROR] Gagal membersihkan {json_file.name}: {e}")
 
     # ── Ringkasan ─────────────────────────────────────────────
     print("\n" + "="*60)
-    print("📊 RINGKASAN CLEANING")
+    print("[SUMMARY] RINGKASAN CLEANING")
     print("="*60)
     print(f"Dokumen diproses  : {len(all_stats)}")
 
@@ -426,7 +429,7 @@ def main():
         print(f"Rata-rata reduksi : {avg_reduction:.1f}%")
         print(f"Total HF dihapus  : {total_hf:,} baris")
 
-    print(f"\n✅ Output tersimpan di: {output_dir}")
+    print(f"\n[DONE] Output tersimpan di: {output_dir}")
 
 
 if __name__ == "__main__":

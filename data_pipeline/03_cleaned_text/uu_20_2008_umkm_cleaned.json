@@ -564,7 +564,7 @@
       }
     }
   ],
-  "extraction_date": "2026-05-12T14:39:28.212681",
+  "extraction_date": "2026-05-18T20:06:25.605547",
   "success_rate": 100.0,
   "total_chars": 202871,
   "metadata": {
@@ -580,7 +580,7 @@
     },
     "page_count": 31
   },
-  "cleaning_date": "2026-05-12T14:55:38.101412",
+  "cleaning_date": "2026-05-18T20:20:21.194671",
   "cleaning_stats": {
     "total_pages": 31,
     "pages_with_content": 30,

@@ -1,0 +1,64 @@
+2026-05-18 20:20:18,835 [INFO] TextCleaner: [CLEANING] Membersihkan: permendag_31_2023_perdagangan_elektronik_extracted.json
+2026-05-18 20:20:18,884 [INFO] TextCleaner:   [SUCCESS] Selesai: 175,050 -> 62,824 chars (berkurang 64.1%)
+2026-05-18 20:20:18,885 [INFO] TextCleaner:   [INFO] 29 halaman berkonten, 0 halaman kosong setelah cleaning
+2026-05-18 20:20:18,891 [INFO] TextCleaner:   [INFO] Full text: 03_cleaned_text\permendag_31_2023_perdagangan_elektronik_full.txt
+2026-05-18 20:20:18,891 [INFO] TextCleaner: [CLEANING] Membersihkan: pp_23_2018_pajak_umkm_extracted.json
+2026-05-18 20:20:18,927 [INFO] TextCleaner:   [SUCCESS] Selesai: 121,304 -> 28,923 chars (berkurang 76.2%)
+2026-05-18 20:20:18,928 [INFO] TextCleaner:   [INFO] 20 halaman berkonten, 0 halaman kosong setelah cleaning
+2026-05-18 20:20:18,932 [INFO] TextCleaner:   [INFO] Full text: 03_cleaned_text\pp_23_2018_pajak_umkm_full.txt
+2026-05-18 20:20:18,933 [INFO] TextCleaner: [CLEANING] Membersihkan: pp_55_2022_pajak_penghasilan_extracted.json
+2026-05-18 20:20:19,136 [INFO] TextCleaner:   [SUCCESS] Selesai: 718,299 -> 179,056 chars (berkurang 75.1%)
+2026-05-18 20:20:19,136 [INFO] TextCleaner:   [INFO] 118 halaman berkonten, 0 halaman kosong setelah cleaning
+2026-05-18 20:20:19,147 [INFO] TextCleaner:   [INFO] Full text: 03_cleaned_text\pp_55_2022_pajak_penghasilan_full.txt
+2026-05-18 20:20:19,147 [INFO] TextCleaner: [CLEANING] Membersihkan: pp_5_2021_perizinan_berbasis_risiko_extracted.json
+2026-05-18 20:20:20,490 [INFO] TextCleaner:   [SUCCESS] Selesai: 4,354,198 -> 505,475 chars (berkurang 88.4%)
+2026-05-18 20:20:20,491 [INFO] TextCleaner:   [INFO] 739 halaman berkonten, 0 halaman kosong setelah cleaning
+2026-05-18 20:20:20,538 [INFO] TextCleaner:   [INFO] Full text: 03_cleaned_text\pp_5_2021_perizinan_berbasis_risiko_full.txt
+2026-05-18 20:20:20,538 [INFO] TextCleaner: [CLEANING] Membersihkan: pp_7_2021_kemudahan_umkm_extracted.json
+2026-05-18 20:20:20,759 [INFO] TextCleaner:   [SUCCESS] Selesai: 749,482 -> 142,494 chars (berkurang 81.0%)
+2026-05-18 20:20:20,759 [INFO] TextCleaner:   [INFO] 121 halaman berkonten, 0 halaman kosong setelah cleaning
+2026-05-18 20:20:20,774 [INFO] TextCleaner:   [INFO] Full text: 03_cleaned_text\pp_7_2021_kemudahan_umkm_full.txt
+2026-05-18 20:20:20,775 [INFO] TextCleaner: [CLEANING] Membersihkan: uu_13_2003_ketenagakerjaan_extracted.json
+2026-05-18 20:20:21,034 [INFO] TextCleaner:   [SUCCESS] Selesai: 853,351 -> 175,172 chars (berkurang 79.5%)
+2026-05-18 20:20:21,034 [INFO] TextCleaner:   [INFO] 128 halaman berkonten, 0 halaman kosong setelah cleaning
+2026-05-18 20:20:21,049 [INFO] TextCleaner:   [INFO] Full text: 03_cleaned_text\uu_13_2003_ketenagakerjaan_full.txt
+2026-05-18 20:20:21,050 [INFO] TextCleaner: [CLEANING] Membersihkan: uu_1_2024_ite_extracted.json
+2026-05-18 20:20:21,124 [INFO] TextCleaner:   [SUCCESS] Selesai: 240,547 -> 50,178 chars (berkurang 79.1%)
+2026-05-18 20:20:21,124 [INFO] TextCleaner:   [INFO] 39 halaman berkonten, 0 halaman kosong setelah cleaning
+2026-05-18 20:20:21,131 [INFO] TextCleaner:   [INFO] Full text: 03_cleaned_text\uu_1_2024_ite_full.txt
+2026-05-18 20:20:21,132 [INFO] TextCleaner: [CLEANING] Membersihkan: uu_20_2008_umkm_extracted.json
+2026-05-18 20:20:21,194 [INFO] TextCleaner:   [SUCCESS] Selesai: 202,871 -> 42,154 chars (berkurang 79.2%)
+2026-05-18 20:20:21,195 [INFO] TextCleaner:   [INFO] 30 halaman berkonten, 1 halaman kosong setelah cleaning
+2026-05-18 20:20:21,200 [INFO] TextCleaner:   [INFO] Full text: 03_cleaned_text\uu_20_2008_umkm_full.txt
+2026-05-18 20:20:21,200 [INFO] TextCleaner: [CLEANING] Membersihkan: uu_20_2016_merek_indikasi_geografis_extracted.json
+2026-05-18 20:20:21,328 [INFO] TextCleaner:   [SUCCESS] Selesai: 456,500 -> 103,456 chars (berkurang 77.3%)
+2026-05-18 20:20:21,328 [INFO] TextCleaner:   [INFO] 74 halaman berkonten, 0 halaman kosong setelah cleaning
+2026-05-18 20:20:21,338 [INFO] TextCleaner:   [INFO] Full text: 03_cleaned_text\uu_20_2016_merek_indikasi_geografis_full.txt
+2026-05-18 20:20:21,339 [INFO] TextCleaner: [CLEANING] Membersihkan: uu_27_2022_perlindungan_data_pribadi_extracted.json
+2026-05-18 20:20:21,433 [INFO] TextCleaner:   [SUCCESS] Selesai: 303,018 -> 63,503 chars (berkurang 79.0%)
+2026-05-18 20:20:21,434 [INFO] TextCleaner:   [INFO] 50 halaman berkonten, 0 halaman kosong setelah cleaning
+2026-05-18 20:20:21,440 [INFO] TextCleaner:   [INFO] Full text: 03_cleaned_text\uu_27_2022_perlindungan_data_pribadi_full.txt
+2026-05-18 20:20:21,441 [INFO] TextCleaner: [CLEANING] Membersihkan: uu_28_2014_hak_cipta_extracted.json
+2026-05-18 20:20:21,579 [INFO] TextCleaner:   [SUCCESS] Selesai: 501,789 -> 117,883 chars (berkurang 76.5%)
+2026-05-18 20:20:21,580 [INFO] TextCleaner:   [INFO] 83 halaman berkonten, 0 halaman kosong setelah cleaning
+2026-05-18 20:20:21,590 [INFO] TextCleaner:   [INFO] Full text: 03_cleaned_text\uu_28_2014_hak_cipta_full.txt
+2026-05-18 20:20:21,592 [INFO] TextCleaner: [CLEANING] Membersihkan: uu_33_2014_jaminan_produk_halal_extracted.json
+2026-05-18 20:20:21,677 [INFO] TextCleaner:   [SUCCESS] Selesai: 241,360 -> 38,514 chars (berkurang 84.0%)
+2026-05-18 20:20:21,678 [INFO] TextCleaner:   [INFO] 40 halaman berkonten, 0 halaman kosong setelah cleaning
+2026-05-18 20:20:21,683 [INFO] TextCleaner:   [INFO] Full text: 03_cleaned_text\uu_33_2014_jaminan_produk_halal_full.txt
+2026-05-18 20:20:21,683 [INFO] TextCleaner: [CLEANING] Membersihkan: uu_36_2008_pajak_penghasilan_extracted.json
+2026-05-18 20:20:21,766 [INFO] TextCleaner:   [SUCCESS] Selesai: 261,808 -> 65,722 chars (berkurang 74.9%)
+2026-05-18 20:20:21,766 [INFO] TextCleaner:   [INFO] 40 halaman berkonten, 0 halaman kosong setelah cleaning
+2026-05-18 20:20:21,771 [INFO] TextCleaner:   [INFO] Full text: 03_cleaned_text\uu_36_2008_pajak_penghasilan_full.txt
+2026-05-18 20:20:21,772 [INFO] TextCleaner: [CLEANING] Membersihkan: uu_6_2023_cipta_kerja_extracted.json
+2026-05-18 20:20:23,702 [INFO] TextCleaner:   [SUCCESS] Selesai: 6,856,360 -> 1,380,651 chars (berkurang 79.9%)
+2026-05-18 20:20:23,702 [INFO] TextCleaner:   [INFO] 1127 halaman berkonten, 0 halaman kosong setelah cleaning
+2026-05-18 20:20:23,782 [INFO] TextCleaner:   [INFO] Full text: 03_cleaned_text\uu_6_2023_cipta_kerja_full.txt
+2026-05-18 20:20:23,783 [INFO] TextCleaner: [CLEANING] Membersihkan: uu_7_2021_harmonisasi_perpajakan_extracted.json
+2026-05-18 20:20:24,164 [INFO] TextCleaner:   [SUCCESS] Selesai: 1,351,921 -> 339,144 chars (berkurang 74.9%)
+2026-05-18 20:20:24,165 [INFO] TextCleaner:   [INFO] 224 halaman berkonten, 0 halaman kosong setelah cleaning
+2026-05-18 20:20:24,186 [INFO] TextCleaner:   [INFO] Full text: 03_cleaned_text\uu_7_2021_harmonisasi_perpajakan_full.txt
+2026-05-18 20:20:24,187 [INFO] TextCleaner: [CLEANING] Membersihkan: uu_8_1999_perlindungan_konsumen_extracted.json
+2026-05-18 20:20:24,266 [INFO] TextCleaner:   [SUCCESS] Selesai: 276,826 -> 61,773 chars (berkurang 77.7%)
+2026-05-18 20:20:24,266 [INFO] TextCleaner:   [INFO] 54 halaman berkonten, 0 halaman kosong setelah cleaning
+2026-05-18 20:20:24,272 [INFO] TextCleaner:   [INFO] Full text: 03_cleaned_text\uu_8_1999_perlindungan_konsumen_full.txt
