@@ -48,6 +48,7 @@ export default function DashboardPage() {
   const [showUpload, setShowUpload] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [sourcesPanelOpen, setSourcesPanelOpen] = useState(false);
+  const [profileMenuOpen, setProfileMenuOpen] = useState(false);
 
   const handleSend = () => {
     if (!input.trim()) return;
@@ -80,6 +81,11 @@ export default function DashboardPage() {
 
   // TODO: Tambah projek baru ke Supabase
   const handleNewProject = () => router.push("/new-project");
+
+  const handleLogout = () => {
+    // TODO: Implement logout logic (Supabase sign out)
+    router.push("/login");
+  };
 
   return (
     <div
@@ -137,16 +143,21 @@ export default function DashboardPage() {
             className="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-sm font-medium transition-all hover:bg-white/5"
             style={{ color: "var(--text-secondary)" }}
           >
-            
-              <span
-                className="text-lg leading-none"
-                style={{ color: "var(--accent)" }}
-              ><div className="flex items-center justify-center align-center h-6 w-6 rounded-full" style={ { background: "var(--bg-upload)" } } >+</div>
-                
-              </span>
+            <span
+              className="text-lg leading-none"
+              style={{ color: "var(--accent)" }}
+            >
+              <div
+                className="flex items-center justify-center align-center h-6 w-6 rounded-full"
+                style={{ background: "var(--bg-upload)" }}
+              >
+                +
+              </div>
+            </span>
             Tambah Projek
           </button>
           <button
+            onClick={() => router.push("/projects")}
             className="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-sm font-medium transition-all hover:bg-white/5"
             style={{ color: "var(--text-secondary)" }}
           >
@@ -161,7 +172,7 @@ export default function DashboardPage() {
             className="text-xs font-semibold uppercase tracking-wider px-3 mb-2"
             style={{ color: "var(--text-muted)" }}
           >
-            Projek Aktif
+            Obrolan
           </p>
           <div className="space-y-0.5">
             {DUMMY_PROJECTS.map((p) => (
@@ -188,6 +199,101 @@ export default function DashboardPage() {
             ))}
           </div>
         </div>
+
+        {/* Profile section */}
+        {/* <div
+          className="mt-auto border-t py-2 px-2"
+          style={{ borderColor: "var(--border)" }}
+        >
+          <div className="relative">
+            <button
+              onClick={() => setProfileMenuOpen(!profileMenuOpen)}
+              className="w-full flex items-center gap-3 rounded-lg p-2 transition-all hover:bg-white/5"
+            >
+              <div
+                className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
+                style={{ background: "var(--accent)" }}
+              >
+                <UserIcon width={16} height={16} stroke="var(--bg-base)" />
+              </div>
+
+              <div className="flex-1 text-left min-w-0">
+                <p
+                  className="text-sm font-medium truncate"
+                  style={{ color: "var(--text-primary)" }}
+                >
+                  muhammadhtaraka2027@gmail.com
+                </p>
+                <p className="text-xs" style={{ color: "var(--text-muted)" }}>
+                  Free plan
+                </p>
+              </div>
+
+              <ChevronIcon
+                width={16}
+                height={16}
+                stroke="var(--text-secondary)"
+              />
+            </button>
+
+            {profileMenuOpen && (
+              <div
+                className="absolute bottom-full left-0 mb-2 w-full rounded-lg shadow-lg border overflow-hidden"
+                style={{
+                  background: "var(--bg-surface)",
+                  borderColor: "var(--border)",
+                }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  className="w-full text-left px-4 py-2.5 text-sm transition-all hover:bg-white/5 flex items-center gap-2"
+                  style={{ color: "var(--text-primary)" }}
+                  onClick={() => router.push("/settings")}
+                >
+                  <SettingsIcon width={14} height={14} />
+                  Settings
+                </button>
+                <button
+                  className="w-full text-left px-4 py-2.5 text-sm transition-all hover:bg-white/5 flex items-center gap-2"
+                  style={{ color: "var(--text-primary)" }}
+                >
+                  <LanguageIcon width={14} height={14} />
+                  Language &gt;
+                </button>
+                <button
+                  className="w-full text-left px-4 py-2.5 text-sm transition-all hover:bg-white/5 flex items-center gap-2"
+                  style={{ color: "var(--text-primary)" }}
+                >
+                  <HelpIcon width={14} height={14} />
+                  Get help
+                </button>
+                <button
+                  className="w-full text-left px-4 py-2.5 text-sm transition-all hover:bg-white/5 flex items-center gap-2"
+                  style={{ color: "var(--text-primary)" }}
+                >
+                  <AppsIcon width={14} height={14} />
+                  Get apps and extensions
+                </button>
+                <button
+                  className="w-full text-left px-4 py-2.5 text-sm transition-all hover:bg-white/5 flex items-center gap-2"
+                  style={{ color: "var(--text-primary)" }}
+                >
+                  <LearnIcon width={14} height={14} />
+                  Learn more
+                </button>
+                <div className="h-px" style={{ background: "var(--border)" }} />
+                <button
+                  className="w-full text-left px-4 py-2.5 text-sm transition-all hover:bg-white/5 flex items-center gap-2"
+                  style={{ color: "#ef4444" }}
+                  onClick={handleLogout}
+                >
+                  <LogoutIcon width={14} height={14} />
+                  Log out
+                </button>
+              </div>
+            )}
+          </div>
+        </div> */}
       </aside>
 
       {/* ── Main area ──────────────────────────────────── */}
@@ -511,7 +617,6 @@ function SourcesPanel({
   );
 }
 
-// Tambah icon Plus
 function PlusIcon() {
   return (
     <svg
@@ -526,6 +631,172 @@ function PlusIcon() {
     >
       <line x1="12" y1="5" x2="12" y2="19" />
       <line x1="5" y1="12" x2="19" y2="12" />
+    </svg>
+  );
+}
+
+function UserIcon({ width = 20, height = 20, stroke = "currentColor" }) {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={stroke}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+      <circle cx="12" cy="7" r="4" />
+    </svg>
+  );
+}
+
+function ChevronIcon({ width = 20, height = 20, stroke = "currentColor" }) {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={stroke}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <polyline points="6 9 12 15 18 9" />
+    </svg>
+  );
+}
+
+function LanguageIcon({ width = 20, height = 20, stroke = "currentColor" }) {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={stroke}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="12" cy="12" r="10" />
+      <line x1="2" y1="12" x2="22" y2="12" />
+      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+    </svg>
+  );
+}
+
+function HelpIcon({ width = 20, height = 20, stroke = "currentColor" }) {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={stroke}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="12" cy="12" r="10" />
+      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+      <line x1="12" y1="17" x2="12.01" y2="17" />
+    </svg>
+  );
+}
+
+function UpgradeIcon({ width = 20, height = 20, stroke = "currentColor" }) {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={stroke}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+    </svg>
+  );
+}
+
+function AppsIcon({ width = 20, height = 20, stroke = "currentColor" }) {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={stroke}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect x="3" y="3" width="7" height="7" />
+      <rect x="14" y="3" width="7" height="7" />
+      <rect x="14" y="14" width="7" height="7" />
+      <rect x="3" y="14" width="7" height="7" />
+    </svg>
+  );
+}
+
+function LearnIcon({ width = 20, height = 20, stroke = "currentColor" }) {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={stroke}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+    </svg>
+  );
+}
+
+function LogoutIcon({ width = 20, height = 20, stroke = "currentColor" }) {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={stroke}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+      <polyline points="16 17 21 12 16 7" />
+      <line x1="21" y1="12" x2="9" y2="12" />
+    </svg>
+  );
+}
+
+function SettingsIcon({ ...props }: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <circle cx="12" cy="12" r="3" />
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
     </svg>
   );
 }

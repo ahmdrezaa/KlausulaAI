@@ -109,7 +109,7 @@ export default function NewProjectPage() {
                 className="block text-sm font-medium mb-2"
                 style={{ color: "var(--accent)" }}
               >
-                Master Prompt
+                Instruksi
               </label>
               <textarea
                 rows={4}
