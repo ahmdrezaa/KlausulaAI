@@ -1,10 +1,3 @@
-"""
-===============================================================
-KlausulaAI - Data Pipeline | Step 01: PDF Text Extraction
-===============================================================
-Tanggung Jawab: Dzaky Muttaqi Sunaryadi (Data Engineer)
-"""
-
 import os
 import json
 import logging

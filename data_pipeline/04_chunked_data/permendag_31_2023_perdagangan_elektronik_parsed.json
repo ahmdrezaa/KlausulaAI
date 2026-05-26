@@ -6,7 +6,7 @@
   "uu_topic": "permendag_31_2023_perdagangan_elektronik",
   "total_pasal": 67,
   "total_bab": 8,
-  "parsed_date": "2026-05-18T20:23:54.182016",
+  "parsed_date": "2026-05-26T14:25:42.047794",
   "pasal_list": [
     {
       "pasal_id": "uu_?_?_pasal_1",
@@ -29,7 +29,12 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.185633"
+      "parsed_date": "2026-05-26T14:25:42.051116",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm",
+        "perizinan"
+      ]
     },
     {
       "pasal_id": "uu_?_?_pasal_2",
@@ -96,7 +101,9 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.185782"
+      "parsed_date": "2026-05-26T14:25:42.051230",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_3",
@@ -138,7 +145,11 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.185876"
+      "parsed_date": "2026-05-26T14:25:42.051301",
+      "is_umkm_relevant": false,
+      "tags": [
+        "perizinan"
+      ]
     },
     {
       "pasal_id": "uu_?_?_pasal_4",
@@ -161,7 +172,11 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.185904"
+      "parsed_date": "2026-05-26T14:25:42.051326",
+      "is_umkm_relevant": false,
+      "tags": [
+        "perizinan"
+      ]
     },
     {
       "pasal_id": "uu_?_?_pasal_5",
@@ -248,7 +263,11 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.186197"
+      "parsed_date": "2026-05-26T14:25:42.051545",
+      "is_umkm_relevant": false,
+      "tags": [
+        "perizinan"
+      ]
     },
     {
       "pasal_id": "uu_?_?_pasal_6",
@@ -276,7 +295,11 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.186242"
+      "parsed_date": "2026-05-26T14:25:42.051580",
+      "is_umkm_relevant": false,
+      "tags": [
+        "perizinan"
+      ]
     },
     {
       "pasal_id": "uu_?_?_pasal_7",
@@ -314,7 +337,11 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.186313"
+      "parsed_date": "2026-05-26T14:25:42.051642",
+      "is_umkm_relevant": false,
+      "tags": [
+        "perizinan"
+      ]
     },
     {
       "pasal_id": "uu_?_?_pasal_8",
@@ -337,7 +364,11 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.186341"
+      "parsed_date": "2026-05-26T14:25:42.051660",
+      "is_umkm_relevant": false,
+      "tags": [
+        "perizinan"
+      ]
     },
     {
       "pasal_id": "uu_?_?_pasal_9",
@@ -370,7 +401,11 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.186417"
+      "parsed_date": "2026-05-26T14:25:42.051710",
+      "is_umkm_relevant": false,
+      "tags": [
+        "perizinan"
+      ]
     },
     {
       "pasal_id": "uu_?_?_pasal_10",
@@ -393,7 +428,11 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.186435"
+      "parsed_date": "2026-05-26T14:25:42.051729",
+      "is_umkm_relevant": false,
+      "tags": [
+        "perizinan"
+      ]
     },
     {
       "pasal_id": "uu_?_?_pasal_11",
@@ -438,7 +477,11 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.186562"
+      "parsed_date": "2026-05-26T14:25:42.051833",
+      "is_umkm_relevant": false,
+      "tags": [
+        "perizinan"
+      ]
     },
     {
       "pasal_id": "uu_?_?_pasal_12",
@@ -479,7 +522,11 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.186630"
+      "parsed_date": "2026-05-26T14:25:42.051888",
+      "is_umkm_relevant": false,
+      "tags": [
+        "perizinan"
+      ]
     },
     {
       "pasal_id": "uu_?_?_pasal_13",
@@ -535,7 +582,9 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.186788"
+      "parsed_date": "2026-05-26T14:25:42.052001",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_14",
@@ -558,7 +607,11 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.186824"
+      "parsed_date": "2026-05-26T14:25:42.052017",
+      "is_umkm_relevant": false,
+      "tags": [
+        "perizinan"
+      ]
     },
     {
       "pasal_id": "uu_?_?_pasal_15",
@@ -581,7 +634,11 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.186835"
+      "parsed_date": "2026-05-26T14:25:42.052031",
+      "is_umkm_relevant": false,
+      "tags": [
+        "perizinan"
+      ]
     },
     {
       "pasal_id": "uu_?_?_pasal_16",
@@ -609,7 +666,11 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.186888"
+      "parsed_date": "2026-05-26T14:25:42.052074",
+      "is_umkm_relevant": false,
+      "tags": [
+        "perizinan"
+      ]
     },
     {
       "pasal_id": "uu_?_?_pasal_17",
@@ -632,7 +693,9 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.186901"
+      "parsed_date": "2026-05-26T14:25:42.052089",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_18",
@@ -683,7 +746,9 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.187012"
+      "parsed_date": "2026-05-26T14:25:42.052181",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_19",
@@ -721,7 +786,9 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.187095"
+      "parsed_date": "2026-05-26T14:25:42.052252",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_20",
@@ -744,7 +811,9 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.187109"
+      "parsed_date": "2026-05-26T14:25:42.052267",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_21",
@@ -777,7 +846,12 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.187173"
+      "parsed_date": "2026-05-26T14:25:42.052317",
+      "is_umkm_relevant": false,
+      "tags": [
+        "perpajakan",
+        "perizinan"
+      ]
     },
     {
       "pasal_id": "uu_?_?_pasal_22",
@@ -800,7 +874,11 @@
       "bagian": "Bagian Kesatu - Umum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.187194"
+      "parsed_date": "2026-05-26T14:25:42.052339",
+      "is_umkm_relevant": false,
+      "tags": [
+        "perizinan"
+      ]
     },
     {
       "pasal_id": "uu_?_?_pasal_23",
@@ -828,7 +906,9 @@
       "bagian": "Bagian Kesatu - Umum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.187225"
+      "parsed_date": "2026-05-26T14:25:42.052366",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_24",
@@ -851,7 +931,9 @@
       "bagian": "Bagian Kesatu - Umum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.187239"
+      "parsed_date": "2026-05-26T14:25:42.052382",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_25",
@@ -879,7 +961,9 @@
       "bagian": "Bagian Kesatu - Umum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.187278"
+      "parsed_date": "2026-05-26T14:25:42.052431",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_26",
@@ -902,7 +986,9 @@
       "bagian": "Bagian Kesatu - Umum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.187292"
+      "parsed_date": "2026-05-26T14:25:42.052447",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_27",
@@ -925,7 +1011,9 @@
       "bagian": "Bagian Kedua - Penayangan dan Pemutusan Akses Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.187309"
+      "parsed_date": "2026-05-26T14:25:42.052465",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_28",
@@ -978,7 +1066,12 @@
       "bagian": "Bagian Kedua - Penayangan dan Pemutusan Akses Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.187429"
+      "parsed_date": "2026-05-26T14:25:42.052565",
+      "is_umkm_relevant": false,
+      "tags": [
+        "perpajakan",
+        "perizinan"
+      ]
     },
     {
       "pasal_id": "uu_?_?_pasal_29",
@@ -1011,7 +1104,9 @@
       "bagian": "Bagian Kedua - Penayangan dan Pemutusan Akses Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.187489"
+      "parsed_date": "2026-05-26T14:25:42.052619",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_30",
@@ -1048,7 +1143,9 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.187551"
+      "parsed_date": "2026-05-26T14:25:42.052671",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_31",
@@ -1091,7 +1188,9 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.187641"
+      "parsed_date": "2026-05-26T14:25:42.052741",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_32",
@@ -1132,7 +1231,9 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.187709"
+      "parsed_date": "2026-05-26T14:25:42.052793",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_33",
@@ -1170,7 +1271,11 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.187785"
+      "parsed_date": "2026-05-26T14:25:42.052852",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_?_?_pasal_34",
@@ -1193,7 +1298,11 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.187812"
+      "parsed_date": "2026-05-26T14:25:42.052871",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_?_?_pasal_35",
@@ -1216,7 +1325,9 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.187830"
+      "parsed_date": "2026-05-26T14:25:42.052892",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_36",
@@ -1244,7 +1355,9 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.187869"
+      "parsed_date": "2026-05-26T14:25:42.052926",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_37",
@@ -1282,7 +1395,9 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.187932"
+      "parsed_date": "2026-05-26T14:25:42.052979",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_38",
@@ -1371,7 +1486,11 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.188197"
+      "parsed_date": "2026-05-26T14:25:42.053172",
+      "is_umkm_relevant": false,
+      "tags": [
+        "perizinan"
+      ]
     },
     {
       "pasal_id": "uu_?_?_pasal_39",
@@ -1399,7 +1518,11 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.188226"
+      "parsed_date": "2026-05-26T14:25:42.053196",
+      "is_umkm_relevant": false,
+      "tags": [
+        "perizinan"
+      ]
     },
     {
       "pasal_id": "uu_?_?_pasal_40",
@@ -1427,7 +1550,9 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.188249"
+      "parsed_date": "2026-05-26T14:25:42.053218",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_41",
@@ -1450,7 +1575,9 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.188273"
+      "parsed_date": "2026-05-26T14:25:42.053241",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_42",
@@ -1473,7 +1600,9 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.188286"
+      "parsed_date": "2026-05-26T14:25:42.053252",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_43",
@@ -1559,7 +1688,9 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.188439"
+      "parsed_date": "2026-05-26T14:25:42.053362",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_44",
@@ -1597,7 +1728,9 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.188507"
+      "parsed_date": "2026-05-26T14:25:42.053416",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_45",
@@ -1620,7 +1753,9 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.188523"
+      "parsed_date": "2026-05-26T14:25:42.053429",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_46",
@@ -1648,7 +1783,9 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.188553"
+      "parsed_date": "2026-05-26T14:25:42.053454",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_47",
@@ -1685,7 +1822,9 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.188621"
+      "parsed_date": "2026-05-26T14:25:42.053510",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_48",
@@ -1718,7 +1857,9 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.188657"
+      "parsed_date": "2026-05-26T14:25:42.053539",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_49",
@@ -1741,7 +1882,9 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.188673"
+      "parsed_date": "2026-05-26T14:25:42.053555",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_50",
@@ -1805,7 +1948,11 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.188784"
+      "parsed_date": "2026-05-26T14:25:42.053632",
+      "is_umkm_relevant": false,
+      "tags": [
+        "perizinan"
+      ]
     },
     {
       "pasal_id": "uu_?_?_pasal_51",
@@ -1843,7 +1990,9 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.188864"
+      "parsed_date": "2026-05-26T14:25:42.053694",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_52",
@@ -1886,7 +2035,9 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.188960"
+      "parsed_date": "2026-05-26T14:25:42.053770",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_53",
@@ -1924,7 +2075,9 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.189039"
+      "parsed_date": "2026-05-26T14:25:42.053837",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_54",
@@ -1962,7 +2115,11 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.189130"
+      "parsed_date": "2026-05-26T14:25:42.053908",
+      "is_umkm_relevant": false,
+      "tags": [
+        "perizinan"
+      ]
     },
     {
       "pasal_id": "uu_?_?_pasal_55",
@@ -2015,7 +2172,9 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.189260"
+      "parsed_date": "2026-05-26T14:25:42.054002",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_56",
@@ -2053,7 +2212,9 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.189327"
+      "parsed_date": "2026-05-26T14:25:42.054059",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_57",
@@ -2091,7 +2252,9 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.189402"
+      "parsed_date": "2026-05-26T14:25:42.054117",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_58",
@@ -2114,7 +2277,9 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.189422"
+      "parsed_date": "2026-05-26T14:25:42.054138",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_59",
@@ -2162,7 +2327,11 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.189525"
+      "parsed_date": "2026-05-26T14:25:42.054215",
+      "is_umkm_relevant": false,
+      "tags": [
+        "perizinan"
+      ]
     },
     {
       "pasal_id": "uu_?_?_pasal_60",
@@ -2200,7 +2369,11 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.189605"
+      "parsed_date": "2026-05-26T14:25:42.054276",
+      "is_umkm_relevant": false,
+      "tags": [
+        "perizinan"
+      ]
     },
     {
       "pasal_id": "uu_?_?_pasal_61",
@@ -2223,7 +2396,9 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.189618"
+      "parsed_date": "2026-05-26T14:25:42.054290",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_62",
@@ -2261,7 +2436,9 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.189690"
+      "parsed_date": "2026-05-26T14:25:42.054349",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_63",
@@ -2304,7 +2481,9 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.189795"
+      "parsed_date": "2026-05-26T14:25:42.054452",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_64",
@@ -2345,7 +2524,9 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.189861"
+      "parsed_date": "2026-05-26T14:25:42.054506",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_65",
@@ -2368,7 +2549,11 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.189877"
+      "parsed_date": "2026-05-26T14:25:42.054522",
+      "is_umkm_relevant": false,
+      "tags": [
+        "perizinan"
+      ]
     },
     {
       "pasal_id": "uu_?_?_pasal_66",
@@ -2391,7 +2576,11 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.189893"
+      "parsed_date": "2026-05-26T14:25:42.054539",
+      "is_umkm_relevant": false,
+      "tags": [
+        "perizinan"
+      ]
     },
     {
       "pasal_id": "uu_?_?_pasal_67",
@@ -2414,7 +2603,11 @@
       "bagian": "Bagian Ketiga - Pengawasan Iklan Elektronik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.189947"
+      "parsed_date": "2026-05-26T14:25:42.054610",
+      "is_umkm_relevant": false,
+      "tags": [
+        "perizinan"
+      ]
     }
   ]
 }

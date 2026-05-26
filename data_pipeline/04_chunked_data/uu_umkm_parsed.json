@@ -6,7 +6,7 @@
   "uu_topic": "UMKM",
   "total_pasal": 44,
   "total_bab": 10,
-  "parsed_date": "2026-05-18T20:23:54.630016",
+  "parsed_date": "2026-05-26T14:25:42.458766",
   "pasal_list": [
     {
       "pasal_id": "uu_20_2008_pasal_1",
@@ -29,7 +29,11 @@
       "bagian": "Bagian baik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.631818"
+      "parsed_date": "2026-05-26T14:25:42.460655",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_2",
@@ -52,7 +56,11 @@
       "bagian": "Bagian baik",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.631837"
+      "parsed_date": "2026-05-26T14:25:42.460701",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_3",
@@ -75,7 +83,11 @@
       "bagian": "Bagian Kesatu - Prinsip Pemberdayaan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.631847"
+      "parsed_date": "2026-05-26T14:25:42.460731",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_4",
@@ -98,7 +110,11 @@
       "bagian": "Bagian Kedua - Tujuan Pemberdayaan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.631860"
+      "parsed_date": "2026-05-26T14:25:42.460769",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_5",
@@ -121,7 +137,11 @@
       "bagian": "Bagian Kedua - Tujuan Pemberdayaan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.631870"
+      "parsed_date": "2026-05-26T14:25:42.460803",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_6",
@@ -190,7 +210,11 @@
       "bagian": "Bagian Kedua - Tujuan Pemberdayaan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.631987"
+      "parsed_date": "2026-05-26T14:25:42.461149",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_7",
@@ -251,7 +275,11 @@
       "bagian": "Bagian Kedua - Tujuan Pemberdayaan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632026"
+      "parsed_date": "2026-05-26T14:25:42.461223",
+      "is_umkm_relevant": false,
+      "tags": [
+        "perizinan"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_8",
@@ -274,7 +302,11 @@
       "bagian": "Bagian Kedua - Tujuan Pemberdayaan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632039"
+      "parsed_date": "2026-05-26T14:25:42.461270",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_9",
@@ -297,7 +329,12 @@
       "bagian": "Bagian Kedua - Tujuan Pemberdayaan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632047"
+      "parsed_date": "2026-05-26T14:25:42.461290",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm",
+        "perpajakan"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_10",
@@ -320,7 +357,11 @@
       "bagian": "Bagian Kedua - Tujuan Pemberdayaan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632057"
+      "parsed_date": "2026-05-26T14:25:42.461314",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_11",
@@ -343,7 +384,11 @@
       "bagian": "Bagian Kedua - Tujuan Pemberdayaan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632070"
+      "parsed_date": "2026-05-26T14:25:42.461345",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_12",
@@ -380,7 +425,12 @@
       "bagian": "Bagian Kedua - Tujuan Pemberdayaan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632105"
+      "parsed_date": "2026-05-26T14:25:42.461399",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm",
+        "perizinan"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_13",
@@ -408,7 +458,11 @@
       "bagian": "Bagian Kedua - Tujuan Pemberdayaan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632129"
+      "parsed_date": "2026-05-26T14:25:42.461449",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_14",
@@ -453,7 +507,11 @@
       "bagian": "Bagian Kedua - Tujuan Pemberdayaan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632196"
+      "parsed_date": "2026-05-26T14:25:42.461545",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_15",
@@ -476,7 +534,11 @@
       "bagian": "Bagian Kedua - Tujuan Pemberdayaan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632206"
+      "parsed_date": "2026-05-26T14:25:42.461569",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_16",
@@ -526,7 +588,9 @@
       "bagian": "Bagian Kedua - Tujuan Pemberdayaan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632244"
+      "parsed_date": "2026-05-26T14:25:42.461629",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2008_pasal_17",
@@ -549,7 +613,11 @@
       "bagian": "Bagian Kedua - Tujuan Pemberdayaan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632257"
+      "parsed_date": "2026-05-26T14:25:42.461657",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_18",
@@ -572,7 +640,11 @@
       "bagian": "Bagian Kedua - Tujuan Pemberdayaan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632269"
+      "parsed_date": "2026-05-26T14:25:42.461684",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_19",
@@ -595,7 +667,9 @@
       "bagian": "Bagian Kedua - Tujuan Pemberdayaan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632279"
+      "parsed_date": "2026-05-26T14:25:42.461708",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2008_pasal_20",
@@ -618,7 +692,11 @@
       "bagian": "Bagian Kesatu - Pembiayaan dan Penjaminan Usaha Mikro dan Kecil",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632295"
+      "parsed_date": "2026-05-26T14:25:42.461736",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_21",
@@ -661,7 +739,13 @@
       "bagian": "Bagian Kesatu - Pembiayaan dan Penjaminan Usaha Mikro dan Kecil",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632357"
+      "parsed_date": "2026-05-26T14:25:42.461828",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm",
+        "perpajakan",
+        "perizinan"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_22",
@@ -684,7 +768,11 @@
       "bagian": "Bagian Kesatu - Pembiayaan dan Penjaminan Usaha Mikro dan Kecil",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632369"
+      "parsed_date": "2026-05-26T14:25:42.461854",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_23",
@@ -738,7 +826,11 @@
       "bagian": "Bagian Kedua - Pembiayaan dan Penjaminan Usaha Menengah",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632437"
+      "parsed_date": "2026-05-26T14:25:42.461947",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_24",
@@ -761,7 +853,11 @@
       "bagian": "Bagian Kedua - Pembiayaan dan Penjaminan Usaha Menengah",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632447"
+      "parsed_date": "2026-05-26T14:25:42.461968",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_25",
@@ -794,7 +890,11 @@
       "bagian": "Bagian Kedua - Pembiayaan dan Penjaminan Usaha Menengah",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632495"
+      "parsed_date": "2026-05-26T14:25:42.462022",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_26",
@@ -817,7 +917,9 @@
       "bagian": "Bagian Kedua - Pembiayaan dan Penjaminan Usaha Menengah",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632505"
+      "parsed_date": "2026-05-26T14:25:42.462041",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2008_pasal_27",
@@ -840,7 +942,11 @@
       "bagian": "Bagian Kedua - Pembiayaan dan Penjaminan Usaha Menengah",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632517"
+      "parsed_date": "2026-05-26T14:25:42.462062",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_28",
@@ -863,7 +969,11 @@
       "bagian": "Bagian Kedua - Pembiayaan dan Penjaminan Usaha Menengah",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632530"
+      "parsed_date": "2026-05-26T14:25:42.462084",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_29",
@@ -901,7 +1011,11 @@
       "bagian": "Bagian Kedua - Pembiayaan dan Penjaminan Usaha Menengah",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632572"
+      "parsed_date": "2026-05-26T14:25:42.462132",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_30",
@@ -934,7 +1048,11 @@
       "bagian": "Bagian Kedua - Pembiayaan dan Penjaminan Usaha Menengah",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632610"
+      "parsed_date": "2026-05-26T14:25:42.462174",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_31",
@@ -957,7 +1075,11 @@
       "bagian": "Bagian Kedua - Pembiayaan dan Penjaminan Usaha Menengah",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632619"
+      "parsed_date": "2026-05-26T14:25:42.462187",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_32",
@@ -980,7 +1102,11 @@
       "bagian": "Bagian Kedua - Pembiayaan dan Penjaminan Usaha Menengah",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632628"
+      "parsed_date": "2026-05-26T14:25:42.462198",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_33",
@@ -1003,7 +1129,11 @@
       "bagian": "Bagian Kedua - Pembiayaan dan Penjaminan Usaha Menengah",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632638"
+      "parsed_date": "2026-05-26T14:25:42.462209",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_34",
@@ -1041,7 +1171,11 @@
       "bagian": "Bagian Kedua - Pembiayaan dan Penjaminan Usaha Menengah",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632686"
+      "parsed_date": "2026-05-26T14:25:42.462264",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_35",
@@ -1069,7 +1203,11 @@
       "bagian": "Bagian Kedua - Pembiayaan dan Penjaminan Usaha Menengah",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632708"
+      "parsed_date": "2026-05-26T14:25:42.462288",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_36",
@@ -1097,7 +1235,9 @@
       "bagian": "Bagian Kedua - Pembiayaan dan Penjaminan Usaha Menengah",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632734"
+      "parsed_date": "2026-05-26T14:25:42.462318",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2008_pasal_37",
@@ -1120,7 +1260,11 @@
       "bagian": "Bagian Kedua - Pembiayaan dan Penjaminan Usaha Menengah",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632743"
+      "parsed_date": "2026-05-26T14:25:42.462331",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_38",
@@ -1153,7 +1297,11 @@
       "bagian": "Bagian Kesatu - Sanksi Administratif",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632792"
+      "parsed_date": "2026-05-26T14:25:42.462384",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_39",
@@ -1191,7 +1339,12 @@
       "bagian": "Bagian Kedua - Ketentuan Pidana",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632835"
+      "parsed_date": "2026-05-26T14:25:42.462431",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm",
+        "perizinan"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_40",
@@ -1214,7 +1367,11 @@
       "bagian": "Bagian Kedua - Ketentuan Pidana",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632845"
+      "parsed_date": "2026-05-26T14:25:42.462448",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_41",
@@ -1237,7 +1394,9 @@
       "bagian": "Bagian Kedua - Ketentuan Pidana",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632853"
+      "parsed_date": "2026-05-26T14:25:42.462460",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2008_pasal_42",
@@ -1260,7 +1419,11 @@
       "bagian": "Bagian Kedua - Ketentuan Pidana",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632862"
+      "parsed_date": "2026-05-26T14:25:42.462473",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_43",
@@ -1283,7 +1446,11 @@
       "bagian": "Bagian Kedua - Ketentuan Pidana",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632871"
+      "parsed_date": "2026-05-26T14:25:42.462485",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_20_2008_pasal_44",
@@ -1306,7 +1473,9 @@
       "bagian": "Bagian Kedua - Ketentuan Pidana",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.632887"
+      "parsed_date": "2026-05-26T14:25:42.462507",
+      "is_umkm_relevant": false,
+      "tags": []
     }
   ]
 }

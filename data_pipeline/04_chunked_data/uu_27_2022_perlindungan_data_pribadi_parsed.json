@@ -6,7 +6,7 @@
   "uu_topic": "uu_27_2022_perlindungan_data_pribadi",
   "total_pasal": 142,
   "total_bab": 15,
-  "parsed_date": "2026-05-18T20:23:54.703698",
+  "parsed_date": "2026-05-26T14:25:42.510575",
   "pasal_list": [
     {
       "pasal_id": "uu_?_?_pasal_2",
@@ -43,7 +43,9 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.706829"
+      "parsed_date": "2026-05-26T14:25:42.513533",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_3",
@@ -66,7 +68,9 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.706865"
+      "parsed_date": "2026-05-26T14:25:42.513566",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_4",
@@ -110,7 +114,9 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.706900"
+      "parsed_date": "2026-05-26T14:25:42.513612",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_5",
@@ -133,7 +139,9 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.706909"
+      "parsed_date": "2026-05-26T14:25:42.513626",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_6",
@@ -156,7 +164,9 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.706918"
+      "parsed_date": "2026-05-26T14:25:42.513641",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_7",
@@ -179,7 +189,9 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.706925"
+      "parsed_date": "2026-05-26T14:25:42.513653",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_8",
@@ -202,7 +214,9 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.706933"
+      "parsed_date": "2026-05-26T14:25:42.513665",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_9",
@@ -225,7 +239,9 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.706940"
+      "parsed_date": "2026-05-26T14:25:42.513676",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_10",
@@ -253,7 +269,9 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.706968"
+      "parsed_date": "2026-05-26T14:25:42.513712",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_11",
@@ -276,7 +294,9 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.706976"
+      "parsed_date": "2026-05-26T14:25:42.513725",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_12",
@@ -304,7 +324,9 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.706997"
+      "parsed_date": "2026-05-26T14:25:42.513755",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_13",
@@ -337,7 +359,9 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.707038"
+      "parsed_date": "2026-05-26T14:25:42.513808",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_14",
@@ -360,7 +384,9 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.707046"
+      "parsed_date": "2026-05-26T14:25:42.513823",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_15",
@@ -388,7 +414,9 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.707070"
+      "parsed_date": "2026-05-26T14:25:42.513859",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_16",
@@ -479,7 +507,9 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.707203"
+      "parsed_date": "2026-05-26T14:25:42.514023",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_17",
@@ -502,7 +532,9 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.707223"
+      "parsed_date": "2026-05-26T14:25:42.514052",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_18",
@@ -543,7 +575,9 @@
       "bagian": "Bagian Kesatu - Umum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.707340"
+      "parsed_date": "2026-05-26T14:25:42.514119",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_19",
@@ -566,7 +600,9 @@
       "bagian": "Bagian Kedua - Kewajiban Pengendali Data Pribadi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.707359"
+      "parsed_date": "2026-05-26T14:25:42.514134",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_20",
@@ -624,7 +660,9 @@
       "bagian": "Bagian Kedua - Kewajiban Pengendali Data Pribadi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.707569"
+      "parsed_date": "2026-05-26T14:25:42.514249",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_21",
@@ -702,7 +740,9 @@
       "bagian": "Bagian Kedua - Kewajiban Pengendali Data Pribadi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.707758"
+      "parsed_date": "2026-05-26T14:25:42.514360",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_23",
@@ -725,7 +765,9 @@
       "bagian": "Bagian Kedua - Kewajiban Pengendali Data Pribadi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.708103"
+      "parsed_date": "2026-05-26T14:25:42.514375",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_24",
@@ -748,7 +790,9 @@
       "bagian": "Bagian Kedua - Kewajiban Pengendali Data Pribadi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.708149"
+      "parsed_date": "2026-05-26T14:25:42.514388",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_25",
@@ -776,7 +820,9 @@
       "bagian": "Bagian Kedua - Kewajiban Pengendali Data Pribadi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.708206"
+      "parsed_date": "2026-05-26T14:25:42.514412",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_26",
@@ -809,7 +855,9 @@
       "bagian": "Bagian Kedua - Kewajiban Pengendali Data Pribadi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.708288"
+      "parsed_date": "2026-05-26T14:25:42.514462",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_28",
@@ -832,7 +880,9 @@
       "bagian": "Bagian Kedua - Kewajiban Pengendali Data Pribadi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.708297"
+      "parsed_date": "2026-05-26T14:25:42.514473",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_29",
@@ -865,7 +915,9 @@
       "bagian": "Bagian Kedua - Kewajiban Pengendali Data Pribadi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.708472"
+      "parsed_date": "2026-05-26T14:25:42.514509",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_30",
@@ -893,7 +945,9 @@
       "bagian": "Bagian Kedua - Kewajiban Pengendali Data Pribadi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.708500"
+      "parsed_date": "2026-05-26T14:25:42.514543",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_31",
@@ -916,7 +970,9 @@
       "bagian": "Bagian Kedua - Kewajiban Pengendali Data Pribadi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.708532"
+      "parsed_date": "2026-05-26T14:25:42.514555",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_32",
@@ -944,7 +1000,9 @@
       "bagian": "Bagian Kedua - Kewajiban Pengendali Data Pribadi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.708562"
+      "parsed_date": "2026-05-26T14:25:42.514589",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_33",
@@ -967,7 +1025,9 @@
       "bagian": "Bagian Kedua - Kewajiban Pengendali Data Pribadi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.708574"
+      "parsed_date": "2026-05-26T14:25:42.514607",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_34",
@@ -1029,7 +1089,9 @@
       "bagian": "Bagian Kedua - Kewajiban Pengendali Data Pribadi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.708656"
+      "parsed_date": "2026-05-26T14:25:42.514702",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_35",
@@ -1052,7 +1114,9 @@
       "bagian": "Bagian Kedua - Kewajiban Pengendali Data Pribadi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.708669"
+      "parsed_date": "2026-05-26T14:25:42.514722",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_36",
@@ -1075,7 +1139,9 @@
       "bagian": "Bagian Kedua - Kewajiban Pengendali Data Pribadi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.708676"
+      "parsed_date": "2026-05-26T14:25:42.514733",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_37",
@@ -1098,7 +1164,9 @@
       "bagian": "Bagian Kedua - Kewajiban Pengendali Data Pribadi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.708684"
+      "parsed_date": "2026-05-26T14:25:42.514745",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_38",
@@ -1121,7 +1189,9 @@
       "bagian": "Bagian Kedua - Kewajiban Pengendali Data Pribadi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.708691"
+      "parsed_date": "2026-05-26T14:25:42.514755",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_39",
@@ -1154,7 +1224,9 @@
       "bagian": "Bagian Kedua - Kewajiban Pengendali Data Pribadi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.708721"
+      "parsed_date": "2026-05-26T14:25:42.514795",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_40",
@@ -1182,7 +1254,9 @@
       "bagian": "Bagian Kedua - Kewajiban Pengendali Data Pribadi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.708749"
+      "parsed_date": "2026-05-26T14:25:42.514831",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_41",
@@ -1224,7 +1298,9 @@
       "bagian": "Bagian Kedua - Kewajiban Pengendali Data Pribadi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.708809"
+      "parsed_date": "2026-05-26T14:25:42.514903",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_42",
@@ -1269,7 +1345,9 @@
       "bagian": "Bagian Kedua - Kewajiban Pengendali Data Pribadi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.708844"
+      "parsed_date": "2026-05-26T14:25:42.514945",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_43",
@@ -1292,7 +1370,9 @@
       "bagian": "Bagian Kedua - Kewajiban Pengendali Data Pribadi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.708856"
+      "parsed_date": "2026-05-26T14:25:42.514967",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_44",
@@ -1333,7 +1413,9 @@
       "bagian": "Bagian Kedua - Kewajiban Pengendali Data Pribadi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.708901"
+      "parsed_date": "2026-05-26T14:25:42.515024",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_45",
@@ -1356,7 +1438,9 @@
       "bagian": "Bagian Kedua - Kewajiban Pengendali Data Pribadi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.708909"
+      "parsed_date": "2026-05-26T14:25:42.515037",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_46",
@@ -1411,7 +1495,9 @@
       "bagian": "Bagian Kedua - Kewajiban Pengendali Data Pribadi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.708959"
+      "parsed_date": "2026-05-26T14:25:42.515095",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_47",
@@ -1434,7 +1520,9 @@
       "bagian": "Bagian Kedua - Kewajiban Pengendali Data Pribadi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.708968"
+      "parsed_date": "2026-05-26T14:25:42.515108",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_48",
@@ -1482,7 +1570,9 @@
       "bagian": "Bagian Kedua - Kewajiban Pengendali Data Pribadi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.709030"
+      "parsed_date": "2026-05-26T14:25:42.515199",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_49",
@@ -1505,7 +1595,9 @@
       "bagian": "Bagian Kedua - Kewajiban Pengendali Data Pribadi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.709038"
+      "parsed_date": "2026-05-26T14:25:42.515213",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_50",
@@ -1538,7 +1630,9 @@
       "bagian": "Bagian Ketiga - Kewajiban Prosesor Data Pribadi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.709066"
+      "parsed_date": "2026-05-26T14:25:42.515253",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_51",
@@ -1586,7 +1680,9 @@
       "bagian": "Bagian Ketiga - Kewajiban Prosesor Data Pribadi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.709124"
+      "parsed_date": "2026-05-26T14:25:42.515324",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_52",
@@ -1609,7 +1705,9 @@
       "bagian": "Bagian Keempat - Pejabat atau Petugas yang Melaksanakan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.709133"
+      "parsed_date": "2026-05-26T14:25:42.515340",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_53",
@@ -1650,7 +1748,9 @@
       "bagian": "Bagian Keempat - Pejabat atau Petugas yang Melaksanakan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.709201"
+      "parsed_date": "2026-05-26T14:25:42.515425",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_54",
@@ -1700,7 +1800,9 @@
       "bagian": "Bagian Kesatu - Transfer Data Pribadi Dalam Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.709300"
+      "parsed_date": "2026-05-26T14:25:42.515533",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_55",
@@ -1733,7 +1835,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.709334"
+      "parsed_date": "2026-05-26T14:25:42.515575",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_56",
@@ -1776,7 +1880,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.709402"
+      "parsed_date": "2026-05-26T14:25:42.515658",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_57",
@@ -1836,7 +1942,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.709464"
+      "parsed_date": "2026-05-26T14:25:42.515740",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_58",
@@ -1879,7 +1987,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.709498"
+      "parsed_date": "2026-05-26T14:25:42.515783",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_59",
@@ -1902,7 +2012,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.709511"
+      "parsed_date": "2026-05-26T14:25:42.515803",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_60",
@@ -1925,7 +2037,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.709573"
+      "parsed_date": "2026-05-26T14:25:42.515852",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_61",
@@ -1948,7 +2062,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.709581"
+      "parsed_date": "2026-05-26T14:25:42.515865",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_62",
@@ -1976,7 +2092,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.709607"
+      "parsed_date": "2026-05-26T14:25:42.515899",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_63",
@@ -2004,7 +2122,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.709636"
+      "parsed_date": "2026-05-26T14:25:42.515938",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_64",
@@ -2051,7 +2171,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.709695"
+      "parsed_date": "2026-05-26T14:25:42.516011",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_65",
@@ -2084,7 +2206,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.709724"
+      "parsed_date": "2026-05-26T14:25:42.516050",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_66",
@@ -2107,7 +2231,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.709732"
+      "parsed_date": "2026-05-26T14:25:42.516064",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_67",
@@ -2140,7 +2266,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.709789"
+      "parsed_date": "2026-05-26T14:25:42.516218",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_68",
@@ -2163,7 +2291,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.709800"
+      "parsed_date": "2026-05-26T14:25:42.516240",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_69",
@@ -2186,7 +2316,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.709809"
+      "parsed_date": "2026-05-26T14:25:42.516257",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_7O",
@@ -2257,7 +2389,11 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.709884"
+      "parsed_date": "2026-05-26T14:25:42.516353",
+      "is_umkm_relevant": false,
+      "tags": [
+        "perizinan"
+      ]
     },
     {
       "pasal_id": "uu_?_?_pasal_71",
@@ -2280,7 +2416,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.709892"
+      "parsed_date": "2026-05-26T14:25:42.516365",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_71",
@@ -2333,7 +2471,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.709970"
+      "parsed_date": "2026-05-26T14:25:42.516472",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_73",
@@ -2356,7 +2496,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.709978"
+      "parsed_date": "2026-05-26T14:25:42.516487",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_74",
@@ -2379,7 +2521,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.709987"
+      "parsed_date": "2026-05-26T14:25:42.516504",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_75",
@@ -2402,7 +2546,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.709996"
+      "parsed_date": "2026-05-26T14:25:42.516519",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_76",
@@ -2425,7 +2571,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710036"
+      "parsed_date": "2026-05-26T14:25:42.516617",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_2",
@@ -2448,7 +2596,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710042"
+      "parsed_date": "2026-05-26T14:25:42.516628",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_3",
@@ -2471,7 +2621,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710064"
+      "parsed_date": "2026-05-26T14:25:42.516679",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_4",
@@ -2494,7 +2646,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710090"
+      "parsed_date": "2026-05-26T14:25:42.516726",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_5",
@@ -2517,7 +2671,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710096"
+      "parsed_date": "2026-05-26T14:25:42.516737",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_6",
@@ -2540,7 +2696,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710104"
+      "parsed_date": "2026-05-26T14:25:42.516748",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_7",
@@ -2563,7 +2721,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710111"
+      "parsed_date": "2026-05-26T14:25:42.516759",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_8",
@@ -2586,7 +2746,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710118"
+      "parsed_date": "2026-05-26T14:25:42.516770",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_9",
@@ -2609,7 +2771,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710125"
+      "parsed_date": "2026-05-26T14:25:42.516779",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_1O",
@@ -2632,7 +2796,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710134"
+      "parsed_date": "2026-05-26T14:25:42.516794",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_13",
@@ -2655,7 +2821,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710142"
+      "parsed_date": "2026-05-26T14:25:42.516804",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_15",
@@ -2678,7 +2846,12 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710155"
+      "parsed_date": "2026-05-26T14:25:42.516828",
+      "is_umkm_relevant": false,
+      "tags": [
+        "perpajakan",
+        "perizinan"
+      ]
     },
     {
       "pasal_id": "uu_?_?_pasal_16",
@@ -2701,7 +2874,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710167"
+      "parsed_date": "2026-05-26T14:25:42.516851",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_17",
@@ -2724,7 +2899,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710173"
+      "parsed_date": "2026-05-26T14:25:42.516860",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_18",
@@ -2747,7 +2924,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710179"
+      "parsed_date": "2026-05-26T14:25:42.516870",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_19",
@@ -2770,7 +2949,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710185"
+      "parsed_date": "2026-05-26T14:25:42.516879",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_20",
@@ -2793,7 +2974,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710194"
+      "parsed_date": "2026-05-26T14:25:42.516896",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_21",
@@ -2816,7 +2999,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710209"
+      "parsed_date": "2026-05-26T14:25:42.516924",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_23",
@@ -2839,7 +3024,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710215"
+      "parsed_date": "2026-05-26T14:25:42.516936",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_25",
@@ -2862,7 +3049,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710221"
+      "parsed_date": "2026-05-26T14:25:42.516945",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_26",
@@ -2885,7 +3074,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710234"
+      "parsed_date": "2026-05-26T14:25:42.516970",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_28",
@@ -2908,7 +3099,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710241"
+      "parsed_date": "2026-05-26T14:25:42.516980",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_29",
@@ -2931,7 +3124,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710246"
+      "parsed_date": "2026-05-26T14:25:42.516989",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_30",
@@ -2954,7 +3149,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710252"
+      "parsed_date": "2026-05-26T14:25:42.516997",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_31",
@@ -2977,7 +3174,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710258"
+      "parsed_date": "2026-05-26T14:25:42.517006",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_32",
@@ -3000,7 +3199,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710264"
+      "parsed_date": "2026-05-26T14:25:42.517017",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_33",
@@ -3023,7 +3224,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710273"
+      "parsed_date": "2026-05-26T14:25:42.517034",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_34",
@@ -3046,7 +3249,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710282"
+      "parsed_date": "2026-05-26T14:25:42.517049",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_35",
@@ -3069,7 +3274,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710288"
+      "parsed_date": "2026-05-26T14:25:42.517059",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_36",
@@ -3092,7 +3299,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710294"
+      "parsed_date": "2026-05-26T14:25:42.517067",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_37",
@@ -3115,7 +3324,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710300"
+      "parsed_date": "2026-05-26T14:25:42.517077",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_38",
@@ -3138,7 +3349,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710306"
+      "parsed_date": "2026-05-26T14:25:42.517090",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_39",
@@ -3161,7 +3374,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710312"
+      "parsed_date": "2026-05-26T14:25:42.517105",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_4O",
@@ -3184,7 +3399,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710318"
+      "parsed_date": "2026-05-26T14:25:42.517119",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_41",
@@ -3207,7 +3424,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710324"
+      "parsed_date": "2026-05-26T14:25:42.517130",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_41",
@@ -3230,7 +3449,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710329"
+      "parsed_date": "2026-05-26T14:25:42.517138",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_42",
@@ -3253,7 +3474,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710335"
+      "parsed_date": "2026-05-26T14:25:42.517146",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_43",
@@ -3276,7 +3499,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710342"
+      "parsed_date": "2026-05-26T14:25:42.517157",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_44",
@@ -3299,7 +3524,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710350"
+      "parsed_date": "2026-05-26T14:25:42.517186",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_45",
@@ -3322,7 +3549,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710356"
+      "parsed_date": "2026-05-26T14:25:42.517195",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_46",
@@ -3345,7 +3574,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710368"
+      "parsed_date": "2026-05-26T14:25:42.517216",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_47",
@@ -3368,7 +3599,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710374"
+      "parsed_date": "2026-05-26T14:25:42.517227",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_48",
@@ -3391,7 +3624,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710393"
+      "parsed_date": "2026-05-26T14:25:42.517241",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_49",
@@ -3414,7 +3649,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710402"
+      "parsed_date": "2026-05-26T14:25:42.517249",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_50",
@@ -3437,7 +3674,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710409"
+      "parsed_date": "2026-05-26T14:25:42.517258",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_51",
@@ -3460,7 +3699,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710415"
+      "parsed_date": "2026-05-26T14:25:42.517267",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_52",
@@ -3483,7 +3724,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710421"
+      "parsed_date": "2026-05-26T14:25:42.517275",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_53",
@@ -3506,7 +3749,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710429"
+      "parsed_date": "2026-05-26T14:25:42.517290",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_54",
@@ -3529,7 +3774,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710435"
+      "parsed_date": "2026-05-26T14:25:42.517299",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_55",
@@ -3552,7 +3799,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710441"
+      "parsed_date": "2026-05-26T14:25:42.517310",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_56",
@@ -3575,7 +3824,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710447"
+      "parsed_date": "2026-05-26T14:25:42.517318",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_57",
@@ -3598,7 +3849,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710456"
+      "parsed_date": "2026-05-26T14:25:42.517334",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_58",
@@ -3621,7 +3874,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710462"
+      "parsed_date": "2026-05-26T14:25:42.517343",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_59",
@@ -3644,7 +3899,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710471"
+      "parsed_date": "2026-05-26T14:25:42.517360",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_6O",
@@ -3667,7 +3924,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710482"
+      "parsed_date": "2026-05-26T14:25:42.517379",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_61",
@@ -3690,7 +3949,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710488"
+      "parsed_date": "2026-05-26T14:25:42.517387",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_62",
@@ -3713,7 +3974,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710494"
+      "parsed_date": "2026-05-26T14:25:42.517397",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_63",
@@ -3736,7 +3999,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710501"
+      "parsed_date": "2026-05-26T14:25:42.517407",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_64",
@@ -3759,7 +4024,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710507"
+      "parsed_date": "2026-05-26T14:25:42.517416",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_65",
@@ -3782,7 +4049,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710512"
+      "parsed_date": "2026-05-26T14:25:42.517424",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_66",
@@ -3805,7 +4074,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710518"
+      "parsed_date": "2026-05-26T14:25:42.517433",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_67",
@@ -3828,7 +4099,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710565"
+      "parsed_date": "2026-05-26T14:25:42.517441",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_68",
@@ -3851,7 +4124,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710573"
+      "parsed_date": "2026-05-26T14:25:42.517450",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_69",
@@ -3874,7 +4149,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710578"
+      "parsed_date": "2026-05-26T14:25:42.517458",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_7O",
@@ -3897,7 +4174,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710584"
+      "parsed_date": "2026-05-26T14:25:42.517466",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_71",
@@ -3920,7 +4199,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710591"
+      "parsed_date": "2026-05-26T14:25:42.517475",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_73",
@@ -3943,7 +4224,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710597"
+      "parsed_date": "2026-05-26T14:25:42.517483",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_74",
@@ -3966,7 +4249,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710603"
+      "parsed_date": "2026-05-26T14:25:42.517491",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_75",
@@ -3989,7 +4274,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710608"
+      "parsed_date": "2026-05-26T14:25:42.517500",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_?_?_pasal_76",
@@ -4012,7 +4299,9 @@
       "bagian": "Bagian Kedua - Transfer Data Pribadi ke Luar Wilayah Hukum",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.710615"
+      "parsed_date": "2026-05-26T14:25:42.517509",
+      "is_umkm_relevant": false,
+      "tags": []
     }
   ]
 }

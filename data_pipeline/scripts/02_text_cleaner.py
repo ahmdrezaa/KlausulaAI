@@ -1,32 +1,3 @@
-"""
-===============================================================
-KlausulaAI - Data Pipeline | Step 02: Text Cleaning & Normalization
-===============================================================
-Tanggung Jawab: Dzaky Muttaqi Sunaryadi (Data Engineer)
-Fase: D1 - Dataset Dokumen UU
-
-DESKRIPSI:
-    Membersihkan dan menormalkan teks hasil ekstraksi PDF.
-    Khusus dirancang untuk struktur dokumen Undang-Undang Indonesia.
-
-CLEANING RULES yang diterapkan:
-    1. Hapus header/footer berulang (nomor halaman, nama dokumen)
-    2. Hapus karakter noise (karakter kontrol, unicode aneh)
-    3. Normalisasi whitespace & baris kosong berlebih
-    4. Normalisasi tanda baca & tanda hubung yang terpotong
-    5. Perbaiki kata yang terpotong antar baris (hyphenation)
-    6. Normalisasi format nomor pasal, ayat, huruf
-    7. Hapus watermark & disclaimer umum dokumen pemerintah
-
-OUTPUT:
-    - File JSON cleaned per dokumen
-    - Cleaned text report (statistik before-after)
-
-CARA PAKAI:
-    python 02_text_cleaner.py --input ../02_extracted_text/ --output ../03_cleaned_text/
-===============================================================
-"""
-
 import json
 import re
 import logging
