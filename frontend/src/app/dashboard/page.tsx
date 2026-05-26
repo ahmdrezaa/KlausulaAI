@@ -3,10 +3,12 @@
 // Letakkan di: frontend/src/app/dashboard/page.tsx
 
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { useAuth } from "@/contexts/AuthContext";
 import UploadModal from "@/components/modals/UploadModal";
 import Image from "next/image";
+import toast from "react-hot-toast";
 
 // ─── Data dummy untuk preview ────────────────────────────────────────────────
 const DUMMY_PROJECTS = [
@@ -40,6 +42,7 @@ Rekomendasi: Tambahkan kalimat 'Para pihak sepakat untuk mengesampingkan ketentu
 
 export default function DashboardPage() {
   const router = useRouter();
+  const { user, signOut, isLoading } = useAuth(); // ← Ambil user dan signOut dari AuthContext
   const [activeProject, setActiveProject] = useState(DUMMY_PROJECTS[0]);
   const [messages, setMessages] = useState(DUMMY_MESSAGES);
   const [input, setInput] = useState("");
@@ -49,6 +52,21 @@ export default function DashboardPage() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [sourcesPanelOpen, setSourcesPanelOpen] = useState(false);
   const [profileMenuOpen, setProfileMenuOpen] = useState(false);
+  const [userEmail, setUserEmail] = useState("");
+
+  // Ambil email dari user yang login
+  useEffect(() => {
+    if (user) {
+      setUserEmail(user.email || "User");
+    }
+  }, [user]);
+
+  // Redirect ke login jika tidak ada user (belum login)
+  useEffect(() => {
+    if (!isLoading && !user) {
+      router.push("/login");
+    }
+  }, [user, isLoading, router]);
 
   const handleSend = () => {
     if (!input.trim()) return;
@@ -79,13 +97,39 @@ export default function DashboardPage() {
     setSources((prev) => prev.map((s) => ({ ...s, checked: next })));
   };
 
-  // TODO: Tambah projek baru ke Supabase
   const handleNewProject = () => router.push("/new-project");
 
-  const handleLogout = () => {
-    // TODO: Implement logout logic (Supabase sign out)
-    router.push("/login");
+  // FUNGSI LOGOUT
+  const handleLogout = async () => {
+    try {
+      await signOut();
+      toast.success("Berhasil logout");
+      router.push("/login");
+    } catch (error) {
+      console.error("Logout error:", error);
+      toast.error("Gagal logout. Silakan coba lagi.");
+    }
   };
+
+  // Jika masih loading, tampilkan loading state
+  if (isLoading) {
+    return (
+      <div
+        className="min-h-screen flex items-center justify-center"
+        style={{ background: "var(--bg-base)" }}
+      >
+        <div className="text-center">
+          <div className="w-10 h-10 border-4 border-t-blue-500 rounded-full animate-spin mx-auto mb-4"></div>
+          <p style={{ color: "var(--text-secondary)" }}>Memuat...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Jika tidak ada user, jangan render dashboard (redirect sudah terjadi)
+  if (!user) {
+    return null;
+  }
 
   return (
     <div
@@ -201,7 +245,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Profile section */}
-        {/* <div
+        <div
           className="mt-auto border-t py-2 px-2"
           style={{ borderColor: "var(--border)" }}
         >
@@ -222,7 +266,7 @@ export default function DashboardPage() {
                   className="text-sm font-medium truncate"
                   style={{ color: "var(--text-primary)" }}
                 >
-                  muhammadhtaraka2027@gmail.com
+                  {userEmail || "User"} {/* ← TAMPILKAN EMAIL DARI SUPABASE */}
                 </p>
                 <p className="text-xs" style={{ color: "var(--text-muted)" }}>
                   Free plan
@@ -285,7 +329,7 @@ export default function DashboardPage() {
                 <button
                   className="w-full text-left px-4 py-2.5 text-sm transition-all hover:bg-white/5 flex items-center gap-2"
                   style={{ color: "#ef4444" }}
-                  onClick={handleLogout}
+                  onClick={handleLogout} // ← FUNGSI LOGOUT SUDAH TERHUBUNG
                 >
                   <LogoutIcon width={14} height={14} />
                   Log out
@@ -293,7 +337,7 @@ export default function DashboardPage() {
               </div>
             )}
           </div>
-        </div> */}
+        </div>
       </aside>
 
       {/* ── Main area ──────────────────────────────────── */}
