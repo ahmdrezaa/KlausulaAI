@@ -1,0 +1,108 @@
+2026-05-26 14:23:13,333 [INFO] StructureParser: 
+[PROCESS] Memproses: permendag_31_2023_perdagangan_elektronik_cleaned.json -> slug: permendag_31_2023_perdagangan_elektronik
+2026-05-26 14:23:13,333 [INFO] StructureParser: [PROCESS] Parsing struktur: permendag_31_2023_perdagangan_elektronik_cleaned.json
+2026-05-26 14:23:13,356 [INFO] StructureParser:   [INFO] Ditemukan 67 pasal
+2026-05-26 14:23:13,360 [INFO] StructureParser:   [SUCCESS] Parsed: 67 pasal, 8 bab
+2026-05-26 14:23:13,376 [INFO] StructureParser: [SAVED] Tersimpan: permendag_31_2023_perdagangan_elektronik_parsed.json, permendag_31_2023_perdagangan_elektronik_pasal_list.json, permendag_31_2023_perdagangan_elektronik_stats.json
+2026-05-26 14:23:13,377 [INFO] StructureParser: 
+[PROCESS] Memproses: pp_23_2018_pajak_umkm_cleaned.json -> slug: uu_harmonisasi_perpajakan
+2026-05-26 14:23:13,377 [INFO] StructureParser: [PROCESS] Parsing struktur: pp_23_2018_pajak_umkm_cleaned.json
+2026-05-26 14:23:13,390 [INFO] StructureParser: [TRUNCATE] Memotong bagian Penjelasan di akhir dokumen.
+2026-05-26 14:23:13,391 [INFO] StructureParser:   [INFO] Ditemukan 13 pasal
+2026-05-26 14:23:13,393 [INFO] StructureParser:   [SUCCESS] Parsed: 13 pasal, 0 bab
+2026-05-26 14:23:13,401 [INFO] StructureParser: [SAVED] Tersimpan: uu_harmonisasi_perpajakan_parsed.json, uu_harmonisasi_perpajakan_pasal_list.json, uu_harmonisasi_perpajakan_stats.json
+2026-05-26 14:23:13,402 [INFO] StructureParser: 
+[PROCESS] Memproses: pp_55_2022_pajak_penghasilan_cleaned.json -> slug: uu_harmonisasi_perpajakan
+2026-05-26 14:23:13,403 [INFO] StructureParser: [PROCESS] Parsing struktur: pp_55_2022_pajak_penghasilan_cleaned.json
+2026-05-26 14:23:13,426 [INFO] StructureParser: [TRUNCATE] Memotong bagian Penjelasan di akhir dokumen.
+2026-05-26 14:23:13,431 [INFO] StructureParser:   [INFO] Ditemukan 71 pasal
+2026-05-26 14:23:13,439 [INFO] StructureParser:   [SUCCESS] Parsed: 71 pasal, 12 bab
+2026-05-26 14:23:13,459 [INFO] StructureParser: [SAVED] Tersimpan: uu_harmonisasi_perpajakan_parsed.json, uu_harmonisasi_perpajakan_pasal_list.json, uu_harmonisasi_perpajakan_stats.json
+2026-05-26 14:23:13,461 [INFO] StructureParser: 
+[PROCESS] Memproses: pp_5_2021_perizinan_berbasis_risiko_cleaned.json -> slug: pp_perizinan_berbasis_risiko
+2026-05-26 14:23:13,461 [INFO] StructureParser: [PROCESS] Parsing struktur: pp_5_2021_perizinan_berbasis_risiko_cleaned.json
+2026-05-26 14:23:13,538 [INFO] StructureParser:   [INFO] Ditemukan 567 pasal
+2026-05-26 14:23:13,583 [INFO] StructureParser:   [SUCCESS] Parsed: 567 pasal, 12 bab
+2026-05-26 14:23:13,690 [INFO] StructureParser: [SAVED] Tersimpan: pp_perizinan_berbasis_risiko_parsed.json, pp_perizinan_berbasis_risiko_pasal_list.json, pp_perizinan_berbasis_risiko_stats.json
+2026-05-26 14:23:13,693 [INFO] StructureParser: 
+[PROCESS] Memproses: pp_7_2021_kemudahan_umkm_cleaned.json -> slug: uu_umkm
+2026-05-26 14:23:13,693 [INFO] StructureParser: [PROCESS] Parsing struktur: pp_7_2021_kemudahan_umkm_cleaned.json
+2026-05-26 14:23:13,713 [INFO] StructureParser: [TRUNCATE] Memotong bagian Penjelasan di akhir dokumen.
+2026-05-26 14:23:13,717 [INFO] StructureParser:   [INFO] Ditemukan 110 pasal
+2026-05-26 14:23:13,726 [INFO] StructureParser:   [SUCCESS] Parsed: 110 pasal, 9 bab
+2026-05-26 14:23:13,756 [INFO] StructureParser: [SAVED] Tersimpan: uu_umkm_parsed.json, uu_umkm_pasal_list.json, uu_umkm_stats.json
+2026-05-26 14:23:13,757 [INFO] StructureParser: 
+[PROCESS] Memproses: uu_13_2003_ketenagakerjaan_cleaned.json -> slug: uu_ketenagakerjaan
+2026-05-26 14:23:13,757 [INFO] StructureParser: [PROCESS] Parsing struktur: uu_13_2003_ketenagakerjaan_cleaned.json
+2026-05-26 14:23:13,777 [INFO] StructureParser: [TRUNCATE] Memotong bagian Penjelasan di akhir dokumen.
+2026-05-26 14:23:13,782 [INFO] StructureParser:   [INFO] Ditemukan 199 pasal
+2026-05-26 14:23:13,792 [INFO] StructureParser:   [SUCCESS] Parsed: 199 pasal, 4 bab
+2026-05-26 14:23:13,823 [INFO] StructureParser: [SAVED] Tersimpan: uu_ketenagakerjaan_parsed.json, uu_ketenagakerjaan_pasal_list.json, uu_ketenagakerjaan_stats.json
+2026-05-26 14:23:13,825 [INFO] StructureParser: 
+[PROCESS] Memproses: uu_1_2024_ite_cleaned.json -> slug: uu_ite
+2026-05-26 14:23:13,825 [INFO] StructureParser: [PROCESS] Parsing struktur: uu_1_2024_ite_cleaned.json
+2026-05-26 14:23:13,840 [INFO] StructureParser: [TRUNCATE] Memotong bagian Penjelasan di akhir dokumen.
+2026-05-26 14:23:13,842 [INFO] StructureParser:   [INFO] Ditemukan 17 pasal
+2026-05-26 14:23:13,844 [INFO] StructureParser:   [SUCCESS] Parsed: 17 pasal, 0 bab
+2026-05-26 14:23:13,854 [INFO] StructureParser: [SAVED] Tersimpan: uu_ite_parsed.json, uu_ite_pasal_list.json, uu_ite_stats.json
+2026-05-26 14:23:13,855 [INFO] StructureParser: 
+[PROCESS] Memproses: uu_20_2008_umkm_cleaned.json -> slug: uu_umkm
+2026-05-26 14:23:13,855 [INFO] StructureParser: [PROCESS] Parsing struktur: uu_20_2008_umkm_cleaned.json
+2026-05-26 14:23:13,869 [INFO] StructureParser: [TRUNCATE] Memotong bagian Penjelasan di akhir dokumen.
+2026-05-26 14:23:13,871 [INFO] StructureParser:   [INFO] Ditemukan 44 pasal
+2026-05-26 14:23:13,873 [INFO] StructureParser:   [SUCCESS] Parsed: 44 pasal, 10 bab
+2026-05-26 14:23:13,882 [INFO] StructureParser: [SAVED] Tersimpan: uu_umkm_parsed.json, uu_umkm_pasal_list.json, uu_umkm_stats.json
+2026-05-26 14:23:13,883 [INFO] StructureParser: 
+[PROCESS] Memproses: uu_20_2016_merek_indikasi_geografis_cleaned.json -> slug: uu_merek_indikasi_geografis
+2026-05-26 14:23:13,884 [INFO] StructureParser: [PROCESS] Parsing struktur: uu_20_2016_merek_indikasi_geografis_cleaned.json
+2026-05-26 14:23:13,902 [INFO] StructureParser: [TRUNCATE] Memotong bagian Penjelasan di akhir dokumen.
+2026-05-26 14:23:13,905 [INFO] StructureParser:   [INFO] Ditemukan 109 pasal
+2026-05-26 14:23:13,910 [INFO] StructureParser:   [SUCCESS] Parsed: 109 pasal, 18 bab
+2026-05-26 14:23:13,930 [INFO] StructureParser: [SAVED] Tersimpan: uu_merek_indikasi_geografis_parsed.json, uu_merek_indikasi_geografis_pasal_list.json, uu_merek_indikasi_geografis_stats.json
+2026-05-26 14:23:13,931 [INFO] StructureParser: 
+[PROCESS] Memproses: uu_27_2022_perlindungan_data_pribadi_cleaned.json -> slug: uu_27_2022_perlindungan_data_pribadi
+2026-05-26 14:23:13,932 [INFO] StructureParser: [PROCESS] Parsing struktur: uu_27_2022_perlindungan_data_pribadi_cleaned.json
+2026-05-26 14:23:13,949 [INFO] StructureParser:   [INFO] Ditemukan 142 pasal
+2026-05-26 14:23:13,954 [INFO] StructureParser:   [SUCCESS] Parsed: 142 pasal, 15 bab
+2026-05-26 14:23:13,974 [INFO] StructureParser: [SAVED] Tersimpan: uu_27_2022_perlindungan_data_pribadi_parsed.json, uu_27_2022_perlindungan_data_pribadi_pasal_list.json, uu_27_2022_perlindungan_data_pribadi_stats.json
+2026-05-26 14:23:13,975 [INFO] StructureParser: 
+[PROCESS] Memproses: uu_28_2014_hak_cipta_cleaned.json -> slug: uu_28_2014_hak_cipta
+2026-05-26 14:23:13,976 [INFO] StructureParser: [PROCESS] Parsing struktur: uu_28_2014_hak_cipta_cleaned.json
+2026-05-26 14:23:13,992 [INFO] StructureParser: [TRUNCATE] Memotong bagian Penjelasan di akhir dokumen.
+2026-05-26 14:23:13,996 [INFO] StructureParser:   [INFO] Ditemukan 118 pasal
+2026-05-26 14:23:14,002 [INFO] StructureParser:   [SUCCESS] Parsed: 118 pasal, 19 bab
+2026-05-26 14:23:14,023 [INFO] StructureParser: [SAVED] Tersimpan: uu_28_2014_hak_cipta_parsed.json, uu_28_2014_hak_cipta_pasal_list.json, uu_28_2014_hak_cipta_stats.json
+2026-05-26 14:23:14,024 [INFO] StructureParser: 
+[PROCESS] Memproses: uu_33_2014_jaminan_produk_halal_cleaned.json -> slug: uu_jaminan_produk_halal
+2026-05-26 14:23:14,024 [INFO] StructureParser: [PROCESS] Parsing struktur: uu_33_2014_jaminan_produk_halal_cleaned.json
+2026-05-26 14:23:14,041 [INFO] StructureParser: [TRUNCATE] Memotong bagian Penjelasan di akhir dokumen.
+2026-05-26 14:23:14,043 [INFO] StructureParser:   [INFO] Ditemukan 67 pasal
+2026-05-26 14:23:14,045 [INFO] StructureParser:   [SUCCESS] Parsed: 67 pasal, 11 bab
+2026-05-26 14:23:14,058 [INFO] StructureParser: [SAVED] Tersimpan: uu_jaminan_produk_halal_parsed.json, uu_jaminan_produk_halal_pasal_list.json, uu_jaminan_produk_halal_stats.json
+2026-05-26 14:23:14,059 [INFO] StructureParser: 
+[PROCESS] Memproses: uu_36_2008_pajak_penghasilan_cleaned.json -> slug: uu_harmonisasi_perpajakan
+2026-05-26 14:23:14,059 [INFO] StructureParser: [PROCESS] Parsing struktur: uu_36_2008_pajak_penghasilan_cleaned.json
+2026-05-26 14:23:14,076 [INFO] StructureParser:   [INFO] Ditemukan 32 pasal
+2026-05-26 14:23:14,083 [INFO] StructureParser:   [SUCCESS] Parsed: 32 pasal, 0 bab
+2026-05-26 14:23:14,102 [INFO] StructureParser: [SAVED] Tersimpan: uu_harmonisasi_perpajakan_parsed.json, uu_harmonisasi_perpajakan_pasal_list.json, uu_harmonisasi_perpajakan_stats.json
+2026-05-26 14:23:14,105 [INFO] StructureParser: 
+[PROCESS] Memproses: uu_6_2023_cipta_kerja_cleaned.json -> slug: uu_6_2023_cipta_kerja
+2026-05-26 14:23:14,105 [INFO] StructureParser: [PROCESS] Parsing struktur: uu_6_2023_cipta_kerja_cleaned.json
+2026-05-26 14:23:14,192 [INFO] StructureParser: [TRUNCATE] Memotong bagian Penjelasan di akhir dokumen.
+2026-05-26 14:23:14,193 [INFO] StructureParser:   [INFO] Ditemukan 1 pasal
+2026-05-26 14:23:14,194 [INFO] StructureParser:   [SUCCESS] Parsed: 1 pasal, 0 bab
+2026-05-26 14:23:14,199 [INFO] StructureParser: [SAVED] Tersimpan: uu_6_2023_cipta_kerja_parsed.json, uu_6_2023_cipta_kerja_pasal_list.json, uu_6_2023_cipta_kerja_stats.json
+2026-05-26 14:23:14,199 [INFO] StructureParser: 
+[PROCESS] Memproses: uu_7_2021_harmonisasi_perpajakan_cleaned.json -> slug: uu_harmonisasi_perpajakan
+2026-05-26 14:23:14,200 [INFO] StructureParser: [PROCESS] Parsing struktur: uu_7_2021_harmonisasi_perpajakan_cleaned.json
+2026-05-26 14:23:14,218 [INFO] StructureParser: [TRUNCATE] Memotong bagian Penjelasan di akhir dokumen.
+2026-05-26 14:23:14,225 [INFO] StructureParser:   [INFO] Ditemukan 56 pasal
+2026-05-26 14:23:14,238 [INFO] StructureParser:   [SUCCESS] Parsed: 56 pasal, 8 bab
+2026-05-26 14:23:14,260 [INFO] StructureParser: [SAVED] Tersimpan: uu_harmonisasi_perpajakan_parsed.json, uu_harmonisasi_perpajakan_pasal_list.json, uu_harmonisasi_perpajakan_stats.json
+2026-05-26 14:23:14,261 [INFO] StructureParser: 
+[PROCESS] Memproses: uu_8_1999_perlindungan_konsumen_cleaned.json -> slug: uu_perlindungan_konsumen
+2026-05-26 14:23:14,261 [INFO] StructureParser: [PROCESS] Parsing struktur: uu_8_1999_perlindungan_konsumen_cleaned.json
+2026-05-26 14:23:14,275 [INFO] StructureParser: [TRUNCATE] Memotong bagian Penjelasan di akhir dokumen.
+2026-05-26 14:23:14,277 [INFO] StructureParser:   [INFO] Ditemukan 65 pasal
+2026-05-26 14:23:14,281 [INFO] StructureParser:   [SUCCESS] Parsed: 65 pasal, 14 bab
+2026-05-26 14:23:14,296 [INFO] StructureParser: [SAVED] Tersimpan: uu_perlindungan_konsumen_parsed.json, uu_perlindungan_konsumen_pasal_list.json, uu_perlindungan_konsumen_stats.json

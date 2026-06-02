@@ -1,12 +1,3 @@
-"""
-===============================================================
-KlausulaAI - Data Pipeline | Step 03: Structure Parsing (Bab/Pasal/Ayat)
-===============================================================
-Tanggung Jawab: Dzaky Muttaqi Sunaryadi (Data Engineer)
-Fase: D1 - Dataset Dokumen UU
-===============================================================
-"""
-
 import json
 import re
 import logging
@@ -56,6 +47,10 @@ class Pasal:
     paragraf: str = ""
     source_pages: list = field(default_factory=list)
     parsed_date: str = field(default_factory=lambda: datetime.now().isoformat())
+    
+    # Field Metadata Tagging
+    is_umkm_relevant: bool = False
+    tags: list = field(default_factory=list)
 
 
 @dataclass
@@ -285,6 +280,34 @@ class UUStructureParser:
         year = self.uu_meta.get("year", "?")
         return f"uu_{num}_{year}_pasal_{pasal_number}"
 
+    def generate_tags(self, text: str) -> dict:
+        """
+        Fungsi untuk mengevaluasi teks dan memberikan tagging otomatis.
+        Returns dictionary berisi status relevansi dan list tags.
+        """
+        text_lower = text.lower()
+        tags = []
+        is_umkm = False
+        
+        umkm_keywords = [
+            "umkm", "usaha mikro", "usaha kecil", "usaha menengah", 
+            "koperasi", "kemitraan usaha", "inkubator bisnis"
+        ]
+        
+        if any(keyword in text_lower for keyword in umkm_keywords):
+            is_umkm = True
+            tags.append("umkm")
+            
+        if any(kw in text_lower for kw in ["pajak", "tarif", "retribusi", "npwp"]):
+            tags.append("perpajakan")
+        if any(kw in text_lower for kw in ["izin", "perizinan", "oss"]):
+            tags.append("perizinan")
+            
+        return {
+            "is_umkm_relevant": is_umkm,
+            "tags": tags
+        }
+
     def parse_document(self, cleaned_json_path: str) -> UUDocument:
         logger.info(f"[PROCESS] Parsing struktur: {Path(cleaned_json_path).name}")
 
@@ -315,6 +338,9 @@ class UUStructureParser:
 
         for block in pasal_blocks:
             ayat_list = self.parse_ayat(block["raw_text"])
+            
+            # --- EKSEKUSI TAGGING DI SINI ---
+            tagging_result = self.generate_tags(block["raw_text"])
 
             pasal = Pasal(
                 pasal_id=self.build_pasal_id(block["pasal_number"]),
@@ -330,6 +356,10 @@ class UUStructureParser:
                 bab_title=block["bab_title"],
                 bagian=block["bagian"],
                 paragraf=block["paragraf"],
+                
+                # --- MEMASUKKAN HASIL TAGGING KE OBJEK PASAL ---
+                is_umkm_relevant=tagging_result["is_umkm_relevant"],
+                tags=tagging_result["tags"]
             )
             uu_doc.pasal_list.append(pasal)
 

@@ -20,7 +20,9 @@
     "bagian": "",
     "paragraf": "",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.753936"
+    "parsed_date": "2026-05-26T14:25:42.552655",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_3",
@@ -43,7 +45,9 @@
     "bagian": "Bagian Kesatu - Umum",
     "paragraf": "",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.753956"
+    "parsed_date": "2026-05-26T14:25:42.552680",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_4",
@@ -66,7 +70,9 @@
     "bagian": "Bagian Kedua - Hak Moral",
     "paragraf": "",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.753965"
+    "parsed_date": "2026-05-26T14:25:42.552694",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_5",
@@ -120,7 +126,9 @@
     "bagian": "Bagian Kedua - Hak Moral",
     "paragraf": "",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.754050"
+    "parsed_date": "2026-05-26T14:25:42.552789",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_6",
@@ -143,7 +151,9 @@
     "bagian": "Bagian Kedua - Hak Moral",
     "paragraf": "",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.754059"
+    "parsed_date": "2026-05-26T14:25:42.552803",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_7",
@@ -214,7 +224,9 @@
     "bagian": "Bagian Ketiga - Hak Ekonomi",
     "paragraf": "",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.754135"
+    "parsed_date": "2026-05-26T14:25:42.552892",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_8",
@@ -237,7 +249,9 @@
     "bagian": "Bagian Ketiga - Hak Ekonomi",
     "paragraf": "",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.754143"
+    "parsed_date": "2026-05-26T14:25:42.552904",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_9",
@@ -302,7 +316,11 @@
     "bagian": "Bagian Ketiga - Hak Ekonomi",
     "paragraf": "",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.754208"
+    "parsed_date": "2026-05-26T14:25:42.552980",
+    "is_umkm_relevant": false,
+    "tags": [
+      "perizinan"
+    ]
   },
   {
     "pasal_id": "uu_?_?_pasal_10",
@@ -325,7 +343,9 @@
     "bagian": "Bagian Ketiga - Hak Ekonomi",
     "paragraf": "",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.754217"
+    "parsed_date": "2026-05-26T14:25:42.552994",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_11",
@@ -348,7 +368,9 @@
     "bagian": "Bagian Ketiga - Hak Ekonomi",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.754249"
+    "parsed_date": "2026-05-26T14:25:42.553035",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_12",
@@ -371,7 +393,9 @@
     "bagian": "Bagian Ketiga - Hak Ekonomi",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.754285"
+    "parsed_date": "2026-05-26T14:25:42.553081",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_13",
@@ -394,7 +418,9 @@
     "bagian": "Bagian Ketiga - Hak Ekonomi",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.754294"
+    "parsed_date": "2026-05-26T14:25:42.553097",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_14",
@@ -417,7 +443,9 @@
     "bagian": "Bagian Ketiga - Hak Ekonomi",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.754303"
+    "parsed_date": "2026-05-26T14:25:42.553112",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_15",
@@ -445,7 +473,9 @@
     "bagian": "Bagian Ketiga - Hak Ekonomi",
     "paragraf": "Paragraf 3",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.754335"
+    "parsed_date": "2026-05-26T14:25:42.553154",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_16",
@@ -508,7 +538,9 @@
     "bagian": "Bagian Ketiga - Hak Ekonomi",
     "paragraf": "Paragraf 3",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.754381"
+    "parsed_date": "2026-05-26T14:25:42.553210",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_17",
@@ -531,7 +563,9 @@
     "bagian": "Bagian Ketiga - Hak Ekonomi",
     "paragraf": "Paragraf 3",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.754409"
+    "parsed_date": "2026-05-26T14:25:42.553245",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_18",
@@ -554,7 +588,9 @@
     "bagian": "Bagian Ketiga - Hak Ekonomi",
     "paragraf": "Paragraf 3",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.754418"
+    "parsed_date": "2026-05-26T14:25:42.553261",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_19",
@@ -582,7 +618,9 @@
     "bagian": "Bagian Kesatu - Umum",
     "paragraf": "Paragraf 3",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.754447"
+    "parsed_date": "2026-05-26T14:25:42.553297",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_20",
@@ -605,7 +643,9 @@
     "bagian": "Bagian Kedua - Hak Moral Pelaku Pertunjukan",
     "paragraf": "Paragraf 3",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.754456"
+    "parsed_date": "2026-05-26T14:25:42.553312",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_2",
@@ -628,7 +668,9 @@
     "bagian": "Bagian Kedua - Hak Moral Pelaku Pertunjukan",
     "paragraf": "Paragraf 3",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.754468"
+    "parsed_date": "2026-05-26T14:25:42.553324",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_22",
@@ -651,7 +693,9 @@
     "bagian": "Bagian Ketiga - Hak Ekonomi",
     "paragraf": "Paragraf 3",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.754483"
+    "parsed_date": "2026-05-26T14:25:42.553343",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_23",
@@ -728,7 +772,11 @@
     "bagian": "Bagian Ketiga - Hak Ekonomi",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.754721"
+    "parsed_date": "2026-05-26T14:25:42.553459",
+    "is_umkm_relevant": false,
+    "tags": [
+      "perizinan"
+    ]
   },
   {
     "pasal_id": "uu_?_?_pasal_24",
@@ -773,7 +821,11 @@
     "bagian": "Bagian Ketiga - Hak Ekonomi",
     "paragraf": "Paragraf 3",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.754817"
+    "parsed_date": "2026-05-26T14:25:42.553530",
+    "is_umkm_relevant": false,
+    "tags": [
+      "perizinan"
+    ]
   },
   {
     "pasal_id": "uu_?_?_pasal_25",
@@ -818,7 +870,11 @@
     "bagian": "Bagian Ketiga - Hak Ekonomi",
     "paragraf": "Paragraf 4",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.754879"
+    "parsed_date": "2026-05-26T14:25:42.553583",
+    "is_umkm_relevant": false,
+    "tags": [
+      "perizinan"
+    ]
   },
   {
     "pasal_id": "uu_?_?_pasal_26",
@@ -841,7 +897,11 @@
     "bagian": "Bagian Ketiga - Hak Ekonomi",
     "paragraf": "Paragraf 5",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.755012"
+    "parsed_date": "2026-05-26T14:25:42.553608",
+    "is_umkm_relevant": false,
+    "tags": [
+      "perizinan"
+    ]
   },
   {
     "pasal_id": "uu_?_?_pasal_27",
@@ -879,7 +939,9 @@
     "bagian": "Bagian Ketiga - Hak Ekonomi",
     "paragraf": "Paragraf 5",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.755118"
+    "parsed_date": "2026-05-26T14:25:42.553658",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_28",
@@ -902,7 +964,9 @@
     "bagian": "Bagian Ketiga - Hak Ekonomi",
     "paragraf": "Paragraf 6",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.755143"
+    "parsed_date": "2026-05-26T14:25:42.553674",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_30",
@@ -925,7 +989,9 @@
     "bagian": "Bagian Ketiga - Hak Ekonomi",
     "paragraf": "Paragraf 6",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.755158"
+    "parsed_date": "2026-05-26T14:25:42.553688",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_31",
@@ -948,7 +1014,9 @@
     "bagian": "Bagian Ketiga - Hak Ekonomi",
     "paragraf": "Paragraf 6",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.755172"
+    "parsed_date": "2026-05-26T14:25:42.553703",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_32",
@@ -971,7 +1039,9 @@
     "bagian": "Bagian Ketiga - Hak Ekonomi",
     "paragraf": "Paragraf 6",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.755183"
+    "parsed_date": "2026-05-26T14:25:42.553715",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_33",
@@ -994,7 +1064,9 @@
     "bagian": "Bagian Ketiga - Hak Ekonomi",
     "paragraf": "Paragraf 6",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.755225"
+    "parsed_date": "2026-05-26T14:25:42.553751",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_34",
@@ -1017,7 +1089,9 @@
     "bagian": "Bagian Ketiga - Hak Ekonomi",
     "paragraf": "Paragraf 6",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.755237"
+    "parsed_date": "2026-05-26T14:25:42.553765",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_35",
@@ -1045,7 +1119,9 @@
     "bagian": "Bagian Ketiga - Hak Ekonomi",
     "paragraf": "Paragraf 6",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.755281"
+    "parsed_date": "2026-05-26T14:25:42.553804",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_36",
@@ -1068,7 +1144,9 @@
     "bagian": "Bagian Ketiga - Hak Ekonomi",
     "paragraf": "Paragraf 6",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.755294"
+    "parsed_date": "2026-05-26T14:25:42.553817",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_37",
@@ -1091,7 +1169,9 @@
     "bagian": "Bagian Kesatu - Ekspresi Budaya Tradisional dan Hak Cipta atas Ciptaan yang Penciptanya",
     "paragraf": "Paragraf 6",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.755309"
+    "parsed_date": "2026-05-26T14:25:42.553835",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_38",
@@ -1129,7 +1209,9 @@
     "bagian": "Bagian Kesatu - Ekspresi Budaya Tradisional dan Hak Cipta atas Ciptaan yang Penciptanya",
     "paragraf": "Paragraf 6",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.755357"
+    "parsed_date": "2026-05-26T14:25:42.553877",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_39",
@@ -1167,7 +1249,9 @@
     "bagian": "Bagian Kedua - Ciptaan yang Dilindungi",
     "paragraf": "Paragraf 6",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.755438"
+    "parsed_date": "2026-05-26T14:25:42.553947",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_40",
@@ -1269,7 +1353,9 @@
     "bagian": "Bagian Ketiga - Hasil Karya yang Tidak Dilindungi Hak Cipta",
     "paragraf": "Paragraf 6",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.755650"
+    "parsed_date": "2026-05-26T14:25:42.554100",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_41",
@@ -1292,7 +1378,9 @@
     "bagian": "Bagian Ketiga - Hasil Karya yang Tidak Dilindungi Hak Cipta",
     "paragraf": "Paragraf 6",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.755679"
+    "parsed_date": "2026-05-26T14:25:42.554118",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_42",
@@ -1315,7 +1403,9 @@
     "bagian": "Bagian Ketiga - Hasil Karya yang Tidak Dilindungi Hak Cipta",
     "paragraf": "Paragraf 6",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.755693"
+    "parsed_date": "2026-05-26T14:25:42.554134",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_43",
@@ -1338,7 +1428,9 @@
     "bagian": "Bagian Ketiga - Hasil Karya yang Tidak Dilindungi Hak Cipta",
     "paragraf": "Paragraf 6",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.755719"
+    "parsed_date": "2026-05-26T14:25:42.554232",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_44",
@@ -1397,7 +1489,9 @@
     "bagian": "Bagian Ketiga - Hasil Karya yang Tidak Dilindungi Hak Cipta",
     "paragraf": "Paragraf 6",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.755858"
+    "parsed_date": "2026-05-26T14:25:42.554398",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_45",
@@ -1439,7 +1533,11 @@
     "bagian": "Bagian Ketiga - Hasil Karya yang Tidak Dilindungi Hak Cipta",
     "paragraf": "Paragraf 6",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.755936"
+    "parsed_date": "2026-05-26T14:25:42.554455",
+    "is_umkm_relevant": false,
+    "tags": [
+      "perizinan"
+    ]
   },
   {
     "pasal_id": "uu_?_?_pasal_46",
@@ -1488,7 +1586,11 @@
     "bagian": "Bagian Ketiga - Hasil Karya yang Tidak Dilindungi Hak Cipta",
     "paragraf": "Paragraf 6",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.756001"
+    "parsed_date": "2026-05-26T14:25:42.554525",
+    "is_umkm_relevant": false,
+    "tags": [
+      "perizinan"
+    ]
   },
   {
     "pasal_id": "uu_?_?_pasal_47",
@@ -1511,7 +1613,11 @@
     "bagian": "Bagian Ciptaan",
     "paragraf": "Paragraf 6",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.756045"
+    "parsed_date": "2026-05-26T14:25:42.554578",
+    "is_umkm_relevant": false,
+    "tags": [
+      "perizinan"
+    ]
   },
   {
     "pasal_id": "uu_?_?_pasal_48",
@@ -1534,7 +1640,9 @@
     "bagian": "Bagian Ciptaan",
     "paragraf": "Paragraf 6",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.756071"
+    "parsed_date": "2026-05-26T14:25:42.554610",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_49",
@@ -1584,7 +1692,11 @@
     "bagian": "Bagian Ciptaan",
     "paragraf": "Paragraf 6",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.756180"
+    "parsed_date": "2026-05-26T14:25:42.554726",
+    "is_umkm_relevant": false,
+    "tags": [
+      "perizinan"
+    ]
   },
   {
     "pasal_id": "uu_?_?_pasal_50",
@@ -1607,7 +1719,11 @@
     "bagian": "Bagian Ciptaan",
     "paragraf": "Paragraf 6",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.756214"
+    "parsed_date": "2026-05-26T14:25:42.554782",
+    "is_umkm_relevant": false,
+    "tags": [
+      "perizinan"
+    ]
   },
   {
     "pasal_id": "uu_?_?_pasal_52",
@@ -1630,7 +1746,9 @@
     "bagian": "Bagian Ciptaan",
     "paragraf": "Paragraf 6",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.756231"
+    "parsed_date": "2026-05-26T14:25:42.554819",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_53",
@@ -1653,7 +1771,11 @@
     "bagian": "Bagian Ciptaan",
     "paragraf": "Paragraf 6",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.756266"
+    "parsed_date": "2026-05-26T14:25:42.554861",
+    "is_umkm_relevant": false,
+    "tags": [
+      "perizinan"
+    ]
   },
   {
     "pasal_id": "uu_?_?_pasal_54",
@@ -1676,7 +1798,9 @@
     "bagian": "Bagian Ciptaan",
     "paragraf": "Paragraf 6",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.756279"
+    "parsed_date": "2026-05-26T14:25:42.554884",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_55",
@@ -1714,7 +1838,9 @@
     "bagian": "Bagian Ciptaan",
     "paragraf": "Paragraf 6",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.756338"
+    "parsed_date": "2026-05-26T14:25:42.554950",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_56",
@@ -1752,7 +1878,9 @@
     "bagian": "Bagian Kesatu - Masa Berlaku Hak Cipta",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.756416"
+    "parsed_date": "2026-05-26T14:25:42.555041",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_58",
@@ -1780,7 +1908,9 @@
     "bagian": "Bagian Kesatu - Masa Berlaku Hak Cipta",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.756457"
+    "parsed_date": "2026-05-26T14:25:42.555101",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_59",
@@ -1844,7 +1974,9 @@
     "bagian": "Bagian Kesatu - Masa Berlaku Hak Cipta",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.756545"
+    "parsed_date": "2026-05-26T14:25:42.555187",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_60",
@@ -1882,7 +2014,9 @@
     "bagian": "Bagian Kesatu - Masa Berlaku Hak Cipta",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.756599"
+    "parsed_date": "2026-05-26T14:25:42.555239",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_61",
@@ -1905,7 +2039,9 @@
     "bagian": "Bagian Kedua - Masa Berlaku Hak Terkait",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.756617"
+    "parsed_date": "2026-05-26T14:25:42.555259",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_62",
@@ -1928,7 +2064,9 @@
     "bagian": "Bagian Kedua - Masa Berlaku Hak Terkait",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.756628"
+    "parsed_date": "2026-05-26T14:25:42.555273",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_63",
@@ -1973,7 +2111,9 @@
     "bagian": "Bagian Kesatu - Umum",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.756691"
+    "parsed_date": "2026-05-26T14:25:42.555336",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_64",
@@ -1996,7 +2136,9 @@
     "bagian": "Bagian Kesatu - Umum",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.756711"
+    "parsed_date": "2026-05-26T14:25:42.555359",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_65",
@@ -2019,7 +2161,9 @@
     "bagian": "Bagian Kedua - Tata Cara Pencatatan",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.756723"
+    "parsed_date": "2026-05-26T14:25:42.555374",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_66",
@@ -2061,7 +2205,9 @@
     "bagian": "Bagian Kedua - Tata Cara Pencatatan",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.756764"
+    "parsed_date": "2026-05-26T14:25:42.555421",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_67",
@@ -2089,7 +2235,9 @@
     "bagian": "Bagian Kedua - Tata Cara Pencatatan",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.756788"
+    "parsed_date": "2026-05-26T14:25:42.555454",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_68",
@@ -2127,7 +2275,9 @@
     "bagian": "Bagian Kedua - Tata Cara Pencatatan",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.756852"
+    "parsed_date": "2026-05-26T14:25:42.555509",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_69",
@@ -2182,7 +2332,9 @@
     "bagian": "Bagian Kedua - Tata Cara Pencatatan",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.756915"
+    "parsed_date": "2026-05-26T14:25:42.555578",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_70",
@@ -2205,7 +2357,9 @@
     "bagian": "Bagian Kedua - Tata Cara Pencatatan",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.756940"
+    "parsed_date": "2026-05-26T14:25:42.555611",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_73",
@@ -2228,7 +2382,9 @@
     "bagian": "Bagian Ketiga - Hapusnya Kekuatan Hukum Pencatatan Ciptaan dan Produk Hak Terkait",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.756951"
+    "parsed_date": "2026-05-26T14:25:42.555626",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_74",
@@ -2273,7 +2429,9 @@
     "bagian": "Bagian Ketiga - Hapusnya Kekuatan Hukum Pencatatan Ciptaan dan Produk Hak Terkait",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.757022"
+    "parsed_date": "2026-05-26T14:25:42.555706",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_75",
@@ -2296,7 +2454,9 @@
     "bagian": "Bagian Keempat - Pengalihan Hak atas pencatatan Ciptaan dan Produk Hak Terkait",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.757032"
+    "parsed_date": "2026-05-26T14:25:42.555722",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_76",
@@ -2324,7 +2484,9 @@
     "bagian": "Bagian Keempat - Pengalihan Hak atas pencatatan Ciptaan dan Produk Hak Terkait",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.757065"
+    "parsed_date": "2026-05-26T14:25:42.555762",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_77",
@@ -2347,7 +2509,9 @@
     "bagian": "Bagian Kelima - Perubahan Nama dan/atau Alamat",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.757075"
+    "parsed_date": "2026-05-26T14:25:42.555775",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_78",
@@ -2375,7 +2539,9 @@
     "bagian": "Bagian Kelima - Perubahan Nama dan/atau Alamat",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.757115"
+    "parsed_date": "2026-05-26T14:25:42.555823",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_79",
@@ -2398,7 +2564,9 @@
     "bagian": "Bagian Kesatu - Lisensi",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.757125"
+    "parsed_date": "2026-05-26T14:25:42.555836",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_80",
@@ -2426,7 +2594,9 @@
     "bagian": "Bagian Kesatu - Lisensi",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.757178"
+    "parsed_date": "2026-05-26T14:25:42.555928",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_82",
@@ -2454,7 +2624,9 @@
     "bagian": "Bagian Kesatu - Lisensi",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.757203"
+    "parsed_date": "2026-05-26T14:25:42.555969",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_83",
@@ -2482,7 +2654,9 @@
     "bagian": "Bagian Kedua - Lisensi Wajib",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.757243"
+    "parsed_date": "2026-05-26T14:25:42.556024",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_84",
@@ -2505,7 +2679,9 @@
     "bagian": "Bagian Kedua - Lisensi Wajib",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.757255"
+    "parsed_date": "2026-05-26T14:25:42.556045",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_85",
@@ -2528,7 +2704,9 @@
     "bagian": "Bagian Kedua - Lisensi Wajib",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.757270"
+    "parsed_date": "2026-05-26T14:25:42.556065",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_86",
@@ -2580,7 +2758,11 @@
     "bagian": "Bagian Kedua - Lisensi Wajib",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.757367"
+    "parsed_date": "2026-05-26T14:25:42.556184",
+    "is_umkm_relevant": false,
+    "tags": [
+      "perizinan"
+    ]
   },
   {
     "pasal_id": "uu_?_?_pasal_87",
@@ -2613,7 +2795,9 @@
     "bagian": "Bagian Kedua - Lisensi Wajib",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.757425"
+    "parsed_date": "2026-05-26T14:25:42.556252",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_88",
@@ -2671,7 +2855,11 @@
     "bagian": "Bagian Kedua - Lisensi Wajib",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.757527"
+    "parsed_date": "2026-05-26T14:25:42.556377",
+    "is_umkm_relevant": false,
+    "tags": [
+      "perizinan"
+    ]
   },
   {
     "pasal_id": "uu_?_?_pasal_89",
@@ -2708,7 +2896,9 @@
     "bagian": "Bagian Kedua - Lisensi Wajib",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.757605"
+    "parsed_date": "2026-05-26T14:25:42.556458",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_90",
@@ -2731,7 +2921,9 @@
     "bagian": "Bagian Kedua - Lisensi Wajib",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.757636"
+    "parsed_date": "2026-05-26T14:25:42.556502",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_92",
@@ -2764,7 +2956,11 @@
     "bagian": "Bagian Kedua - Lisensi Wajib",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.757664"
+    "parsed_date": "2026-05-26T14:25:42.556534",
+    "is_umkm_relevant": false,
+    "tags": [
+      "perizinan"
+    ]
   },
   {
     "pasal_id": "uu_?_?_pasal_93",
@@ -2787,7 +2983,11 @@
     "bagian": "Bagian Kedua - Lisensi Wajib",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.757674"
+    "parsed_date": "2026-05-26T14:25:42.556551",
+    "is_umkm_relevant": false,
+    "tags": [
+      "perizinan"
+    ]
   },
   {
     "pasal_id": "uu_?_?_pasal_94",
@@ -2810,7 +3010,11 @@
     "bagian": "Bagian Kesatu - Umum",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.757684"
+    "parsed_date": "2026-05-26T14:25:42.556567",
+    "is_umkm_relevant": false,
+    "tags": [
+      "perpajakan"
+    ]
   },
   {
     "pasal_id": "uu_?_?_pasal_95",
@@ -2843,7 +3047,9 @@
     "bagian": "Bagian Kesatu - Umum",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.757737"
+    "parsed_date": "2026-05-26T14:25:42.556617",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_96",
@@ -2876,7 +3082,9 @@
     "bagian": "Bagian Kesatu - Umum",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.757775"
+    "parsed_date": "2026-05-26T14:25:42.556664",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_97",
@@ -2904,7 +3112,9 @@
     "bagian": "Bagian Kesatu - Umum",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.757797"
+    "parsed_date": "2026-05-26T14:25:42.556692",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_98",
@@ -2927,7 +3137,9 @@
     "bagian": "Bagian Kesatu - Umum",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.757833"
+    "parsed_date": "2026-05-26T14:25:42.556735",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_99",
@@ -2974,7 +3186,9 @@
     "bagian": "Bagian Kedua - Tata Cara Gugatan",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.757912"
+    "parsed_date": "2026-05-26T14:25:42.556828",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_100",
@@ -3017,7 +3231,9 @@
     "bagian": "Bagian Kedua - Tata Cara Gugatan",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.757968"
+    "parsed_date": "2026-05-26T14:25:42.556897",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_101",
@@ -3055,7 +3271,9 @@
     "bagian": "Bagian Ketiga - Upaya Hukum",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.758008"
+    "parsed_date": "2026-05-26T14:25:42.556945",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_102",
@@ -3088,7 +3306,9 @@
     "bagian": "Bagian Ketiga - Upaya Hukum",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.758069"
+    "parsed_date": "2026-05-26T14:25:42.557002",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_103",
@@ -3116,7 +3336,9 @@
     "bagian": "Bagian Ketiga - Upaya Hukum",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.758128"
+    "parsed_date": "2026-05-26T14:25:42.557075",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_104",
@@ -3159,7 +3381,9 @@
     "bagian": "Bagian Ketiga - Upaya Hukum",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.758178"
+    "parsed_date": "2026-05-26T14:25:42.557136",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_105",
@@ -3182,7 +3406,9 @@
     "bagian": "Bagian Ketiga - Upaya Hukum",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.758191"
+    "parsed_date": "2026-05-26T14:25:42.557154",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_106",
@@ -3205,7 +3431,9 @@
     "bagian": "Bagian Ketiga - Upaya Hukum",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.758202"
+    "parsed_date": "2026-05-26T14:25:42.557175",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_107",
@@ -3258,7 +3486,9 @@
     "bagian": "Bagian Ketiga - Upaya Hukum",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.758286"
+    "parsed_date": "2026-05-26T14:25:42.557270",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_108",
@@ -3306,7 +3536,9 @@
     "bagian": "Bagian Ketiga - Upaya Hukum",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.758368"
+    "parsed_date": "2026-05-26T14:25:42.557364",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_109",
@@ -3357,7 +3589,9 @@
     "bagian": "Bagian Ketiga - Upaya Hukum",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.758466"
+    "parsed_date": "2026-05-26T14:25:42.557475",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_110",
@@ -3436,7 +3670,11 @@
     "bagian": "Bagian Ketiga - Upaya Hukum",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.758653"
+    "parsed_date": "2026-05-26T14:25:42.557682",
+    "is_umkm_relevant": false,
+    "tags": [
+      "perizinan"
+    ]
   },
   {
     "pasal_id": "uu_?_?_pasal_111",
@@ -3459,7 +3697,9 @@
     "bagian": "Bagian Ketiga - Upaya Hukum",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.758684"
+    "parsed_date": "2026-05-26T14:25:42.557721",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_112",
@@ -3482,7 +3722,9 @@
     "bagian": "Bagian Ketiga - Upaya Hukum",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.758697"
+    "parsed_date": "2026-05-26T14:25:42.557738",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_113",
@@ -3515,7 +3757,11 @@
     "bagian": "Bagian Ketiga - Upaya Hukum",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.758747"
+    "parsed_date": "2026-05-26T14:25:42.557803",
+    "is_umkm_relevant": false,
+    "tags": [
+      "perizinan"
+    ]
   },
   {
     "pasal_id": "uu_?_?_pasal_114",
@@ -3538,7 +3784,9 @@
     "bagian": "Bagian Ketiga - Upaya Hukum",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.758758"
+    "parsed_date": "2026-05-26T14:25:42.557822",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_115",
@@ -3561,7 +3809,9 @@
     "bagian": "Bagian Ketiga - Upaya Hukum",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.758770"
+    "parsed_date": "2026-05-26T14:25:42.557840",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_116",
@@ -3604,7 +3854,9 @@
     "bagian": "Bagian Ketiga - Upaya Hukum",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.758830"
+    "parsed_date": "2026-05-26T14:25:42.557902",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_117",
@@ -3632,7 +3884,9 @@
     "bagian": "Bagian Ketiga - Upaya Hukum",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.758884"
+    "parsed_date": "2026-05-26T14:25:42.557968",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_118",
@@ -3655,7 +3909,9 @@
     "bagian": "Bagian Ketiga - Upaya Hukum",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.758924"
+    "parsed_date": "2026-05-26T14:25:42.558017",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_119",
@@ -3678,7 +3934,11 @@
     "bagian": "Bagian Ketiga - Upaya Hukum",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.758935"
+    "parsed_date": "2026-05-26T14:25:42.558034",
+    "is_umkm_relevant": false,
+    "tags": [
+      "perizinan"
+    ]
   },
   {
     "pasal_id": "uu_?_?_pasal_120",
@@ -3701,7 +3961,9 @@
     "bagian": "Bagian Ketiga - Upaya Hukum",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.758943"
+    "parsed_date": "2026-05-26T14:25:42.558048",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_121",
@@ -3724,7 +3986,9 @@
     "bagian": "Bagian Ketiga - Upaya Hukum",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.758963"
+    "parsed_date": "2026-05-26T14:25:42.558092",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_122",
@@ -3747,7 +4011,9 @@
     "bagian": "Bagian Ketiga - Upaya Hukum",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.758977"
+    "parsed_date": "2026-05-26T14:25:42.558124",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_123",
@@ -3770,7 +4036,9 @@
     "bagian": "Bagian Ketiga - Upaya Hukum",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.758987"
+    "parsed_date": "2026-05-26T14:25:42.558141",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_124",
@@ -3793,7 +4061,9 @@
     "bagian": "Bagian Ketiga - Upaya Hukum",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.758996"
+    "parsed_date": "2026-05-26T14:25:42.558157",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_125",
@@ -3816,7 +4086,9 @@
     "bagian": "Bagian Ketiga - Upaya Hukum",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.759003"
+    "parsed_date": "2026-05-26T14:25:42.558171",
+    "is_umkm_relevant": false,
+    "tags": []
   },
   {
     "pasal_id": "uu_?_?_pasal_126",
@@ -3839,6 +4111,8 @@
     "bagian": "Bagian Ketiga - Upaya Hukum",
     "paragraf": "Paragraf 2",
     "source_pages": [],
-    "parsed_date": "2026-05-18T20:23:54.759016"
+    "parsed_date": "2026-05-26T14:25:42.558199",
+    "is_umkm_relevant": false,
+    "tags": []
   }
 ]

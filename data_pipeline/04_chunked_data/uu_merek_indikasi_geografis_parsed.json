@@ -6,7 +6,7 @@
   "uu_topic": "Merek dan Indikasi Geografis",
   "total_pasal": 109,
   "total_bab": 18,
-  "parsed_date": "2026-05-18T20:23:54.661125",
+  "parsed_date": "2026-05-26T14:25:42.477618",
   "pasal_list": [
     {
       "pasal_id": "uu_20_2016_pasal_2",
@@ -51,7 +51,9 @@
       "bagian": "",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.664783"
+      "parsed_date": "2026-05-26T14:25:42.481011",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_3",
@@ -74,7 +76,9 @@
       "bagian": "Bagian Kesatu - Syarat dan Tata Cara Permohonan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.664840"
+      "parsed_date": "2026-05-26T14:25:42.481044",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_4",
@@ -167,7 +171,9 @@
       "bagian": "Bagian Kesatu - Syarat dan Tata Cara Permohonan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.665088"
+      "parsed_date": "2026-05-26T14:25:42.481172",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_5",
@@ -200,7 +206,9 @@
       "bagian": "Bagian Kesatu - Syarat dan Tata Cara Permohonan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.665162"
+      "parsed_date": "2026-05-26T14:25:42.481230",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_6",
@@ -228,7 +236,9 @@
       "bagian": "Bagian Kesatu - Syarat dan Tata Cara Permohonan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.665188"
+      "parsed_date": "2026-05-26T14:25:42.481264",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_7",
@@ -261,7 +271,9 @@
       "bagian": "Bagian Kesatu - Syarat dan Tata Cara Permohonan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.665215"
+      "parsed_date": "2026-05-26T14:25:42.481297",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_8",
@@ -284,7 +296,9 @@
       "bagian": "Bagian Kedua - Permohonan Pendaftaran Merek dengan Hak prioritas",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.665227"
+      "parsed_date": "2026-05-26T14:25:42.481313",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_9",
@@ -307,7 +321,9 @@
       "bagian": "Bagian Kedua - Permohonan Pendaftaran Merek dengan Hak prioritas",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.665238"
+      "parsed_date": "2026-05-26T14:25:42.481334",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_10",
@@ -355,7 +371,9 @@
       "bagian": "Bagian Ketiga - Pemeriksaan Kelengkapan Persyaratan pendaftaran Merek",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.665350"
+      "parsed_date": "2026-05-26T14:25:42.481472",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_12",
@@ -378,7 +396,9 @@
       "bagian": "Bagian Keempat - Tanggal Penerimaan Permohonan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.665360"
+      "parsed_date": "2026-05-26T14:25:42.481488",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_13",
@@ -424,7 +444,9 @@
       "bagian": "Bagian Kelima - Pengumuman Permohonan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.665389"
+      "parsed_date": "2026-05-26T14:25:42.481523",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_14",
@@ -447,7 +469,9 @@
       "bagian": "Bagian Kelima - Pengumuman Permohonan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.665404"
+      "parsed_date": "2026-05-26T14:25:42.481546",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_15",
@@ -470,7 +494,9 @@
       "bagian": "Bagian Keenam - Keberatan dan Sanggahan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.665418"
+      "parsed_date": "2026-05-26T14:25:42.481572",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_16",
@@ -503,7 +529,9 @@
       "bagian": "Bagian Keenam - Keberatan dan Sanggahan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.665459"
+      "parsed_date": "2026-05-26T14:25:42.481626",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_17",
@@ -526,7 +554,9 @@
       "bagian": "Bagian Ketujuh - Perbaikan dan Penarikan Kembali Permohonan pendaftaran Merek",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.665487"
+      "parsed_date": "2026-05-26T14:25:42.481661",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_18",
@@ -549,7 +579,9 @@
       "bagian": "Bagian Ketujuh - Perbaikan dan Penarikan Kembali Permohonan pendaftaran Merek",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.665495"
+      "parsed_date": "2026-05-26T14:25:42.481673",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_19",
@@ -572,7 +604,9 @@
       "bagian": "Bagian Kesatu - Merek yang Tidak Dapat Didaftar dan Ditolak",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.665522"
+      "parsed_date": "2026-05-26T14:25:42.481709",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_20",
@@ -636,7 +670,9 @@
       "bagian": "Bagian Kesatu - Merek yang Tidak Dapat Didaftar dan Ditolak",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.665647"
+      "parsed_date": "2026-05-26T14:25:42.481843",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_22",
@@ -659,7 +695,9 @@
       "bagian": "Bagian Kesatu - Merek yang Tidak Dapat Didaftar dan Ditolak",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.665655"
+      "parsed_date": "2026-05-26T14:25:42.481854",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_22",
@@ -682,7 +720,9 @@
       "bagian": "Bagian Kedua - Pemeriksaan Substantif Merek",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.665664"
+      "parsed_date": "2026-05-26T14:25:42.481869",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_23",
@@ -750,7 +790,9 @@
       "bagian": "Bagian Kedua - Pemeriksaan Substantif Merek",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.665751"
+      "parsed_date": "2026-05-26T14:25:42.481976",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_24",
@@ -830,7 +872,9 @@
       "bagian": "Bagian Kedua - Pemeriksaan Substantif Merek",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.665862"
+      "parsed_date": "2026-05-26T14:25:42.482114",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_25",
@@ -896,7 +940,9 @@
       "bagian": "Bagian Kedua - Pemeriksaan Substantif Merek",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.665967"
+      "parsed_date": "2026-05-26T14:25:42.482233",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_26",
@@ -924,7 +970,9 @@
       "bagian": "Bagian Ketiga - Perbaikan Sertifikat",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.666003"
+      "parsed_date": "2026-05-26T14:25:42.482280",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_28",
@@ -962,7 +1010,9 @@
       "bagian": "Bagian Ketiga - Perbaikan Sertifikat",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.666042"
+      "parsed_date": "2026-05-26T14:25:42.482329",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_29",
@@ -985,7 +1035,9 @@
       "bagian": "Bagian Ketiga - Perbaikan Sertifikat",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.666065"
+      "parsed_date": "2026-05-26T14:25:42.482356",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_30",
@@ -1013,7 +1065,9 @@
       "bagian": "Bagian Ketiga - Perbaikan Sertifikat",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.666107"
+      "parsed_date": "2026-05-26T14:25:42.482408",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_31",
@@ -1036,7 +1090,9 @@
       "bagian": "Bagian Ketiga - Perbaikan Sertifikat",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.666116"
+      "parsed_date": "2026-05-26T14:25:42.482422",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_32",
@@ -1059,7 +1115,9 @@
       "bagian": "Bagian Kelima - Komisi Banding Merek",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.666126"
+      "parsed_date": "2026-05-26T14:25:42.482437",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_33",
@@ -1114,7 +1172,9 @@
       "bagian": "Bagian Kelima - Komisi Banding Merek",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.666184"
+      "parsed_date": "2026-05-26T14:25:42.482506",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_34",
@@ -1137,7 +1197,9 @@
       "bagian": "Bagian Keenam - Jangka waktu Pelindungan dan perpanjangan Merek rerdaftar",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.666194"
+      "parsed_date": "2026-05-26T14:25:42.482521",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_35",
@@ -1175,7 +1237,9 @@
       "bagian": "Bagian Keenam - Jangka waktu Pelindungan dan perpanjangan Merek rerdaftar",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.666259"
+      "parsed_date": "2026-05-26T14:25:42.482599",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_36",
@@ -1198,7 +1262,9 @@
       "bagian": "Bagian Keenam - Jangka waktu Pelindungan dan perpanjangan Merek rerdaftar",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.666269"
+      "parsed_date": "2026-05-26T14:25:42.482615",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_37",
@@ -1231,7 +1297,9 @@
       "bagian": "Bagian Keenam - Jangka waktu Pelindungan dan perpanjangan Merek rerdaftar",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.666307"
+      "parsed_date": "2026-05-26T14:25:42.482662",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_38",
@@ -1254,7 +1322,9 @@
       "bagian": "Bagian Keenam - Jangka waktu Pelindungan dan perpanjangan Merek rerdaftar",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.666314"
+      "parsed_date": "2026-05-26T14:25:42.482671",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_38",
@@ -1277,7 +1347,9 @@
       "bagian": "Bagian Keenam - Jangka waktu Pelindungan dan perpanjangan Merek rerdaftar",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.666351"
+      "parsed_date": "2026-05-26T14:25:42.482716",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_39",
@@ -1310,7 +1382,9 @@
       "bagian": "Bagian Keenam - Jangka waktu Pelindungan dan perpanjangan Merek rerdaftar",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.666381"
+      "parsed_date": "2026-05-26T14:25:42.482754",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_40",
@@ -1353,7 +1427,9 @@
       "bagian": "Bagian Kesatu - Pengalihan Hak",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.666429"
+      "parsed_date": "2026-05-26T14:25:42.482812",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_41",
@@ -1431,7 +1507,9 @@
       "bagian": "Bagian Kedua - Lisensi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.666531"
+      "parsed_date": "2026-05-26T14:25:42.482931",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_42",
@@ -1469,7 +1547,9 @@
       "bagian": "Bagian Kedua - Lisensi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.666581"
+      "parsed_date": "2026-05-26T14:25:42.482997",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_43",
@@ -1492,7 +1572,9 @@
       "bagian": "Bagian Kedua - Lisensi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.666594"
+      "parsed_date": "2026-05-26T14:25:42.483015",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_44",
@@ -1515,7 +1597,9 @@
       "bagian": "Bagian Kedua - Lisensi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.666602"
+      "parsed_date": "2026-05-26T14:25:42.483027",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_44",
@@ -1538,7 +1622,9 @@
       "bagian": "Bagian Kedua - Lisensi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.666610"
+      "parsed_date": "2026-05-26T14:25:42.483040",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_45",
@@ -1561,7 +1647,9 @@
       "bagian": "Bagian Kedua - Lisensi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.666619"
+      "parsed_date": "2026-05-26T14:25:42.483055",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_46",
@@ -1602,7 +1690,11 @@
       "bagian": "Bagian Kedua - Lisensi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.666683"
+      "parsed_date": "2026-05-26T14:25:42.483128",
+      "is_umkm_relevant": true,
+      "tags": [
+        "umkm"
+      ]
     },
     {
       "pasal_id": "uu_20_2016_pasal_47",
@@ -1625,7 +1717,9 @@
       "bagian": "Bagian Kedua - Lisensi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.666692"
+      "parsed_date": "2026-05-26T14:25:42.483142",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_48",
@@ -1648,7 +1742,9 @@
       "bagian": "Bagian Kedua - Lisensi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.666701"
+      "parsed_date": "2026-05-26T14:25:42.483156",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_49",
@@ -1676,7 +1772,9 @@
       "bagian": "Bagian Kedua - Lisensi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.666718"
+      "parsed_date": "2026-05-26T14:25:42.483179",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_50",
@@ -1699,7 +1797,9 @@
       "bagian": "Bagian Kedua - Lisensi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.666725"
+      "parsed_date": "2026-05-26T14:25:42.483190",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_51",
@@ -1722,7 +1822,9 @@
       "bagian": "Bagian Kedua - Lisensi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.666733"
+      "parsed_date": "2026-05-26T14:25:42.483202",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_52",
@@ -1786,7 +1888,9 @@
       "bagian": "Bagian Kedua - Lisensi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.666823"
+      "parsed_date": "2026-05-26T14:25:42.483305",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_53",
@@ -1833,7 +1937,9 @@
       "bagian": "Bagian Kedua - Lisensi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.666876"
+      "parsed_date": "2026-05-26T14:25:42.483370",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_54",
@@ -1861,7 +1967,9 @@
       "bagian": "Bagian Kedua - Lisensi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.666903"
+      "parsed_date": "2026-05-26T14:25:42.483404",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_55",
@@ -1889,7 +1997,9 @@
       "bagian": "Bagian Kesatu - Indikasi Geografis yang Tidak Dapat Didaftar dan Ditolak",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.666921"
+      "parsed_date": "2026-05-26T14:25:42.483427",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_56",
@@ -1937,7 +2047,9 @@
       "bagian": "Bagian Kesatu - Indikasi Geografis yang Tidak Dapat Didaftar dan Ditolak",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.666993"
+      "parsed_date": "2026-05-26T14:25:42.483509",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_57",
@@ -1960,7 +2072,9 @@
       "bagian": "Bagian Kedua - Pemeriksaan Substantif Indikasi Geografis",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.667016"
+      "parsed_date": "2026-05-26T14:25:42.483539",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_58",
@@ -1988,7 +2102,9 @@
       "bagian": "Bagian Kedua - Pemeriksaan Substantif Indikasi Geografis",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.667034"
+      "parsed_date": "2026-05-26T14:25:42.483561",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_59",
@@ -2038,7 +2154,9 @@
       "bagian": "Bagian Kedua - Pemeriksaan Substantif Indikasi Geografis",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.667113"
+      "parsed_date": "2026-05-26T14:25:42.483658",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_60",
@@ -2061,7 +2179,9 @@
       "bagian": "Bagian Ketiga - Jangka Waktu Pelindungan dan Penghapusan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.667126"
+      "parsed_date": "2026-05-26T14:25:42.483677",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_61",
@@ -2094,7 +2214,9 @@
       "bagian": "Bagian Ketiga - Jangka Waktu Pelindungan dan Penghapusan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.667155"
+      "parsed_date": "2026-05-26T14:25:42.483713",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_62",
@@ -2137,7 +2259,9 @@
       "bagian": "Bagian Keempat - Indikasi Asal",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.667272"
+      "parsed_date": "2026-05-26T14:25:42.483848",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_63",
@@ -2160,7 +2284,9 @@
       "bagian": "Bagian Keempat - Indikasi Asal",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.667281"
+      "parsed_date": "2026-05-26T14:25:42.483863",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_64",
@@ -2183,7 +2309,9 @@
       "bagian": "Bagian Keempat - Indikasi Asal",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.667289"
+      "parsed_date": "2026-05-26T14:25:42.483876",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_65",
@@ -2206,7 +2334,9 @@
       "bagian": "Bagian Kesatu - Pelanggaran atas Indikasi Geografis",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.667299"
+      "parsed_date": "2026-05-26T14:25:42.483890",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_66",
@@ -2229,7 +2359,9 @@
       "bagian": "Bagian Kedua - Gugatan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.667320"
+      "parsed_date": "2026-05-26T14:25:42.483926",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_67",
@@ -2265,7 +2397,9 @@
       "bagian": "Bagian Kedua - Gugatan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.667355"
+      "parsed_date": "2026-05-26T14:25:42.483966",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_68",
@@ -2303,7 +2437,9 @@
       "bagian": "Bagian Kedua - Gugatan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.667444"
+      "parsed_date": "2026-05-26T14:25:42.484070",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_69",
@@ -2326,7 +2462,9 @@
       "bagian": "Bagian Kesatu - Pembinaan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.667483"
+      "parsed_date": "2026-05-26T14:25:42.484114",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_7O",
@@ -2391,7 +2529,9 @@
       "bagian": "Bagian Kedua - Pengawasan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.667565"
+      "parsed_date": "2026-05-26T14:25:42.484192",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_71",
@@ -2491,7 +2631,9 @@
       "bagian": "Bagian Kesatu - Penghapusan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.667762"
+      "parsed_date": "2026-05-26T14:25:42.484387",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_73",
@@ -2519,7 +2661,9 @@
       "bagian": "Bagian Kesatu - Penghapusan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.667792"
+      "parsed_date": "2026-05-26T14:25:42.484419",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_74",
@@ -2542,7 +2686,9 @@
       "bagian": "Bagian Kesatu - Penghapusan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.667803"
+      "parsed_date": "2026-05-26T14:25:42.484430",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_74",
@@ -2583,7 +2729,11 @@
       "bagian": "Bagian Kesatu - Penghapusan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.667862"
+      "parsed_date": "2026-05-26T14:25:42.484497",
+      "is_umkm_relevant": false,
+      "tags": [
+        "perizinan"
+      ]
     },
     {
       "pasal_id": "uu_20_2016_pasal_75",
@@ -2606,7 +2756,9 @@
       "bagian": "Bagian Kedua - Pembatalan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.667871"
+      "parsed_date": "2026-05-26T14:25:42.484509",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_76",
@@ -2639,7 +2791,9 @@
       "bagian": "Bagian Kedua - Pembatalan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.667899"
+      "parsed_date": "2026-05-26T14:25:42.484543",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_77",
@@ -2662,7 +2816,9 @@
       "bagian": "Bagian Kedua - Pembatalan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.667925"
+      "parsed_date": "2026-05-26T14:25:42.484586",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_78",
@@ -2685,7 +2841,9 @@
       "bagian": "Bagian Kedua - Pembatalan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.667941"
+      "parsed_date": "2026-05-26T14:25:42.484606",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_79",
@@ -2708,7 +2866,9 @@
       "bagian": "Bagian Kedua - Pembatalan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.667953"
+      "parsed_date": "2026-05-26T14:25:42.484622",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_80",
@@ -2731,7 +2891,9 @@
       "bagian": "Bagian Kedua - Pembatalan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.667961"
+      "parsed_date": "2026-05-26T14:25:42.484633",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_81",
@@ -2754,7 +2916,9 @@
       "bagian": "Bagian Kedua - Pembatalan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.667970"
+      "parsed_date": "2026-05-26T14:25:42.484648",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_82",
@@ -2782,7 +2946,9 @@
       "bagian": "Bagian Kesatu - Gugatan atas Pelanggaran Merek",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.668002"
+      "parsed_date": "2026-05-26T14:25:42.484688",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_83",
@@ -2824,7 +2990,9 @@
       "bagian": "Bagian Kesatu - Gugatan atas Pelanggaran Merek",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.668044"
+      "parsed_date": "2026-05-26T14:25:42.484738",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_84",
@@ -2847,7 +3015,9 @@
       "bagian": "Bagian Kesatu - Gugatan atas Pelanggaran Merek",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.668050"
+      "parsed_date": "2026-05-26T14:25:42.484748",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_84",
@@ -2875,7 +3045,9 @@
       "bagian": "Bagian Kedua - Tata Cara Gugatan pada Pengadilan Niaga",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.668088"
+      "parsed_date": "2026-05-26T14:25:42.484795",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_85",
@@ -2928,7 +3100,9 @@
       "bagian": "Bagian Kedua - Tata Cara Gugatan pada Pengadilan Niaga",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.668178"
+      "parsed_date": "2026-05-26T14:25:42.484908",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_86",
@@ -2951,7 +3125,9 @@
       "bagian": "Bagian Ketiga - Kasasi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.668187"
+      "parsed_date": "2026-05-26T14:25:42.484921",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_87",
@@ -2974,7 +3150,9 @@
       "bagian": "Bagian Ketiga - Kasasi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.668195"
+      "parsed_date": "2026-05-26T14:25:42.484932",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_88",
@@ -3052,7 +3230,9 @@
       "bagian": "Bagian Ketiga - Kasasi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.668358"
+      "parsed_date": "2026-05-26T14:25:42.485109",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_89",
@@ -3075,7 +3255,9 @@
       "bagian": "Bagian Ketiga - Kasasi",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.668367"
+      "parsed_date": "2026-05-26T14:25:42.485121",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_90",
@@ -3098,7 +3280,9 @@
       "bagian": "Bagian Keempat - Tata Cara Pelaksanaan Putusan",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.668397"
+      "parsed_date": "2026-05-26T14:25:42.485160",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_92",
@@ -3136,7 +3320,9 @@
       "bagian": "Bagian Kelima - Alternatif Penyelesaian Sengketa",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.668441"
+      "parsed_date": "2026-05-26T14:25:42.485216",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_93",
@@ -3159,7 +3345,9 @@
       "bagian": "Bagian Kelima - Alternatif Penyelesaian Sengketa",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.668451"
+      "parsed_date": "2026-05-26T14:25:42.485230",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_94",
@@ -3182,7 +3370,9 @@
       "bagian": "Bagian Kelima - Alternatif Penyelesaian Sengketa",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.668462"
+      "parsed_date": "2026-05-26T14:25:42.485249",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_95",
@@ -3205,7 +3395,9 @@
       "bagian": "Bagian Kelima - Alternatif Penyelesaian Sengketa",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.668475"
+      "parsed_date": "2026-05-26T14:25:42.485269",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_96",
@@ -3243,7 +3435,9 @@
       "bagian": "Bagian Kelima - Alternatif Penyelesaian Sengketa",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.668553"
+      "parsed_date": "2026-05-26T14:25:42.485364",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_97",
@@ -3289,7 +3483,9 @@
       "bagian": "Bagian Kelima - Alternatif Penyelesaian Sengketa",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.668645"
+      "parsed_date": "2026-05-26T14:25:42.485471",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_98",
@@ -3312,7 +3508,9 @@
       "bagian": "Bagian Kelima - Alternatif Penyelesaian Sengketa",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.668654"
+      "parsed_date": "2026-05-26T14:25:42.485485",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_99",
@@ -3382,7 +3580,9 @@
       "bagian": "Bagian Kelima - Alternatif Penyelesaian Sengketa",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.668807"
+      "parsed_date": "2026-05-26T14:25:42.485661",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_100",
@@ -3410,7 +3610,9 @@
       "bagian": "Bagian Kelima - Alternatif Penyelesaian Sengketa",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.668866"
+      "parsed_date": "2026-05-26T14:25:42.485731",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_101",
@@ -3433,7 +3635,9 @@
       "bagian": "Bagian Kelima - Alternatif Penyelesaian Sengketa",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.668873"
+      "parsed_date": "2026-05-26T14:25:42.485742",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_101",
@@ -3461,7 +3665,9 @@
       "bagian": "Bagian Kelima - Alternatif Penyelesaian Sengketa",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.668916"
+      "parsed_date": "2026-05-26T14:25:42.485795",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_102",
@@ -3484,7 +3690,9 @@
       "bagian": "Bagian Kelima - Alternatif Penyelesaian Sengketa",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.668926"
+      "parsed_date": "2026-05-26T14:25:42.485811",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_103",
@@ -3507,7 +3715,9 @@
       "bagian": "Bagian Kelima - Alternatif Penyelesaian Sengketa",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.668933"
+      "parsed_date": "2026-05-26T14:25:42.485823",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_104",
@@ -3540,7 +3750,9 @@
       "bagian": "Bagian Kelima - Alternatif Penyelesaian Sengketa",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.668968"
+      "parsed_date": "2026-05-26T14:25:42.485866",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_105",
@@ -3563,7 +3775,9 @@
       "bagian": "Bagian Kelima - Alternatif Penyelesaian Sengketa",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.668976"
+      "parsed_date": "2026-05-26T14:25:42.485881",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_106",
@@ -3586,7 +3800,9 @@
       "bagian": "Bagian Kelima - Alternatif Penyelesaian Sengketa",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.668985"
+      "parsed_date": "2026-05-26T14:25:42.485898",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_107",
@@ -3609,7 +3825,9 @@
       "bagian": "Bagian Kelima - Alternatif Penyelesaian Sengketa",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.668993"
+      "parsed_date": "2026-05-26T14:25:42.485926",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_108",
@@ -3632,7 +3850,9 @@
       "bagian": "Bagian Kelima - Alternatif Penyelesaian Sengketa",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.669000"
+      "parsed_date": "2026-05-26T14:25:42.485938",
+      "is_umkm_relevant": false,
+      "tags": []
     },
     {
       "pasal_id": "uu_20_2016_pasal_109",
@@ -3655,7 +3875,9 @@
       "bagian": "Bagian Kelima - Alternatif Penyelesaian Sengketa",
       "paragraf": "",
       "source_pages": [],
-      "parsed_date": "2026-05-18T20:23:54.669013"
+      "parsed_date": "2026-05-26T14:25:42.485960",
+      "is_umkm_relevant": false,
+      "tags": []
     }
   ]
 }
