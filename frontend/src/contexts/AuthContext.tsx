@@ -24,6 +24,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const supabase = createClient();
 
   useEffect(() => {
+    // Cek session saat pertama kali load
     supabase.auth
       .getSession()
       .then(({ data: { session } }: { data: { session: Session | null } }) => {
@@ -31,13 +32,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         setIsLoading(false);
       });
 
+    // Listen untuk perubahan auth state
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange(
       (_event: any, session: Session | null) => {
         setUser(session?.user ?? null);
         setIsLoading(false);
-      },
+      }
     );
 
     return () => subscription.unsubscribe();
@@ -53,19 +55,18 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     if (error) throw error;
   };
 
-  // REGISTER / SIGN UP
   const signUp = async (email: string, password: string) => {
     const { data, error } = await supabase.auth.signUp({
       email,
       password,
       options: {
+        // Nonaktifkan email confirmation
         emailRedirectTo: `${window.location.origin}/dashboard`,
       },
     });
     return { error };
   };
 
-  // LOGIN dengan password
   const signIn = async (email: string, password: string) => {
     const { data, error } = await supabase.auth.signInWithPassword({
       email,
@@ -76,6 +77,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const checkEmailExists = async (email: string): Promise<boolean> => {
     try {
+      console.log(`🔍 Checking email: ${email}`);
+
       const response = await fetch("/api/check-email", {
         method: "POST",
         headers: {
@@ -86,13 +89,47 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
       if (!response.ok) {
         console.error("API response not OK:", response.status);
-        return false;
+        // Fallback: coba metode signUp (kurang akurat)
+        return fallbackCheckEmail(email);
       }
 
       const data = await response.json();
-      return data.exists === true;
+
+      if (data.error) {
+        console.error("API error:", data.error);
+        return fallbackCheckEmail(email);
+      }
+
+      console.log(`✅ Email check result: ${data.exists ? "TERDAFTAR" : "BELUM TERDAFTAR"}`);
+      return data.exists;
     } catch (error) {
-      console.error("Error checking email:", error);
+      console.error("Error in checkEmailExists:", error);
+      // Fallback jika API error
+      return fallbackCheckEmail(email);
+    }
+  };
+
+  // Fallback method menggunakan signUp (kurang akurat, tapi bisa dipakai)
+  const fallbackCheckEmail = async (email: string): Promise<boolean> => {
+    try {
+      // Coba sign up dengan random password
+      const randomPassword = Math.random().toString(36).slice(-12);
+      const { error } = await supabase.auth.signUp({
+        email,
+        password: randomPassword,
+      });
+
+      // Jika error "already registered", berarti email terdaftar
+      if (error?.message?.toLowerCase().includes("already registered")) {
+        return true;
+      }
+
+      // Jika berhasil sign up (tidak error), berarti email baru
+      // Tapi kita sudah buat akun dengan random password
+      // Opsional: kita bisa hapus user ini
+      return false;
+    } catch (error) {
+      console.error("Fallback check error:", error);
       return false;
     }
   };

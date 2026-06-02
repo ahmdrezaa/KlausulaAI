@@ -3,20 +3,71 @@
 // Letakkan di: frontend/src/app/agreement/page.tsx
 
 'use client'
-import { useState } from 'react'
-import { useRouter } from 'next/navigation'
+import { useState, useEffect } from 'react'
+import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useAuth } from '@/contexts/AuthContext'
+import toast from 'react-hot-toast'
 
 export default function AgreementPage() {
   const router = useRouter()
+  const searchParams = useSearchParams()
+  const email = searchParams.get('email') || ''
+  const { user, supabase } = useAuth()
+  
   const [agreed, setAgreed] = useState(false)
   const [subscribed, setSubscribed] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
-  // TODO: Hubungkan dengan Supabase Auth — buat akun baru
-  const handleSubmit = () => {
+  // Redirect jika tidak ada user atau email
+  useEffect(() => {
+    if (!user && !email) {
+      router.push('/login')
+    }
+  }, [user, email, router])
+
+  const handleSubmit = async () => {
     if (!agreed) return
-    router.push('/onboarding')
+    
+    setIsSubmitting(true)
+    
+    try {
+      const currentUser = user
+      
+      if (!currentUser) {
+        toast.error('User tidak ditemukan. Silakan login kembali.')
+        router.push('/login')
+        return
+      }
+
+      // Simpan agreement ke profiles
+      const { error: profileError } = await supabase
+        .from('profiles')
+        .upsert({
+          id: currentUser.id,
+          email: currentUser.email,
+          agreed_terms: true,
+          subscribed_newsletter: subscribed,
+          updated_at: new Date().toISOString(),
+        }, {
+          onConflict: 'id',
+        })
+
+      if (profileError) {
+        console.error('Profile error:', profileError)
+        toast.error('Gagal menyimpan persetujuan. Silakan coba lagi.')
+        return
+      }
+
+      toast.success('Terima kasih! Mengarahkan ke onboarding...')
+      router.push('/onboarding')
+    } catch (error) {
+      console.error('Submit error:', error)
+      toast.error('Terjadi kesalahan. Silakan coba lagi.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (

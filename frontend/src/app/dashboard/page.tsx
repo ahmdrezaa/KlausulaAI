@@ -9,73 +9,141 @@ import { useAuth } from "@/contexts/AuthContext";
 import UploadModal from "@/components/modals/UploadModal";
 import Image from "next/image";
 import toast from "react-hot-toast";
-
-// ─── Data dummy untuk preview ────────────────────────────────────────────────
-const DUMMY_PROJECTS = [
-  { id: "1", name: "Projek Usaha Makanan 1" },
-  { id: "2", name: "Projek Usaha Pakaian 1" },
-  { id: "3", name: "Projek Usaha Makanan 2" },
-  { id: "4", name: "Projek Usaha Minuman 1" },
-];
-
-const DUMMY_SOURCES = [
-  { id: "1", name: "Deskripsi_Projek.pdf", checked: false },
-  { id: "2", name: "Kontrak_Vendor_Final.pdf", checked: true },
-];
-
-const DUMMY_MESSAGES = [
-  {
-    id: "1",
-    role: "user" as const,
-    content:
-      "Tolong analisis draf kontrak vendor yang baru saja saya unggah di sidebar kanan. Fokus pada pasal mengenai ganti rugi dan pembatalan sepihak. Apakah sudah sesuai dengan KUHPerdata?",
-  },
-  {
-    id: "2",
-    role: "assistant" as const,
-    content: `Berdasarkan tinjauan saya terhadap Kontrak_Vendor_Final.pdf, berikut adalah poin-poin krusial yang perlu Anda perhatikan:
-1. Ganti Rugi (Pasal 7): Klausul ini menyebutkan denda keterlambatan sebesar 1% per hari. Secara hukum, ini bisa dianggap exorbitant. Saya sarankan diturunkan menjadi 0,1% sesuai standar kebiasaan bisnis agar tidak berisiko dibatalkan hakim jika terjadi sengketa.
-2. Pembatalan Sepihak (Pasal 12): Kontrak ini belum mencantumkan pengesampingan Pasal 1266 KUHPerdata. Tanpa pengesampingan ini, Anda harus melalui putusan pengadilan hanya untuk memutus kontrak.
-Rekomendasi: Tambahkan kalimat 'Para pihak sepakat untuk mengesampingkan ketentuan Pasal 1266 dan 1267 KUHPerdata terkait syarat pemutusan perjanjian' agar proses lebih cepat.`,
-  },
-];
+import { useSearchParams } from "next/navigation";
 
 export default function DashboardPage() {
   const router = useRouter();
-  const { user, signOut, isLoading } = useAuth(); // ← Ambil user dan signOut dari AuthContext
-  const [activeProject, setActiveProject] = useState(DUMMY_PROJECTS[0]);
-  const [messages, setMessages] = useState(DUMMY_MESSAGES);
+  const searchParams = useSearchParams();
+  const projectIdFromUrl = searchParams.get("projectId");
+
+  const { user, supabase, signOut } = useAuth();
+  const [activeProject, setActiveProject] = useState<any>(null);
+  const [projects, setProjects] = useState<any[]>([]);
+  const [messages, setMessages] = useState<any[]>([]);
+  const [sources, setSources] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
   const [input, setInput] = useState("");
-  const [sources, setSources] = useState(DUMMY_SOURCES);
-  const [allSources, setAllSources] = useState(false);
-  const [showUpload, setShowUpload] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [sourcesPanelOpen, setSourcesPanelOpen] = useState(false);
   const [profileMenuOpen, setProfileMenuOpen] = useState(false);
+  const [showUpload, setShowUpload] = useState(false);
+  const [allSources, setAllSources] = useState(false);
   const [userEmail, setUserEmail] = useState("");
 
-  // Ambil email dari user yang login
+  // Load projects and active project
   useEffect(() => {
-    if (user) {
-      setUserEmail(user.email || "User");
+    if (!user) {
+      router.push("/login");
+      return;
     }
+    loadProjects();
   }, [user]);
 
-  // Redirect ke login jika tidak ada user (belum login)
-  useEffect(() => {
-    if (!isLoading && !user) {
-      router.push("/login");
-    }
-  }, [user, isLoading, router]);
+  const loadProjects = async () => {
+    setLoading(true);
+    try {
+      // Load projects
+      const { data: projectsData, error: projectsError } = await supabase
+        .from("projects")
+        .select("*")
+        .eq("user_id", user?.id)
+        .order("updated_at", { ascending: false });
 
-  const handleSend = () => {
-    if (!input.trim()) return;
-    // TODO: Kirim ke backend FastAPI /api/v1/chat/ask
-    setMessages((prev) => [
-      ...prev,
-      { id: Date.now().toString(), role: "user", content: input },
-    ]);
+      if (projectsError) throw projectsError;
+
+      setProjects(projectsData || []);
+
+      // Determine active project
+      let active = null;
+      if (projectIdFromUrl) {
+        active = projectsData?.find((p) => p.id === projectIdFromUrl);
+      }
+      if (!active && projectsData && projectsData.length > 0) {
+        active = projectsData[0];
+      }
+
+      if (active) {
+        setActiveProject(active);
+        // Load messages for this project
+        await loadMessages(active.id);
+        // Load sources for this project
+        await loadSources(active.id);
+      }
+    } catch (error: any) {
+      console.error("Load error:", error);
+      toast.error(error.message || "Gagal memuat data");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const loadMessages = async (projectId: string) => {
+    const { data, error } = await supabase
+      .from("chat_messages")
+      .select("*")
+      .eq("project_id", projectId)
+      .order("created_at", { ascending: true });
+
+    if (error) {
+      console.error("Load messages error:", error);
+    } else {
+      setMessages(data || []);
+    }
+  };
+
+  const loadSources = async (projectId: string) => {
+    const { data, error } = await supabase
+      .from("project_sources")
+      .select("*")
+      .eq("project_id", projectId);
+
+    if (error) {
+      console.error("Load sources error:", error);
+    } else {
+      setSources(
+        (data || []).map((s) => ({
+          id: s.id,
+          name: s.file_name,
+          checked: s.is_active,
+        })),
+      );
+    }
+  };
+
+  const handleSend = async () => {
+    if (!input.trim() || !activeProject) return;
+
+    const userMessage = {
+      id: Date.now().toString(),
+      role: "user" as const,
+      content: input,
+    };
+    setMessages((prev) => [...prev, userMessage]);
     setInput("");
+
+    // Save to Supabase
+    await supabase.from("chat_messages").insert({
+      project_id: activeProject.id,
+      role: "user",
+      content: input,
+    });
+
+    // TODO: Call backend FastAPI
+    // For now, dummy response
+    setTimeout(async () => {
+      const assistantMessage = {
+        id: (Date.now() + 1).toString(),
+        role: "assistant" as const,
+        content:
+          "Terima kasih atas pertanyaan Anda. Saya sedang menganalisis dokumen yang Anda unggah. Fitur ini akan segera terintegrasi dengan backend AI.",
+      };
+      setMessages((prev) => [...prev, assistantMessage]);
+      await supabase.from("chat_messages").insert({
+        project_id: activeProject.id,
+        role: "assistant",
+        content: assistantMessage.content,
+      });
+    }, 1000);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -112,7 +180,7 @@ export default function DashboardPage() {
   };
 
   // Jika masih loading, tampilkan loading state
-  if (isLoading) {
+  if (loading) {
     return (
       <div
         className="min-h-screen flex items-center justify-center"
@@ -219,7 +287,7 @@ export default function DashboardPage() {
             Obrolan
           </p>
           <div className="space-y-0.5">
-            {DUMMY_PROJECTS.map((p) => (
+            {projects.map((p) => (
               <button
                 key={p.id}
                 onClick={() => {
@@ -266,10 +334,7 @@ export default function DashboardPage() {
                   className="text-sm font-medium truncate"
                   style={{ color: "var(--text-primary)" }}
                 >
-                  {userEmail || "User"} {/* ← TAMPILKAN EMAIL DARI SUPABASE */}
-                </p>
-                <p className="text-xs" style={{ color: "var(--text-muted)" }}>
-                  Free plan
+                  {user ? user.email : "User"} {/* ← pakai ternary */}
                 </p>
               </div>
 
@@ -357,7 +422,7 @@ export default function DashboardPage() {
             className="font-display text-base font-semibold"
             style={{ color: "var(--text-primary)" }}
           >
-            {activeProject.name}
+            {activeProject?.name || "Loading..."}
           </span>
           <button onClick={() => setSourcesPanelOpen(true)}>
             <FolderIcon />
@@ -380,7 +445,7 @@ export default function DashboardPage() {
                 className="font-display text-3xl font-regular mb-2"
                 style={{ color: "var(--text-primary)" }}
               >
-                {activeProject.name}
+                {activeProject?.name || "Loading..."}
               </h2>
               <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
                 Peninjauan klausul ganti rugi dan pengesampingan Pasal 1266
@@ -890,6 +955,7 @@ function ScaleIcon() {
     </svg>
   );
 }
+
 function SearchIcon() {
   return (
     <svg
@@ -907,6 +973,7 @@ function SearchIcon() {
     </svg>
   );
 }
+
 function SendIcon() {
   return (
     <svg
@@ -924,6 +991,7 @@ function SendIcon() {
     </svg>
   );
 }
+
 function PdfIcon() {
   return (
     <svg
@@ -941,6 +1009,7 @@ function PdfIcon() {
     </svg>
   );
 }
+
 function MenuIcon() {
   return (
     <svg
@@ -958,6 +1027,7 @@ function MenuIcon() {
     </svg>
   );
 }
+
 function FolderIcon() {
   return (
     <svg
@@ -973,6 +1043,7 @@ function FolderIcon() {
     </svg>
   );
 }
+
 function ThumbUpIcon() {
   return (
     <svg
@@ -990,6 +1061,7 @@ function ThumbUpIcon() {
     </svg>
   );
 }
+
 function ThumbDownIcon() {
   return (
     <svg
@@ -1007,6 +1079,7 @@ function ThumbDownIcon() {
     </svg>
   );
 }
+
 function RefreshIcon() {
   return (
     <svg
@@ -1024,6 +1097,7 @@ function RefreshIcon() {
     </svg>
   );
 }
+
 function CopyIcon() {
   return (
     <svg

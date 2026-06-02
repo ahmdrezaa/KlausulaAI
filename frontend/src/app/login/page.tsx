@@ -12,28 +12,30 @@ import toast from "react-hot-toast";
 
 export default function LoginPage() {
   const router = useRouter();
-  const { supabase, signInWithGoogle, checkEmailExists } = useAuth(); // ← butuh akses supabase
+  const { checkEmailExists, signInWithGoogle } = useAuth();
   const [email, setEmail] = useState("");
   const [isChecking, setIsChecking] = useState(false);
 
-  const checkEmail = async (e: React.FormEvent) => {
+  const handleCheckEmail = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!email) {
       toast.error("Silakan masukkan email Anda.");
       return;
     }
 
     setIsChecking(true);
-    
+
     try {
       const exists = await checkEmailExists(email);
-      
+
       if (exists) {
-        // Email sudah terdaftar → halaman login dengan password
+        // Email terdaftar → arahkan ke login password
+        toast.success("Email terdaftar! Silakan masukkan password.");
         router.push(`/login-password?email=${encodeURIComponent(email)}`);
       } else {
-        // Email belum terdaftar → halaman register
+        // Email belum terdaftar → arahkan ke register
+        toast.success("Email belum terdaftar. Silakan buat akun.");
         router.push(`/register?email=${encodeURIComponent(email)}`);
       }
     } catch (error) {
@@ -161,7 +163,7 @@ export default function LoginPage() {
 
             {/* Email form */}
             {/* TODO: Hubungkan dengan Supabase Auth */}
-            <form onSubmit={checkEmail} className="space-y-3">
+            <form onSubmit={handleCheckEmail} className="space-y-3">
               <input
                 type="email"
                 placeholder="Masukkan email Anda"

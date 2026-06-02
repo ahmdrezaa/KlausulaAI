@@ -7,19 +7,60 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+import { useAuth } from "@/contexts/AuthContext";
+import toast from "react-hot-toast";
 
 export default function NewProjectPage() {
   const router = useRouter();
+  const { supabase, user } = useAuth();
   const [name, setName] = useState("");
   const [desc, setDesc] = useState("");
   const [masterPrompt, setMasterPrompt] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // TODO: Simpan projek baru ke Supabase (tabel: chat_sessions / projects)
-  //       lalu redirect ke /dashboard?projectId=<id>
-  const handleCreate = () => {
-    if (!name.trim()) return;
-    // Sementara langsung ke dashboard
-    router.push("/dashboard");
+  const handleCreate = async () => {
+    if (!name.trim()) {
+      toast.error("Silakan isi nama projek.");
+      return;
+    }
+
+    if (!user) {
+      toast.error("Anda harus login terlebih dahulu.");
+      router.push("/login");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const { data, error } = await supabase
+        .from("projects")
+        .insert({
+          user_id: user.id,
+          name: name.trim(),
+          description: desc.trim() || null,
+          master_prompt: masterPrompt.trim() || null,
+          icon_id: "scale",
+        })
+        .select()
+        .single();
+
+      if (error) {
+        console.error("Create project error:", error);
+        toast.error(
+          error.message || "Gagal membuat projek. Silakan coba lagi.",
+        );
+        return;
+      }
+
+      toast.success("Projek berhasil dibuat!");
+      router.push(`/dashboard?projectId=${data.id}`);
+    } catch (error) {
+      console.error(error);
+      toast.error("Terjadi kesalahan. Silakan coba lagi.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleCancel = () => router.back();
@@ -109,13 +150,13 @@ export default function NewProjectPage() {
                 className="block text-sm font-medium mb-2"
                 style={{ color: "var(--accent)" }}
               >
-                Instruksi
+                Instruksi untuk KlausulaAI
               </label>
               <textarea
                 rows={4}
                 value={masterPrompt}
                 onChange={(e) => setMasterPrompt(e.target.value)}
-                placeholder="Berperanlah sebagai pengacara senior spesialis hukum perdata. Gunakan bahasa formal dan referensi pasal yang akurat. Setiap jawaban harus disertai dasar hukum yang relevan"
+                placeholder="Berperanlah sebagai pengacara senior spesialis hukum perdata. Gunakan bahasa formal dan referensi pasal yang akurat..."
                 className="w-full px-4 py-3.5 rounded-xl text-sm outline-none transition-all border focus:border-[var(--accent)] resize-none"
                 style={{
                   background: "var(--bg-input)",

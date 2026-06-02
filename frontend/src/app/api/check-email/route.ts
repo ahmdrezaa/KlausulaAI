@@ -1,38 +1,54 @@
 // frontend/src/app/api/check-email/route.ts
-import { createClient } from '@/lib/supabase/server'
+import { createAdminClient } from '@/lib/supabase/admin'
 import { NextResponse } from 'next/server'
 
 export async function POST(request: Request) {
   try {
     const { email } = await request.json()
-    
+
     if (!email) {
-      return NextResponse.json({ error: 'Email is required' }, { status: 400 })
+      return NextResponse.json(
+        { error: 'Email is required' },
+        { status: 400 }
+      )
     }
-    
-    // Gunakan supabase client biasa (bukan admin)
-    const supabase = createClient()
-    
-    // Coba cek apakah email sudah terdaftar dengan sign in dummy
-    // Ini akan return error "Invalid login credentials" jika email ada
-    const { error } = await supabase.auth.signInWithPassword({
-      email,
-      password: 'dummy_password_that_will_never_match_12345!',
-    })
-    
-    // Jika error "Invalid login credentials" → email terdaftar
-    // Jika error "Email not confirmed" → email terdaftar tapi belum verifikasi
-    // Jika tidak ada error (tidak mungkin karena password dummy) atau error lain → email tidak terdaftar
-    if (error?.message?.includes('Invalid login credentials') || 
-        error?.message?.includes('Email not confirmed')) {
-      return NextResponse.json({ exists: true })
+
+    // Validasi format email sederhana
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(email)) {
+      return NextResponse.json(
+        { error: 'Invalid email format' },
+        { status: 400 }
+      )
     }
-    
-    // Email tidak terdaftar
-    return NextResponse.json({ exists: false })
-    
+
+    // Gunakan admin client untuk list users
+    const supabase = createAdminClient()
+
+    const {
+      data: { users },
+      error,
+    } = await supabase.auth.admin.listUsers()
+
+    if (error) {
+      console.error('Admin API error:', error)
+      return NextResponse.json(
+        { exists: false, error: error.message },
+        { status: 500 }
+      )
+    }
+
+    // Cek apakah email sudah terdaftar
+    const exists = users.some((user) => user.email === email)
+
+    console.log(`🔍 Email check: ${email} -> ${exists ? 'TERDAFTAR' : 'BELUM TERDAFTAR'}`)
+
+    return NextResponse.json({ exists })
   } catch (error) {
     console.error('API error:', error)
-    return NextResponse.json({ exists: false, error: 'Internal server error' }, { status: 500 })
+    return NextResponse.json(
+      { exists: false, error: 'Internal server error' },
+      { status: 500 }
+    )
   }
 }

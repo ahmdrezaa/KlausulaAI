@@ -2,9 +2,11 @@
 // Halaman Daftar Projek — Dengan icon, menu dropdown, dan edit modal
 
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { useAuth } from "@/contexts/AuthContext";
+import toast from "react-hot-toast";
 
 // Pilihan icon untuk projek
 const ICON_OPTIONS = [
@@ -90,7 +92,9 @@ type Project = {
 
 export default function ProjectsPage() {
   const router = useRouter();
-  const [projects, setProjects] = useState<Project[]>(DUMMY_PROJECTS);
+  const { supabase, user } = useAuth();
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
   const [showPinnedOnly, setShowPinnedOnly] = useState(false);
   
@@ -100,15 +104,57 @@ export default function ProjectsPage() {
   const [editDescription, setEditDescription] = useState("");
   const [editIconId, setEditIconId] = useState("");
   
-  // Menu dropdown state
   const [openMenuId, setOpenMenuId] = useState<string | null>(null);
+
+  // Load projects from Supabase
+  useEffect(() => {
+    if (!user) {
+      router.push("/login");
+      return;
+    }
+    loadProjects();
+  }, [user]);
+
+  const loadProjects = async () => {
+    setLoading(true);
+    try {
+      const { data, error } = await supabase
+        .from("projects")
+        .select("*")
+        .eq("user_id", user?.id)
+        .order("is_pinned", { ascending: false })
+        .order("updated_at", { ascending: false });
+
+      if (error) throw error;
+
+      const formattedProjects: Project[] = (data || []).map((p) => ({
+        id: p.id,
+        name: p.name,
+        updatedAt: new Date(p.updated_at).toLocaleDateString("en-US", {
+          month: "short",
+          day: "numeric",
+          year: "numeric",
+        }),
+        sourceCount: 0, // TODO: hitung dari project_sources
+        isPinned: p.is_pinned || false,
+        iconId: p.icon_id || "scale",
+        description: p.description || "",
+      }));
+
+      setProjects(formattedProjects);
+    } catch (error: any) {
+      console.error("Load projects error:", error);
+      toast.error(error.message || "Gagal memuat projek");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleNewProject = () => router.push("/new-project");
   const handleProjectClick = (projectId: string) => {
     router.push(`/dashboard?projectId=${projectId}`);
   };
 
-  // Edit project handlers
   const handleOpenEditModal = (project: Project) => {
     setEditingProject(project);
     setEditName(project.name);
@@ -117,27 +163,82 @@ export default function ProjectsPage() {
     setOpenMenuId(null);
   };
 
-  const handleSaveEdit = () => {
+  const handleSaveEdit = async () => {
     if (editingProject && editName.trim()) {
-      setProjects(prev => prev.map(p => 
-        p.id === editingProject.id 
-          ? { ...p, name: editName.trim(), description: editDescription, iconId: editIconId }
-          : p
-      ));
-      setEditingProject(null);
+      try {
+        const { error } = await supabase
+          .from("projects")
+          .update({
+            name: editName.trim(),
+            description: editDescription,
+            icon_id: editIconId,
+            updated_at: new Date().toISOString(),
+          })
+          .eq("id", editingProject.id);
+
+        if (error) throw error;
+
+        setProjects((prev) =>
+          prev.map((p) =>
+            p.id === editingProject.id
+              ? {
+                  ...p,
+                  name: editName.trim(),
+                  description: editDescription,
+                  iconId: editIconId,
+                }
+              : p
+          )
+        );
+        toast.success("Projek berhasil diupdate");
+        setEditingProject(null);
+      } catch (error: any) {
+        console.error("Update project error:", error);
+        toast.error(error.message || "Gagal mengupdate projek");
+      }
     }
   };
 
-  const handleDeleteProject = (projectId: string) => {
-    setProjects(prev => prev.filter(p => p.id !== projectId));
-    setOpenMenuId(null);
+  const handleDeleteProject = async (projectId: string) => {
+    try {
+      const { error } = await supabase
+        .from("projects")
+        .delete()
+        .eq("id", projectId);
+
+      if (error) throw error;
+
+      setProjects((prev) => prev.filter((p) => p.id !== projectId));
+      toast.success("Projek berhasil dihapus");
+      setOpenMenuId(null);
+    } catch (error: any) {
+      console.error("Delete project error:", error);
+      toast.error(error.message || "Gagal menghapus projek");
+    }
   };
 
-  const handleTogglePin = (projectId: string) => {
-    setProjects(prev => prev.map(p => 
-      p.id === projectId ? { ...p, isPinned: !p.isPinned } : p
-    ));
-    setOpenMenuId(null);
+  const handleTogglePin = async (projectId: string) => {
+    const project = projects.find((p) => p.id === projectId);
+    if (!project) return;
+
+    try {
+      const { error } = await supabase
+        .from("projects")
+        .update({ is_pinned: !project.isPinned })
+        .eq("id", projectId);
+
+      if (error) throw error;
+
+      setProjects((prev) =>
+        prev.map((p) =>
+          p.id === projectId ? { ...p, isPinned: !p.isPinned } : p
+        )
+      );
+      setOpenMenuId(null);
+    } catch (error: any) {
+      console.error("Toggle pin error:", error);
+      toast.error(error.message || "Gagal mengubah pin");
+    }
   };
 
   const filteredProjects = projects.filter((p) => {
