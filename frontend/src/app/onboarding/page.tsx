@@ -4,7 +4,9 @@
 
 "use client";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
+import { useAuth } from "@/contexts/AuthContext";
+import toast from "react-hot-toast";
+import { useState } from "react";
 import Image from "next/image";
 
 const FEATURES = [
@@ -71,9 +73,38 @@ const FEATURES = [
 
 export default function OnboardingPage() {
   const router = useRouter();
+  const { user, supabase } = useAuth();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // TODO: Tandai onboarding selesai di Supabase user metadata
-  const handleStart = () => router.push("/welcome");
+  const handleStart = async () => {
+    setIsSubmitting(true);
+
+    try {
+      if (!user) {
+        router.push("/login");
+        return;
+      }
+
+      // Tandai onboarding selesai
+      const { error } = await supabase
+        .from("profiles")
+        .update({ onboarding_completed: true })
+        .eq("id", user.id);
+
+      if (error) {
+        console.error("Onboarding error:", error);
+        toast.error("Gagal menyimpan progres. Silakan coba lagi.");
+        return;
+      }
+
+      router.push("/welcome");
+    } catch (error) {
+      console.error(error);
+      toast.error("Terjadi kesalahan. Silakan coba lagi.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div
@@ -100,7 +131,6 @@ export default function OnboardingPage() {
       </nav>
 
       <div className="w-full h-full flex flex-col items-center justify-center page-enter mb-16">
-
         <div className="w-full max-w-2xl stagger">
           <h1
             className="font-display text-5xl md:text-6xl font-regular text-center mb-2"
@@ -117,7 +147,10 @@ export default function OnboardingPage() {
 
           <div
             className="rounded-2xl border overflow-hidden"
-            style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+            style={{
+              background: "var(--bg-card)",
+              borderColor: "var(--border)",
+            }}
           >
             <div className="p-6 space-y-6">
               {FEATURES.map((f, i) => (
@@ -152,35 +185,19 @@ export default function OnboardingPage() {
             <div className="px-6 pb-6">
               <button
                 onClick={handleStart}
-                className="w-full py-3.5 rounded-xl font-semibold text-sm transition-all hover:opacity-90 active:scale-[0.98]"
+                disabled={isSubmitting}
+                className="w-full py-3.5 rounded-xl font-semibold text-sm transition-all hover:opacity-90 active:scale-[0.98] disabled:opacity-50"
                 style={{
                   background: "var(--text-primary)",
                   color: "var(--bg-base)",
                 }}
               >
-                Mulai menggunakan KlausulaAI
+                {isSubmitting ? "Memproses..." : "Mulai menggunakan KlausulaAI"}
               </button>
             </div>
           </div>
         </div>
       </div>
     </div>
-  );
-}
-
-function ScaleIcon() {
-  return (
-    <svg
-      width="26"
-      height="26"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="var(--accent)"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M12 3v1M3 9h18M7 9l-3 6a3 3 0 006 0L7 9zM17 9l-3 6a3 3 0 006 0L17 9zM12 4l8 5M12 4L4 9M12 21v-6M9 21h6" />
-    </svg>
   );
 }
