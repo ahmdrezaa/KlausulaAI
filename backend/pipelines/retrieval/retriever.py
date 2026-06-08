@@ -99,13 +99,7 @@ from langchain_google_genai import GoogleGenerativeAIEmbeddings
 
 from backend.core.config import supabase_admin
 
-load_dotenv()
-
-_embeddings = GoogleGenerativeAIEmbeddings(
-    model="models/text-embedding-004",
-    google_api_key=os.environ.get("GOOGLE_API_KEY"),
-)
-
+from core.llm_clients import embeddings
 
 def embed_query(text: str) -> list[float]:
     """Ubah teks query menjadi embedding vector 768-dimensi."""

@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 
 load_dotenv()
 
@@ -20,6 +20,11 @@ llm_for_grading: ChatGoogleGenerativeAI = ChatGoogleGenerativeAI(
 llm_for_generation: ChatGoogleGenerativeAI = ChatGoogleGenerativeAI(
     model="gemini-1.5-pro",
     temperature=0.7,
+    google_api_key=GOOGLE_API_KEY,
+)
+
+_embeddings = GoogleGenerativeAIEmbeddings(
+    model="models/text-embedding-004",
     google_api_key=GOOGLE_API_KEY,
 )
 
