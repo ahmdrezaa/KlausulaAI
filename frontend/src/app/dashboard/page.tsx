@@ -3,60 +3,147 @@
 // Letakkan di: frontend/src/app/dashboard/page.tsx
 
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { useAuth } from "@/contexts/AuthContext";
 import UploadModal from "@/components/modals/UploadModal";
 import Image from "next/image";
-
-// ─── Data dummy untuk preview ────────────────────────────────────────────────
-const DUMMY_PROJECTS = [
-  { id: "1", name: "Projek Usaha Makanan 1" },
-  { id: "2", name: "Projek Usaha Pakaian 1" },
-  { id: "3", name: "Projek Usaha Makanan 2" },
-  { id: "4", name: "Projek Usaha Minuman 1" },
-];
-
-const DUMMY_SOURCES = [
-  { id: "1", name: "Deskripsi_Projek.pdf", checked: false },
-  { id: "2", name: "Kontrak_Vendor_Final.pdf", checked: true },
-];
-
-const DUMMY_MESSAGES = [
-  {
-    id: "1",
-    role: "user" as const,
-    content:
-      "Tolong analisis draf kontrak vendor yang baru saja saya unggah di sidebar kanan. Fokus pada pasal mengenai ganti rugi dan pembatalan sepihak. Apakah sudah sesuai dengan KUHPerdata?",
-  },
-  {
-    id: "2",
-    role: "assistant" as const,
-    content: `Berdasarkan tinjauan saya terhadap Kontrak_Vendor_Final.pdf, berikut adalah poin-poin krusial yang perlu Anda perhatikan:
-1. Ganti Rugi (Pasal 7): Klausul ini menyebutkan denda keterlambatan sebesar 1% per hari. Secara hukum, ini bisa dianggap exorbitant. Saya sarankan diturunkan menjadi 0,1% sesuai standar kebiasaan bisnis agar tidak berisiko dibatalkan hakim jika terjadi sengketa.
-2. Pembatalan Sepihak (Pasal 12): Kontrak ini belum mencantumkan pengesampingan Pasal 1266 KUHPerdata. Tanpa pengesampingan ini, Anda harus melalui putusan pengadilan hanya untuk memutus kontrak.
-Rekomendasi: Tambahkan kalimat 'Para pihak sepakat untuk mengesampingkan ketentuan Pasal 1266 dan 1267 KUHPerdata terkait syarat pemutusan perjanjian' agar proses lebih cepat.`,
-  },
-];
+import toast from "react-hot-toast";
+import { useSearchParams } from "next/navigation";
 
 export default function DashboardPage() {
   const router = useRouter();
-  const [activeProject, setActiveProject] = useState(DUMMY_PROJECTS[0]);
-  const [messages, setMessages] = useState(DUMMY_MESSAGES);
+  const searchParams = useSearchParams();
+  const projectIdFromUrl = searchParams.get("projectId");
+
+  const { user, supabase, signOut } = useAuth();
+  const [activeProject, setActiveProject] = useState<any>(null);
+  const [projects, setProjects] = useState<any[]>([]);
+  const [messages, setMessages] = useState<any[]>([]);
+  const [sources, setSources] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
   const [input, setInput] = useState("");
-  const [sources, setSources] = useState(DUMMY_SOURCES);
-  const [allSources, setAllSources] = useState(false);
-  const [showUpload, setShowUpload] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [sourcesPanelOpen, setSourcesPanelOpen] = useState(false);
+  const [profileMenuOpen, setProfileMenuOpen] = useState(false);
+  const [showUpload, setShowUpload] = useState(false);
+  const [allSources, setAllSources] = useState(false);
+  const [userEmail, setUserEmail] = useState("");
 
-  const handleSend = () => {
-    if (!input.trim()) return;
-    // TODO: Kirim ke backend FastAPI /api/v1/chat/ask
-    setMessages((prev) => [
-      ...prev,
-      { id: Date.now().toString(), role: "user", content: input },
-    ]);
+  // Load projects and active project
+  useEffect(() => {
+    if (!user) {
+      router.push("/login");
+      return;
+    }
+    loadProjects();
+  }, [user]);
+
+  const loadProjects = async () => {
+    setLoading(true);
+    try {
+      // Load projects
+      const { data: projectsData, error: projectsError } = await supabase
+        .from("projects")
+        .select("*")
+        .eq("user_id", user?.id)
+        .order("updated_at", { ascending: false });
+
+      if (projectsError) throw projectsError;
+
+      setProjects(projectsData || []);
+
+      // Determine active project
+      let active = null;
+      if (projectIdFromUrl) {
+        active = projectsData?.find((p) => p.id === projectIdFromUrl);
+      }
+      if (!active && projectsData && projectsData.length > 0) {
+        active = projectsData[0];
+      }
+
+      if (active) {
+        setActiveProject(active);
+        // Load messages for this project
+        await loadMessages(active.id);
+        // Load sources for this project
+        await loadSources(active.id);
+      }
+    } catch (error: any) {
+      console.error("Load error:", error);
+      toast.error(error.message || "Gagal memuat data");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const loadMessages = async (projectId: string) => {
+    const { data, error } = await supabase
+      .from("chat_messages")
+      .select("*")
+      .eq("project_id", projectId)
+      .order("created_at", { ascending: true });
+
+    if (error) {
+      console.error("Load messages error:", error);
+    } else {
+      setMessages(data || []);
+    }
+  };
+
+  const loadSources = async (projectId: string) => {
+    const { data, error } = await supabase
+      .from("project_sources")
+      .select("*")
+      .eq("project_id", projectId);
+
+    if (error) {
+      console.error("Load sources error:", error);
+    } else {
+      setSources(
+        (data || []).map((s) => ({
+          id: s.id,
+          name: s.file_name,
+          checked: s.is_active,
+        })),
+      );
+    }
+  };
+
+  const handleSend = async () => {
+    if (!input.trim() || !activeProject) return;
+
+    const userMessage = {
+      id: Date.now().toString(),
+      role: "user" as const,
+      content: input,
+    };
+    setMessages((prev) => [...prev, userMessage]);
     setInput("");
+
+    // Save to Supabase
+    await supabase.from("chat_messages").insert({
+      project_id: activeProject.id,
+      role: "user",
+      content: input,
+    });
+
+    // TODO: Call backend FastAPI
+    // For now, dummy response
+    setTimeout(async () => {
+      const assistantMessage = {
+        id: (Date.now() + 1).toString(),
+        role: "assistant" as const,
+        content:
+          "Terima kasih atas pertanyaan Anda. Saya sedang menganalisis dokumen yang Anda unggah. Fitur ini akan segera terintegrasi dengan backend AI.",
+      };
+      setMessages((prev) => [...prev, assistantMessage]);
+      await supabase.from("chat_messages").insert({
+        project_id: activeProject.id,
+        role: "assistant",
+        content: assistantMessage.content,
+      });
+    }, 1000);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -78,8 +165,39 @@ export default function DashboardPage() {
     setSources((prev) => prev.map((s) => ({ ...s, checked: next })));
   };
 
-  // TODO: Tambah projek baru ke Supabase
   const handleNewProject = () => router.push("/new-project");
+
+  // FUNGSI LOGOUT
+  const handleLogout = async () => {
+    try {
+      await signOut();
+      toast.success("Berhasil logout");
+      router.push("/login");
+    } catch (error) {
+      console.error("Logout error:", error);
+      toast.error("Gagal logout. Silakan coba lagi.");
+    }
+  };
+
+  // Jika masih loading, tampilkan loading state
+  if (loading) {
+    return (
+      <div
+        className="min-h-screen flex items-center justify-center"
+        style={{ background: "var(--bg-base)" }}
+      >
+        <div className="text-center">
+          <div className="w-10 h-10 border-4 border-t-blue-500 rounded-full animate-spin mx-auto mb-4"></div>
+          <p style={{ color: "var(--text-secondary)" }}>Memuat...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Jika tidak ada user, jangan render dashboard (redirect sudah terjadi)
+  if (!user) {
+    return null;
+  }
 
   return (
     <div
@@ -137,16 +255,21 @@ export default function DashboardPage() {
             className="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-sm font-medium transition-all hover:bg-white/5"
             style={{ color: "var(--text-secondary)" }}
           >
-            
-              <span
-                className="text-lg leading-none"
-                style={{ color: "var(--accent)" }}
-              ><div className="flex items-center justify-center align-center h-6 w-6 rounded-full" style={ { background: "var(--bg-upload)" } } >+</div>
-                
-              </span>
+            <span
+              className="text-lg leading-none"
+              style={{ color: "var(--accent)" }}
+            >
+              <div
+                className="flex items-center justify-center align-center h-6 w-6 rounded-full"
+                style={{ background: "var(--bg-upload)" }}
+              >
+                +
+              </div>
+            </span>
             Tambah Projek
           </button>
           <button
+            onClick={() => router.push("/projects")}
             className="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-sm font-medium transition-all hover:bg-white/5"
             style={{ color: "var(--text-secondary)" }}
           >
@@ -161,10 +284,10 @@ export default function DashboardPage() {
             className="text-xs font-semibold uppercase tracking-wider px-3 mb-2"
             style={{ color: "var(--text-muted)" }}
           >
-            Projek Aktif
+            Obrolan
           </p>
           <div className="space-y-0.5">
-            {DUMMY_PROJECTS.map((p) => (
+            {projects.map((p) => (
               <button
                 key={p.id}
                 onClick={() => {
@@ -188,6 +311,98 @@ export default function DashboardPage() {
             ))}
           </div>
         </div>
+
+        {/* Profile section */}
+        <div
+          className="mt-auto border-t py-2 px-2"
+          style={{ borderColor: "var(--border)" }}
+        >
+          <div className="relative">
+            <button
+              onClick={() => setProfileMenuOpen(!profileMenuOpen)}
+              className="w-full flex items-center gap-3 rounded-lg p-2 transition-all hover:bg-white/5"
+            >
+              <div
+                className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
+                style={{ background: "var(--accent)" }}
+              >
+                <UserIcon width={16} height={16} stroke="var(--bg-base)" />
+              </div>
+
+              <div className="flex-1 text-left min-w-0">
+                <p
+                  className="text-sm font-medium truncate"
+                  style={{ color: "var(--text-primary)" }}
+                >
+                  {user ? user.email : "User"} {/* ← pakai ternary */}
+                </p>
+              </div>
+
+              <ChevronIcon
+                width={16}
+                height={16}
+                stroke="var(--text-secondary)"
+              />
+            </button>
+
+            {profileMenuOpen && (
+              <div
+                className="absolute bottom-full left-0 mb-2 w-full rounded-lg shadow-lg border overflow-hidden"
+                style={{
+                  background: "var(--bg-surface)",
+                  borderColor: "var(--border)",
+                }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  className="w-full text-left px-4 py-2.5 text-sm transition-all hover:bg-white/5 flex items-center gap-2"
+                  style={{ color: "var(--text-primary)" }}
+                  onClick={() => router.push("/settings")}
+                >
+                  <SettingsIcon width={14} height={14} />
+                  Settings
+                </button>
+                <button
+                  className="w-full text-left px-4 py-2.5 text-sm transition-all hover:bg-white/5 flex items-center gap-2"
+                  style={{ color: "var(--text-primary)" }}
+                >
+                  <LanguageIcon width={14} height={14} />
+                  Language &gt;
+                </button>
+                <button
+                  className="w-full text-left px-4 py-2.5 text-sm transition-all hover:bg-white/5 flex items-center gap-2"
+                  style={{ color: "var(--text-primary)" }}
+                >
+                  <HelpIcon width={14} height={14} />
+                  Get help
+                </button>
+                <button
+                  className="w-full text-left px-4 py-2.5 text-sm transition-all hover:bg-white/5 flex items-center gap-2"
+                  style={{ color: "var(--text-primary)" }}
+                >
+                  <AppsIcon width={14} height={14} />
+                  Get apps and extensions
+                </button>
+                <button
+                  className="w-full text-left px-4 py-2.5 text-sm transition-all hover:bg-white/5 flex items-center gap-2"
+                  style={{ color: "var(--text-primary)" }}
+                >
+                  <LearnIcon width={14} height={14} />
+                  Learn more
+                </button>
+                <div className="h-px" style={{ background: "var(--border)" }} />
+                <button
+                  className="w-full text-left px-4 py-2.5 text-sm transition-all hover:bg-white/5 flex items-center gap-2"
+                  style={{ color: "#ef4444" }}
+                  onClick={handleLogout} // ← FUNGSI LOGOUT SUDAH TERHUBUNG
+                >
+                  <LogoutIcon width={14} height={14} />
+                  Log out
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
       </aside>
 
       {/* ── Main area ──────────────────────────────────── */}
@@ -207,7 +422,7 @@ export default function DashboardPage() {
             className="font-display text-base font-semibold"
             style={{ color: "var(--text-primary)" }}
           >
-            {activeProject.name}
+            {activeProject?.name || "Loading..."}
           </span>
           <button onClick={() => setSourcesPanelOpen(true)}>
             <FolderIcon />
@@ -230,7 +445,7 @@ export default function DashboardPage() {
                 className="font-display text-3xl font-regular mb-2"
                 style={{ color: "var(--text-primary)" }}
               >
-                {activeProject.name}
+                {activeProject?.name || "Loading..."}
               </h2>
               <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
                 Peninjauan klausul ganti rugi dan pengesampingan Pasal 1266
@@ -511,7 +726,6 @@ function SourcesPanel({
   );
 }
 
-// Tambah icon Plus
 function PlusIcon() {
   return (
     <svg
@@ -526,6 +740,172 @@ function PlusIcon() {
     >
       <line x1="12" y1="5" x2="12" y2="19" />
       <line x1="5" y1="12" x2="19" y2="12" />
+    </svg>
+  );
+}
+
+function UserIcon({ width = 20, height = 20, stroke = "currentColor" }) {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={stroke}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+      <circle cx="12" cy="7" r="4" />
+    </svg>
+  );
+}
+
+function ChevronIcon({ width = 20, height = 20, stroke = "currentColor" }) {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={stroke}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <polyline points="6 9 12 15 18 9" />
+    </svg>
+  );
+}
+
+function LanguageIcon({ width = 20, height = 20, stroke = "currentColor" }) {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={stroke}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="12" cy="12" r="10" />
+      <line x1="2" y1="12" x2="22" y2="12" />
+      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+    </svg>
+  );
+}
+
+function HelpIcon({ width = 20, height = 20, stroke = "currentColor" }) {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={stroke}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="12" cy="12" r="10" />
+      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+      <line x1="12" y1="17" x2="12.01" y2="17" />
+    </svg>
+  );
+}
+
+function UpgradeIcon({ width = 20, height = 20, stroke = "currentColor" }) {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={stroke}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+    </svg>
+  );
+}
+
+function AppsIcon({ width = 20, height = 20, stroke = "currentColor" }) {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={stroke}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect x="3" y="3" width="7" height="7" />
+      <rect x="14" y="3" width="7" height="7" />
+      <rect x="14" y="14" width="7" height="7" />
+      <rect x="3" y="14" width="7" height="7" />
+    </svg>
+  );
+}
+
+function LearnIcon({ width = 20, height = 20, stroke = "currentColor" }) {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={stroke}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+    </svg>
+  );
+}
+
+function LogoutIcon({ width = 20, height = 20, stroke = "currentColor" }) {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={stroke}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+      <polyline points="16 17 21 12 16 7" />
+      <line x1="21" y1="12" x2="9" y2="12" />
+    </svg>
+  );
+}
+
+function SettingsIcon({ ...props }: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <circle cx="12" cy="12" r="3" />
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
     </svg>
   );
 }
@@ -575,6 +955,7 @@ function ScaleIcon() {
     </svg>
   );
 }
+
 function SearchIcon() {
   return (
     <svg
@@ -592,6 +973,7 @@ function SearchIcon() {
     </svg>
   );
 }
+
 function SendIcon() {
   return (
     <svg
@@ -609,6 +991,7 @@ function SendIcon() {
     </svg>
   );
 }
+
 function PdfIcon() {
   return (
     <svg
@@ -626,6 +1009,7 @@ function PdfIcon() {
     </svg>
   );
 }
+
 function MenuIcon() {
   return (
     <svg
@@ -643,6 +1027,7 @@ function MenuIcon() {
     </svg>
   );
 }
+
 function FolderIcon() {
   return (
     <svg
@@ -658,6 +1043,7 @@ function FolderIcon() {
     </svg>
   );
 }
+
 function ThumbUpIcon() {
   return (
     <svg
@@ -675,6 +1061,7 @@ function ThumbUpIcon() {
     </svg>
   );
 }
+
 function ThumbDownIcon() {
   return (
     <svg
@@ -692,6 +1079,7 @@ function ThumbDownIcon() {
     </svg>
   );
 }
+
 function RefreshIcon() {
   return (
     <svg
@@ -709,6 +1097,7 @@ function RefreshIcon() {
     </svg>
   );
 }
+
 function CopyIcon() {
   return (
     <svg

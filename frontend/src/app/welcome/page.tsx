@@ -3,14 +3,17 @@
 // Letakkan di: frontend/src/app/welcome/page.tsx
 
 "use client";
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { useAuth } from "@/contexts/AuthContext";
 
 export default function WelcomePage() {
   const router = useRouter();
+  const { user } = useAuth();
 
-  // TODO: Navigasi ke halaman konfigurasi projek baru
   const handleNewProject = () => router.push("/new-project");
+
 
   return (
     <div
