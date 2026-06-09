@@ -36,7 +36,7 @@ export default function UploadModal({ onClose, onUpload }: Props) {
     >
       {/* Modal box */}
       <div
-        className="relative w-full max-w-xl rounded-2xl border p-8"
+        className="relative w-full max-w-xl rounded-2xl border p-12"
         style={{
           background: 'var(--bg-card)',
           borderColor: 'var(--border)',
@@ -83,14 +83,14 @@ export default function UploadModal({ onClose, onUpload }: Props) {
             Upload Files
           </button>
 
-          {/* Upload from cloud — TODO: Google Drive integration */}
+          {/* Upload from cloud — TODO: Google Drive integration
           <button
             className="flex-1 flex items-center justify-center gap-2.5 py-3 px-4 rounded-xl border text-sm font-medium transition-all hover:opacity-80 active:scale-[0.97]"
             style={{ borderColor: 'var(--border-light)', color: 'var(--text-primary)', background: 'transparent' }}
           >
             <CloudIcon />
             Upload Files
-          </button>
+          </button> */}
 
           {/* Paste text — TODO: Handle pasted text as document */}
           <button

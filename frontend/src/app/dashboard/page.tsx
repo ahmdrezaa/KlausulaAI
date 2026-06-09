@@ -11,14 +11,47 @@ import Image from "next/image";
 import toast from "react-hot-toast";
 import { useSearchParams } from "next/navigation";
 
+interface ChatSession {
+  id: string;
+  project_id: string;
+  title: string;
+  created_at: string;
+  updated_at: string;
+}
+
+interface ChatMessage {
+  id: string;
+  session_id: string;
+  role: "user" | "assistant";
+  content: string;
+  created_at: string;
+}
+
+interface Project {
+  id: string;
+  name: string;
+  user_id: string;
+  description?: string;
+  is_pinned: boolean;
+  created_at: string;
+  updated_at: string;
+}
+
+interface Source {
+  id: string;
+  name: string;
+  checked: boolean;
+}
+
 export default function DashboardPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const projectIdFromUrl = searchParams.get("projectId");
+  const sessionIdFromUrl = searchParams.get("sessionId");
 
   const { user, supabase, signOut } = useAuth();
-  const [activeProject, setActiveProject] = useState<any>(null);
-  const [projects, setProjects] = useState<any[]>([]);
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [activeProject, setActiveProject] = useState<Project | null>(null);
   const [messages, setMessages] = useState<any[]>([]);
   const [sources, setSources] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -29,6 +62,8 @@ export default function DashboardPage() {
   const [showUpload, setShowUpload] = useState(false);
   const [allSources, setAllSources] = useState(false);
   const [userEmail, setUserEmail] = useState("");
+  const [sessions, setSessions] = useState<ChatSession[]>([]);
+  const [activeSession, setActiveSession] = useState<any>(null);
 
   // Load projects and active project
   useEffect(() => {
@@ -36,10 +71,10 @@ export default function DashboardPage() {
       router.push("/login");
       return;
     }
-    loadProjects();
+    loadProjectsAndSessions();
   }, [user]);
 
-  const loadProjects = async () => {
+  const loadProjectsAndSessions = async () => {
     setLoading(true);
     try {
       // Load projects
@@ -50,24 +85,42 @@ export default function DashboardPage() {
         .order("updated_at", { ascending: false });
 
       if (projectsError) throw projectsError;
-
       setProjects(projectsData || []);
 
-      // Determine active project
-      let active = null;
+      // Load all sessions
+      const { data: sessionsData, error: sessionsError } = await supabase
+        .from("chat_sessions")
+        .select("*")
+        .eq("user_id", user?.id)
+        .order("updated_at", { ascending: false });
+
+      if (sessionsError) throw sessionsError;
+      setSessions(sessionsData || []);
+
+      // Determine active project and session
+      let targetProject: Project | null = null;
+      let targetSession: ChatSession | null = null;
+
       if (projectIdFromUrl) {
-        active = projectsData?.find((p) => p.id === projectIdFromUrl);
-      }
-      if (!active && projectsData && projectsData.length > 0) {
-        active = projectsData[0];
+        targetProject = projectsData?.find((p) => p.id === projectIdFromUrl);
+        if (sessionIdFromUrl) {
+          targetSession = sessionsData?.find((s) => s.id === sessionIdFromUrl);
+        } else if (targetProject) {
+          targetSession = sessionsData?.find(
+            (s) => s.project_id === targetProject?.id,
+          );
+        }
       }
 
-      if (active) {
-        setActiveProject(active);
-        // Load messages for this project
-        await loadMessages(active.id);
-        // Load sources for this project
-        await loadSources(active.id);
+      if (targetProject) {
+        setActiveProject(targetProject);
+        if (targetSession) {
+          setActiveSession(targetSession);
+          await loadMessages(targetSession.id);
+        } else if (targetProject.id) {
+          await createNewSession(targetProject.id, undefined, false);
+        }
+        await loadSources(targetProject.id);
       }
     } catch (error: any) {
       console.error("Load error:", error);
@@ -110,6 +163,97 @@ export default function DashboardPage() {
     }
   };
 
+  const createNewSession = async (
+    projectId: string,
+    customTitle?: string,
+    isManual = true,
+  ) => {
+    try {
+      const { data, error } = await supabase
+        .from("chat_sessions")
+        .insert({
+          project_id: projectId,
+          user_id: user?.id,
+          title: customTitle || "Obrolan Baru",
+        })
+        .select()
+        .single();
+
+      if (error) throw error;
+      setSessions((prev) => [data, ...prev]);
+      setActiveSession(data);
+      setMessages([]);
+      router.push(`/dashboard?projectId=${projectId}&sessionId=${data.id}`, {
+        scroll: false,
+      });
+
+      // Hanya tampilkan toast jika manual (bukan auto-create)
+      if (isManual) {
+        toast.success("Obrolan baru dibuat");
+      }
+
+      return data;
+    } catch (error: any) {
+      if (isManual) {
+        toast.error(error.message || "Gagal membuat obrolan baru");
+      }
+      return null;
+    }
+  };
+
+  const deleteSession = async (sessionId: string, projectId: string) => {
+    try {
+      const { error } = await supabase
+        .from("chat_sessions")
+        .delete()
+        .eq("id", sessionId);
+      if (error) throw error;
+      setSessions((prev) => prev.filter((s) => s.id !== sessionId));
+
+      if (activeSession?.id === sessionId) {
+        const remainingSessions = sessions.filter((s) => s.id !== sessionId);
+        const nextSession = remainingSessions.find(
+          (s) => s.project_id === projectId,
+        );
+        if (nextSession) {
+          setActiveSession(nextSession);
+          await loadMessages(nextSession.id);
+          router.push(
+            `/dashboard?projectId=${projectId}&sessionId=${nextSession.id}`,
+            { scroll: false },
+          );
+        } else {
+          await createNewSession(projectId);
+        }
+      }
+      toast.success("Obrolan dihapus");
+    } catch (error: any) {
+      toast.error(error.message || "Gagal menghapus obrolan");
+    }
+  };
+
+  const renameSession = async (sessionId: string, newTitle: string) => {
+    try {
+      const { error } = await supabase
+        .from("chat_sessions")
+        .update({ title: newTitle, updated_at: new Date().toISOString() })
+        .eq("id", sessionId);
+      if (error) throw error;
+      setSessions((prev) =>
+        prev.map((s) => (s.id === sessionId ? { ...s, title: newTitle } : s)),
+      );
+      if (activeSession?.id === sessionId)
+        setActiveSession({ ...activeSession, title: newTitle });
+      toast.success("Nama obrolan diubah");
+    } catch (error: any) {
+      toast.error(error.message || "Gagal mengubah nama obrolan");
+    }
+  };
+
+  const getSessionsForProject = (projectId: string) => {
+    return sessions.filter((s) => s.project_id === projectId);
+  };
+
   const handleSend = async () => {
     if (!input.trim() || !activeProject) return;
 
@@ -121,12 +265,26 @@ export default function DashboardPage() {
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
 
-    // Save to Supabase
+    // Ganti ini:
     await supabase.from("chat_messages").insert({
       project_id: activeProject.id,
       role: "user",
       content: input,
     });
+
+    // Menjadi:
+    await supabase.from("chat_messages").insert({
+      session_id: activeSession.id,
+      project_id: activeProject.id,
+      role: "user",
+      content: input,
+    });
+
+    // Update session updated_at
+    await supabase
+      .from("chat_sessions")
+      .update({ updated_at: new Date().toISOString() })
+      .eq("id", activeSession.id);
 
     // TODO: Call backend FastAPI
     // For now, dummy response
@@ -278,7 +436,7 @@ export default function DashboardPage() {
           </button>
         </div>
 
-        {/* Project list */}
+        {/* Active Project & Its Sessions */}
         <div className="flex-1 overflow-y-auto px-4 py-3">
           <p
             className="text-xs font-semibold uppercase tracking-wider px-3 mb-2"
@@ -286,30 +444,89 @@ export default function DashboardPage() {
           >
             Obrolan
           </p>
-          <div className="space-y-0.5">
-            {projects.map((p) => (
+
+          {activeProject ? (
+            <div className="space-y-2">
+              {/* New session button */}
               <button
-                key={p.id}
-                onClick={() => {
-                  setActiveProject(p);
-                  setSidebarOpen(false);
-                }}
-                className="w-full text-left px-3 py-2.5 rounded-lg text-sm transition-all hover:bg-white/5"
+                onClick={() => createNewSession(activeProject.id)}
+                className="w-full align-center justify-center text-center px-3 py-2 rounded-lg text-sm transition-all hover:bg-white/5 flex items-center gap-2"
                 style={{
-                  color:
-                    activeProject.id === p.id
-                      ? "var(--text-primary)"
-                      : "var(--text-secondary)",
-                  background:
-                    activeProject.id === p.id
-                      ? "rgba(201,139,122,0.12)"
-                      : "transparent",
+                  color: "var(--text-primary)",
+                  background: "var(--bg-upload)",
                 }}
               >
-                {p.name}
+                <span>+</span>
+                <span>Obrolan Baru</span>
               </button>
-            ))}
-          </div>
+
+              {/* Sessions list for active project */}
+              <div className="space-y-0.5">
+                {getSessionsForProject(activeProject.id).map((session) => (
+                  <div key={session.id} className="group">
+                    <button
+                      onClick={() => {
+                        setActiveSession(session);
+                        loadMessages(session.id);
+                        router.push(
+                          `/dashboard?projectId=${activeProject.id}&sessionId=${session.id}`,
+                          { scroll: false },
+                        );
+                      }}
+                      className="w-full text-left px-3 py-2 rounded-lg text-md flex items-center justify-between hover:bg-white/5"
+                      style={{
+                        color: "var(--text-primary)",
+                        background:
+                          activeSession?.id === session.id
+                            ? "rgba(201,139,122,0.12)"
+                            : "transparent",
+                        fontWeight:
+                          activeSession?.id === session.id ? "600" : "400",
+                      }}
+                    >
+                      <div className="flex items-center gap-2 truncate">
+                        <span className="truncate">{session.title}</span>
+                      </div>
+                      <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100">
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            const newTitle = prompt(
+                              "Masukkan nama baru:",
+                              session.title,
+                            );
+                            if (newTitle?.trim())
+                              renameSession(session.id, newTitle.trim());
+                          }}
+                          className="p-1 hover:bg-white/10 rounded"
+                        >
+                          ✎
+                        </button>
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            if (confirm(`Hapus obrolan "${session.title}"?`)) {
+                              deleteSession(session.id, activeProject.id);
+                            }
+                          }}
+                          className="p-1 hover:bg-white/10 rounded text-red-400"
+                        >
+                          🗑
+                        </button>
+                      </div>
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <p
+              className="text-sm text-center py-8"
+              style={{ color: "var(--text-muted)" }}
+            >
+              Belum ada projek
+            </p>
+          )}
         </div>
 
         {/* Profile section */}
