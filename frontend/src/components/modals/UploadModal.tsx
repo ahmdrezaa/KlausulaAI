@@ -2,39 +2,51 @@
 // Modal Upload File — Mockup halaman upload
 // Letakkan di: frontend/src/components/modals/UploadModal.tsx
 
-'use client'
-import { useState, useRef, DragEvent } from 'react'
+'use client';
+
+import { useState, useRef, DragEvent } from 'react';
+import { useFileUpload } from '@/hooks/useFileUpload';
 
 interface Props {
-  onClose: () => void
-  // TODO: Hubungkan onUpload dengan backend POST /api/v1/knowledge/upload
-  onUpload: (files: File[]) => void
+  projectId: string;
+  onClose: () => void;
+  onUploadComplete: () => void;
 }
 
-export default function UploadModal({ onClose, onUpload }: Props) {
-  const [dragging, setDragging] = useState(false)
-  const fileRef = useRef<HTMLInputElement>(null)
+export default function UploadModal({ projectId, onClose, onUploadComplete }: Props) {
+  const [dragging, setDragging] = useState(false);
+  const fileRef = useRef<HTMLInputElement>(null);
+  const { uploadFiles, uploading, progress } = useFileUpload(projectId, onUploadComplete);
 
-  const handleDrop = (e: DragEvent) => {
-    e.preventDefault()
-    setDragging(false)
-    const files = Array.from(e.dataTransfer.files)
-    if (files.length) onUpload(files)
-  }
+  const handleFiles = async (files: File[]) => {
+    if (files.length === 0) return;
+    
+    try {
+      await uploadFiles(files);
+      onClose();
+    } catch (error) {
+      // Error already handled by hook
+    }
+  };
 
-  const handleFileInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const files = Array.from(e.target.files || [])
-    if (files.length) onUpload(files)
-  }
+  const handleDrop = async (e: DragEvent) => {
+    e.preventDefault();
+    setDragging(false);
+    const files = Array.from(e.dataTransfer.files);
+    await handleFiles(files);
+  };
 
+  const handleFileInput = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = Array.from(e.target.files || []);
+    await handleFiles(files);
+  };
+  
   return (
-    /* Backdrop */
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-4"
       style={{ background: 'rgba(0,0,0,0.7)', backdropFilter: 'blur(4px)' }}
       onClick={onClose}
     >
-      {/* Modal box */}
       <div
         className="relative w-full max-w-xl rounded-2xl border p-12"
         style={{
@@ -43,7 +55,6 @@ export default function UploadModal({ onClose, onUpload }: Props) {
         }}
         onClick={e => e.stopPropagation()}
       >
-        {/* Close */}
         <button
           onClick={onClose}
           className="absolute top-4 right-4 opacity-40 hover:opacity-80 transition-opacity"
@@ -51,7 +62,6 @@ export default function UploadModal({ onClose, onUpload }: Props) {
           <CloseIcon />
         </button>
 
-        {/* Drop zone */}
         <div
           onDragOver={e => { e.preventDefault(); setDragging(true) }}
           onDragLeave={() => setDragging(false)}
@@ -64,35 +74,24 @@ export default function UploadModal({ onClose, onUpload }: Props) {
         >
           <p className="font-display text-3xl font-semibold mb-2"
             style={{ color: 'var(--text-primary)' }}>
-            drop your files
+            {uploading ? 'Uploading...' : 'drop your files'}
           </p>
           <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
-            pdf, images, docs, and more
+            PDF, Word, dan Text (max 50MB)
           </p>
         </div>
 
-        {/* Action buttons */}
         <div className="flex flex-col sm:flex-row gap-3">
-          {/* Upload from device */}
           <button
             onClick={() => fileRef.current?.click()}
-            className="flex-1 flex items-center justify-center gap-2.5 py-3 px-4 rounded-xl border text-sm font-medium transition-all hover:opacity-80 active:scale-[0.97]"
+            disabled={uploading}
+            className="flex-1 flex items-center justify-center gap-2.5 py-3 px-4 rounded-xl border text-sm font-medium transition-all hover:opacity-80 active:scale-[0.97] disabled:opacity-50"
             style={{ borderColor: 'var(--border-light)', color: 'var(--text-primary)', background: 'transparent' }}
           >
             <UploadIcon />
-            Upload Files
+            {uploading ? 'Uploading...' : 'Upload Files'}
           </button>
 
-          {/* Upload from cloud — TODO: Google Drive integration
-          <button
-            className="flex-1 flex items-center justify-center gap-2.5 py-3 px-4 rounded-xl border text-sm font-medium transition-all hover:opacity-80 active:scale-[0.97]"
-            style={{ borderColor: 'var(--border-light)', color: 'var(--text-primary)', background: 'transparent' }}
-          >
-            <CloudIcon />
-            Upload Files
-          </button> */}
-
-          {/* Paste text — TODO: Handle pasted text as document */}
           <button
             className="flex-1 flex items-center justify-center gap-2.5 py-3 px-4 rounded-xl border text-sm font-medium transition-all hover:opacity-80 active:scale-[0.97]"
             style={{ borderColor: 'var(--border-light)', color: 'var(--text-primary)', background: 'transparent' }}
@@ -102,12 +101,11 @@ export default function UploadModal({ onClose, onUpload }: Props) {
           </button>
         </div>
 
-        {/* Hidden file input */}
         <input
           ref={fileRef}
           type="file"
           multiple
-          accept=".pdf,.doc,.docx,.txt,.png,.jpg,.jpeg"
+          accept=".pdf,.doc,.docx,.txt"
           className="hidden"
           onChange={handleFileInput}
         />

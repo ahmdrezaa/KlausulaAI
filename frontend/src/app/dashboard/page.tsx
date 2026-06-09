@@ -39,8 +39,12 @@ interface Project {
 
 interface Source {
   id: string;
-  name: string;
-  checked: boolean;
+  file_name: string;
+  file_type: string;
+  file_size_bytes: number;
+  storage_path: string;
+  status: string;
+  created_at: string;
 }
 
 export default function DashboardPage() {
@@ -64,6 +68,7 @@ export default function DashboardPage() {
   const [userEmail, setUserEmail] = useState("");
   const [sessions, setSessions] = useState<ChatSession[]>([]);
   const [activeSession, setActiveSession] = useState<any>(null);
+  const [isSending, setIsSending] = useState(false);
 
   // Load projects and active project
   useEffect(() => {
@@ -130,11 +135,16 @@ export default function DashboardPage() {
     }
   };
 
-  const loadMessages = async (projectId: string) => {
+  const loadMessages = async (sessionId: string) => {
+    if (!sessionId) {
+      console.warn("loadMessages called without sessionId");
+      return;
+    }
+
     const { data, error } = await supabase
       .from("chat_messages")
       .select("*")
-      .eq("project_id", projectId)
+      .eq("session_id", sessionId) // ← FILTER BY SESSION_ID
       .order("created_at", { ascending: true });
 
     if (error) {
@@ -146,20 +156,20 @@ export default function DashboardPage() {
 
   const loadSources = async (projectId: string) => {
     const { data, error } = await supabase
-      .from("project_sources")
+      .from("documents") // ← project_sources → documents
       .select("*")
       .eq("project_id", projectId);
 
     if (error) {
       console.error("Load sources error:", error);
+      toast.error("Gagal memuat sumber dokumen");
     } else {
-      setSources(
-        (data || []).map((s) => ({
-          id: s.id,
-          name: s.file_name,
-          checked: s.is_active,
-        })),
-      );
+      console.log("✅ Documents loaded:", data);
+      setSources(data || []);
+
+      // Set allSources berdasarkan status
+      const allActive = data?.every((doc) => doc.status === "active") || false;
+      setAllSources(allActive);
     }
   };
 
@@ -255,72 +265,150 @@ export default function DashboardPage() {
   };
 
   const handleSend = async () => {
-    if (!input.trim() || !activeProject) return;
+    if (!input.trim() || !activeProject || !activeSession) return;
+
+    const userInput = input;
+    const tempId = Date.now().toString();
 
     const userMessage = {
-      id: Date.now().toString(),
+      id: tempId,
       role: "user" as const,
-      content: input,
+      content: userInput,
     };
+
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
+    setIsSending(true);
 
-    // Ganti ini:
-    await supabase.from("chat_messages").insert({
-      project_id: activeProject.id,
-      role: "user",
-      content: input,
-    });
+    try {
+      // Save user message
+      const { error: userMsgError } = await supabase
+        .from("chat_messages")
+        .insert({
+          session_id: activeSession.id,
+          project_id: activeProject.id,
+          role: "user",
+          content: userInput,
+        });
+      if (userMsgError) throw userMsgError;
 
-    // Menjadi:
-    await supabase.from("chat_messages").insert({
-      session_id: activeSession.id,
-      project_id: activeProject.id,
-      role: "user",
-      content: input,
-    });
+      // Update session
+      await supabase
+        .from("chat_sessions")
+        .update({ updated_at: new Date().toISOString() })
+        .eq("id", activeSession.id);
 
-    // Update session updated_at
-    await supabase
-      .from("chat_sessions")
-      .update({ updated_at: new Date().toISOString() })
-      .eq("id", activeSession.id);
+      // Mock AI response
+      setTimeout(async () => {
+        const assistantMessage = {
+          id: (Date.now() + 1).toString(),
+          role: "assistant" as const,
+          content:
+            "Terima kasih atas pertanyaan Anda. Saya sedang menganalisis dokumen yang Anda unggah. Fitur ini akan segera terintegrasi dengan backend AI.",
+        };
 
-    // TODO: Call backend FastAPI
-    // For now, dummy response
-    setTimeout(async () => {
-      const assistantMessage = {
-        id: (Date.now() + 1).toString(),
-        role: "assistant" as const,
-        content:
-          "Terima kasih atas pertanyaan Anda. Saya sedang menganalisis dokumen yang Anda unggah. Fitur ini akan segera terintegrasi dengan backend AI.",
-      };
-      setMessages((prev) => [...prev, assistantMessage]);
-      await supabase.from("chat_messages").insert({
-        project_id: activeProject.id,
-        role: "assistant",
-        content: assistantMessage.content,
-      });
-    }, 1000);
+        setMessages((prev) => [...prev, assistantMessage]);
+
+        // ✅ FIX: Tambahkan session_id untuk assistant message
+        const { error: assistantError } = await supabase
+          .from("chat_messages")
+          .insert({
+            session_id: activeSession.id, // ← HARUS ADA INI!
+            project_id: activeProject.id,
+            role: "assistant",
+            content: assistantMessage.content,
+          });
+
+        if (assistantError) {
+          console.error("Failed to save assistant message:", assistantError);
+        }
+
+        setIsSending(false);
+      }, 1000);
+    } catch (error) {
+      console.error("Send message error:", error);
+      toast.error("Gagal mengirim pesan");
+      setMessages((prev) => prev.filter((m) => m.id !== tempId));
+      setInput(userInput);
+      setIsSending(false);
+    }
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       handleSend();
     }
   };
 
-  const toggleSource = (id: string) => {
+  const toggleSource = async (id: string) => {
+    const source = sources.find((s) => s.id === id);
+    if (!source) {
+      console.warn("Source not found:", id);
+      return;
+    }
+
+    if (!activeProject) {
+      toast.error("Project tidak aktif");
+      return;
+    }
+
+    const newStatus = source.status === "active" ? "inactive" : "active";
+    const projectId = activeProject.id;
+
+    const oldStatus = source.status;
+
     setSources((prev) =>
-      prev.map((s) => (s.id === id ? { ...s, checked: !s.checked } : s)),
+      prev.map((s) => (s.id === id ? { ...s, status: newStatus } : s)),
     );
+
+    try {
+      const { error } = await supabase
+        .from("documents")
+        .update({
+          status: newStatus,
+        })
+        .eq("id", id);
+
+      if (error) throw error;
+
+      setAllSources(
+        sources.every((s) =>
+          s.id === id ? newStatus === "active" : s.status === "active",
+        ),
+      );
+    } catch (error) {
+      console.error("Failed to update status:", error);
+
+      setSources((prev) =>
+        prev.map((s) => (s.id === id ? { ...s, status: oldStatus } : s)),
+      );
+
+      toast.error("Gagal mengupdate status sumber");
+    }
   };
 
   const toggleAllSources = () => {
     const next = !allSources;
     setAllSources(next);
-    setSources((prev) => prev.map((s) => ({ ...s, checked: next })));
+    const newStatus = next ? "active" : "inactive";
+
+    setSources((prev) => prev.map((s) => ({ ...s, status: newStatus })));
+
+    // Optional: Batch update ke Supabase
+    const updates = sources.map((s) => ({
+      id: s.id,
+      status: newStatus,
+    }));
+
+    Promise.all(
+      updates.map((update) =>
+        supabase
+          .from("documents")
+          .update({ status: update.status })
+          .eq("id", update.id),
+      ),
+    ).catch((error) => console.error("Failed to update statuses:", error));
   };
 
   const handleNewProject = () => router.push("/new-project");
@@ -785,13 +873,14 @@ export default function DashboardPage() {
       )}
 
       {/* ── Upload Modal ─────────────────────────────── */}
-      {showUpload && (
+      {showUpload && activeProject && (
         <UploadModal
+          projectId={activeProject.id}
           onClose={() => setShowUpload(false)}
-          onUpload={(files) => {
-            // TODO: Upload file ke backend /api/v1/knowledge/upload
-            console.log("Upload files:", files);
-            setShowUpload(false);
+          onUploadComplete={() => {
+            if (activeProject) {
+              loadSources(activeProject.id);
+            }
           }}
         />
       )}
@@ -849,7 +938,7 @@ function SourcesPanel({
   onToggleSource,
   onAddSource,
 }: {
-  sources: { id: string; name: string; checked: boolean }[];
+  sources: Source[]; // ← use the updated Source interface
   allSources: boolean;
   onToggleAll: () => void;
   onToggleSource: (id: string) => void;
@@ -857,35 +946,20 @@ function SourcesPanel({
 }) {
   return (
     <div className="w-full h-full p-4 pl-0">
-      {/* Container card yang rounded */}
       <div
         className="rounded-2xl h-full overflow-hidden"
-        style={{
-          background: "var(--bg-elevated)",
-          // border: `1px solid var(--border)`,
-        }}
+        style={{ background: "var(--bg-elevated)" }}
       >
-        {/* Header dengan background berbeda */}
-        <div
-          className="px-5 py-4"
-          style={{
-            // borderColor: "var(--border)",
-            background: "var(--bg-elevated)",
-          }}
-        >
-          <div className="flex items-center">
-            <h3
-              className="text-lg font-regular"
-              style={{ color: "var(--text-primary)" }}
-            >
-              Sumber
-            </h3>
-          </div>
+        <div className="px-5 py-4" style={{ background: "var(--bg-elevated)" }}>
+          <h3
+            className="text-lg font-regular"
+            style={{ color: "var(--text-primary)" }}
+          >
+            Sumber
+          </h3>
         </div>
 
-        {/* Konten dalam card */}
         <div className="px-4 space-y-3">
-          {/* Add source button */}
           <button
             onClick={onAddSource}
             className="w-full flex items-center justify-center gap-2 py-2 px-4 rounded-full border text-sm font-regular transition-all hover:opacity-80"
@@ -899,10 +973,8 @@ function SourcesPanel({
             Tambahkan Sumber
           </button>
 
-          {/* Divider */}
           <div className="h-px" style={{ background: "var(--border-light)" }} />
 
-          {/* Select all */}
           <label
             className="flex items-center justify-between gap-3 cursor-pointer"
             onClick={onToggleAll}
@@ -911,12 +983,11 @@ function SourcesPanel({
               className="text-xs font-regular"
               style={{ color: "var(--text-secondary)" }}
             >
-              Pilih semua sumber
+              Pilih semua sumber ({sources.length})
             </span>
             <Checkbox checked={allSources} />
           </label>
 
-          {/* Source list */}
           <div className="space-y-2">
             {sources.map((s) => (
               <label
@@ -927,16 +998,30 @@ function SourcesPanel({
                 <div className="flex-shrink-0">
                   <PdfIcon />
                 </div>
-                <span
-                  className="flex-1 text-sm truncate group-hover:text-[var(--text-primary)] transition-colors"
-                  style={{ color: "var(--text-primary)" }}
-                >
-                  {s.name}
-                </span>
-                <Checkbox checked={s.checked} accent />
+                <div className="flex-1 min-w-0">
+                  <p
+                    className="text-sm truncate"
+                    style={{ color: "var(--text-primary)" }}
+                  >
+                    {s.file_name}
+                  </p>
+                  <p className="text-xs" style={{ color: "var(--text-muted)" }}>
+                    {(s.file_size_bytes / 1024).toFixed(1)} KB • {s.file_type}
+                  </p>
+                </div>
+                <Checkbox checked={s.status === "active"} accent />
               </label>
             ))}
           </div>
+
+          {sources.length === 0 && (
+            <p
+              className="text-sm text-center py-8"
+              style={{ color: "var(--text-muted)" }}
+            >
+              Belum ada dokumen. Klik "Tambahkan Sumber" untuk upload file.
+            </p>
+          )}
         </div>
       </div>
     </div>
