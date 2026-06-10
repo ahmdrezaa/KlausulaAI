@@ -11,21 +11,22 @@ if not GOOGLE_API_KEY:
 
 # Untuk grading (relevance check) — deterministic, temperature=0
 llm_for_grading: ChatGoogleGenerativeAI = ChatGoogleGenerativeAI(
-    model="gemini-1.5-flash",
+    model="gemini-2.5-flash-lite",
     temperature=0,
     google_api_key=GOOGLE_API_KEY,
 )
 
 # Untuk generation (answer synthesis) — sedikit kreatif, temperature=0.7
 llm_for_generation: ChatGoogleGenerativeAI = ChatGoogleGenerativeAI(
-    model="gemini-1.5-pro",
+    model="gemini-2.5-flash",
     temperature=0.7,
     google_api_key=GOOGLE_API_KEY,
 )
 
-_embeddings = GoogleGenerativeAIEmbeddings(
-    model="models/text-embedding-004",
+embeddings = GoogleGenerativeAIEmbeddings(
+    model="models/gemini-embedding-001",
     google_api_key=GOOGLE_API_KEY,
+    output_dimensionality=768,
 )
 
 print("LLM clients ready")

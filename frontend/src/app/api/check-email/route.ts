@@ -39,7 +39,7 @@ export async function POST(request: Request) {
     }
 
     // Cek apakah email sudah terdaftar
-    const exists = users.some((user) => user.email === email)
+    const exists = users.some((user: any) => user.email === email)
 
     console.log(`🔍 Email check: ${email} -> ${exists ? 'TERDAFTAR' : 'BELUM TERDAFTAR'}`)
 
