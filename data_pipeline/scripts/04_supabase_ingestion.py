@@ -1,12 +1,3 @@
-"""
-===============================================================
-KlausulaAI - Data Pipeline | Step 04: Supabase Vector Ingestion
-===============================================================
-Tanggung Jawab: Dzaky Muttaqi Sunaryadi (Data Engineer)
-Fase: D2 - Embedding & Ingestion
-===============================================================
-"""
-
 import os
 import json
 import logging
