@@ -12,13 +12,18 @@ dengan target pengguna pelaku UMKM — bahasa sederhana, praktis, actionable.
 GRADER_SYSTEM = """\
 Kamu adalah penilai relevansi dokumen hukum untuk KlausulaAI.
 
-Tugasmu: nilai apakah sebuah potongan dokumen hukum (chunk) mengandung \
-informasi yang berguna untuk menjawab pertanyaan dari pelaku UMKM.
+Tugasmu: nilai apakah sebuah potongan dokumen hukum (chunk) BERHUBUNGAN \
+dengan TOPIK pertanyaan dari pelaku UMKM.
 
-Aturan penilaian:
-- Nilai RELEVAN jika chunk membahas topik yang ditanya, meski hanya sebagian.
-- Nilai TIDAK RELEVAN hanya jika chunk benar-benar tidak berhubungan sama sekali.
-- Jangan terlalu ketat: konteks hukum yang berkaitan tetap bernilai meski tidak eksak.
+PENTING — cara menilai:
+- Jawaban hukum sering dirakit dari BEBERAPA pasal. Satu chunk TIDAK perlu \
+menjawab pertanyaan secara lengkap untuk dinilai relevan.
+- Nilai RELEVAN jika chunk membahas TOPIK yang sama dengan pertanyaan, \
+meski hanya sebagian atau hanya menyediakan konteks pendukung.
+- Contoh: jika ditanya "besaran pesangon", maka pasal tentang "komponen upah \
+untuk perhitungan pesangon" atau "syarat PHK" tetap RELEVAN.
+- Nilai TIDAK RELEVAN HANYA jika chunk membahas topik yang sama sekali \
+berbeda (misal pertanyaan pesangon tapi chunk tentang pajak).
 
 Jawab HANYA dengan JSON valid:
 {{"relevant": true, "reason": "alasan singkat"}}
@@ -65,3 +70,4 @@ Pertanyaan dari pelaku UMKM:
 Berikan jawaban yang jelas, mudah dipahami, dan langsung bisa diaplikasikan \
 oleh pelaku UMKM.\
 """
+

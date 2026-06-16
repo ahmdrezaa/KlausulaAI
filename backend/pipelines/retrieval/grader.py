@@ -9,11 +9,12 @@ Menggunakan gemini-1.5-flash (temperature=0) untuk penilaian yang konsisten.
 """
 
 import json
+import time
 
 from langchain_core.prompts import ChatPromptTemplate
 
-from backend.core.llm_clients import llm_for_grading
-from backend.pipelines.retrieval.prompts import GRADER_HUMAN, GRADER_SYSTEM
+from core.llm_clients import llm_for_grading
+from pipelines.retrieval.prompts import GRADER_HUMAN, GRADER_SYSTEM
 
 _prompt = ChatPromptTemplate.from_messages(
     [
@@ -70,5 +71,7 @@ def grade_chunks(query: str, chunks: list[dict]) -> list[dict]:
                 reason = ""
 
             relevant.append({**chunk, "grade_reason": reason})
+        
+        time.sleep(13)
 
     return relevant
