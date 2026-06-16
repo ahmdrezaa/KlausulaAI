@@ -1,13 +1,21 @@
-# backend/routers/upload.py
-from fastapi import APIRouter, Depends, HTTPException, UploadFile, File
-from typing import List
-from supabase import Client
+import os
+import shutil
 import uuid
 from datetime import datetime
+from typing import List
 
+from fastapi import APIRouter, Depends, HTTPException, UploadFile, File
+from supabase import Client
+
+# --- 1. Import Fitur Infrastruktur (Dari GitHub) ---
 from dependencies import get_current_user, get_supabase
 from services.storage import StorageService
 
+# --- 2. Import Fitur AI Ingestion (Dari Lokal/Buatanmu) ---
+from backend.core.llm_clients import embeddings
+from backend.pipelines.ingestion.document_processor import UserDocumentProcessor
+
+# Catatan: Endpoint sekarang menggunakan standar RESTful API dari GitHub
 router = APIRouter(prefix="/api/v1/projects", tags=["upload"])
 
 @router.post("/{project_id}/upload")
@@ -18,12 +26,13 @@ async def upload_files(
     supabase: Client = Depends(get_supabase)
 ):
     """
-    Upload multiple files to a project
+    Mengunggah banyak file sekaligus, menyimpan ke Storage, 
+    dan melakukan ekstraksi Vector Embedding AI.
     """
     if not files:
-        raise HTTPException(400, "No files provided")
+        raise HTTPException(400, "Tidak ada file yang diberikan")
     
-    # Verify project ownership
+    # Verifikasi kepemilikan proyek
     project = supabase.table("projects")\
         .select("id")\
         .eq("id", project_id)\
@@ -31,24 +40,33 @@ async def upload_files(
         .execute()
     
     if not project.data:
-        raise HTTPException(404, "Project not found or access denied")
+        raise HTTPException(404, "Proyek tidak ditemukan atau akses ditolak")
     
+    # Inisialisasi alat
     storage = StorageService(supabase)
+    processor = UserDocumentProcessor(supabase, embeddings)
+    
     uploaded_files = []
     errors = []
     
     for file in files:
+        temp_file_path = f"temp_{file.filename}"
         try:
-            # Upload file to storage
+            # A. Simpan PDF sementara untuk diakses oleh PyPDFLoader (Lokal)
+            with open(temp_file_path, "wb") as buffer:
+                shutil.copyfileobj(file.file, buffer)
+
+            # B. Upload file fisik ke Supabase Storage (GitHub)
             upload_result = await storage.upload_file(
                 file, 
                 current_user.id, 
                 project_id
             )
             
-            # Save metadata to database
+            # C. Simpan metadata ke tabel PostgreSQL (GitHub)
+            new_doc_id = str(uuid.uuid4())
             source_data = {
-                "id": str(uuid.uuid4()),
+                "id": new_doc_id,
                 "project_id": project_id,
                 "file_name": upload_result["file_name"],
                 "storage_path": upload_result["file_path"],
@@ -59,31 +77,39 @@ async def upload_files(
                 "created_at": datetime.utcnow().isoformat(),
             }
             
-            result = supabase.table("documents")\
-                .insert(source_data)\
-                .execute()
+            supabase.table("documents").insert(source_data).execute()
+
+            # D. Eksekusi AI Vector Ingestion LangChain (Lokal)
+            processor.process_and_ingest(temp_file_path, file.filename, project_id)
+            
             uploaded_files.append({
-                "id": result.data[0]["id"],
+                "id": new_doc_id,
                 "name": file.filename,
                 "size": upload_result["file_size"],
-                "status": "success"
+                "status": "success - stored and embedded"
             })
             
         except Exception as e:
-            print("error", str(e))
+            print(f"Error processing {file.filename}:", str(e))
             errors.append({
                 "name": file.filename,
                 "error": str(e)
             })
+        finally:
+            # E. WAJIB: Selalu hapus file sampah sementara (Lokal)
+            if os.path.exists(temp_file_path):
+                os.remove(temp_file_path)
     
     if errors and not uploaded_files:
-        raise HTTPException(500, f"Upload failed: {errors[0]['error']}")
+        raise HTTPException(500, f"Upload gagal: {errors[0]['error']}")
     
     return {
-        "message": f"Uploaded {len(uploaded_files)} files successfully",
+        "message": f"Berhasil mengunggah dan memproses {len(uploaded_files)} file",
         "files": uploaded_files,
         "errors": errors if errors else None
     }
+
+# --- Fitur Baca dan Hapus Dokumen (Dari GitHub) ---
 
 @router.get("/{project_id}/sources")
 async def get_sources(
@@ -112,13 +138,15 @@ async def delete_source(
         .execute()
     
     if not source.data:
-        raise HTTPException(404, "Source not found")
+        raise HTTPException(404, "Dokumen tidak ditemukan")
     
+    # Hapus file fisik dari Storage
     supabase.storage.from_("project_files").remove([source.data[0]["storage_path"]])
     
+    # Hapus metadata (Otomatis akan menghapus chunks jika ada pengaturan CASCADE di database)
     supabase.table("documents")\
         .delete()\
         .eq("id", source_id)\
         .execute()
     
-    return {"message": "Source deleted"}
+    return {"message": "Dokumen berhasil dihapus"}

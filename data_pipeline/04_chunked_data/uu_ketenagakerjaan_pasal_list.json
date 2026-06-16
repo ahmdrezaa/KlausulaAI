@@ -5808,7 +5808,7 @@
         "huruf": [
           {
             "huruf": "a",
-            "teks": "masakerjakurangdari 1 (satu)tahun,1(satu)bulanupah;"
+            "teks": "masa kerja kurang dari 1 (satu) tahun, 1(satu) bulan upah;"
           },
           {
             "huruf": "b",
@@ -5840,7 +5840,7 @@
           },
           {
             "huruf": "i",
-            "teks": "masakerja8 (delapan)tahunataulebih,9(sembilan)bulanupah."
+            "teks": "masa kerja8 (delapan) tahun atau lebih, 9(sembilan) bulan upah."
           }
         ]
       },
@@ -5878,7 +5878,7 @@
           },
           {
             "huruf": "h",
-            "teks": "masa kerja 24 (dua puluh empat) tahun atau lebih, 10 (sepuluh ) bulan\n upah."
+            "teks": "masa kerja 24 (dua puluh empat) tahun atau lebih, 10 (sepuluh) bulan\n upah."
           }
         ]
       },
