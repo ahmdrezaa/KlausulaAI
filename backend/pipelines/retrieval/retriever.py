@@ -91,7 +91,10 @@ $$;
 =============================================================================
 """
 
+import json
 from typing import Optional
+
+import numpy as np
 
 from core.config import supabase_admin
 
@@ -100,6 +103,65 @@ from core.llm_clients import embeddings
 def embed_query(text: str) -> list[float]:
     """Ubah teks query menjadi embedding vector 768-dimensi."""
     return embeddings.embed_query(text)
+
+
+def user_doc_vector_search(
+    query_embedding: list[float],
+    project_id: str,
+    top_k: int = 10,
+) -> list[dict]:
+    """Cari chunk DOKUMEN USER (per project) paling mirip — dihitung di Python,
+    TANPA lewat RPC `match_chunks_vector`.
+
+    Kenapa perlu: RPC global ternyata mem-filter dengan ambang kemiripan, jadi
+    untuk pertanyaan samar ("jelaskan dokumen saya") chunk dokumen user yang
+    skornya di bawah ambang TIDAK ikut sebagai kandidat sama sekali. Karena
+    jumlah chunk user per project kecil (puluhan), menghitung cosine di Python
+    murah dan menjamin dokumen user selalu bisa jadi kandidat.
+
+    Returns list of dicts dengan struktur sama seperti vector_search().
+    """
+    if not project_id:
+        return []
+
+    response = (
+        supabase_admin.table("document_chunks")
+        .select("id, content, metadata, document_id, project_id, embedding")
+        .eq("project_id", project_id)
+        .execute()
+    )
+    rows = response.data or []
+    if not rows:
+        return []
+
+    q = np.asarray(query_embedding, dtype=float)
+    q_norm = float(np.linalg.norm(q)) or 1.0
+
+    scored: list[tuple[float, dict]] = []
+    for row in rows:
+        emb = row.get("embedding")
+        if isinstance(emb, str):
+            # pgvector via PostgREST kembali sebagai string "[...]"
+            emb = json.loads(emb)
+        if not emb:
+            continue
+        v = np.asarray(emb, dtype=float)
+        v_norm = float(np.linalg.norm(v)) or 1.0
+        sim = float(np.dot(q, v) / (q_norm * v_norm))
+        scored.append((sim, row))
+
+    scored.sort(key=lambda x: x[0], reverse=True)
+    return [
+        {
+            "id": row["id"],
+            "content": row["content"],
+            "metadata": row["metadata"] or {},
+            "document_id": row["document_id"],
+            "project_id": row["project_id"],
+            "score": sim,
+        }
+        for sim, row in scored[:top_k]
+    ]
 
 
 def vector_search(

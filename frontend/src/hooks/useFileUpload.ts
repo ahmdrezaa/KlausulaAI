@@ -57,7 +57,7 @@ export function useFileUpload(projectId: string, onSuccess?: () => void) {
       // Split multiple errors for better display
       if (errorMessage.includes('\n')) {
         const errors = errorMessage.split('\n');
-        errors.forEach(err => toast.error(err));
+        errors.forEach((err: string) => toast.error(err));
       } else {
         toast.error(errorMessage);
       }

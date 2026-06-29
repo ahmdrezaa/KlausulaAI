@@ -38,15 +38,19 @@ class StorageService:
             )
     
     async def upload_file(
-        self, 
-        file: UploadFile, 
-        user_id: str, 
+        self,
+        file: UploadFile,
+        content: bytes,
+        user_id: str,
         project_id: str
     ) -> Dict:
-        """Upload single file to Supabase storage"""
-        
-        # ✅ Validate file first
-        content = await file.read()
+        """Upload single file to Supabase storage.
+
+        `content` adalah isi file yang SUDAH dibaca oleh caller. Dulu metode ini
+        memanggil `await file.read()` sendiri, padahal caller sudah meng-konsumsi
+        stream UploadFile lebih dulu (untuk temp PDF) → read kedua mengembalikan
+        b'' → file 0 byte tersimpan di storage. Sekarang isi diterima langsung.
+        """
         file_size = len(content)
         self.validate_file(file.filename, file_size)
         

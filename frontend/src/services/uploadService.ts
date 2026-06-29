@@ -127,6 +127,36 @@ class UploadService {
       throw new Error("Failed to delete source");
     }
   }
+
+  /** Hapus beberapa dokumen sekaligus (chunks + documents row + file storage). */
+  async deleteSources(
+    projectId: string,
+    sourceIds: string[],
+    token: string,
+  ): Promise<{ deleted: string[]; deleted_count: number; errors: any[] }> {
+    const response = await fetch(
+      `${this.baseUrl}/api/v1/projects/${projectId}/sources/bulk-delete`,
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ source_ids: sourceIds }),
+      },
+    );
+
+    if (!response.ok) {
+      let detail = "Gagal menghapus dokumen";
+      try {
+        const error = await response.json();
+        detail = error.detail || detail;
+      } catch {}
+      throw new Error(detail);
+    }
+
+    return response.json();
+  }
 }
 
 export const uploadService = new UploadService();

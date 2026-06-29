@@ -32,4 +32,4 @@ def get_user_client(jwt_token: str) -> Client:
     
     return client
 
-print("✅ Database clients ready")
+print("Database clients ready")

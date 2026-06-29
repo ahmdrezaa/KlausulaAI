@@ -44,9 +44,9 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(redirectUrl)
   }
 
-  // If user is logged in and tries to access login/register, redirect to dashboard
+  // If user is logged in and tries to access login/register, redirect to project list
   if (user && (request.nextUrl.pathname === '/login' || request.nextUrl.pathname === '/register')) {
-    const redirectUrl = new URL('/dashboard', request.url)
+    const redirectUrl = new URL('/projects', request.url)
     return NextResponse.redirect(redirectUrl)
   }
 

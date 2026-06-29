@@ -3,13 +3,34 @@
 // Letakkan di: frontend/src/app/dashboard/page.tsx
 
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/contexts/AuthContext";
 import UploadModal from "@/components/modals/UploadModal";
 import Image from "next/image";
 import toast from "react-hot-toast";
 import { useSearchParams } from "next/navigation";
+import { streamChat, deleteSession as deleteSessionApi } from "@/services/chatService";
+import { uploadService } from "@/services/uploadService";
+import ReactMarkdown from "react-markdown";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogFooter,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
+import {
+  AlertDialog,
+  AlertDialogContent,
+  AlertDialogHeader,
+  AlertDialogFooter,
+  AlertDialogTitle,
+  AlertDialogDescription,
+  AlertDialogAction,
+  AlertDialogCancel,
+} from "@/components/ui/alert-dialog";
 
 interface ChatSession {
   id: string;
@@ -64,11 +85,27 @@ export default function DashboardPage() {
   const [sourcesPanelOpen, setSourcesPanelOpen] = useState(false);
   const [profileMenuOpen, setProfileMenuOpen] = useState(false);
   const [showUpload, setShowUpload] = useState(false);
-  const [allSources, setAllSources] = useState(false);
+  // #7: id dokumen yang ter-centang untuk dihapus (bukan lagi toggle aktif/nonaktif)
+  const [selectedSources, setSelectedSources] = useState<string[]>([]);
+  const [deletingSources, setDeletingSources] = useState(false);
   const [userEmail, setUserEmail] = useState("");
   const [sessions, setSessions] = useState<ChatSession[]>([]);
   const [activeSession, setActiveSession] = useState<any>(null);
   const [isSending, setIsSending] = useState(false);
+
+  // #5 Auto-scroll: turun ke pesan terbaru setiap kali messages berubah
+  // (termasuk tiap token saat streaming, karena array messages ikut berubah).
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
+
+  // Modal in-app (mengganti prompt()/confirm() native)
+  const [renameTarget, setRenameTarget] = useState<ChatSession | null>(null);
+  const [renameValue, setRenameValue] = useState("");
+  const [deleteSessionTarget, setDeleteSessionTarget] =
+    useState<ChatSession | null>(null);
+  const [confirmDeleteDocsOpen, setConfirmDeleteDocsOpen] = useState(false);
 
   // Load projects and active project
   useEffect(() => {
@@ -166,10 +203,7 @@ export default function DashboardPage() {
     } else {
       console.log("✅ Documents loaded:", data);
       setSources(data || []);
-
-      // Set allSources berdasarkan status
-      const allActive = data?.every((doc) => doc.status === "active") || false;
-      setAllSources(allActive);
+      setSelectedSources([]); // reset seleksi tiap kali daftar dimuat ulang
     }
   };
 
@@ -213,11 +247,17 @@ export default function DashboardPage() {
 
   const deleteSession = async (sessionId: string, projectId: string) => {
     try {
-      const { error } = await supabase
-        .from("chat_sessions")
-        .delete()
-        .eq("id", sessionId);
-      if (error) throw error;
+      // Hapus lewat backend (service-role, bypass RLS) supaya pesan + session
+      // benar-benar terhapus dengan urutan yang benar (child dulu, baru parent).
+      // Delete langsung dari sini (RLS) bisa diam-diam no-op lalu memicu error
+      // "session_id null violates not-null constraint" (Bug #8).
+      const {
+        data: { session },
+      } = await supabase.auth.getSession();
+      const token = session?.access_token;
+      if (!token) throw new Error("Anda belum login");
+
+      await deleteSessionApi(projectId, sessionId, token);
       setSessions((prev) => prev.filter((s) => s.id !== sessionId));
 
       if (activeSession?.id === sessionId) {
@@ -268,67 +308,106 @@ export default function DashboardPage() {
     if (!input.trim() || !activeProject || !activeSession) return;
 
     const userInput = input;
-    const tempId = Date.now().toString();
+    const tempUserId = Date.now().toString();
+    const tempAssistantId = (Date.now() + 1).toString();
 
-    const userMessage = {
-      id: tempId,
-      role: "user" as const,
-      content: userInput,
-    };
+    // #9 Auto-judul: kalau ini pesan PERTAMA di session yang masih bernama
+    // default "Obrolan Baru", jadikan ~6 kata pertama sebagai judul. Tanpa LLM
+    // (hemat kuota). Rename manual tetap bisa dipakai untuk mengubahnya nanti.
+    if (
+      messages.length === 0 &&
+      activeSession &&
+      activeSession.title === "Obrolan Baru"
+    ) {
+      const autoTitle = userInput
+        .trim()
+        .split(/\s+/)
+        .slice(0, 6)
+        .join(" ")
+        .slice(0, 60);
+      if (autoTitle) {
+        setActiveSession((prev: any) =>
+          prev ? { ...prev, title: autoTitle } : prev,
+        );
+        setSessions((prev) =>
+          prev.map((s) =>
+            s.id === activeSession.id ? { ...s, title: autoTitle } : s,
+          ),
+        );
+        supabase
+          .from("chat_sessions")
+          .update({ title: autoTitle, updated_at: new Date().toISOString() })
+          .eq("id", activeSession.id)
+          .then(({ error }: { error: any }) => {
+            if (error) console.error("Auto-title error:", error);
+          });
+      }
+    }
 
-    setMessages((prev) => [...prev, userMessage]);
+    setMessages((prev) => [
+      ...prev,
+      { id: tempUserId, role: "user" as const, content: userInput },
+    ]);
     setInput("");
     setIsSending(true);
 
     try {
-      // Save user message
-      const { error: userMsgError } = await supabase
-        .from("chat_messages")
-        .insert({
-          session_id: activeSession.id,
-          project_id: activeProject.id,
-          role: "user",
-          content: userInput,
-        });
-      if (userMsgError) throw userMsgError;
+      const {
+        data: { session },
+      } = await supabase.auth.getSession();
+      const token = session?.access_token;
+      if (!token) throw new Error("Anda belum login");
 
-      // Update session
-      await supabase
-        .from("chat_sessions")
-        .update({ updated_at: new Date().toISOString() })
-        .eq("id", activeSession.id);
+      setMessages((prev) => [
+        ...prev,
+        { id: tempAssistantId, role: "assistant" as const, content: "" },
+      ]);
 
-      // Mock AI response
-      setTimeout(async () => {
-        const assistantMessage = {
-          id: (Date.now() + 1).toString(),
-          role: "assistant" as const,
-          content:
-            "Terima kasih atas pertanyaan Anda. Saya sedang menganalisis dokumen yang Anda unggah. Fitur ini akan segera terintegrasi dengan backend AI.",
-        };
+      await streamChat(
+        activeProject.id,
+        activeSession.id,
+        userInput,
+        token,
+        {
+          onToken: (tok) => {
+            setMessages((prev) =>
+              prev.map((m) =>
+                m.id === tempAssistantId
+                  ? { ...m, content: m.content + tok }
+                  : m,
+              ),
+            );
+          },
+          onSources: (_sources) => {
+            // sources received — can be displayed in UI later
+          },
+          onDone: () => {
+            setIsSending(false);
+          },
+          onError: (err) => {
+            console.error("Stream error:", err);
+            toast.error("Gagal mendapat jawaban dari AI");
+            // Render the error inside the assistant bubble so it is visible,
+            // instead of silently dropping the message.
+            setMessages((prev) =>
+              prev.map((m) =>
+                m.id === tempAssistantId ? { ...m, content: err } : m,
+              ),
+            );
+            setIsSending(false);
+          },
+        },
+      );
 
-        setMessages((prev) => [...prev, assistantMessage]);
-
-        // ✅ FIX: Tambahkan session_id untuk assistant message
-        const { error: assistantError } = await supabase
-          .from("chat_messages")
-          .insert({
-            session_id: activeSession.id, // ← HARUS ADA INI!
-            project_id: activeProject.id,
-            role: "assistant",
-            content: assistantMessage.content,
-          });
-
-        if (assistantError) {
-          console.error("Failed to save assistant message:", assistantError);
-        }
-
-        setIsSending(false);
-      }, 1000);
-    } catch (error) {
+      if (isSending) setIsSending(false);
+    } catch (error: any) {
       console.error("Send message error:", error);
-      toast.error("Gagal mengirim pesan");
-      setMessages((prev) => prev.filter((m) => m.id !== tempId));
+      toast.error(error.message || "Gagal mengirim pesan");
+      setMessages((prev) =>
+        prev.filter(
+          (m) => m.id !== tempUserId && m.id !== tempAssistantId,
+        ),
+      );
       setInput(userInput);
       setIsSending(false);
     }
@@ -341,74 +420,58 @@ export default function DashboardPage() {
     }
   };
 
-  const toggleSource = async (id: string) => {
-    const source = sources.find((s) => s.id === id);
-    if (!source) {
-      console.warn("Source not found:", id);
-      return;
-    }
-
-    if (!activeProject) {
-      toast.error("Project tidak aktif");
-      return;
-    }
-
-    const newStatus = source.status === "active" ? "inactive" : "active";
-    const projectId = activeProject.id;
-
-    const oldStatus = source.status;
-
-    setSources((prev) =>
-      prev.map((s) => (s.id === id ? { ...s, status: newStatus } : s)),
+  // #7: seleksi dokumen (centang) untuk dihapus — menggantikan toggle aktif/nonaktif
+  const toggleSelectSource = (id: string) => {
+    setSelectedSources((prev) =>
+      prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id],
     );
+  };
 
+  const allSelected =
+    sources.length > 0 && selectedSources.length === sources.length;
+
+  const toggleSelectAll = () => {
+    setSelectedSources(allSelected ? [] : sources.map((s) => s.id));
+  };
+
+  const handleDeleteSelected = async () => {
+    if (selectedSources.length === 0 || !activeProject) return;
+
+    setDeletingSources(true);
     try {
-      const { error } = await supabase
-        .from("documents")
-        .update({
-          status: newStatus,
-        })
-        .eq("id", id);
+      const {
+        data: { session },
+      } = await supabase.auth.getSession();
+      const token = session?.access_token;
+      if (!token) throw new Error("Anda belum login");
 
-      if (error) throw error;
-
-      setAllSources(
-        sources.every((s) =>
-          s.id === id ? newStatus === "active" : s.status === "active",
-        ),
+      const res = await uploadService.deleteSources(
+        activeProject.id,
+        selectedSources,
+        token,
       );
-    } catch (error) {
-      console.error("Failed to update status:", error);
-
-      setSources((prev) =>
-        prev.map((s) => (s.id === id ? { ...s, status: oldStatus } : s)),
-      );
-
-      toast.error("Gagal mengupdate status sumber");
+      toast.success(`${res.deleted_count} dokumen dihapus`);
+      setSelectedSources([]);
+      await loadSources(activeProject.id); // refresh sidebar Sumber
+    } catch (error: any) {
+      console.error("Delete sources error:", error);
+      toast.error(error.message || "Gagal menghapus dokumen");
+    } finally {
+      setDeletingSources(false);
     }
   };
 
-  const toggleAllSources = () => {
-    const next = !allSources;
-    setAllSources(next);
-    const newStatus = next ? "active" : "inactive";
+  const submitRename = () => {
+    if (renameTarget && renameValue.trim()) {
+      renameSession(renameTarget.id, renameValue.trim());
+    }
+    setRenameTarget(null);
+  };
 
-    setSources((prev) => prev.map((s) => ({ ...s, status: newStatus })));
-
-    // Optional: Batch update ke Supabase
-    const updates = sources.map((s) => ({
-      id: s.id,
-      status: newStatus,
-    }));
-
-    Promise.all(
-      updates.map((update) =>
-        supabase
-          .from("documents")
-          .update({ status: update.status })
-          .eq("id", update.id),
-      ),
-    ).catch((error) => console.error("Failed to update statuses:", error));
+  const confirmDeleteSession = () => {
+    const target = deleteSessionTarget;
+    setDeleteSessionTarget(null);
+    if (target) deleteSession(target.id, target.project_id);
   };
 
   const handleNewProject = () => router.push("/new-project");
@@ -579,12 +642,8 @@ export default function DashboardPage() {
                         <button
                           onClick={(e) => {
                             e.stopPropagation();
-                            const newTitle = prompt(
-                              "Masukkan nama baru:",
-                              session.title,
-                            );
-                            if (newTitle?.trim())
-                              renameSession(session.id, newTitle.trim());
+                            setRenameValue(session.title);
+                            setRenameTarget(session);
                           }}
                           className="p-1 hover:bg-white/10 rounded"
                         >
@@ -593,9 +652,7 @@ export default function DashboardPage() {
                         <button
                           onClick={(e) => {
                             e.stopPropagation();
-                            if (confirm(`Hapus obrolan "${session.title}"?`)) {
-                              deleteSession(session.id, activeProject.id);
-                            }
+                            setDeleteSessionTarget(session);
                           }}
                           className="p-1 hover:bg-white/10 rounded text-red-400"
                         >
@@ -659,43 +716,50 @@ export default function DashboardPage() {
                 }}
                 onClick={(e) => e.stopPropagation()}
               >
-                <button
-                  className="w-full text-left px-4 py-2.5 text-sm transition-all hover:bg-white/5 flex items-center gap-2"
-                  style={{ color: "var(--text-primary)" }}
-                  onClick={() => router.push("/settings")}
-                >
-                  <SettingsIcon width={14} height={14} />
-                  Settings
-                </button>
-                <button
-                  className="w-full text-left px-4 py-2.5 text-sm transition-all hover:bg-white/5 flex items-center gap-2"
-                  style={{ color: "var(--text-primary)" }}
-                >
-                  <LanguageIcon width={14} height={14} />
-                  Language &gt;
-                </button>
-                <button
-                  className="w-full text-left px-4 py-2.5 text-sm transition-all hover:bg-white/5 flex items-center gap-2"
-                  style={{ color: "var(--text-primary)" }}
-                >
-                  <HelpIcon width={14} height={14} />
-                  Get help
-                </button>
-                <button
-                  className="w-full text-left px-4 py-2.5 text-sm transition-all hover:bg-white/5 flex items-center gap-2"
-                  style={{ color: "var(--text-primary)" }}
-                >
-                  <AppsIcon width={14} height={14} />
-                  Get apps and extensions
-                </button>
-                <button
-                  className="w-full text-left px-4 py-2.5 text-sm transition-all hover:bg-white/5 flex items-center gap-2"
-                  style={{ color: "var(--text-primary)" }}
-                >
-                  <LearnIcon width={14} height={14} />
-                  Learn more
-                </button>
-                <div className="h-px" style={{ background: "var(--border)" }} />
+                {/* #2: item menu di bawah mengarah ke halaman 404 (belum ada
+                    implementasinya). Disembunyikan dengan {false && ...} supaya
+                    mudah diaktifkan lagi nanti. Hanya "Log out" yang tampil. */}
+                {false && (
+                  <>
+                    <button
+                      className="w-full text-left px-4 py-2.5 text-sm transition-all hover:bg-white/5 flex items-center gap-2"
+                      style={{ color: "var(--text-primary)" }}
+                      onClick={() => router.push("/settings")}
+                    >
+                      <SettingsIcon width={14} height={14} />
+                      Settings
+                    </button>
+                    <button
+                      className="w-full text-left px-4 py-2.5 text-sm transition-all hover:bg-white/5 flex items-center gap-2"
+                      style={{ color: "var(--text-primary)" }}
+                    >
+                      <LanguageIcon width={14} height={14} />
+                      Language &gt;
+                    </button>
+                    <button
+                      className="w-full text-left px-4 py-2.5 text-sm transition-all hover:bg-white/5 flex items-center gap-2"
+                      style={{ color: "var(--text-primary)" }}
+                    >
+                      <HelpIcon width={14} height={14} />
+                      Get help
+                    </button>
+                    <button
+                      className="w-full text-left px-4 py-2.5 text-sm transition-all hover:bg-white/5 flex items-center gap-2"
+                      style={{ color: "var(--text-primary)" }}
+                    >
+                      <AppsIcon width={14} height={14} />
+                      Get apps and extensions
+                    </button>
+                    <button
+                      className="w-full text-left px-4 py-2.5 text-sm transition-all hover:bg-white/5 flex items-center gap-2"
+                      style={{ color: "var(--text-primary)" }}
+                    >
+                      <LearnIcon width={14} height={14} />
+                      Learn more
+                    </button>
+                    <div className="h-px" style={{ background: "var(--border)" }} />
+                  </>
+                )}
                 <button
                   className="w-full text-left px-4 py-2.5 text-sm transition-all hover:bg-white/5 flex items-center gap-2"
                   style={{ color: "#ef4444" }}
@@ -739,7 +803,6 @@ export default function DashboardPage() {
           <div className="flex-1 flex flex-col overflow-hidden">
             {/* Project header */}
             <div className="px-6 md:px-8 pt-6 pb-4 hidden md:block">
-              {/* TODO: Ambil data projek aktif dari Supabase */}
               <h2
                 className="font-display text-5xl font-regular"
                 style={{ color: "var(--accent)" }}
@@ -752,10 +815,13 @@ export default function DashboardPage() {
               >
                 {activeProject?.name || "Loading..."}
               </h2>
-              <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
-                Peninjauan klausul ganti rugi dan pengesampingan Pasal 1266
-                KUHPerdata untuk kontrak vendor restoran.
-              </p>
+              {/* #10/#11: deskripsi diambil dari DB (yang user isi). Disembunyikan
+                  total kalau kosong (tidak menampilkan placeholder hardcoded). */}
+              {activeProject?.description && (
+                <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
+                  {activeProject.description}
+                </p>
+              )}
             </div>
 
             {/* Messages */}
@@ -774,6 +840,8 @@ export default function DashboardPage() {
               {messages.map((msg) => (
                 <MessageBubble key={msg.id} message={msg} />
               ))}
+              {/* #5 sentinel utk auto-scroll ke bawah */}
+              <div ref={messagesEndRef} />
             </div>
 
             {/* Input area */}
@@ -834,9 +902,12 @@ export default function DashboardPage() {
           >
             <SourcesPanel
               sources={sources}
-              allSources={allSources}
-              onToggleAll={toggleAllSources}
-              onToggleSource={toggleSource}
+              selectedIds={selectedSources}
+              allSelected={allSelected}
+              deleting={deletingSources}
+              onToggleSelect={toggleSelectSource}
+              onToggleSelectAll={toggleSelectAll}
+              onDeleteSelected={() => setConfirmDeleteDocsOpen(true)}
               onAddSource={() => setShowUpload(true)}
             />
           </aside>
@@ -860,9 +931,12 @@ export default function DashboardPage() {
           >
             <SourcesPanel
               sources={sources}
-              allSources={allSources}
-              onToggleAll={toggleAllSources}
-              onToggleSource={toggleSource}
+              selectedIds={selectedSources}
+              allSelected={allSelected}
+              deleting={deletingSources}
+              onToggleSelect={toggleSelectSource}
+              onToggleSelectAll={toggleSelectAll}
+              onDeleteSelected={() => setConfirmDeleteDocsOpen(true)}
               onAddSource={() => {
                 setShowUpload(true);
                 setSourcesPanelOpen(false);
@@ -884,11 +958,159 @@ export default function DashboardPage() {
           }}
         />
       )}
+
+      {/* ── Rename session (Dialog in-app, mengganti prompt()) ── */}
+      <Dialog
+        open={!!renameTarget}
+        onOpenChange={(open) => {
+          if (!open) setRenameTarget(null);
+        }}
+      >
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Ubah nama obrolan</DialogTitle>
+            <DialogDescription>
+              Beri nama baru untuk obrolan ini.
+            </DialogDescription>
+          </DialogHeader>
+          <input
+            value={renameValue}
+            onChange={(e) => setRenameValue(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") submitRename();
+            }}
+            autoFocus
+            placeholder="Nama obrolan"
+            className="w-full px-4 py-2.5 rounded-xl text-sm outline-none border focus:border-[var(--accent)]"
+            style={{
+              background: "var(--bg-input)",
+              borderColor: "var(--border)",
+              color: "var(--text-primary)",
+            }}
+          />
+          <DialogFooter>
+            <button
+              onClick={() => setRenameTarget(null)}
+              className="px-4 py-2 rounded-lg text-sm transition-all hover:bg-white/5"
+              style={{ color: "var(--text-secondary)" }}
+            >
+              Batal
+            </button>
+            <button
+              onClick={submitRename}
+              disabled={!renameValue.trim()}
+              className="px-4 py-2 rounded-lg text-sm font-medium transition-all active:scale-[0.97] disabled:opacity-50"
+              style={{ background: "var(--accent)", color: "var(--bg-base)" }}
+            >
+              Simpan
+            </button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      {/* ── Konfirmasi hapus session (AlertDialog, mengganti confirm()) ── */}
+      <AlertDialog
+        open={!!deleteSessionTarget}
+        onOpenChange={(open) => {
+          if (!open) setDeleteSessionTarget(null);
+        }}
+      >
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Hapus obrolan?</AlertDialogTitle>
+            <AlertDialogDescription>
+              Obrolan &quot;{deleteSessionTarget?.title}&quot; beserta semua
+              pesannya akan dihapus permanen.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Batal</AlertDialogCancel>
+            <AlertDialogAction onClick={confirmDeleteSession}>
+              Hapus
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+
+      {/* ── Konfirmasi hapus dokumen terpilih (AlertDialog) ── */}
+      <AlertDialog
+        open={confirmDeleteDocsOpen}
+        onOpenChange={setConfirmDeleteDocsOpen}
+      >
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>
+              Hapus {selectedSources.length} dokumen?
+            </AlertDialogTitle>
+            <AlertDialogDescription>
+              Dokumen, isinya (chunks), dan file-nya akan dihapus permanen dan
+              tidak bisa dikembalikan.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Batal</AlertDialogCancel>
+            <AlertDialogAction onClick={handleDeleteSelected}>
+              Hapus
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   );
 }
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
+
+function ThinkingIndicator() {
+  return (
+    <div
+      className="flex items-center gap-2"
+      style={{ color: "var(--text-muted)" }}
+    >
+      <div className="flex gap-1">
+        {[0, 1, 2].map((i) => (
+          <span
+            key={i}
+            className="inline-block w-2 h-2 rounded-full animate-bounce"
+            style={{ background: "var(--accent)", animationDelay: `${i * 0.15}s` }}
+          />
+        ))}
+      </div>
+      <span className="text-sm animate-pulse">Menganalisis dokumen...</span>
+    </div>
+  );
+}
+
+// #4: pemetaan elemen Markdown → className eksplisit. Perlu karena Tailwind
+// preflight me-reset list/heading, jadi tanpa ini bullet & bold tidak tampil.
+const mdComponents = {
+  p: (props: any) => <p className="mb-2 last:mb-0" {...props} />,
+  ul: (props: any) => <ul className="list-disc pl-5 mb-2 space-y-1" {...props} />,
+  ol: (props: any) => <ol className="list-decimal pl-5 mb-2 space-y-1" {...props} />,
+  li: (props: any) => <li className="leading-relaxed" {...props} />,
+  strong: (props: any) => <strong className="font-semibold" {...props} />,
+  em: (props: any) => <em className="italic" {...props} />,
+  h1: (props: any) => <h1 className="text-lg font-semibold mb-2 mt-1" {...props} />,
+  h2: (props: any) => <h2 className="text-base font-semibold mb-2 mt-1" {...props} />,
+  h3: (props: any) => <h3 className="text-sm font-semibold mb-1 mt-1" {...props} />,
+  a: (props: any) => (
+    <a className="underline" target="_blank" rel="noreferrer" {...props} />
+  ),
+  code: (props: any) => (
+    <code
+      className="px-1 py-0.5 rounded text-xs"
+      style={{ background: "var(--bg-elevated)" }}
+      {...props}
+    />
+  ),
+  blockquote: (props: any) => (
+    <blockquote
+      className="border-l-2 pl-3 italic opacity-90"
+      style={{ borderColor: "var(--border)" }}
+      {...props}
+    />
+  ),
+};
 
 function MessageBubble({
   message,
@@ -896,23 +1118,36 @@ function MessageBubble({
   message: { id: string; role: "user" | "assistant"; content: string };
 }) {
   const isUser = message.role === "user";
-
-  const formattedContent = message.content.replace(/\n\s*\n/g, "\n\n");
+  // Assistant bubble masih kosong = sedang menunggu token jawaban pertama.
+  // event "sources" tidak mengisi content, jadi indikator tetap tampil sampai
+  // token JAWABAN pertama benar-benar masuk.
+  const isThinking = !isUser && message.content === "";
 
   return (
     <div className={`flex ${isUser ? "justify-end" : "justify-start"}`}>
       <div
-        className={`${isUser ? "max-w-2xl" : "w-full"} rounded-2xl px-5 py-4 text-sm leading-relaxed whitespace-pre-wrap`}
+        className={`${isUser ? "max-w-2xl" : "w-full"} rounded-2xl px-5 py-4 text-sm leading-relaxed`}
         style={{
           background: isUser ? "var(--bg-card)" : "transparent",
           color: "var(--text-primary)",
           // border: isUser ? `1px solid var(--border)` : "none",
         }}
       >
-        {message.content}
+        {/* #4: pesan asisten dirender sebagai Markdown (aman terhadap markdown
+            setengah jadi saat streaming — react-markdown tidak error). Pesan
+            user tetap plain text dengan newline dipertahankan. */}
+        {isThinking ? (
+          <ThinkingIndicator />
+        ) : isUser ? (
+          <div className="whitespace-pre-wrap">{message.content}</div>
+        ) : (
+          <ReactMarkdown components={mdComponents}>
+            {message.content}
+          </ReactMarkdown>
+        )}
 
-        {/* Action buttons (only for assistant) */}
-        {!isUser && (
+        {/* Action buttons (only for assistant, setelah jawaban mulai muncul) */}
+        {!isUser && !isThinking && (
           <div className="flex items-center gap-3 mt-3">
             {[ThumbUpIcon, ThumbDownIcon, RefreshIcon, CopyIcon].map(
               (Icon, i) => (
@@ -933,15 +1168,21 @@ function MessageBubble({
 
 function SourcesPanel({
   sources,
-  allSources,
-  onToggleAll,
-  onToggleSource,
+  selectedIds,
+  allSelected,
+  deleting,
+  onToggleSelect,
+  onToggleSelectAll,
+  onDeleteSelected,
   onAddSource,
 }: {
-  sources: Source[]; // ← use the updated Source interface
-  allSources: boolean;
-  onToggleAll: () => void;
-  onToggleSource: (id: string) => void;
+  sources: Source[];
+  selectedIds: string[];
+  allSelected: boolean;
+  deleting: boolean;
+  onToggleSelect: (id: string) => void;
+  onToggleSelectAll: () => void;
+  onDeleteSelected: () => void;
   onAddSource: () => void;
 }) {
   return (
@@ -975,25 +1216,46 @@ function SourcesPanel({
 
           <div className="h-px" style={{ background: "var(--border-light)" }} />
 
-          <label
-            className="flex items-center justify-between gap-3 cursor-pointer"
-            onClick={onToggleAll}
-          >
-            <span
-              className="text-xs font-regular"
-              style={{ color: "var(--text-secondary)" }}
+          {/* #7: centang untuk MEMILIH dokumen, lalu hapus yang terpilih */}
+          {sources.length > 0 && (
+            <label
+              className="flex items-center justify-between gap-3 cursor-pointer"
+              onClick={onToggleSelectAll}
             >
-              Pilih semua sumber ({sources.length})
-            </span>
-            <Checkbox checked={allSources} />
-          </label>
+              <span
+                className="text-xs font-regular"
+                style={{ color: "var(--text-secondary)" }}
+              >
+                Pilih semua ({selectedIds.length}/{sources.length})
+              </span>
+              <Checkbox checked={allSelected} accent />
+            </label>
+          )}
+
+          {selectedIds.length > 0 && (
+            <button
+              onClick={onDeleteSelected}
+              disabled={deleting}
+              className="w-full flex items-center justify-center gap-2 py-2 px-4 rounded-full text-sm font-medium transition-all hover:opacity-90 disabled:opacity-60"
+              style={{
+                background: "rgba(239,68,68,0.12)",
+                color: "#ef4444",
+                border: "1px solid rgba(239,68,68,0.4)",
+              }}
+            >
+              <TrashIcon />
+              {deleting
+                ? "Menghapus..."
+                : `Hapus ${selectedIds.length} dokumen`}
+            </button>
+          )}
 
           <div className="space-y-2">
             {sources.map((s) => (
               <label
                 key={s.id}
                 className="flex items-center justify-between gap-3 cursor-pointer group py-1 rounded-lg transition-all hover:bg-white/5"
-                onClick={() => onToggleSource(s.id)}
+                onClick={() => onToggleSelect(s.id)}
               >
                 <div className="flex-shrink-0">
                   <PdfIcon />
@@ -1006,10 +1268,11 @@ function SourcesPanel({
                     {s.file_name}
                   </p>
                   <p className="text-xs" style={{ color: "var(--text-muted)" }}>
-                    {(s.file_size_bytes / 1024).toFixed(1)} KB • {s.file_type}
+                    {((s.file_size_bytes || 0) / 1024).toFixed(1)} KB •{" "}
+                    {s.file_type}
                   </p>
                 </div>
-                <Checkbox checked={s.status === "active"} accent />
+                <Checkbox checked={selectedIds.includes(s.id)} accent />
               </label>
             ))}
           </div>
@@ -1326,6 +1589,26 @@ function MenuIcon() {
       <line x1="3" y1="6" x2="21" y2="6" />
       <line x1="3" y1="12" x2="21" y2="12" />
       <line x1="3" y1="18" x2="21" y2="18" />
+    </svg>
+  );
+}
+
+function TrashIcon() {
+  return (
+    <svg
+      width="15"
+      height="15"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <polyline points="3 6 5 6 21 6" />
+      <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+      <line x1="10" y1="11" x2="10" y2="17" />
+      <line x1="14" y1="11" x2="14" y2="17" />
     </svg>
   );
 }

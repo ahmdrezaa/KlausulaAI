@@ -92,7 +92,7 @@ type Project = {
 
 export default function ProjectsPage() {
   const router = useRouter();
-  const { supabase, user } = useAuth();
+  const { supabase, user, signOut } = useAuth();
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
@@ -127,6 +127,24 @@ export default function ProjectsPage() {
 
       if (error) throw error;
 
+      // #1b: hitung jumlah dokumen (sources) per project dari tabel `documents`.
+      // Dulu hardcoded 0 sehingga semua kartu selalu "0 sources".
+      const projectIds = (data || []).map((p) => p.id);
+      const countByProject: Record<string, number> = {};
+      if (projectIds.length > 0) {
+        const { data: docs, error: docsError } = await supabase
+          .from("documents")
+          .select("project_id")
+          .in("project_id", projectIds);
+        if (docsError) {
+          console.error("Load source counts error:", docsError);
+        } else {
+          for (const d of docs || []) {
+            countByProject[d.project_id] = (countByProject[d.project_id] || 0) + 1;
+          }
+        }
+      }
+
       const formattedProjects: Project[] = (data || []).map((p) => ({
         id: p.id,
         name: p.name,
@@ -135,7 +153,7 @@ export default function ProjectsPage() {
           day: "numeric",
           year: "numeric",
         }),
-        sourceCount: 0, // TODO: hitung dari project_sources
+        sourceCount: countByProject[p.id] || 0,
         isPinned: p.is_pinned || false,
         iconId: p.icon_id || "scale",
         description: p.description || "",
@@ -151,6 +169,18 @@ export default function ProjectsPage() {
   };
 
   const handleNewProject = () => router.push("/new-project");
+
+  const handleLogout = async () => {
+    try {
+      await signOut();
+      toast.success("Berhasil logout");
+      router.push("/login");
+    } catch (error) {
+      console.error("Logout error:", error);
+      toast.error("Gagal logout. Silakan coba lagi.");
+    }
+  };
+
   const handleProjectClick = (projectId: string) => {
     router.push(`/dashboard?projectId=${projectId}`);
   };
@@ -298,9 +328,12 @@ export default function ProjectsPage() {
 
           <button
             className="p-1 rounded-lg transition-all hover:bg-white/5"
-            onClick={() => router.push("/settings")}
+            onClick={handleLogout}
+            title="Log out"
+            aria-label="Log out"
+            style={{ color: "var(--text-secondary)" }}
           >
-            <SettingsIcon />
+            <LogoutIcon />
           </button>
         </div>
       </nav>
@@ -703,6 +736,26 @@ function SearchIcon({ className = "", ...props }: React.SVGProps<SVGSVGElement>)
     >
       <circle cx="11" cy="11" r="8" />
       <line x1="21" y1="21" x2="16.65" y2="16.65" />
+    </svg>
+  );
+}
+
+function LogoutIcon({ ...props }: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+      <polyline points="16 17 21 12 16 7" />
+      <line x1="21" y1="12" x2="9" y2="12" />
     </svg>
   );
 }

@@ -54,7 +54,7 @@ export default function LoginPasswordPage() {
       }
 
       toast.success("Login berhasil!");
-      router.push("/dashboard");
+      router.push("/projects");
     } catch (error) {
       console.error(error);
       toast.error("Gagal login. Silakan coba lagi.");

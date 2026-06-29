@@ -8,6 +8,8 @@ Target audiens: pelaku UMKM — bukan ahli hukum.
 Menggunakan gemini-1.5-pro (temperature=0.7) untuk jawaban yang natural.
 """
 
+from typing import Optional
+
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 
@@ -49,21 +51,58 @@ def _format_context(chunks: list[dict]) -> str:
     return "\n\n".join(parts)
 
 
-def generate_answer(query: str, chunks: list[dict]) -> str:
-    """
-    Generate jawaban berdasarkan query dan chunk yang relevan.
+def _format_history(chat_history: Optional[list[dict]]) -> str:
+    if not chat_history:
+        return "(Tidak ada riwayat, ini pertanyaan pertama)"
+    parts = []
+    for msg in chat_history:
+        role = "User" if msg["role"] == "user" else "Asisten"
+        parts.append(f"{role}: {msg['content']}")
+    return "\n".join(parts)
 
-    Args:
-        query  : Pertanyaan dari pelaku UMKM
-        chunks : Chunk yang sudah lolos grading (terurut by relevansi)
 
-    Returns:
-        Jawaban dalam Bahasa Indonesia yang mudah dipahami UMKM.
-    """
-    context = _format_context(chunks)
-    return _chain.invoke({"context": context, "question": query})
+def _format_instruction(system_instruction: Optional[str]) -> str:
+    """Instruksi khusus per-project (kolom projects.master_prompt) yang ditetapkan
+    user saat membuat project. Disuntikkan ke system prompt generator. Kosong =
+    tidak ada instruksi khusus → string kosong (tidak mengubah perilaku default)."""
+    if not system_instruction or not system_instruction.strip():
+        return ""
+    return (
+        "\n──────────────────────────────────────────────────────────────────────\n"
+        "INSTRUKSI KHUSUS PROJECT (ditetapkan pengguna untuk project ini) — IKUTI "
+        "selama tidak bertentangan dengan aturan relevansi & kejujuran di atas:\n"
+        f"{system_instruction.strip()}\n"
+        "──────────────────────────────────────────────────────────────────────"
+    )
 
-def generate_answer_stream(query: str, chunks: list[dict]):
-    context = _format_context(chunks)
-    for chunk in _chain.stream({"context": context, "question": query}):
+
+def generate_answer(
+    query: str,
+    chunks: list[dict],
+    chat_history: Optional[list[dict]] = None,
+    system_instruction: Optional[str] = None,
+) -> str:
+    return _chain.invoke(
+        {
+            "context": _format_context(chunks),
+            "question": query,
+            "history": _format_history(chat_history),
+            "project_instruction": _format_instruction(system_instruction),
+        }
+    )
+
+
+def generate_answer_stream(
+    query: str,
+    chunks: list[dict],
+    chat_history: Optional[list[dict]] = None,
+    system_instruction: Optional[str] = None,
+):
+    payload = {
+        "context": _format_context(chunks),
+        "question": query,
+        "history": _format_history(chat_history),
+        "project_instruction": _format_instruction(system_instruction),
+    }
+    for chunk in _chain.stream(payload):
         yield chunk
