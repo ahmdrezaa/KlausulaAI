@@ -1,0 +1,62 @@
+2026-06-30 13:12:24,930 [INFO] StructureParser: 
+[PROCESS] Memproses: kuhd_cleaned.json -> slug: kuhd
+2026-06-30 13:12:24,930 [INFO] StructureParser: [PROCESS] Parsing struktur: kuhd_cleaned.json
+2026-06-30 13:12:25,000 [INFO] StructureParser:   [SUCCESS] Parsed: 979 pasal, 13 bab
+2026-06-30 13:12:25,137 [INFO] StructureParser: [SAVED] Tersimpan di: 04_chunked_data
+2026-06-30 13:12:25,139 [INFO] StructureParser: 
+[PROCESS] Memproses: kuhperdata_buku_3_perikatan_cleaned.json -> slug: kuhperdata_buku_3_perikatan
+2026-06-30 13:12:25,139 [INFO] StructureParser: [PROCESS] Parsing struktur: kuhperdata_buku_3_perikatan_cleaned.json
+2026-06-30 13:12:25,185 [INFO] StructureParser:   [SUCCESS] Parsed: 708 pasal, 17 bab
+2026-06-30 13:12:25,273 [INFO] StructureParser: [SAVED] Tersimpan di: 04_chunked_data
+2026-06-30 13:12:25,275 [INFO] StructureParser: 
+[PROCESS] Memproses: permenkes_1096_2011_higiene_sanitasi_cleaned.json -> slug: permenkes_1096_2011_higiene_sanitasi
+2026-06-30 13:12:25,275 [INFO] StructureParser: [PROCESS] Parsing struktur: permenkes_1096_2011_higiene_sanitasi_cleaned.json
+2026-06-30 13:12:25,303 [INFO] StructureParser:   [SUCCESS] Parsed: 21 pasal, 8 bab
+2026-06-30 13:12:25,315 [INFO] StructureParser: [SAVED] Tersimpan di: 04_chunked_data
+2026-06-30 13:12:25,316 [INFO] StructureParser: 
+[PROCESS] Memproses: pp_39_2021_jaminan_produk_halal_cleaned.json -> slug: uu_33_2014_jaminan_produk_halal
+2026-06-30 13:12:25,317 [INFO] StructureParser: [PROCESS] Parsing struktur: pp_39_2021_jaminan_produk_halal_cleaned.json
+2026-06-30 13:12:25,331 [INFO] StructureParser: [TRUNCATE] Memotong bagian Penjelasan di akhir dokumen.
+2026-06-30 13:12:25,347 [INFO] StructureParser:   [SUCCESS] Parsed: 161 pasal, 16 bab
+2026-06-30 13:12:25,385 [INFO] StructureParser: [SAVED] Tersimpan di: 04_chunked_data
+2026-06-30 13:12:25,387 [INFO] StructureParser: 
+[PROCESS] Memproses: pp_5_2021_perizinan_berbasis_risiko_cleaned.json -> slug: pp_5_2021_perizinan_berbasis_risiko
+2026-06-30 13:12:25,387 [INFO] StructureParser: [PROCESS] Parsing struktur: pp_5_2021_perizinan_berbasis_risiko_cleaned.json
+2026-06-30 13:12:25,521 [INFO] StructureParser:   [SUCCESS] Parsed: 567 pasal, 12 bab
+2026-06-30 13:12:25,650 [INFO] StructureParser: [SAVED] Tersimpan di: 04_chunked_data
+2026-06-30 13:12:25,653 [INFO] StructureParser: 
+[PROCESS] Memproses: uu_11_2020_cipta_kerja_cleaned.json -> slug: uu_11_2020_cipta_kerja
+2026-06-30 13:12:25,653 [INFO] StructureParser: [PROCESS] Parsing struktur: uu_11_2020_cipta_kerja_cleaned.json
+2026-06-30 13:12:25,729 [INFO] StructureParser: [TRUNCATE] Memotong bagian Penjelasan di akhir dokumen.
+2026-06-30 13:12:25,862 [INFO] StructureParser:   [SUCCESS] Parsed: 1165 pasal, 14 bab
+2026-06-30 13:12:26,088 [INFO] StructureParser: [SAVED] Tersimpan di: 04_chunked_data
+2026-06-30 13:12:26,092 [INFO] StructureParser: 
+[PROCESS] Memproses: uu_13_2003_ketenagakerjaan_cleaned.json -> slug: uu_13_2003_ketenagakerjaan
+2026-06-30 13:12:26,092 [INFO] StructureParser: [PROCESS] Parsing struktur: uu_13_2003_ketenagakerjaan_cleaned.json
+2026-06-30 13:12:26,110 [INFO] StructureParser: [TRUNCATE] Memotong bagian Penjelasan di akhir dokumen.
+2026-06-30 13:12:26,128 [INFO] StructureParser:   [SUCCESS] Parsed: 199 pasal, 4 bab
+2026-06-30 13:12:26,171 [INFO] StructureParser: [SAVED] Tersimpan di: 04_chunked_data
+2026-06-30 13:12:26,172 [INFO] StructureParser: 
+[PROCESS] Memproses: uu_20_2016_merek_indikasi_geografis_cleaned.json -> slug: uu_20_2016_merek_indikasi_geografis
+2026-06-30 13:12:26,172 [INFO] StructureParser: [PROCESS] Parsing struktur: uu_20_2016_merek_indikasi_geografis_cleaned.json
+2026-06-30 13:12:26,188 [INFO] StructureParser: [TRUNCATE] Memotong bagian Penjelasan di akhir dokumen.
+2026-06-30 13:12:26,199 [INFO] StructureParser:   [SUCCESS] Parsed: 109 pasal, 18 bab
+2026-06-30 13:12:26,223 [INFO] StructureParser: [SAVED] Tersimpan di: 04_chunked_data
+2026-06-30 13:12:26,224 [INFO] StructureParser: 
+[PROCESS] Memproses: uu_33_2014_jaminan_produk_halal_cleaned.json -> slug: uu_33_2014_jaminan_produk_halal
+2026-06-30 13:12:26,225 [INFO] StructureParser: [PROCESS] Parsing struktur: uu_33_2014_jaminan_produk_halal_cleaned.json
+2026-06-30 13:12:26,238 [INFO] StructureParser: [TRUNCATE] Memotong bagian Penjelasan di akhir dokumen.
+2026-06-30 13:12:26,242 [INFO] StructureParser:   [SUCCESS] Parsed: 67 pasal, 11 bab
+2026-06-30 13:12:26,256 [INFO] StructureParser: [SAVED] Tersimpan di: 04_chunked_data
+2026-06-30 13:12:26,257 [INFO] StructureParser: 
+[PROCESS] Memproses: uu_40_2007_perseroan_terbatas_cleaned.json -> slug: uu_40_2007_perseroan_terbatas
+2026-06-30 13:12:26,258 [INFO] StructureParser: [PROCESS] Parsing struktur: uu_40_2007_perseroan_terbatas_cleaned.json
+2026-06-30 13:12:26,276 [INFO] StructureParser: [TRUNCATE] Memotong bagian Penjelasan di akhir dokumen.
+2026-06-30 13:12:26,295 [INFO] StructureParser:   [SUCCESS] Parsed: 161 pasal, 14 bab
+2026-06-30 13:12:26,334 [INFO] StructureParser: [SAVED] Tersimpan di: 04_chunked_data
+2026-06-30 13:12:26,335 [INFO] StructureParser: 
+[PROCESS] Memproses: uu_8_1999_perlindungan_konsumen_cleaned.json -> slug: uu_8_1999_perlindungan_konsumen
+2026-06-30 13:12:26,335 [INFO] StructureParser: [PROCESS] Parsing struktur: uu_8_1999_perlindungan_konsumen_cleaned.json
+2026-06-30 13:12:26,351 [INFO] StructureParser: [TRUNCATE] Memotong bagian Penjelasan di akhir dokumen.
+2026-06-30 13:12:26,357 [INFO] StructureParser:   [SUCCESS] Parsed: 65 pasal, 14 bab
+2026-06-30 13:12:26,372 [INFO] StructureParser: [SAVED] Tersimpan di: 04_chunked_data

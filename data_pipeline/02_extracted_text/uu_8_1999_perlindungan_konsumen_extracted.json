@@ -1,6 +1,7 @@
 {
   "file_name": "uu_8_1999_perlindungan_konsumen.pdf",
   "file_path": "01_raw_documents\\uu_8_1999_perlindungan_konsumen.pdf",
+  "file_type": "pdf",
   "total_pages": 54,
   "extracted_pages": 54,
   "failed_pages": [],
@@ -384,10 +385,15 @@
       "error_msg": ""
     }
   ],
-  "extraction_date": "2026-05-18T20:09:40.071041",
+  "extraction_date": "2026-06-30T13:00:48.727710",
   "success_rate": 100.0,
   "total_chars": 276826,
   "metadata": {
+    "doc_type": "global_uu",
+    "status": "active",
+    "superseded_by": null,
+    "project_id": null,
+    "is_global": true,
     "pdf_info": {
       "CreationDate": "D:20081223172153+07'00'",
       "Author": "egyptian hak",
@@ -397,7 +403,6 @@
       "Company": " a",
       "SourceModified": "D:20081107160000",
       "Title": "UNDANG UNDANG REPUBLIK INDONESIA "
-    },
-    "page_count": 54
+    }
   }
 }

@@ -1,6 +1,7 @@
 {
   "file_name": "pp_5_2021_perizinan_berbasis_risiko.pdf",
   "file_path": "01_raw_documents\\pp_5_2021_perizinan_berbasis_risiko.pdf",
+  "file_type": "pdf",
   "total_pages": 739,
   "extracted_pages": 739,
   "failed_pages": [],
@@ -5179,17 +5180,21 @@
       "error_msg": ""
     }
   ],
-  "extraction_date": "2026-05-18T20:05:38.062320",
+  "extraction_date": "2026-06-30T12:55:48.100666",
   "success_rate": 100.0,
   "total_chars": 4354198,
   "metadata": {
+    "doc_type": "global_uu",
+    "status": "active",
+    "superseded_by": null,
+    "project_id": null,
+    "is_global": true,
     "pdf_info": {
       "Author": "Lenovo75",
       "CreationDate": "D:20210422132558+07'00'",
       "Creator": "Microsoft® Word 2010",
       "ModDate": "D:20210422180350+07'00'",
       "Producer": "Microsoft® Word 2010"
-    },
-    "page_count": 739
+    }
   }
 }

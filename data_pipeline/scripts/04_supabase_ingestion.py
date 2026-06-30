@@ -41,7 +41,7 @@ GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
 if not GOOGLE_API_KEY:
     raise ValueError("[ERROR] GOOGLE_API_KEY tidak ditemukan di .env")
 
-# [UPDATE] Menggunakan model embedding terbaru dengan kompresi dimensi 768
+# Menggunakan model embedding dengan kompresi dimensi 768
 _embeddings = GoogleGenerativeAIEmbeddings(
     model="models/gemini-embedding-001",
     google_api_key=GOOGLE_API_KEY,
@@ -53,22 +53,33 @@ class RelationalSupabaseIngestor:
     def format_text_for_embedding(self, pasal: dict) -> str:
         """
         Menyiapkan teks yang akan di-embed.
-        Konteks judul sangat penting agar vektor tidak kehilangan arah makna.
+        [UPDATE] Menambahkan dukungan 'Buku' untuk KUHPerdata & KUHD agar
+        AI tidak bingung membedakan konteks perjanjian dan badan usaha.
         """
-        return f"Undang-Undang: {pasal.get('uu_name', '')}. Bab: {pasal.get('bab_title', '')}. Isi: {pasal.get('full_text', '')}"
+        dokumen = pasal.get('uu_name', '')
+        buku = f"Buku: {pasal.get('buku_title', '')}. " if pasal.get('buku_title') else ""
+        bab = f"Bab: {pasal.get('bab_title', '')}. " if pasal.get('bab_title') else ""
+        isi = pasal.get('full_text', '')
+        
+        return f"Dokumen Hukum: {dokumen}. {buku}{bab}Isi: {isi}"
 
     def get_or_create_document(self, first_pasal: dict) -> str:
         """
-        Mengecek apakah dokumen UU sudah ada di tabel 'documents'.
-        Disesuaikan dengan skema Supabase KlausulaAI.
+        Mengecek apakah dokumen sudah ada di tabel 'documents'.
+        [UPDATE] Menggunakan metadata yang mengalir dari Step 01 secara dinamis.
         """
         uu_slug = first_pasal.get("uu_slug", "unknown_slug")
         uu_name = first_pasal.get("uu_name", "Unknown Document")
         
-        # Cari dokumen berdasarkan uu_code
+        # Ekstrak metadata dari JSON (hasil pass-through dari step sebelumnya)
+        db_metadata = first_pasal.get("metadata", {})
+        doc_type = db_metadata.get("doc_type", "global_uu")
+        status = db_metadata.get("status", "active")
+        
+        # Cari dokumen berdasarkan uu_code dan doc_type
         response = supabase_admin.table("documents")\
             .select("id")\
-            .eq("doc_type", "global_uu")\
+            .eq("doc_type", doc_type)\
             .eq("uu_code", uu_slug)\
             .execute()
         
@@ -77,20 +88,20 @@ class RelationalSupabaseIngestor:
             logger.info(f"[INFO] Dokumen Induk ditemukan di DB dengan ID: {doc_id}")
             return doc_id
             
-        # Jika tidak ada, buat dokumen baru
+        # Jika tidak ada, buat dokumen baru dengan metadata dinamis
         new_doc_id = str(uuid.uuid4())
         
         doc_data = {
             "id": new_doc_id,
-            "doc_type": "global_uu",
+            "doc_type": doc_type,
             "file_name": uu_name,       
             "uu_code": uu_slug,         
             "file_type": "json",        
-            "status": "active"          
+            "status": status          
         }
         
         supabase_admin.table("documents").insert(doc_data).execute()
-        logger.info(f"[SUCCESS] Dokumen Induk baru dibuat dengan ID: {new_doc_id}")
+        logger.info(f"[SUCCESS] Dokumen Induk baru ({doc_type}) dibuat dengan ID: {new_doc_id}")
         return new_doc_id
 
     def ingest_document(self, json_path: Path):
@@ -109,11 +120,10 @@ class RelationalSupabaseIngestor:
         logger.info(f"[PROCESS] Melakukan embedding dan insert untuk {len(pasal_list)} chunk...")
         
         # 2. Proses Insert Chunk ke tabel 'document_chunks'
-        # [UPDATE] Menambahkan enumerate untuk mendapatkan index urutan pasal
-        for index, pasal in enumerate(tqdm(pasal_list, desc="Supabase Ingestion")):
+        for index, pasal in enumerate(tqdm(pasal_list, desc=f"Ingesting {json_path.stem}")):
             pasal_id = pasal["pasal_id"]
             
-            # Cek duplikasi di level chunk menggunakan filter metadata JSONB
+            # Cek duplikasi di level chunk (Mencegah double insert jika script dijalankan ulang)
             response = supabase_admin.table("document_chunks")\
                 .select("id")\
                 .contains("metadata", {"pasal_id": pasal_id})\
@@ -126,12 +136,12 @@ class RelationalSupabaseIngestor:
             teks_untuk_diembed = self.format_text_for_embedding(pasal)
             vektor = _embeddings.embed_query(teks_untuk_diembed)
             
-            # Siapkan Metadata spesifik chunk (Format JSONB)
+            # [UPDATE] Metadata chunk disesuaikan dengan skema F&B (Fokus pada tags)
             chunk_metadata = {
                 "pasal_id": pasal_id,
                 "pasal_number": pasal.get("pasal_number", ""),
+                "buku_title": pasal.get("buku_title", ""),
                 "bab_title": pasal.get("bab_title", ""),
-                "is_umkm_relevant": pasal.get("is_umkm_relevant", False),
                 "tags": pasal.get("tags", [])
             }
             
@@ -141,7 +151,7 @@ class RelationalSupabaseIngestor:
                 "content": pasal.get("full_text", ""),
                 "metadata": chunk_metadata,
                 "embedding": vektor,
-                "chunk_index": index  # [UPDATE] Menyuntikkan nilai chunk_index
+                "chunk_index": index
             }
             
             try:
@@ -175,7 +185,7 @@ def main():
     for json_file in json_files:
         ingestor.ingest_document(json_file)
 
-    print("\n[DONE] Seluruh proses Ingestion selesai.")
+    print("\n[DONE] Seluruh proses Ingestion selesai. Knowledge Base KlausulaAI F&B siap digunakan!")
 
 
 if __name__ == "__main__":

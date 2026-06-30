@@ -1,6 +1,7 @@
 {
   "file_name": "uu_13_2003_ketenagakerjaan.pdf",
   "file_path": "01_raw_documents\\uu_13_2003_ketenagakerjaan.pdf",
+  "file_type": "pdf",
   "total_pages": 128,
   "extracted_pages": 128,
   "failed_pages": [],
@@ -902,10 +903,15 @@
       "error_msg": ""
     }
   ],
-  "extraction_date": "2026-05-18T20:06:12.596780",
+  "extraction_date": "2026-06-30T12:59:53.939360",
   "success_rate": 100.0,
   "total_chars": 853351,
   "metadata": {
+    "doc_type": "global_uu",
+    "status": "active",
+    "superseded_by": null,
+    "project_id": null,
+    "is_global": true,
     "pdf_info": {
       "Creator": "Microsoft Word - UU0132003",
       "Producer": "ScanSoft PDF Create! 4",
@@ -913,7 +919,6 @@
       "ModDate": "D:20100930154522+07'00'",
       "Author": "ADMIN",
       "Title": "Microsoft Word - UU0132003"
-    },
-    "page_count": 128
+    }
   }
 }

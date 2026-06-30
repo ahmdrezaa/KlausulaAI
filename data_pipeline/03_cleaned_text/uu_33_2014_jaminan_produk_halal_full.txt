@@ -788,7 +788,7 @@ Pasal 35
  wajib mencantumkan Label Halal pada:
 
  a. kemasan Produk;
- b. bagian tertentu dari Produk; dan/atau
+ b. Bagian tertentu dari Produk; dan/atau
 
  c. tempat tertentu pada Produk.
 
@@ -1289,10 +1289,8 @@ pengolahan dan pemanfaatan bahan baku hasil rekayasa ilmu
 
  memproduksi Produk dari Bahan yang berasal dari Bahan yang
  diharamkan dengan kewajiban mencantumkan secara tegas
- keterangan tidak halal pada kemasan Produk atau pada bagian
-
- tertentu dari Produk yang mudah dilihat, dibaca, tidak mudah
- terhapus, dan merupakan bagian yang tidak terpisahkan dari
+ keterangan tidak halal pada kemasan Produk atau pada Bagian tertentu dari Produk yang mudah dilihat, dibaca, tidak mudah
+ terhapus, dan merupakan Bagian yang tidak terpisahkan dari
 
  Produk.
  3. Dalam rangka memberikan pelayanan publik, Pemerintah
@@ -1585,7 +1583,7 @@ Pasal 21
  Ayat (2)
 
  Yang dimaksud dengan keterangan tidak halal adalah
- pernyataan tidak halal yang merupakan bagian tidak
+ pernyataan tidak halal yang merupakan Bagian tidak
 
  terpisahkan dari Produk. Keterangan dapat berupa gambar,
  tanda, dan/atau tulisan.

@@ -1,6 +1,7 @@
 {
   "file_name": "uu_20_2016_merek_indikasi_geografis.pdf",
   "file_path": "01_raw_documents\\uu_20_2016_merek_indikasi_geografis.pdf",
+  "file_type": "pdf",
   "total_pages": 74,
   "extracted_pages": 74,
   "failed_pages": [],
@@ -524,15 +525,19 @@
       "error_msg": ""
     }
   ],
-  "extraction_date": "2026-05-18T20:06:28.042961",
+  "extraction_date": "2026-06-30T13:00:15.412607",
   "success_rate": 100.0,
   "total_chars": 456500,
   "metadata": {
+    "doc_type": "global_uu",
+    "status": "active",
+    "superseded_by": null,
+    "project_id": null,
+    "is_global": true,
     "pdf_info": {
       "Creator": "Canon ",
       "CreationDate": "D:20161220165659+07'00'",
       "Producer": " "
-    },
-    "page_count": 74
+    }
   }
 }

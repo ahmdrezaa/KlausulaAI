@@ -1,6 +1,7 @@
 {
   "file_name": "uu_33_2014_jaminan_produk_halal.pdf",
   "file_path": "01_raw_documents\\uu_33_2014_jaminan_produk_halal.pdf",
+  "file_type": "pdf",
   "total_pages": 40,
   "extracted_pages": 40,
   "failed_pages": [],
@@ -286,17 +287,21 @@
       "error_msg": ""
     }
   ],
-  "extraction_date": "2026-05-18T20:06:45.176607",
+  "extraction_date": "2026-06-30T13:00:27.027992",
   "success_rate": 100.0,
   "total_chars": 241360,
   "metadata": {
+    "doc_type": "global_uu",
+    "status": "active",
+    "superseded_by": null,
+    "project_id": null,
+    "is_global": true,
     "pdf_info": {
       "Author": "pp",
       "CreationDate": "D:20141105093953+07'00'",
       "Creator": "Microsoft® Word 2013",
       "ModDate": "D:20141104095952+07'00'",
       "Producer": "Microsoft® Word 2013"
-    },
-    "page_count": 40
+    }
   }
 }

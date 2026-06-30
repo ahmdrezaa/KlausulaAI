@@ -1,0 +1,44 @@
+2026-06-30 13:07:02,335 [INFO] TextCleaner: [CLEANING] Membersihkan: kuhd_extracted.json
+2026-06-30 13:07:02,342 [INFO] TextCleaner:   [METADATA] Tipe: global_uu | Status: active
+2026-06-30 13:07:02,605 [INFO] TextCleaner:   [SUCCESS] Selesai: 909,864 -> 443,110 chars (berkurang 51.3%)
+2026-06-30 13:07:02,623 [INFO] TextCleaner:   [INFO] Full text: 03_cleaned_text\kuhd_full.txt
+2026-06-30 13:07:02,624 [INFO] TextCleaner: [CLEANING] Membersihkan: kuhperdata_buku_3_perikatan_extracted.json
+2026-06-30 13:07:02,639 [INFO] TextCleaner:   [METADATA] Tipe: global_uu | Status: active
+2026-06-30 13:07:02,818 [INFO] TextCleaner:   [SUCCESS] Selesai: 607,281 -> 254,746 chars (berkurang 58.1%)
+2026-06-30 13:07:02,828 [INFO] TextCleaner:   [INFO] Full text: 03_cleaned_text\kuhperdata_buku_3_perikatan_full.txt
+2026-06-30 13:07:02,829 [INFO] TextCleaner: [CLEANING] Membersihkan: permenkes_1096_2011_higiene_sanitasi_extracted.json
+2026-06-30 13:07:02,844 [INFO] TextCleaner:   [METADATA] Tipe: global_uu | Status: active
+2026-06-30 13:07:02,987 [INFO] TextCleaner:   [SUCCESS] Selesai: 450,281 -> 105,736 chars (berkurang 76.5%)
+2026-06-30 13:07:02,994 [INFO] TextCleaner:   [INFO] Full text: 03_cleaned_text\permenkes_1096_2011_higiene_sanitasi_full.txt
+2026-06-30 13:07:02,995 [INFO] TextCleaner: [CLEANING] Membersihkan: pp_39_2021_jaminan_produk_halal_extracted.json
+2026-06-30 13:07:03,015 [INFO] TextCleaner:   [METADATA] Tipe: global_uu | Status: active
+2026-06-30 13:07:03,237 [INFO] TextCleaner:   [SUCCESS] Selesai: 673,664 -> 119,456 chars (berkurang 82.3%)
+2026-06-30 13:07:03,245 [INFO] TextCleaner:   [INFO] Full text: 03_cleaned_text\pp_39_2021_jaminan_produk_halal_full.txt
+2026-06-30 13:07:03,246 [INFO] TextCleaner: [CLEANING] Membersihkan: pp_5_2021_perizinan_berbasis_risiko_extracted.json
+2026-06-30 13:07:03,290 [INFO] TextCleaner:   [METADATA] Tipe: global_uu | Status: active
+2026-06-30 13:07:04,666 [INFO] TextCleaner:   [SUCCESS] Selesai: 4,354,198 -> 505,461 chars (berkurang 88.4%)
+2026-06-30 13:07:04,713 [INFO] TextCleaner:   [INFO] Full text: 03_cleaned_text\pp_5_2021_perizinan_berbasis_risiko_full.txt
+2026-06-30 13:07:04,713 [INFO] TextCleaner: [CLEANING] Membersihkan: uu_11_2020_cipta_kerja_extracted.json
+2026-06-30 13:07:04,774 [INFO] TextCleaner:   [METADATA] Tipe: global_uu | Status: active
+2026-06-30 13:07:06,951 [INFO] TextCleaner:   [SUCCESS] Selesai: 7,177,399 -> 1,432,248 chars (berkurang 80.0%)
+2026-06-30 13:07:07,030 [INFO] TextCleaner:   [INFO] Full text: 03_cleaned_text\uu_11_2020_cipta_kerja_full.txt
+2026-06-30 13:07:07,031 [INFO] TextCleaner: [CLEANING] Membersihkan: uu_13_2003_ketenagakerjaan_extracted.json
+2026-06-30 13:07:07,046 [INFO] TextCleaner:   [METADATA] Tipe: global_uu | Status: active
+2026-06-30 13:07:07,314 [INFO] TextCleaner:   [SUCCESS] Selesai: 853,351 -> 175,168 chars (berkurang 79.5%)
+2026-06-30 13:07:07,332 [INFO] TextCleaner:   [INFO] Full text: 03_cleaned_text\uu_13_2003_ketenagakerjaan_full.txt
+2026-06-30 13:07:07,332 [INFO] TextCleaner: [CLEANING] Membersihkan: uu_20_2016_merek_indikasi_geografis_extracted.json
+2026-06-30 13:07:07,345 [INFO] TextCleaner:   [METADATA] Tipe: global_uu | Status: active
+2026-06-30 13:07:07,476 [INFO] TextCleaner:   [SUCCESS] Selesai: 456,500 -> 103,453 chars (berkurang 77.3%)
+2026-06-30 13:07:07,485 [INFO] TextCleaner:   [INFO] Full text: 03_cleaned_text\uu_20_2016_merek_indikasi_geografis_full.txt
+2026-06-30 13:07:07,486 [INFO] TextCleaner: [CLEANING] Membersihkan: uu_33_2014_jaminan_produk_halal_extracted.json
+2026-06-30 13:07:07,498 [INFO] TextCleaner:   [METADATA] Tipe: global_uu | Status: active
+2026-06-30 13:07:07,574 [INFO] TextCleaner:   [SUCCESS] Selesai: 241,360 -> 38,512 chars (berkurang 84.0%)
+2026-06-30 13:07:07,579 [INFO] TextCleaner:   [INFO] Full text: 03_cleaned_text\uu_33_2014_jaminan_produk_halal_full.txt
+2026-06-30 13:07:07,580 [INFO] TextCleaner: [CLEANING] Membersihkan: uu_40_2007_perseroan_terbatas_extracted.json
+2026-06-30 13:07:07,596 [INFO] TextCleaner:   [METADATA] Tipe: global_uu | Status: active
+2026-06-30 13:07:07,880 [INFO] TextCleaner:   [SUCCESS] Selesai: 916,213 -> 209,917 chars (berkurang 77.1%)
+2026-06-30 13:07:07,893 [INFO] TextCleaner:   [INFO] Full text: 03_cleaned_text\uu_40_2007_perseroan_terbatas_full.txt
+2026-06-30 13:07:07,894 [INFO] TextCleaner: [CLEANING] Membersihkan: uu_8_1999_perlindungan_konsumen_extracted.json
+2026-06-30 13:07:07,907 [INFO] TextCleaner:   [METADATA] Tipe: global_uu | Status: active
+2026-06-30 13:07:08,012 [INFO] TextCleaner:   [SUCCESS] Selesai: 276,826 -> 61,773 chars (berkurang 77.7%)
+2026-06-30 13:07:08,019 [INFO] TextCleaner:   [INFO] Full text: 03_cleaned_text\uu_8_1999_perlindungan_konsumen_full.txt
