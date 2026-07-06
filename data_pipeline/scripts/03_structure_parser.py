@@ -5,415 +5,374 @@ import argparse
 from pathlib import Path
 from datetime import datetime
 from dataclasses import dataclass, field, asdict
+from collections import Counter
 
 # ─── Setup Logging ────────────────────────────────────────────
 LOG_DIR = Path(__file__).parent.parent / "logs"
 LOG_DIR.mkdir(exist_ok=True)
-
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
     handlers=[
-        logging.FileHandler(LOG_DIR / f"parsing_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log", encoding="utf-8"),
+        logging.FileHandler(LOG_DIR / f"parsing_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log",
+                            encoding="utf-8"),
         logging.StreamHandler()
     ]
 )
 logger = logging.getLogger("StructureParser")
 
 
-# ─── Data Structures ──────────────────────────────────────────
+# ─── Pola struktur (zona Pasal) ───────────────────────────────
+RE_BUKU   = re.compile(r'^\s*Buku\s+(KESATU|KEDUA|KETIGA|KEEMPAT|KELIMA|[IVX]+|\d+)\b',
+                       re.IGNORECASE | re.MULTILINE)
+RE_BAB    = re.compile(r'^\s*BAB\s+([IVXLCDM]+|\d+)\b', re.IGNORECASE | re.MULTILINE)
+RE_BAGIAN = re.compile(r'^\s*Bagian\s+(\w+)', re.IGNORECASE | re.MULTILINE)
+RE_PASAL_SPLIT = re.compile(r'(?m)^\s*Pasal\s+(\d+[A-Z]?)\s*$')
+
+# Header awal bagian PENJELASAN (batas batang tubuh → penjelasan)
+RE_PENJELASAN_HEADER = re.compile(
+    r'(?im)^\s*PENJELASAN\s*\n\s*ATAS'
+    r'|^\s*PENJELASAN\s+ATAS\s+(?:UNDANG|PERATURAN)'
+    r'|^\s*P\s*E\s*N\s*J\s*E\s*L\s*A\s*S\s*A\s*N\s*$'
+)
+
+# ─── Pola deteksi zona (perbaikan false positive Lampiran) ────
+RE_HEADER_LAMPIRAN = re.compile(
+    r'(?im)^\s*LAMPIRAN\s*(?:[IVX]+|\d+)?\s*$'
+    r'|^\s*LAMPIRAN\s+[IVX]+\s*\n\s*PERATURAN'
+)
+RE_PASAL_LINE = re.compile(r'(?m)^\s*Pasal\s+\d+[A-Z]?\s*$')
+
+# ─── Pola KBLI ────────────────────────────────────────────────
+RE_KBLI = re.compile(r'\b(\d{5})\b')
+RE_KBLI_ENTRY = re.compile(r'(?m)^\s*(\d{5})\s+([A-Z][A-Z\s,/()-]{3,})$')
+
+# ─── Cakupan F&B (presisi per sektor) ─────────────────────────
+KBLI_FNB_PREFIXES = (
+    "10", "11",   # industri makanan & minuman
+    "55",         # akomodasi
+    "56",         # penyediaan makan-minum (inti F&B)
+)
+KBLI_FNB_ECERAN_PANGAN = (
+    "4711",
+    "4721", "4722", "4723", "4724",
+    "4781",
+)
+
+
+def is_fnb_kbli(code: str) -> bool:
+    if code.startswith(KBLI_FNB_PREFIXES):
+        return True
+    if code.startswith(KBLI_FNB_ECERAN_PANGAN):
+        return True
+    return False
+
+
+def is_true_lampiran_header(text: str) -> bool:
+    """True hanya kalau halaman punya HEADER Lampiran sejati (bukan sekadar menyebut kata)."""
+    return bool(RE_HEADER_LAMPIRAN.search(text[:800]))
+
+
+def looks_like_batang_tubuh(text: str) -> bool:
+    """True kalau halaman masih jelas batang tubuh (>=2 penanda 'Pasal X' di baris sendiri)."""
+    return len(RE_PASAL_LINE.findall(text)) >= 2
+
+
+def strip_vertical_watermark(text: str) -> str:
+    """Buang watermark 'www.bps.go.id' yang ter-interleave vertikal (1 karakter/baris)."""
+    lines = text.split('\n')
+    out = [ln for ln in lines if len(ln.strip()) != 1]
+    text = '\n'.join(out)
+    text = re.sub(r'\n{3,}', '\n\n', text)
+    text = re.sub(r'[ \t]{2,}', ' ', text)
+    return text
+
+
+# ─── Struktur unit hasil parsing ──────────────────────────────
 @dataclass
-class Ayat:
-    nomor: str
-    teks: str
-    huruf: list = field(default_factory=list)
-
-@dataclass
-class Pasal:
-    pasal_id: str
-    pasal_number: str
-    full_text: str
-    ayat: list
-    uu_name: str = ""
-    uu_number: str = ""
-    uu_year: str = ""
-    uu_topic: str = ""
-    uu_slug: str = ""
-    buku_number: str = "" # Tambahan untuk KUHPerdata/KUHD
-    buku_title: str = ""
-    bab_number: str = ""
-    bab_title: str = ""
-    bagian: str = ""
-    paragraf: str = ""
-    parsed_date: str = field(default_factory=lambda: datetime.now().isoformat())
-    
-    # Field Metadata Tagging & Database
-    tags: list = field(default_factory=list)
-    metadata: dict = field(default_factory=dict) # Untuk menyimpan doc_type, status, dll
-
-@dataclass
-class UUDocument:
-    uu_id: str
-    uu_name: str
-    uu_number: str
-    uu_year: str
-    uu_topic: str
-    total_pasal: int = 0
-    total_bab: int = 0
-    pasal_list: list = field(default_factory=list)
-    raw_text: str = ""
-    parsed_date: str = field(default_factory=lambda: datetime.now().isoformat())
-    metadata: dict = field(default_factory=dict) # Mewarisi dari step sebelumnya
+class ParsedUnit:
+    unit_type: str
+    content: str
+    pasal_number: str = None
+    pasal_int: int = None
+    buku: str = None
+    bab: str = None
+    bagian: str = None
+    section: str = "batang_tubuh"         # 'batang_tubuh' | 'penjelasan'
+    kbli_code: str = None
+    lampiran_ref: str = None
+    source_pages: list = field(default_factory=list)
+    order_index: int = 0
 
 
-# ─── F&B Legal Catalog (Lapisan 1 & 2) ────────────────────────
-UU_CATALOG = {
-    # TAHAP 1 & 3: Badan Usaha & Kontrak
-    "uu_40_2007_perseroan_terbatas": {
-        "name": "Undang-Undang Nomor 40 Tahun 2007 tentang Perseroan Terbatas",
-        "number": "40", "year": "2007", "type": "UU", "topic": "Badan Usaha PT",
-        "keywords": ["perseroan terbatas", "uu_40"]
-    },
-    "kuhd": {
-        "name": "Kitab Undang-Undang Hukum Dagang (KUHD)",
-        "number": "-", "year": "-", "type": "KUH", "topic": "Hukum Dagang & CV",
-        "keywords": ["kuhd", "dagang"]
-    },
-    "kuhperdata_buku_3_perikatan": {
-        "name": "Kitab Undang-Undang Hukum Perdata (Buku III tentang Perikatan)",
-        "number": "-", "year": "-", "type": "KUH", "topic": "Kontrak & Perjanjian",
-        "keywords": ["kuhperdata", "perikatan"]
-    },
-    "uu_11_2020_cipta_kerja": {
-        "name": "Undang-Undang Nomor 11 Tahun 2020 tentang Cipta Kerja",
-        "number": "11", "year": "2020", "type": "UU", "topic": "Cipta Kerja & PT Perorangan",
-        "keywords": ["cipta kerja", "uu_11"]
-    },
-    
-    # TAHAP 1: Perizinan & Operasional
-    "pp_5_2021_perizinan_berbasis_risiko": {
-        "name": "Peraturan Pemerintah Nomor 5 Tahun 2021 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko",
-        "number": "5", "year": "2021", "type": "PP", "topic": "OSS & Perizinan",
-        "keywords": ["perizinan", "oss", "pp_5"]
-    },
-    "permenkes_1096_2011_higiene_sanitasi": {
-        "name": "Peraturan Menteri Kesehatan Nomor 1096 Tahun 2011 tentang Higiene Sanitasi Jasaboga",
-        "number": "1096", "year": "2011", "type": "Permenkes", "topic": "Higiene Sanitasi",
-        "keywords": ["higiene", "sanitasi", "permenkes"]
-    },
-    "uu_33_2014_jaminan_produk_halal": {
-        "name": "Undang-Undang Nomor 33 Tahun 2014 tentang Jaminan Produk Halal",
-        "number": "33", "year": "2014", "type": "UU", "topic": "Sertifikasi Halal",
-        "keywords": ["halal", "uu_33"]
-    },
-    "pp_39_2021_jaminan_produk_halal": {
-        "name": "Peraturan Pemerintah Nomor 39 Tahun 2021 tentang Penyelenggaraan Bidang Jaminan Produk Halal",
-        "number": "39", "year": "2021", "type": "PP", "topic": "Pelaksanaan Halal",
-        "keywords": ["pp_39", "produk halal"]
-    },
+class StructureParser:
+    def __init__(self, doc_meta: dict):
+        self.doc_meta = doc_meta or {}
 
-    # TAHAP 2: Melindungi
-    "uu_20_2016_merek_indikasi_geografis": {
-        "name": "Undang-Undang Nomor 20 Tahun 2016 tentang Merek dan Indikasi Geografis",
-        "number": "20", "year": "2016", "type": "UU", "topic": "HKI & Merek",
-        "keywords": ["merek", "indikasi geografis", "uu_20"]
-    },
+    # ── util ──
+    @staticmethod
+    def _pasal_to_int(pasal_number: str):
+        m = re.match(r'(\d+)', pasal_number or "")
+        return int(m.group(1)) if m else None
 
-    # TAHAP 3: Menjalankan
-    "uu_13_2003_ketenagakerjaan": {
-        "name": "Undang-Undang Nomor 13 Tahun 2003 tentang Ketenagakerjaan",
-        "number": "13", "year": "2003", "type": "UU", "topic": "Ketenagakerjaan",
-        "keywords": ["ketenagakerjaan", "uu_13"]
-    },
-    "uu_8_1999_perlindungan_konsumen": {
-        "name": "Undang-Undang Nomor 8 Tahun 1999 tentang Perlindungan Konsumen",
-        "number": "8", "year": "1999", "type": "UU", "topic": "Perlindungan Konsumen",
-        "keywords": ["perlindungan konsumen", "konsumen", "uu_8"]
-    },
-}
+    @staticmethod
+    def _last(rx, text):
+        found = list(rx.finditer(text))
+        return found[-1].group(0).strip() if found else None
 
-# ─── Structure Parser ─────────────────────────────────────────
-class UUStructureParser:
-    RE_BUKU = re.compile(r'^\s*(?:Buku)\s+([IVXLCDM]+|\d+)(?:\s*\n\s*(.+))?', re.IGNORECASE | re.MULTILINE)
-    RE_BAB = re.compile(r'^\s*(?:BAB)\s+([IVXLCDM]+|\d+)(?:\s*\n\s*(.+))?', re.IGNORECASE | re.MULTILINE)
-    RE_BAGIAN = re.compile(r'^\s*Bagian\s+(Kesatu|Kedua|Ketiga|Keempat|Kelima|Keenam|Ketujuh|Kedelapan|Kesembilan|Kesepuluh|ke-\w+|\w+)(?:\s*\n\s*(.+))?', re.IGNORECASE | re.MULTILINE)
-    RE_PARAGRAF = re.compile(r'^\s*Paragraf\s+(\d+)(?:\s*\n\s*(.+))?', re.IGNORECASE | re.MULTILINE)
-    RE_PASAL_SPLIT = re.compile(r'^\s*(Pasal\s+\d+[A-Z]?)\s*$', re.IGNORECASE | re.MULTILINE)
-    RE_AYAT = re.compile(r'^\s*\((?P<nomor>\d+)\)\s+(?P<teks>.+?)(?=^\s*\(\d+\)|^\s*Pasal\s|\Z)', re.MULTILINE | re.DOTALL)
-    RE_HURUF = re.compile(r'^\s*([a-z])\.\s+(.+?)(?=^\s*[a-z]\.\s|\Z)', re.MULTILINE | re.DOTALL)
+    @staticmethod
+    def _page_at(page_map, pos):
+        page = None
+        for offset, pnum in page_map:
+            if offset <= pos:
+                page = pnum
+            else:
+                break
+        return page
 
-    def __init__(self, uu_slug: str):
-        self.uu_slug = uu_slug
-        self.uu_meta = UU_CATALOG.get(uu_slug, {
-            "name": uu_slug, "number": "?", "year": "?", "topic": uu_slug
-        })
+    # ── Hitung ulang zona (perbaikan false positive Lampiran) ──
+    def _tentukan_zona(self, pages: list) -> dict:
+        zona = {}
+        in_lampiran = False
+        for p in pages:
+            text = p.get("cleaned_text", "")
+            pnum = p["page_num"]
+            header_lampiran = is_true_lampiran_header(text)
+            batang_tubuh = looks_like_batang_tubuh(text)
 
-    def truncate_penjelasan(self, full_text: str) -> str:
-        penjelasan_match = re.search(r'\n\s*PENJELASAN\s+ATAS\s+', full_text, re.IGNORECASE)
-        if penjelasan_match:
-            logger.info("[TRUNCATE] Memotong bagian Penjelasan di akhir dokumen.")
-            return full_text[:penjelasan_match.start()]
-        return full_text
+            if not in_lampiran:
+                if header_lampiran and not batang_tubuh:
+                    in_lampiran = True
+            else:
+                if batang_tubuh and not header_lampiran:
+                    in_lampiran = False
+            zona[pnum] = "lampiran" if in_lampiran else "pasal"
+        return zona
 
-    def split_into_pasal_blocks(self, full_text: str) -> list[dict]:
-        pasal_blocks = []
-        current_buku_num, current_buku_title = "", ""
-        current_bab_num, current_bab_title = "", ""
-        current_bagian, current_paragraf = "", ""
+    # ── Tandai section via header PENJELASAN ──────────────────
+    def _tandai_section(self, units: list, text: str, positions: list) -> list:
+        m = RE_PENJELASAN_HEADER.search(text)
+        if not m:
+            for u in units:
+                u.section = "batang_tubuh"
+            return units
+        batas = m.start()
+        for u, pos in zip(units, positions):
+            u.section = "penjelasan" if pos >= batas else "batang_tubuh"
+        return units
 
-        parts = self.RE_PASAL_SPLIT.split(full_text)
-        
-        pre_text = parts[0] if parts else ""
-        current_buku_num, current_buku_title = self._extract_buku_from_text(pre_text, current_buku_num, current_buku_title)
-        current_bab_num, current_bab_title = self._extract_bab_from_text(pre_text, current_bab_num, current_bab_title)
-        current_bagian = self._extract_bagian_from_text(pre_text, current_bagian)
-        current_paragraf = self._extract_paragraf_from_text(pre_text, current_paragraf)
+    # ── JALUR 1: ZONA PASAL ───────────────────────────────────
+    def parse_pasal_zone(self, pages: list) -> list:
+        full, page_map = [], []
+        for p in pages:
+            t = p.get("cleaned_text", "")
+            page_map.append((sum(len(x) for x in full), p["page_num"]))
+            full.append(t)
+        text = "\n".join(full)
 
-        for i in range(1, len(parts) - 1, 2):
-            pasal_header = parts[i].strip()
-            pasal_content = parts[i + 1] if i + 1 < len(parts) else ""
+        matches = list(RE_PASAL_SPLIT.finditer(text))
+        if not matches:
+            return []
 
-            pasal_num_match = re.search(r'Pasal\s+(\d+[A-Z]?)', pasal_header, re.IGNORECASE)
-            if not pasal_num_match:
+        units, positions = [], []
+        for i, m in enumerate(matches):
+            start = m.start()
+            end = matches[i + 1].start() if i + 1 < len(matches) else len(text)
+            pasal_number = m.group(1)
+            body = text[m.end():end].strip()
+
+            head = text[:start]
+            buku = self._last(RE_BUKU, head)
+            bab = self._last(RE_BAB, head)
+            bagian = self._last(RE_BAGIAN, head)
+            src_page = self._page_at(page_map, start)
+
+            units.append(ParsedUnit(
+                unit_type="pasal",
+                content=f"Pasal {pasal_number}\n{body}",
+                pasal_number=pasal_number,
+                pasal_int=self._pasal_to_int(pasal_number),
+                buku=buku, bab=bab, bagian=bagian,
+                source_pages=[src_page] if src_page else [],
+                order_index=i,
+            ))
+            positions.append(start)
+
+        units = self._tandai_section(units, text, positions)
+        return units
+
+    # ── JALUR 2: ZONA LAMPIRAN (kode KBLI → kewajiban) ────────
+    def parse_lampiran_zone(self, pages: list) -> list:
+        units, order = [], 0
+        for p in pages:
+            text = p.get("cleaned_text", "")
+            ref = (p.get("position_markers") or {}).get("lampiran_ref")
+            hits = list(RE_KBLI.finditer(text))
+            if not hits:
                 continue
-            pasal_number = pasal_num_match.group(1)
 
-            current_buku_num, current_buku_title = self._extract_buku_from_text(pasal_content, current_buku_num, current_buku_title)
-            current_bab_num, current_bab_title = self._extract_bab_from_text(pasal_content, current_bab_num, current_bab_title)
-            current_bagian = self._extract_bagian_from_text(pasal_content, current_bagian)
-            current_paragraf = self._extract_paragraf_from_text(pasal_content, current_paragraf)
+            for j, h in enumerate(hits):
+                start = h.start()
+                end = hits[j + 1].start() if j + 1 < len(hits) else len(text)
+                kbli = h.group(1)
+                block = text[start:end].strip()
+                if len(block) < 25:
+                    continue
 
-            full_pasal_text = f"{pasal_header}\n{pasal_content}".strip()
-            
-            pasal_blocks.append({
-                "pasal_number": pasal_number,
-                "raw_text": full_pasal_text,
-                "buku_number": current_buku_num,
-                "buku_title": current_buku_title,
-                "bab_number": current_bab_num,
-                "bab_title": current_bab_title,
-                "bagian": current_bagian,
-                "paragraf": current_paragraf,
-            })
+                units.append(ParsedUnit(
+                    unit_type="kbli_block",
+                    content=block,
+                    kbli_code=kbli,
+                    lampiran_ref=ref,
+                    source_pages=[p["page_num"]],
+                    order_index=order,
+                ))
+                order += 1
+        return units
 
-        return pasal_blocks
+    # ── JALUR 3: KAMUS KBLI 2020 ──────────────────────────────
+    def parse_kbli_dictionary(self, pages: list) -> list:
+        full = "\n".join(strip_vertical_watermark(p.get("cleaned_text", "")) for p in pages)
+        entries = list(RE_KBLI_ENTRY.finditer(full))
+        if not entries:
+            return []
 
-    def _extract_buku_from_text(self, text: str, current_num: str, current_title: str) -> tuple[str, str]:
-        for match in self.RE_BUKU.finditer(text):
-            current_num = match.group(1)
-            current_title = match.group(2).strip() if match.group(2) else ""
-        return current_num, current_title
+        units, order = [], 0
+        for i, m in enumerate(entries):
+            code = m.group(1)
+            if not is_fnb_kbli(code):
+                continue
+            start = m.start()
+            end = entries[i + 1].start() if i + 1 < len(entries) else len(full)
+            block = full[start:end].strip()
 
-    def _extract_bab_from_text(self, text: str, current_num: str, current_title: str) -> tuple[str, str]:
-        for match in self.RE_BAB.finditer(text):
-            current_num = match.group(1)
-            current_title = match.group(2).strip() if match.group(2) else ""
-        return current_num, current_title
+            units.append(ParsedUnit(
+                unit_type="kbli_dictionary",
+                content=block,
+                kbli_code=code,
+                order_index=order,
+            ))
+            order += 1
 
-    def _extract_bagian_from_text(self, text: str, current: str) -> str:
-        for match in self.RE_BAGIAN.finditer(text):
-            ordinal = match.group(1)
-            title = match.group(2).strip() if match.group(2) else ""
-            current = f"Bagian {ordinal}" + (f" - {title}" if title else "")
-        return current
+        logger.info(f"    [KBLI-DICT] {len(units)} entri F&B dari {len(entries)} total entri")
+        return units
 
-    def _extract_paragraf_from_text(self, text: str, current: str) -> str:
-        for match in self.RE_PARAGRAF.finditer(text):
-            current = f"Paragraf {match.group(1)}"
-        return current
+    # ── Orkestrasi ────────────────────────────────────────────
+    def parse(self, cleaned_doc: dict) -> dict:
+        pages = cleaned_doc.get("pages", [])
+        fname = cleaned_doc.get("file_name", "")
+        is_kbli_dict = "kbli" in fname.lower()
 
-    def parse_ayat(self, pasal_text: str) -> list[dict]:
-        ayat_list = []
-        ayat_matches = list(self.RE_AYAT.finditer(pasal_text))
+        # KASUS KHUSUS: file hasil split Lampiran (tak punya header 'LAMPIRAN'
+        # di halaman awal karena sudah terpotong). Paksa SEMUA halaman ke
+        # jalur KBLI Lampiran, abaikan deteksi zona otomatis.
+        is_forced_lampiran = "lampiran_L_pariwisata" in fname
 
-        if ayat_matches:
-            for match in ayat_matches:
-                nomor = match.group('nomor')
-                teks = match.group('teks').strip()
+        if is_forced_lampiran:
+            all_pages = [p for p in pages if p.get("cleaned_text", "").strip()]
+            kbli_units = self.parse_lampiran_zone(all_pages)
+            pasal_units, kbli_dict_units = [], []
+            zona = {p["page_num"]: "lampiran" for p in pages}
 
-                huruf_list = []
-                for hm in self.RE_HURUF.finditer(teks):
-                    huruf_list.append({"huruf": hm.group(1), "teks": hm.group(2).strip()})
+        elif is_kbli_dict:
+            all_pages = [p for p in pages if p.get("cleaned_text", "").strip()]
+            kbli_dict_units = self.parse_kbli_dictionary(all_pages)
+            pasal_units, kbli_units = [], []
+            zona = {p["page_num"]: "pasal" for p in pages}
 
-                ayat_list.append({"nomor": nomor, "teks": teks, "huruf": huruf_list})
         else:
-            content_match = re.search(r'^\s*Pasal\s+\d+[A-Z]?\s*\n(.+)', pasal_text, re.DOTALL | re.IGNORECASE)
-            if content_match:
-                teks = content_match.group(1).strip()
-                if teks:
-                    ayat_list.append({"nomor": "1", "teks": teks, "huruf": []})
+            zona = self._tentukan_zona(pages)
+            pasal_pages = [p for p in pages
+                           if zona.get(p["page_num"]) == "pasal"
+                           and p.get("cleaned_text", "").strip()]
+            lampiran_pages = [p for p in pages
+                              if zona.get(p["page_num"]) == "lampiran"
+                              and p.get("cleaned_text", "").strip()]
+            pasal_units = self.parse_pasal_zone(pasal_pages)
+            kbli_units = self.parse_lampiran_zone(lampiran_pages)
+            kbli_dict_units = []
 
-        return ayat_list
+        low_quality = "lampiran_L_pariwisata" in fname
+        all_units = pasal_units + kbli_units + kbli_dict_units
 
-    def build_pasal_id(self, pasal_number: str) -> str:
-        return f"{self.uu_slug}_pasal_{pasal_number}"
+        kbli_prefix_dist = dict(Counter(u.kbli_code[:2] for u in all_units if u.kbli_code))
+        section_dist = dict(Counter(u.section for u in all_units if u.unit_type == "pasal"))
+        zona_dist = dict(Counter(zona.values()))
 
-    def generate_tags(self, text: str) -> list:
-        """ F&B Specific Smart Tagging berdasarkan KlausulaAI v2 """
-        text_lower = text.lower()
-        tags = set()
-        
-        # Tahap 1: Mendirikan
-        if any(kw in text_lower for kw in ["perseroan", "saham", "direksi", "modal dasar", "cv", "firma"]):
-            tags.add("badan_usaha")
-        if any(kw in text_lower for kw in ["izin", "oss", "nib", "perizinan", "kbli"]):
-            tags.add("perizinan")
-            
-        # Tahap 2: Melindungi
-        if any(kw in text_lower for kw in ["merek", "logo", "indikasi geografis", "hak cipta"]):
-            tags.add("hki_merek")
-            
-        # Tahap 3: Menjalankan (Kontrak & Operasional F&B)
-        if any(kw in text_lower for kw in ["sewa", "perjanjian", "wanprestasi", "ganti rugi", "batal", "pekerja", "pkwt"]):
-            tags.add("kontrak")
-        if any(kw in text_lower for kw in ["halal", "sanitasi", "higiene", "konsumen", "keracunan", "makanan", "minuman", "restoran"]):
-            tags.add("fnb_operasional")
-            
-        return list(tags)
-
-    def parse_document(self, cleaned_json_path: str) -> UUDocument:
-        logger.info(f"[PROCESS] Parsing struktur: {Path(cleaned_json_path).name}")
-
-        with open(cleaned_json_path, "r", encoding="utf-8") as f:
-            doc = json.load(f)
-
-        # Mengambil metadata database dari step sebelumnya
-        db_metadata = doc.get("metadata", {})
-
-        full_text_parts = []
-        for page in doc.get("pages", []):
-            text = page.get("cleaned_text", "").strip()
-            if text:
-                full_text_parts.append(text)
-
-        full_text = "\n\n".join(full_text_parts)
-        full_text = self.truncate_penjelasan(full_text)
-
-        uu_doc = UUDocument(
-            uu_id=self.uu_slug,
-            uu_name=self.uu_meta.get("name", self.uu_slug),
-            uu_number=self.uu_meta.get("number", "?"),
-            uu_year=self.uu_meta.get("year", "?"),
-            uu_topic=self.uu_meta.get("topic", self.uu_slug),
-            raw_text=full_text,
-            metadata=db_metadata
-        )
-
-        pasal_blocks = self.split_into_pasal_blocks(full_text)
-        uu_doc.total_pasal = len(pasal_blocks)
-
-        for block in pasal_blocks:
-            ayat_list = self.parse_ayat(block["raw_text"])
-            tags_list = self.generate_tags(block["raw_text"])
-
-            pasal = Pasal(
-                pasal_id=self.build_pasal_id(block["pasal_number"]),
-                pasal_number=block["pasal_number"],
-                full_text=block["raw_text"],
-                ayat=[vars(a) if not isinstance(a, dict) else a for a in ayat_list],
-                uu_name=uu_doc.uu_name,
-                uu_number=uu_doc.uu_number,
-                uu_year=uu_doc.uu_year,
-                uu_topic=uu_doc.uu_topic,
-                uu_slug=self.uu_slug,
-                buku_number=block["buku_number"],
-                buku_title=block["buku_title"],
-                bab_number=block["bab_number"],
-                bab_title=block["bab_title"],
-                bagian=block["bagian"],
-                paragraf=block["paragraf"],
-                tags=tags_list,
-                metadata=db_metadata # Penting untuk diturunkan ke level pasal/chunk
-            )
-            uu_doc.pasal_list.append(pasal)
-
-        bab_numbers = set(p.bab_number for p in uu_doc.pasal_list if p.bab_number)
-        uu_doc.total_bab = len(bab_numbers)
-
-        logger.info(f"  [SUCCESS] Parsed: {uu_doc.total_pasal} pasal, {uu_doc.total_bab} bab")
-        return uu_doc
+        result = {
+            "file_name": fname,
+            "metadata": cleaned_doc.get("metadata", {}),
+            "parsed_date": datetime.now().isoformat(),
+            "text_quality": "low" if low_quality else "normal",
+            "stats": {
+                "total_units": len(all_units),
+                "pasal_units": len(pasal_units),
+                "kbli_units": len(kbli_units),
+                "kbli_dict_units": len(kbli_dict_units),
+                "distinct_kbli": len(set(u.kbli_code for u in all_units if u.kbli_code)),
+                "kbli_prefix_dist": kbli_prefix_dist,
+                "section_dist": section_dist,
+                "zona_dist": zona_dist,
+            },
+            "units": [asdict(u) for u in all_units],
+        }
+        logger.info(f"  [OK] {len(pasal_units)} pasal "
+                    f"(BT={section_dist.get('batang_tubuh', 0)} "
+                    f"PJ={section_dist.get('penjelasan', 0)}), "
+                    f"{len(kbli_units)} blok KBLI, "
+                    f"{len(kbli_dict_units)} entri kamus | "
+                    f"zona: pasal={zona_dist.get('pasal', 0)}hal "
+                    f"lampiran={zona_dist.get('lampiran', 0)}hal")
+        return result
 
 
-# ─── Output Functions ──────────────────────────────────────────
-def save_parsed_document(uu_doc: UUDocument, output_dir: Path):
-    output_dir.mkdir(parents=True, exist_ok=True)
-
-    full_path = output_dir / f"{uu_doc.uu_id}_parsed.json"
-    doc_dict = {
-        "uu_id": uu_doc.uu_id,
-        "uu_name": uu_doc.uu_name,
-        "uu_number": uu_doc.uu_number,
-        "uu_year": uu_doc.uu_year,
-        "uu_topic": uu_doc.uu_topic,
-        "total_pasal": uu_doc.total_pasal,
-        "total_bab": uu_doc.total_bab,
-        "parsed_date": uu_doc.parsed_date,
-        "metadata": uu_doc.metadata, # Simpan metadata DB di level dokumen
-        "pasal_list": [asdict(p) if isinstance(p, Pasal) else p for p in uu_doc.pasal_list]
-    }
-    with open(full_path, "w", encoding="utf-8") as f:
-        json.dump(doc_dict, f, ensure_ascii=False, indent=2)
-
-    # File ini yang biasanya dikonsumsi oleh script Ingestion
-    pasal_only_path = output_dir / f"{uu_doc.uu_id}_pasal_list.json"
-    pasal_list = []
-    for p in uu_doc.pasal_list:
-        p_dict = asdict(p) if isinstance(p, Pasal) else p
-        p_clean = {k: v for k, v in p_dict.items() if k != "raw_text"}
-        pasal_list.append(p_clean)
-
-    with open(pasal_only_path, "w", encoding="utf-8") as f:
-        json.dump(pasal_list, f, ensure_ascii=False, indent=2)
-
-    logger.info(f"[SAVED] Tersimpan di: {output_dir.name}")
-
-
-# ─── CLI ───────────────────────────────────────────────────────
+# ─── CLI ──────────────────────────────────────────────────────
 def main():
-    parser = argparse.ArgumentParser(description="KlausulaAI - Structure Parser untuk F&B Legal DB")
-    parser.add_argument("--input", "-i", required=True, help="Folder JSON cleaned (dari step 02) atau single file")
-    parser.add_argument("--output", "-o", default="../04_chunked_data", help="Folder output parsed JSON")
-    args = parser.parse_args()
+    ap = argparse.ArgumentParser(description="KlausulaAI - Structure Parser tiga-jalur")
+    ap.add_argument("--input", "-i", required=True, help="Folder/file *_cleaned.json")
+    ap.add_argument("--output", "-o", default="../04_parsed")
+    args = ap.parse_args()
 
-    output_dir = Path(args.output)
-    input_path = Path(args.input)
+    out = Path(args.output)
+    out.mkdir(parents=True, exist_ok=True)
 
-    if input_path.is_file():
-        json_files = [input_path]
-    else:
-        json_files = list(input_path.glob("*_cleaned.json"))
-
-    if not json_files:
-        print(f"[ERROR] Tidak ada file *_cleaned.json di: {input_path}")
+    inp = Path(args.input)
+    files = [inp] if inp.is_file() else sorted(inp.glob("*_cleaned.json"))
+    if not files:
+        print(f"[ERROR] Tidak ada *_cleaned.json di {inp}")
         return
 
-    print(f"\n[START] Parsing {len(json_files)} dokumen hukum...")
-
-    for json_file in json_files:
-        slug = "auto"
-        stem = json_file.stem.replace("_cleaned", "")
-        
-        # Pengecekan cerdas berbasis nama file
-        for catalog_slug in UU_CATALOG.keys():
-            if any(kw in stem.lower() for kw in UU_CATALOG[catalog_slug].get("keywords", [])):
-                slug = catalog_slug
-                break
-                
-        if slug == "auto":
-            slug = stem # Fallback jika tidak ada di katalog
-
-        logger.info(f"\n[PROCESS] Memproses: {json_file.name} -> slug: {slug}")
-        struct_parser = UUStructureParser(uu_slug=slug)
-
+    print(f"\n[START] Parsing {len(files)} dokumen")
+    print("=" * 60)
+    grand = []
+    for i, f in enumerate(files, 1):
+        print(f"\n[{i}/{len(files)}] {f.name}")
         try:
-            uu_doc = struct_parser.parse_document(str(json_file))
-            save_parsed_document(uu_doc, output_dir)
-            print(f"[SUCCESS] {uu_doc.uu_name} ({uu_doc.total_pasal} Pasal)")
+            with open(f, encoding="utf-8") as fh:
+                doc = json.load(fh)
+            parser = StructureParser(doc.get("metadata", {}))
+            res = parser.parse(doc)
 
+            stem = f.stem.replace("_cleaned", "")
+            with open(out / f"{stem}_parsed.json", "w", encoding="utf-8") as fh:
+                json.dump(res, fh, ensure_ascii=False, indent=2)
+            grand.append((f.name, res["stats"]))
         except Exception as e:
-            logger.error(f"[ERROR] Gagal parsing {json_file.name}: {e}", exc_info=True)
+            logger.error(f"[ERROR] {f.name}: {e}", exc_info=True)
 
-    print(f"\n[DONE] Selesai. Lanjutkan ke script Ingestion.")
+    print("\n" + "=" * 60)
+    print("[SUMMARY]")
+    tp = sum(s["pasal_units"] for _, s in grand)
+    tk = sum(s["kbli_units"] for _, s in grand)
+    td = sum(s["kbli_dict_units"] for _, s in grand)
+    tbt = sum(s["section_dist"].get("batang_tubuh", 0) for _, s in grand)
+    tpj = sum(s["section_dist"].get("penjelasan", 0) for _, s in grand)
+    print(f"Dokumen           : {len(grand)}")
+    print(f"Total pasal       : {tp}  (batang_tubuh={tbt}, penjelasan={tpj})")
+    print(f"Total blok KBLI   : {tk}")
+    print(f"Total entri kamus : {td}")
+    print(f"\n[DONE] Output → {out}")
+
 
 if __name__ == "__main__":
     main()

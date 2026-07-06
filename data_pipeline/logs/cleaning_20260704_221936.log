@@ -1,0 +1,108 @@
+2026-07-04 22:19:36,807 [ERROR] TextCleaner: [ERROR] KBLI_2020_extracted.json: 'TextCleaner' object has no attribute 'clean_document'
+Traceback (most recent call last):
+  File "C:\Users\dzaky\Documents\Kuliah\Semester 6\Manpro\KlausulaAI\data_pipeline\scripts\02_text_cleaner.py", line 393, in main
+    cleaned = cleaner.clean_document(str(jf))
+              ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TextCleaner' object has no attribute 'clean_document'
+2026-07-04 22:19:36,809 [ERROR] TextCleaner: [ERROR] kuhd_extracted.json: 'TextCleaner' object has no attribute 'clean_document'
+Traceback (most recent call last):
+  File "C:\Users\dzaky\Documents\Kuliah\Semester 6\Manpro\KlausulaAI\data_pipeline\scripts\02_text_cleaner.py", line 393, in main
+    cleaned = cleaner.clean_document(str(jf))
+              ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TextCleaner' object has no attribute 'clean_document'
+2026-07-04 22:19:36,810 [ERROR] TextCleaner: [ERROR] kuhperdata_buku_3_perikatan_extracted.json: 'TextCleaner' object has no attribute 'clean_document'
+Traceback (most recent call last):
+  File "C:\Users\dzaky\Documents\Kuliah\Semester 6\Manpro\KlausulaAI\data_pipeline\scripts\02_text_cleaner.py", line 393, in main
+    cleaned = cleaner.clean_document(str(jf))
+              ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TextCleaner' object has no attribute 'clean_document'
+2026-07-04 22:19:36,811 [ERROR] TextCleaner: [ERROR] perbpom_4_2024_sppirt_extracted.json: 'TextCleaner' object has no attribute 'clean_document'
+Traceback (most recent call last):
+  File "C:\Users\dzaky\Documents\Kuliah\Semester 6\Manpro\KlausulaAI\data_pipeline\scripts\02_text_cleaner.py", line 393, in main
+    cleaned = cleaner.clean_document(str(jf))
+              ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TextCleaner' object has no attribute 'clean_document'
+2026-07-04 22:19:36,812 [ERROR] TextCleaner: [ERROR] permenkes_1096_2011_higiene_sanitasi_extracted.json: 'TextCleaner' object has no attribute 'clean_document'
+Traceback (most recent call last):
+  File "C:\Users\dzaky\Documents\Kuliah\Semester 6\Manpro\KlausulaAI\data_pipeline\scripts\02_text_cleaner.py", line 393, in main
+    cleaned = cleaner.clean_document(str(jf))
+              ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TextCleaner' object has no attribute 'clean_document'
+2026-07-04 22:19:36,813 [ERROR] TextCleaner: [ERROR] permenkes_14_2021_standar_kesehatan_extracted.json: 'TextCleaner' object has no attribute 'clean_document'
+Traceback (most recent call last):
+  File "C:\Users\dzaky\Documents\Kuliah\Semester 6\Manpro\KlausulaAI\data_pipeline\scripts\02_text_cleaner.py", line 393, in main
+    cleaned = cleaner.clean_document(str(jf))
+              ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TextCleaner' object has no attribute 'clean_document'
+2026-07-04 22:19:36,814 [ERROR] TextCleaner: [ERROR] permenkes_2_2023_tpp_higiene_sanitasi_extracted.json: 'TextCleaner' object has no attribute 'clean_document'
+Traceback (most recent call last):
+  File "C:\Users\dzaky\Documents\Kuliah\Semester 6\Manpro\KlausulaAI\data_pipeline\scripts\02_text_cleaner.py", line 393, in main
+    cleaned = cleaner.clean_document(str(jf))
+              ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TextCleaner' object has no attribute 'clean_document'
+2026-07-04 22:19:36,815 [ERROR] TextCleaner: [ERROR] permenlhk_4_2021_daftar_amdal_sppl_extracted.json: 'TextCleaner' object has no attribute 'clean_document'
+Traceback (most recent call last):
+  File "C:\Users\dzaky\Documents\Kuliah\Semester 6\Manpro\KlausulaAI\data_pipeline\scripts\02_text_cleaner.py", line 393, in main
+    cleaned = cleaner.clean_document(str(jf))
+              ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TextCleaner' object has no attribute 'clean_document'
+2026-07-04 22:19:36,816 [ERROR] TextCleaner: [ERROR] pp28_2025_lampiran_L_pariwisata_extracted.json: 'TextCleaner' object has no attribute 'clean_document'
+Traceback (most recent call last):
+  File "C:\Users\dzaky\Documents\Kuliah\Semester 6\Manpro\KlausulaAI\data_pipeline\scripts\02_text_cleaner.py", line 393, in main
+    cleaned = cleaner.clean_document(str(jf))
+              ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TextCleaner' object has no attribute 'clean_document'
+2026-07-04 22:19:36,818 [ERROR] TextCleaner: [ERROR] pp_22_2021_lingkungan_hidup_extracted.json: 'TextCleaner' object has no attribute 'clean_document'
+Traceback (most recent call last):
+  File "C:\Users\dzaky\Documents\Kuliah\Semester 6\Manpro\KlausulaAI\data_pipeline\scripts\02_text_cleaner.py", line 393, in main
+    cleaned = cleaner.clean_document(str(jf))
+              ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TextCleaner' object has no attribute 'clean_document'
+2026-07-04 22:19:36,819 [ERROR] TextCleaner: [ERROR] pp_28_2025_perizinan_berbasis_risiko_extracted.json: 'TextCleaner' object has no attribute 'clean_document'
+Traceback (most recent call last):
+  File "C:\Users\dzaky\Documents\Kuliah\Semester 6\Manpro\KlausulaAI\data_pipeline\scripts\02_text_cleaner.py", line 393, in main
+    cleaned = cleaner.clean_document(str(jf))
+              ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TextCleaner' object has no attribute 'clean_document'
+2026-07-04 22:19:36,820 [ERROR] TextCleaner: [ERROR] pp_39_2021_jaminan_produk_halal_extracted.json: 'TextCleaner' object has no attribute 'clean_document'
+Traceback (most recent call last):
+  File "C:\Users\dzaky\Documents\Kuliah\Semester 6\Manpro\KlausulaAI\data_pipeline\scripts\02_text_cleaner.py", line 393, in main
+    cleaned = cleaner.clean_document(str(jf))
+              ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TextCleaner' object has no attribute 'clean_document'
+2026-07-04 22:19:36,821 [ERROR] TextCleaner: [ERROR] uu_11_2020_cipta_kerja_extracted.json: 'TextCleaner' object has no attribute 'clean_document'
+Traceback (most recent call last):
+  File "C:\Users\dzaky\Documents\Kuliah\Semester 6\Manpro\KlausulaAI\data_pipeline\scripts\02_text_cleaner.py", line 393, in main
+    cleaned = cleaner.clean_document(str(jf))
+              ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TextCleaner' object has no attribute 'clean_document'
+2026-07-04 22:19:36,822 [ERROR] TextCleaner: [ERROR] uu_13_2003_ketenagakerjaan_extracted.json: 'TextCleaner' object has no attribute 'clean_document'
+Traceback (most recent call last):
+  File "C:\Users\dzaky\Documents\Kuliah\Semester 6\Manpro\KlausulaAI\data_pipeline\scripts\02_text_cleaner.py", line 393, in main
+    cleaned = cleaner.clean_document(str(jf))
+              ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TextCleaner' object has no attribute 'clean_document'
+2026-07-04 22:19:36,823 [ERROR] TextCleaner: [ERROR] uu_20_2016_merek_indikasi_geografis_extracted.json: 'TextCleaner' object has no attribute 'clean_document'
+Traceback (most recent call last):
+  File "C:\Users\dzaky\Documents\Kuliah\Semester 6\Manpro\KlausulaAI\data_pipeline\scripts\02_text_cleaner.py", line 393, in main
+    cleaned = cleaner.clean_document(str(jf))
+              ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TextCleaner' object has no attribute 'clean_document'
+2026-07-04 22:19:36,824 [ERROR] TextCleaner: [ERROR] uu_33_2014_jaminan_produk_halal_extracted.json: 'TextCleaner' object has no attribute 'clean_document'
+Traceback (most recent call last):
+  File "C:\Users\dzaky\Documents\Kuliah\Semester 6\Manpro\KlausulaAI\data_pipeline\scripts\02_text_cleaner.py", line 393, in main
+    cleaned = cleaner.clean_document(str(jf))
+              ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TextCleaner' object has no attribute 'clean_document'
+2026-07-04 22:19:36,825 [ERROR] TextCleaner: [ERROR] uu_40_2007_perseroan_terbatas_extracted.json: 'TextCleaner' object has no attribute 'clean_document'
+Traceback (most recent call last):
+  File "C:\Users\dzaky\Documents\Kuliah\Semester 6\Manpro\KlausulaAI\data_pipeline\scripts\02_text_cleaner.py", line 393, in main
+    cleaned = cleaner.clean_document(str(jf))
+              ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TextCleaner' object has no attribute 'clean_document'
+2026-07-04 22:19:36,826 [ERROR] TextCleaner: [ERROR] uu_8_1999_perlindungan_konsumen_extracted.json: 'TextCleaner' object has no attribute 'clean_document'
+Traceback (most recent call last):
+  File "C:\Users\dzaky\Documents\Kuliah\Semester 6\Manpro\KlausulaAI\data_pipeline\scripts\02_text_cleaner.py", line 393, in main
+    cleaned = cleaner.clean_document(str(jf))
+              ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TextCleaner' object has no attribute 'clean_document'

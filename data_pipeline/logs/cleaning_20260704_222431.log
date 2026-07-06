@@ -1,0 +1,62 @@
+2026-07-04 22:24:31,937 [INFO] TextCleaner: [CLEANING] KBLI_2020_extracted.json
+2026-07-04 22:24:31,955 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:24:32,546 [INFO] TextCleaner:   [OK] 1,684,168 → 1,679,501 chars (0.3% turun) | safe=0 agg=833
+2026-07-04 22:24:32,598 [INFO] TextCleaner: [CLEANING] kuhd_extracted.json
+2026-07-04 22:24:32,604 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:24:32,747 [INFO] TextCleaner:   [OK] 441,980 → 435,223 chars (1.5% turun) | safe=0 agg=165
+2026-07-04 22:24:32,764 [INFO] TextCleaner: [CLEANING] kuhperdata_buku_3_perikatan_extracted.json
+2026-07-04 22:24:32,767 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:24:32,853 [INFO] TextCleaner:   [OK] 249,937 → 249,796 chars (0.1% turun) | safe=0 agg=111
+2026-07-04 22:24:32,862 [INFO] TextCleaner: [CLEANING] perbpom_4_2024_sppirt_extracted.json
+2026-07-04 22:24:32,865 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:24:32,869 [INFO] TextCleaner:   [ZONA] Lampiran mulai halaman 6 → carry-forward aktif
+2026-07-04 22:24:32,918 [INFO] TextCleaner:   [OK] 133,461 → 132,718 chars (0.6% turun) | safe=64 agg=5 | Lampiran dari hal 6
+2026-07-04 22:24:32,927 [INFO] TextCleaner: [CLEANING] permenkes_1096_2011_higiene_sanitasi_extracted.json
+2026-07-04 22:24:32,929 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:24:32,933 [INFO] TextCleaner:   [ZONA] Lampiran mulai halaman 7 → carry-forward aktif
+2026-07-04 22:24:32,961 [INFO] TextCleaner:   [OK] 104,074 → 103,773 chars (0.3% turun) | safe=68 agg=6 | Lampiran dari hal 7
+2026-07-04 22:24:32,968 [INFO] TextCleaner: [CLEANING] permenkes_14_2021_standar_kesehatan_extracted.json
+2026-07-04 22:24:32,995 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:24:32,998 [INFO] TextCleaner:   [ZONA] Lampiran mulai halaman 5 → carry-forward aktif
+2026-07-04 22:24:33,671 [INFO] TextCleaner:   [OK] 2,064,453 → 2,049,282 chars (0.7% turun) | safe=1829 agg=4 | Lampiran dari hal 5
+2026-07-04 22:24:33,755 [INFO] TextCleaner: [CLEANING] permenkes_2_2023_tpp_higiene_sanitasi_extracted.json
+2026-07-04 22:24:33,761 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:24:33,773 [INFO] TextCleaner:   [ZONA] Lampiran mulai halaman 17 → carry-forward aktif
+2026-07-04 22:24:33,881 [INFO] TextCleaner:   [OK] 401,855 → 395,910 chars (1.5% turun) | safe=159 agg=16 | Lampiran dari hal 17
+2026-07-04 22:24:33,900 [INFO] TextCleaner: [CLEANING] permenlhk_4_2021_daftar_amdal_sppl_extracted.json
+2026-07-04 22:24:33,905 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:24:33,909 [INFO] TextCleaner:   [ZONA] Lampiran mulai halaman 7 → carry-forward aktif
+2026-07-04 22:24:34,030 [INFO] TextCleaner:   [OK] 373,614 → 371,117 chars (0.7% turun) | safe=313 agg=6 | Lampiran dari hal 7
+2026-07-04 22:24:34,048 [INFO] TextCleaner: [CLEANING] pp28_2025_lampiran_L_pariwisata_extracted.json
+2026-07-04 22:24:34,050 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:24:34,078 [INFO] TextCleaner:   [OK] 64,126 → 60,602 chars (5.5% turun) | safe=0 agg=105
+2026-07-04 22:24:34,086 [INFO] TextCleaner: [CLEANING] pp_22_2021_lingkungan_hidup_extracted.json
+2026-07-04 22:24:34,094 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:24:34,118 [INFO] TextCleaner:   [ZONA] Lampiran mulai halaman 39 → carry-forward aktif
+2026-07-04 22:24:34,297 [INFO] TextCleaner:   [OK] 624,081 → 605,486 chars (3.0% turun) | safe=445 agg=38 | Lampiran dari hal 39
+2026-07-04 22:24:34,329 [INFO] TextCleaner: [CLEANING] pp_28_2025_perizinan_berbasis_risiko_extracted.json
+2026-07-04 22:24:34,336 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:24:34,341 [INFO] TextCleaner:   [ZONA] Lampiran mulai halaman 9 → carry-forward aktif
+2026-07-04 22:24:34,517 [INFO] TextCleaner:   [OK] 532,631 → 517,684 chars (2.8% turun) | safe=375 agg=8 | Lampiran dari hal 9
+2026-07-04 22:24:34,541 [INFO] TextCleaner: [CLEANING] pp_39_2021_jaminan_produk_halal_extracted.json
+2026-07-04 22:24:34,543 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:24:34,589 [INFO] TextCleaner:   [OK] 114,369 → 110,683 chars (3.2% turun) | safe=0 agg=110
+2026-07-04 22:24:34,597 [INFO] TextCleaner: [CLEANING] uu_11_2020_cipta_kerja_extracted.json
+2026-07-04 22:24:34,615 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:24:35,019 [INFO] TextCleaner:   [ZONA] Lampiran mulai halaman 764 → carry-forward aktif
+2026-07-04 22:24:35,153 [INFO] TextCleaner:   [OK] 1,379,553 → 1,347,087 chars (2.4% turun) | safe=424 agg=763 | Lampiran dari hal 764
+2026-07-04 22:24:35,215 [INFO] TextCleaner: [CLEANING] uu_13_2003_ketenagakerjaan_extracted.json
+2026-07-04 22:24:35,218 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:24:35,282 [INFO] TextCleaner:   [OK] 169,479 → 165,128 chars (2.6% turun) | safe=0 agg=128
+2026-07-04 22:24:35,294 [INFO] TextCleaner: [CLEANING] uu_20_2016_merek_indikasi_geografis_extracted.json
+2026-07-04 22:24:35,296 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:24:35,335 [INFO] TextCleaner:   [OK] 100,100 → 99,271 chars (0.8% turun) | safe=0 agg=74
+2026-07-04 22:24:35,342 [INFO] TextCleaner: [CLEANING] uu_33_2014_jaminan_produk_halal_extracted.json
+2026-07-04 22:24:35,343 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:24:35,358 [INFO] TextCleaner:   [OK] 37,172 → 36,854 chars (0.9% turun) | safe=0 agg=40
+2026-07-04 22:24:35,363 [INFO] TextCleaner: [CLEANING] uu_40_2007_perseroan_terbatas_extracted.json
+2026-07-04 22:24:35,366 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:24:35,442 [INFO] TextCleaner:   [OK] 204,678 → 203,630 chars (0.5% turun) | safe=0 agg=140
+2026-07-04 22:24:35,452 [INFO] TextCleaner: [CLEANING] uu_8_1999_perlindungan_konsumen_extracted.json
+2026-07-04 22:24:35,455 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:24:35,478 [INFO] TextCleaner:   [OK] 60,022 → 58,079 chars (3.2% turun) | safe=0 agg=54

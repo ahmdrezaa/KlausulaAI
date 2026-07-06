@@ -1,0 +1,595 @@
+2026-07-04 19:25:47,247 [INFO] DocumentExtractor: Memproses: kbli_2020.pdf (.pdf)
+2026-07-04 19:25:47,769 [WARNING] DocumentExtractor:   ⚠️  Halaman 2 minim konten (23 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:25:47,774 [WARNING] DocumentExtractor:   ⚠️  Halaman 3 minim konten (24 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:25:47,779 [WARNING] DocumentExtractor:   ⚠️  Halaman 4 minim konten (25 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:25:47,785 [WARNING] DocumentExtractor:   ⚠️  Halaman 5 minim konten (23 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:25:51,987 [INFO] DocumentExtractor:   Progress: 50/833 halaman
+2026-07-04 19:25:57,185 [INFO] DocumentExtractor:   Progress: 100/833 halaman
+2026-07-04 19:26:03,882 [INFO] DocumentExtractor:   Progress: 150/833 halaman
+2026-07-04 19:26:11,324 [INFO] DocumentExtractor:   Progress: 200/833 halaman
+2026-07-04 19:26:18,044 [WARNING] DocumentExtractor:   ⚠️  Halaman 230 minim konten (21 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:26:18,082 [WARNING] DocumentExtractor:   ⚠️  Halaman 232 minim konten (21 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:26:21,569 [INFO] DocumentExtractor:   Progress: 250/833 halaman
+2026-07-04 19:26:28,054 [WARNING] DocumentExtractor:   ⚠️  Halaman 280 minim konten (21 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:26:28,068 [WARNING] DocumentExtractor:   ⚠️  Halaman 281 minim konten (47 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:26:28,072 [WARNING] DocumentExtractor:   ⚠️  Halaman 282 minim konten (21 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:26:30,525 [WARNING] DocumentExtractor:   ⚠️  Halaman 296 minim konten (21 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:26:30,537 [WARNING] DocumentExtractor:   ⚠️  Halaman 297 minim konten (40 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:26:30,541 [WARNING] DocumentExtractor:   ⚠️  Halaman 298 minim konten (21 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:26:30,786 [INFO] DocumentExtractor:   Progress: 300/833 halaman
+2026-07-04 19:26:40,886 [INFO] DocumentExtractor:   Progress: 350/833 halaman
+2026-07-04 19:26:52,114 [INFO] DocumentExtractor:   Progress: 400/833 halaman
+2026-07-04 19:27:02,716 [INFO] DocumentExtractor:   Progress: 450/833 halaman
+2026-07-04 19:27:04,489 [WARNING] DocumentExtractor:   ⚠️  Halaman 462 minim konten (21 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:27:04,503 [WARNING] DocumentExtractor:   ⚠️  Halaman 464 minim konten (21 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:27:05,788 [WARNING] DocumentExtractor:   ⚠️  Halaman 472 minim konten (21 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:27:08,261 [WARNING] DocumentExtractor:   ⚠️  Halaman 483 minim konten (32 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:27:08,264 [WARNING] DocumentExtractor:   ⚠️  Halaman 484 minim konten (21 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:27:11,389 [INFO] DocumentExtractor:   Progress: 500/833 halaman
+2026-07-04 19:27:12,581 [WARNING] DocumentExtractor:   ⚠️  Halaman 506 minim konten (21 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:27:21,831 [INFO] DocumentExtractor:   Progress: 550/833 halaman
+2026-07-04 19:27:26,171 [WARNING] DocumentExtractor:   ⚠️  Halaman 568 minim konten (21 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:27:26,181 [WARNING] DocumentExtractor:   ⚠️  Halaman 569 minim konten (48 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:27:26,184 [WARNING] DocumentExtractor:   ⚠️  Halaman 570 minim konten (21 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:27:32,490 [WARNING] DocumentExtractor:   ⚠️  Halaman 600 minim konten (21 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:27:32,491 [INFO] DocumentExtractor:   Progress: 600/833 halaman
+2026-07-04 19:27:34,050 [WARNING] DocumentExtractor:   ⚠️  Halaman 608 minim konten (21 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:27:34,062 [WARNING] DocumentExtractor:   ⚠️  Halaman 609 minim konten (44 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:27:34,065 [WARNING] DocumentExtractor:   ⚠️  Halaman 610 minim konten (21 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:27:39,477 [WARNING] DocumentExtractor:   ⚠️  Halaman 636 minim konten (21 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:27:43,582 [INFO] DocumentExtractor:   Progress: 650/833 halaman
+2026-07-04 19:27:47,234 [WARNING] DocumentExtractor:   ⚠️  Halaman 668 minim konten (21 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:27:47,245 [WARNING] DocumentExtractor:   ⚠️  Halaman 669 minim konten (31 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:27:47,248 [WARNING] DocumentExtractor:   ⚠️  Halaman 670 minim konten (21 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:27:48,696 [WARNING] DocumentExtractor:   ⚠️  Halaman 674 minim konten (33 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:27:48,710 [WARNING] DocumentExtractor:   ⚠️  Halaman 676 minim konten (21 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:27:55,049 [WARNING] DocumentExtractor:   ⚠️  Halaman 700 minim konten (33 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:27:55,049 [INFO] DocumentExtractor:   Progress: 700/833 halaman
+2026-07-04 19:27:55,094 [WARNING] DocumentExtractor:   ⚠️  Halaman 702 minim konten (21 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:28:03,692 [WARNING] DocumentExtractor:   ⚠️  Halaman 734 minim konten (33 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:28:03,905 [WARNING] DocumentExtractor:   ⚠️  Halaman 736 minim konten (21 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:28:06,973 [WARNING] DocumentExtractor:   ⚠️  Halaman 747 minim konten (32 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:28:06,976 [WARNING] DocumentExtractor:   ⚠️  Halaman 748 minim konten (21 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:28:07,205 [INFO] DocumentExtractor:   Progress: 750/833 halaman
+2026-07-04 19:28:12,867 [WARNING] DocumentExtractor:   ⚠️  Halaman 770 minim konten (21 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:28:17,441 [WARNING] DocumentExtractor:   ⚠️  Halaman 786 minim konten (21 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:28:17,455 [WARNING] DocumentExtractor:   ⚠️  Halaman 787 minim konten (49 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:28:17,458 [WARNING] DocumentExtractor:   ⚠️  Halaman 788 minim konten (21 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:28:21,622 [INFO] DocumentExtractor:   Progress: 800/833 halaman
+2026-07-04 19:28:23,765 [WARNING] DocumentExtractor:   ⚠️  Halaman 806 minim konten (21 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:28:23,781 [WARNING] DocumentExtractor:   ⚠️  Halaman 807 minim konten (42 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:28:23,785 [WARNING] DocumentExtractor:   ⚠️  Halaman 808 minim konten (21 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:28:28,238 [WARNING] DocumentExtractor:   ⚠️  Halaman 822 minim konten (21 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:28:28,260 [WARNING] DocumentExtractor:   ⚠️  Halaman 824 minim konten (21 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:28:28,600 [WARNING] DocumentExtractor:   ⚠️  Halaman 828 minim konten (21 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:28:28,616 [WARNING] DocumentExtractor:   ⚠️  Halaman 830 minim konten (21 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:28:29,586 [INFO] DocumentExtractor: Tersimpan: 02_extracted_text\kbli_2020_extracted.json
+2026-07-04 19:28:29,587 [INFO] DocumentExtractor: Memproses: kuhd.PDF (.pdf)
+2026-07-04 19:28:41,226 [INFO] DocumentExtractor:   Progress: 50/165 halaman
+2026-07-04 19:28:48,106 [INFO] DocumentExtractor:   Progress: 100/165 halaman
+2026-07-04 19:28:55,335 [INFO] DocumentExtractor:   Progress: 150/165 halaman
+2026-07-04 19:28:57,202 [INFO] DocumentExtractor: Tersimpan: 02_extracted_text\kuhd_extracted.json
+2026-07-04 19:28:57,203 [INFO] DocumentExtractor: Memproses: kuhperdata_buku_3_perikatan.pdf (.pdf)
+2026-07-04 19:29:02,884 [INFO] DocumentExtractor:   Progress: 50/111 halaman
+2026-07-04 19:29:07,917 [INFO] DocumentExtractor:   Progress: 100/111 halaman
+2026-07-04 19:29:09,023 [INFO] DocumentExtractor: Tersimpan: 02_extracted_text\kuhperdata_buku_3_perikatan_extracted.json
+2026-07-04 19:29:09,024 [INFO] DocumentExtractor: Memproses: perbpom_4_2024_sppirt.pdf (.pdf)
+2026-07-04 19:29:10,549 [WARNING] DocumentExtractor:   ⚠️  Halaman 13 minim konten (0 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:29:15,786 [INFO] DocumentExtractor:   Progress: 50/70 halaman
+2026-07-04 19:29:18,457 [INFO] DocumentExtractor: Tersimpan: 02_extracted_text\perbpom_4_2024_sppirt_extracted.json
+2026-07-04 19:29:18,458 [INFO] DocumentExtractor: Memproses: permenkes_1096_2011_higiene_sanitasi.pdf (.pdf)
+2026-07-04 19:29:25,100 [INFO] DocumentExtractor:   Progress: 50/74 halaman
+2026-07-04 19:29:27,689 [INFO] DocumentExtractor: Tersimpan: 02_extracted_text\permenkes_1096_2011_higiene_sanitasi_extracted.json
+2026-07-04 19:29:27,689 [INFO] DocumentExtractor: Memproses: permenkes_14_2021_standar_kesehatan.pdf (.pdf)
+2026-07-04 19:29:32,229 [INFO] DocumentExtractor:   Progress: 50/1833 halaman
+2026-07-04 19:29:36,416 [INFO] DocumentExtractor:   Progress: 100/1833 halaman
+2026-07-04 19:29:40,137 [INFO] DocumentExtractor:   Progress: 150/1833 halaman
+2026-07-04 19:29:44,281 [INFO] DocumentExtractor:   Progress: 200/1833 halaman
+2026-07-04 19:29:49,410 [INFO] DocumentExtractor:   Progress: 250/1833 halaman
+2026-07-04 19:29:54,575 [INFO] DocumentExtractor:   Progress: 300/1833 halaman
+2026-07-04 19:30:00,238 [INFO] DocumentExtractor:   Progress: 350/1833 halaman
+2026-07-04 19:30:06,248 [INFO] DocumentExtractor:   Progress: 400/1833 halaman
+2026-07-04 19:30:11,284 [INFO] DocumentExtractor:   Progress: 450/1833 halaman
+2026-07-04 19:30:16,382 [INFO] DocumentExtractor:   Progress: 500/1833 halaman
+2026-07-04 19:30:21,182 [INFO] DocumentExtractor:   Progress: 550/1833 halaman
+2026-07-04 19:30:26,066 [INFO] DocumentExtractor:   Progress: 600/1833 halaman
+2026-07-04 19:30:31,201 [INFO] DocumentExtractor:   Progress: 650/1833 halaman
+2026-07-04 19:30:37,753 [INFO] DocumentExtractor:   Progress: 700/1833 halaman
+2026-07-04 19:30:47,131 [INFO] DocumentExtractor:   Progress: 750/1833 halaman
+2026-07-04 19:30:56,237 [INFO] DocumentExtractor:   Progress: 800/1833 halaman
+2026-07-04 19:31:03,933 [INFO] DocumentExtractor:   Progress: 850/1833 halaman
+2026-07-04 19:31:18,342 [INFO] DocumentExtractor:   Progress: 900/1833 halaman
+2026-07-04 19:31:27,936 [INFO] DocumentExtractor:   Progress: 950/1833 halaman
+2026-07-04 19:31:34,729 [INFO] DocumentExtractor:   Progress: 1000/1833 halaman
+2026-07-04 19:31:42,993 [INFO] DocumentExtractor:   Progress: 1050/1833 halaman
+2026-07-04 19:31:50,532 [INFO] DocumentExtractor:   Progress: 1100/1833 halaman
+2026-07-04 19:31:57,594 [INFO] DocumentExtractor:   Progress: 1150/1833 halaman
+2026-07-04 19:32:04,747 [INFO] DocumentExtractor:   Progress: 1200/1833 halaman
+2026-07-04 19:32:12,177 [INFO] DocumentExtractor:   Progress: 1250/1833 halaman
+2026-07-04 19:32:19,580 [INFO] DocumentExtractor:   Progress: 1300/1833 halaman
+2026-07-04 19:32:28,223 [INFO] DocumentExtractor:   Progress: 1350/1833 halaman
+2026-07-04 19:32:35,975 [INFO] DocumentExtractor:   Progress: 1400/1833 halaman
+2026-07-04 19:32:42,229 [INFO] DocumentExtractor:   Progress: 1450/1833 halaman
+2026-07-04 19:32:48,438 [INFO] DocumentExtractor:   Progress: 1500/1833 halaman
+2026-07-04 19:32:57,228 [INFO] DocumentExtractor:   Progress: 1550/1833 halaman
+2026-07-04 19:33:08,376 [INFO] DocumentExtractor:   Progress: 1600/1833 halaman
+2026-07-04 19:33:19,318 [INFO] DocumentExtractor:   Progress: 1650/1833 halaman
+2026-07-04 19:33:33,110 [INFO] DocumentExtractor:   Progress: 1700/1833 halaman
+2026-07-04 19:33:52,435 [INFO] DocumentExtractor:   Progress: 1750/1833 halaman
+2026-07-04 19:34:13,541 [INFO] DocumentExtractor:   Progress: 1800/1833 halaman
+2026-07-04 19:34:25,085 [INFO] DocumentExtractor: Tersimpan: 02_extracted_text\permenkes_14_2021_standar_kesehatan_extracted.json
+2026-07-04 19:34:25,087 [INFO] DocumentExtractor: Memproses: permenkes_2_2023_tpp_higiene_sanitasi.pdf (.pdf)
+2026-07-04 19:34:39,785 [INFO] DocumentExtractor:   Progress: 50/175 halaman
+2026-07-04 19:34:46,279 [INFO] DocumentExtractor:   Progress: 100/175 halaman
+2026-07-04 19:34:53,199 [INFO] DocumentExtractor:   Progress: 150/175 halaman
+2026-07-04 19:34:56,684 [INFO] DocumentExtractor: Tersimpan: 02_extracted_text\permenkes_2_2023_tpp_higiene_sanitasi_extracted.json
+2026-07-04 19:34:56,684 [INFO] DocumentExtractor: Memproses: permenlhk_4_2021_daftar_amdal_sppl.pdf (.pdf)
+2026-07-04 19:35:02,580 [INFO] DocumentExtractor:   Progress: 50/319 halaman
+2026-07-04 19:35:08,690 [INFO] DocumentExtractor:   Progress: 100/319 halaman
+2026-07-04 19:35:15,390 [INFO] DocumentExtractor:   Progress: 150/319 halaman
+2026-07-04 19:35:23,898 [INFO] DocumentExtractor:   Progress: 200/319 halaman
+2026-07-04 19:35:32,148 [INFO] DocumentExtractor:   Progress: 250/319 halaman
+2026-07-04 19:35:40,621 [INFO] DocumentExtractor:   Progress: 300/319 halaman
+2026-07-04 19:35:43,219 [INFO] DocumentExtractor: Tersimpan: 02_extracted_text\permenlhk_4_2021_daftar_amdal_sppl_extracted.json
+2026-07-04 19:35:43,220 [INFO] DocumentExtractor: Memproses: pp_22_2021_lingkungan_hidup.pdf (.pdf)
+2026-07-04 19:35:48,720 [INFO] DocumentExtractor:   Progress: 50/483 halaman
+2026-07-04 19:35:51,953 [INFO] DocumentExtractor:   Progress: 100/483 halaman
+2026-07-04 19:35:55,113 [INFO] DocumentExtractor:   Progress: 150/483 halaman
+2026-07-04 19:35:58,431 [INFO] DocumentExtractor:   Progress: 200/483 halaman
+2026-07-04 19:36:02,537 [INFO] DocumentExtractor:   Progress: 250/483 halaman
+2026-07-04 19:36:06,972 [INFO] DocumentExtractor:   Progress: 300/483 halaman
+2026-07-04 19:36:11,122 [INFO] DocumentExtractor:   Progress: 350/483 halaman
+2026-07-04 19:36:14,491 [INFO] DocumentExtractor:   Progress: 400/483 halaman
+2026-07-04 19:36:16,711 [INFO] DocumentExtractor:   Progress: 450/483 halaman
+2026-07-04 19:36:18,456 [INFO] DocumentExtractor: Tersimpan: 02_extracted_text\pp_22_2021_lingkungan_hidup_extracted.json
+2026-07-04 19:36:18,457 [INFO] DocumentExtractor: Memproses: pp_39_2021_jaminan_produk_halal.pdf (.pdf)
+2026-07-04 19:36:22,532 [INFO] DocumentExtractor:   Progress: 50/110 halaman
+2026-07-04 19:36:24,865 [INFO] DocumentExtractor:   Progress: 100/110 halaman
+2026-07-04 19:36:25,137 [INFO] DocumentExtractor: Tersimpan: 02_extracted_text\pp_39_2021_jaminan_produk_halal_extracted.json
+2026-07-04 19:36:25,138 [INFO] DocumentExtractor: Memproses: pp_5_2021_perizinan_berbasis_risiko.pdf (.pdf)
+2026-07-04 19:36:28,782 [INFO] DocumentExtractor:   Progress: 50/739 halaman
+2026-07-04 19:36:31,585 [INFO] DocumentExtractor:   Progress: 100/739 halaman
+2026-07-04 19:36:34,556 [INFO] DocumentExtractor:   Progress: 150/739 halaman
+2026-07-04 19:36:37,556 [INFO] DocumentExtractor:   Progress: 200/739 halaman
+2026-07-04 19:36:41,140 [INFO] DocumentExtractor:   Progress: 250/739 halaman
+2026-07-04 19:36:44,964 [INFO] DocumentExtractor:   Progress: 300/739 halaman
+2026-07-04 19:36:48,666 [WARNING] DocumentExtractor:   ⚠️  Halaman 350 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,666 [INFO] DocumentExtractor:   Progress: 350/739 halaman
+2026-07-04 19:36:48,671 [WARNING] DocumentExtractor:   ⚠️  Halaman 351 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,677 [WARNING] DocumentExtractor:   ⚠️  Halaman 352 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,682 [WARNING] DocumentExtractor:   ⚠️  Halaman 353 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,687 [WARNING] DocumentExtractor:   ⚠️  Halaman 354 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,693 [WARNING] DocumentExtractor:   ⚠️  Halaman 355 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,698 [WARNING] DocumentExtractor:   ⚠️  Halaman 356 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,703 [WARNING] DocumentExtractor:   ⚠️  Halaman 357 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,709 [WARNING] DocumentExtractor:   ⚠️  Halaman 358 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,714 [WARNING] DocumentExtractor:   ⚠️  Halaman 359 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,719 [WARNING] DocumentExtractor:   ⚠️  Halaman 360 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,724 [WARNING] DocumentExtractor:   ⚠️  Halaman 361 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,730 [WARNING] DocumentExtractor:   ⚠️  Halaman 362 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,735 [WARNING] DocumentExtractor:   ⚠️  Halaman 363 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,741 [WARNING] DocumentExtractor:   ⚠️  Halaman 364 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,747 [WARNING] DocumentExtractor:   ⚠️  Halaman 365 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,752 [WARNING] DocumentExtractor:   ⚠️  Halaman 366 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,757 [WARNING] DocumentExtractor:   ⚠️  Halaman 367 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,763 [WARNING] DocumentExtractor:   ⚠️  Halaman 368 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,768 [WARNING] DocumentExtractor:   ⚠️  Halaman 369 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,774 [WARNING] DocumentExtractor:   ⚠️  Halaman 370 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,779 [WARNING] DocumentExtractor:   ⚠️  Halaman 371 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,784 [WARNING] DocumentExtractor:   ⚠️  Halaman 372 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,790 [WARNING] DocumentExtractor:   ⚠️  Halaman 373 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,796 [WARNING] DocumentExtractor:   ⚠️  Halaman 374 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,801 [WARNING] DocumentExtractor:   ⚠️  Halaman 375 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,807 [WARNING] DocumentExtractor:   ⚠️  Halaman 376 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,812 [WARNING] DocumentExtractor:   ⚠️  Halaman 377 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,817 [WARNING] DocumentExtractor:   ⚠️  Halaman 378 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,824 [WARNING] DocumentExtractor:   ⚠️  Halaman 379 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,829 [WARNING] DocumentExtractor:   ⚠️  Halaman 380 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,835 [WARNING] DocumentExtractor:   ⚠️  Halaman 381 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,840 [WARNING] DocumentExtractor:   ⚠️  Halaman 382 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,846 [WARNING] DocumentExtractor:   ⚠️  Halaman 383 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,851 [WARNING] DocumentExtractor:   ⚠️  Halaman 384 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,857 [WARNING] DocumentExtractor:   ⚠️  Halaman 385 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,862 [WARNING] DocumentExtractor:   ⚠️  Halaman 386 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,868 [WARNING] DocumentExtractor:   ⚠️  Halaman 387 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,873 [WARNING] DocumentExtractor:   ⚠️  Halaman 388 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,879 [WARNING] DocumentExtractor:   ⚠️  Halaman 389 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,885 [WARNING] DocumentExtractor:   ⚠️  Halaman 390 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,890 [WARNING] DocumentExtractor:   ⚠️  Halaman 391 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,895 [WARNING] DocumentExtractor:   ⚠️  Halaman 392 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,900 [WARNING] DocumentExtractor:   ⚠️  Halaman 393 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,906 [WARNING] DocumentExtractor:   ⚠️  Halaman 394 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,912 [WARNING] DocumentExtractor:   ⚠️  Halaman 395 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,917 [WARNING] DocumentExtractor:   ⚠️  Halaman 396 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,923 [WARNING] DocumentExtractor:   ⚠️  Halaman 397 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,929 [WARNING] DocumentExtractor:   ⚠️  Halaman 398 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,934 [WARNING] DocumentExtractor:   ⚠️  Halaman 399 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,939 [WARNING] DocumentExtractor:   ⚠️  Halaman 400 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,939 [INFO] DocumentExtractor:   Progress: 400/739 halaman
+2026-07-04 19:36:48,947 [WARNING] DocumentExtractor:   ⚠️  Halaman 401 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,953 [WARNING] DocumentExtractor:   ⚠️  Halaman 402 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,960 [WARNING] DocumentExtractor:   ⚠️  Halaman 403 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,967 [WARNING] DocumentExtractor:   ⚠️  Halaman 404 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,974 [WARNING] DocumentExtractor:   ⚠️  Halaman 405 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,980 [WARNING] DocumentExtractor:   ⚠️  Halaman 406 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,987 [WARNING] DocumentExtractor:   ⚠️  Halaman 407 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,993 [WARNING] DocumentExtractor:   ⚠️  Halaman 408 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:48,999 [WARNING] DocumentExtractor:   ⚠️  Halaman 409 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,005 [WARNING] DocumentExtractor:   ⚠️  Halaman 410 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,011 [WARNING] DocumentExtractor:   ⚠️  Halaman 411 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,017 [WARNING] DocumentExtractor:   ⚠️  Halaman 412 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,023 [WARNING] DocumentExtractor:   ⚠️  Halaman 413 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,028 [WARNING] DocumentExtractor:   ⚠️  Halaman 414 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,033 [WARNING] DocumentExtractor:   ⚠️  Halaman 415 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,039 [WARNING] DocumentExtractor:   ⚠️  Halaman 416 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,045 [WARNING] DocumentExtractor:   ⚠️  Halaman 417 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,050 [WARNING] DocumentExtractor:   ⚠️  Halaman 418 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,057 [WARNING] DocumentExtractor:   ⚠️  Halaman 419 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,063 [WARNING] DocumentExtractor:   ⚠️  Halaman 420 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,069 [WARNING] DocumentExtractor:   ⚠️  Halaman 421 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,074 [WARNING] DocumentExtractor:   ⚠️  Halaman 422 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,080 [WARNING] DocumentExtractor:   ⚠️  Halaman 423 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,086 [WARNING] DocumentExtractor:   ⚠️  Halaman 424 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,093 [WARNING] DocumentExtractor:   ⚠️  Halaman 425 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,100 [WARNING] DocumentExtractor:   ⚠️  Halaman 426 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,107 [WARNING] DocumentExtractor:   ⚠️  Halaman 427 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,113 [WARNING] DocumentExtractor:   ⚠️  Halaman 428 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,118 [WARNING] DocumentExtractor:   ⚠️  Halaman 429 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,123 [WARNING] DocumentExtractor:   ⚠️  Halaman 430 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,128 [WARNING] DocumentExtractor:   ⚠️  Halaman 431 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,134 [WARNING] DocumentExtractor:   ⚠️  Halaman 432 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,141 [WARNING] DocumentExtractor:   ⚠️  Halaman 433 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,147 [WARNING] DocumentExtractor:   ⚠️  Halaman 434 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,152 [WARNING] DocumentExtractor:   ⚠️  Halaman 435 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,156 [WARNING] DocumentExtractor:   ⚠️  Halaman 436 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,162 [WARNING] DocumentExtractor:   ⚠️  Halaman 437 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,168 [WARNING] DocumentExtractor:   ⚠️  Halaman 438 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,173 [WARNING] DocumentExtractor:   ⚠️  Halaman 439 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,178 [WARNING] DocumentExtractor:   ⚠️  Halaman 440 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,183 [WARNING] DocumentExtractor:   ⚠️  Halaman 441 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,189 [WARNING] DocumentExtractor:   ⚠️  Halaman 442 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,195 [WARNING] DocumentExtractor:   ⚠️  Halaman 443 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,200 [WARNING] DocumentExtractor:   ⚠️  Halaman 444 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,205 [WARNING] DocumentExtractor:   ⚠️  Halaman 445 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,211 [WARNING] DocumentExtractor:   ⚠️  Halaman 446 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,216 [WARNING] DocumentExtractor:   ⚠️  Halaman 447 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,221 [WARNING] DocumentExtractor:   ⚠️  Halaman 448 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,227 [WARNING] DocumentExtractor:   ⚠️  Halaman 449 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,233 [WARNING] DocumentExtractor:   ⚠️  Halaman 450 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,234 [INFO] DocumentExtractor:   Progress: 450/739 halaman
+2026-07-04 19:36:49,239 [WARNING] DocumentExtractor:   ⚠️  Halaman 451 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,245 [WARNING] DocumentExtractor:   ⚠️  Halaman 452 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,251 [WARNING] DocumentExtractor:   ⚠️  Halaman 453 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,258 [WARNING] DocumentExtractor:   ⚠️  Halaman 454 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,263 [WARNING] DocumentExtractor:   ⚠️  Halaman 455 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,268 [WARNING] DocumentExtractor:   ⚠️  Halaman 456 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,274 [WARNING] DocumentExtractor:   ⚠️  Halaman 457 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,280 [WARNING] DocumentExtractor:   ⚠️  Halaman 458 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,285 [WARNING] DocumentExtractor:   ⚠️  Halaman 459 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,290 [WARNING] DocumentExtractor:   ⚠️  Halaman 460 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,296 [WARNING] DocumentExtractor:   ⚠️  Halaman 461 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,301 [WARNING] DocumentExtractor:   ⚠️  Halaman 462 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,308 [WARNING] DocumentExtractor:   ⚠️  Halaman 463 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,313 [WARNING] DocumentExtractor:   ⚠️  Halaman 464 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,318 [WARNING] DocumentExtractor:   ⚠️  Halaman 465 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,324 [WARNING] DocumentExtractor:   ⚠️  Halaman 466 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,330 [WARNING] DocumentExtractor:   ⚠️  Halaman 467 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,336 [WARNING] DocumentExtractor:   ⚠️  Halaman 468 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,342 [WARNING] DocumentExtractor:   ⚠️  Halaman 469 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,348 [WARNING] DocumentExtractor:   ⚠️  Halaman 470 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,353 [WARNING] DocumentExtractor:   ⚠️  Halaman 471 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,358 [WARNING] DocumentExtractor:   ⚠️  Halaman 472 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,364 [WARNING] DocumentExtractor:   ⚠️  Halaman 473 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,370 [WARNING] DocumentExtractor:   ⚠️  Halaman 474 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,376 [WARNING] DocumentExtractor:   ⚠️  Halaman 475 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,381 [WARNING] DocumentExtractor:   ⚠️  Halaman 476 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,386 [WARNING] DocumentExtractor:   ⚠️  Halaman 477 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,392 [WARNING] DocumentExtractor:   ⚠️  Halaman 478 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,398 [WARNING] DocumentExtractor:   ⚠️  Halaman 479 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,405 [WARNING] DocumentExtractor:   ⚠️  Halaman 480 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,410 [WARNING] DocumentExtractor:   ⚠️  Halaman 481 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,416 [WARNING] DocumentExtractor:   ⚠️  Halaman 482 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,421 [WARNING] DocumentExtractor:   ⚠️  Halaman 483 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,426 [WARNING] DocumentExtractor:   ⚠️  Halaman 484 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,443 [WARNING] DocumentExtractor:   ⚠️  Halaman 485 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,449 [WARNING] DocumentExtractor:   ⚠️  Halaman 486 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,455 [WARNING] DocumentExtractor:   ⚠️  Halaman 487 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,460 [WARNING] DocumentExtractor:   ⚠️  Halaman 488 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,477 [WARNING] DocumentExtractor:   ⚠️  Halaman 489 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,482 [WARNING] DocumentExtractor:   ⚠️  Halaman 490 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,487 [WARNING] DocumentExtractor:   ⚠️  Halaman 491 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,493 [WARNING] DocumentExtractor:   ⚠️  Halaman 492 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,499 [WARNING] DocumentExtractor:   ⚠️  Halaman 493 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,517 [WARNING] DocumentExtractor:   ⚠️  Halaman 494 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,523 [WARNING] DocumentExtractor:   ⚠️  Halaman 495 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,528 [WARNING] DocumentExtractor:   ⚠️  Halaman 496 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,534 [WARNING] DocumentExtractor:   ⚠️  Halaman 497 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,540 [WARNING] DocumentExtractor:   ⚠️  Halaman 498 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,557 [WARNING] DocumentExtractor:   ⚠️  Halaman 499 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,563 [WARNING] DocumentExtractor:   ⚠️  Halaman 500 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,563 [INFO] DocumentExtractor:   Progress: 500/739 halaman
+2026-07-04 19:36:49,570 [WARNING] DocumentExtractor:   ⚠️  Halaman 501 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,575 [WARNING] DocumentExtractor:   ⚠️  Halaman 502 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,594 [WARNING] DocumentExtractor:   ⚠️  Halaman 503 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,599 [WARNING] DocumentExtractor:   ⚠️  Halaman 504 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,605 [WARNING] DocumentExtractor:   ⚠️  Halaman 505 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,610 [WARNING] DocumentExtractor:   ⚠️  Halaman 506 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,615 [WARNING] DocumentExtractor:   ⚠️  Halaman 507 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,633 [WARNING] DocumentExtractor:   ⚠️  Halaman 508 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,639 [WARNING] DocumentExtractor:   ⚠️  Halaman 509 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,644 [WARNING] DocumentExtractor:   ⚠️  Halaman 510 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,650 [WARNING] DocumentExtractor:   ⚠️  Halaman 511 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,667 [WARNING] DocumentExtractor:   ⚠️  Halaman 512 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,672 [WARNING] DocumentExtractor:   ⚠️  Halaman 513 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,682 [WARNING] DocumentExtractor:   ⚠️  Halaman 514 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,689 [WARNING] DocumentExtractor:   ⚠️  Halaman 515 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,697 [WARNING] DocumentExtractor:   ⚠️  Halaman 516 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,722 [WARNING] DocumentExtractor:   ⚠️  Halaman 517 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,727 [WARNING] DocumentExtractor:   ⚠️  Halaman 518 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,733 [WARNING] DocumentExtractor:   ⚠️  Halaman 519 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,738 [WARNING] DocumentExtractor:   ⚠️  Halaman 520 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,744 [WARNING] DocumentExtractor:   ⚠️  Halaman 521 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,768 [WARNING] DocumentExtractor:   ⚠️  Halaman 522 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,774 [WARNING] DocumentExtractor:   ⚠️  Halaman 523 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,779 [WARNING] DocumentExtractor:   ⚠️  Halaman 524 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,784 [WARNING] DocumentExtractor:   ⚠️  Halaman 525 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,801 [WARNING] DocumentExtractor:   ⚠️  Halaman 526 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,807 [WARNING] DocumentExtractor:   ⚠️  Halaman 527 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,813 [WARNING] DocumentExtractor:   ⚠️  Halaman 528 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,818 [WARNING] DocumentExtractor:   ⚠️  Halaman 529 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:49,823 [WARNING] DocumentExtractor:   ⚠️  Halaman 530 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,100 [WARNING] DocumentExtractor:   ⚠️  Halaman 531 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,106 [WARNING] DocumentExtractor:   ⚠️  Halaman 532 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,111 [WARNING] DocumentExtractor:   ⚠️  Halaman 533 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,117 [WARNING] DocumentExtractor:   ⚠️  Halaman 534 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,123 [WARNING] DocumentExtractor:   ⚠️  Halaman 535 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,128 [WARNING] DocumentExtractor:   ⚠️  Halaman 536 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,134 [WARNING] DocumentExtractor:   ⚠️  Halaman 537 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,139 [WARNING] DocumentExtractor:   ⚠️  Halaman 538 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,145 [WARNING] DocumentExtractor:   ⚠️  Halaman 539 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,151 [WARNING] DocumentExtractor:   ⚠️  Halaman 540 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,156 [WARNING] DocumentExtractor:   ⚠️  Halaman 541 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,162 [WARNING] DocumentExtractor:   ⚠️  Halaman 542 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,168 [WARNING] DocumentExtractor:   ⚠️  Halaman 543 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,173 [WARNING] DocumentExtractor:   ⚠️  Halaman 544 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,179 [WARNING] DocumentExtractor:   ⚠️  Halaman 545 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,184 [WARNING] DocumentExtractor:   ⚠️  Halaman 546 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,189 [WARNING] DocumentExtractor:   ⚠️  Halaman 547 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,194 [WARNING] DocumentExtractor:   ⚠️  Halaman 548 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,201 [WARNING] DocumentExtractor:   ⚠️  Halaman 549 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,207 [WARNING] DocumentExtractor:   ⚠️  Halaman 550 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,208 [INFO] DocumentExtractor:   Progress: 550/739 halaman
+2026-07-04 19:36:50,213 [WARNING] DocumentExtractor:   ⚠️  Halaman 551 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,218 [WARNING] DocumentExtractor:   ⚠️  Halaman 552 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,224 [WARNING] DocumentExtractor:   ⚠️  Halaman 553 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,229 [WARNING] DocumentExtractor:   ⚠️  Halaman 554 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,235 [WARNING] DocumentExtractor:   ⚠️  Halaman 555 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,241 [WARNING] DocumentExtractor:   ⚠️  Halaman 556 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,246 [WARNING] DocumentExtractor:   ⚠️  Halaman 557 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,251 [WARNING] DocumentExtractor:   ⚠️  Halaman 558 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,257 [WARNING] DocumentExtractor:   ⚠️  Halaman 559 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,262 [WARNING] DocumentExtractor:   ⚠️  Halaman 560 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,268 [WARNING] DocumentExtractor:   ⚠️  Halaman 561 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,274 [WARNING] DocumentExtractor:   ⚠️  Halaman 562 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,279 [WARNING] DocumentExtractor:   ⚠️  Halaman 563 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,285 [WARNING] DocumentExtractor:   ⚠️  Halaman 564 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,291 [WARNING] DocumentExtractor:   ⚠️  Halaman 565 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,296 [WARNING] DocumentExtractor:   ⚠️  Halaman 566 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,302 [WARNING] DocumentExtractor:   ⚠️  Halaman 567 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,308 [WARNING] DocumentExtractor:   ⚠️  Halaman 568 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,313 [WARNING] DocumentExtractor:   ⚠️  Halaman 569 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,319 [WARNING] DocumentExtractor:   ⚠️  Halaman 570 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,325 [WARNING] DocumentExtractor:   ⚠️  Halaman 571 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,330 [WARNING] DocumentExtractor:   ⚠️  Halaman 572 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,336 [WARNING] DocumentExtractor:   ⚠️  Halaman 573 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,342 [WARNING] DocumentExtractor:   ⚠️  Halaman 574 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,347 [WARNING] DocumentExtractor:   ⚠️  Halaman 575 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,352 [WARNING] DocumentExtractor:   ⚠️  Halaman 576 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,357 [WARNING] DocumentExtractor:   ⚠️  Halaman 577 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,363 [WARNING] DocumentExtractor:   ⚠️  Halaman 578 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,369 [WARNING] DocumentExtractor:   ⚠️  Halaman 579 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,374 [WARNING] DocumentExtractor:   ⚠️  Halaman 580 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,381 [WARNING] DocumentExtractor:   ⚠️  Halaman 581 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,386 [WARNING] DocumentExtractor:   ⚠️  Halaman 582 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,391 [WARNING] DocumentExtractor:   ⚠️  Halaman 583 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,397 [WARNING] DocumentExtractor:   ⚠️  Halaman 584 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,402 [WARNING] DocumentExtractor:   ⚠️  Halaman 585 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,407 [WARNING] DocumentExtractor:   ⚠️  Halaman 586 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,413 [WARNING] DocumentExtractor:   ⚠️  Halaman 587 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,418 [WARNING] DocumentExtractor:   ⚠️  Halaman 588 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,423 [WARNING] DocumentExtractor:   ⚠️  Halaman 589 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,428 [WARNING] DocumentExtractor:   ⚠️  Halaman 590 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,434 [WARNING] DocumentExtractor:   ⚠️  Halaman 591 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,439 [WARNING] DocumentExtractor:   ⚠️  Halaman 592 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,444 [WARNING] DocumentExtractor:   ⚠️  Halaman 593 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,449 [WARNING] DocumentExtractor:   ⚠️  Halaman 594 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,455 [WARNING] DocumentExtractor:   ⚠️  Halaman 595 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,460 [WARNING] DocumentExtractor:   ⚠️  Halaman 596 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,465 [WARNING] DocumentExtractor:   ⚠️  Halaman 597 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,470 [WARNING] DocumentExtractor:   ⚠️  Halaman 598 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,477 [WARNING] DocumentExtractor:   ⚠️  Halaman 599 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,482 [WARNING] DocumentExtractor:   ⚠️  Halaman 600 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,482 [INFO] DocumentExtractor:   Progress: 600/739 halaman
+2026-07-04 19:36:50,488 [WARNING] DocumentExtractor:   ⚠️  Halaman 601 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,493 [WARNING] DocumentExtractor:   ⚠️  Halaman 602 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,499 [WARNING] DocumentExtractor:   ⚠️  Halaman 603 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,505 [WARNING] DocumentExtractor:   ⚠️  Halaman 604 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,510 [WARNING] DocumentExtractor:   ⚠️  Halaman 605 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,516 [WARNING] DocumentExtractor:   ⚠️  Halaman 606 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,522 [WARNING] DocumentExtractor:   ⚠️  Halaman 607 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,527 [WARNING] DocumentExtractor:   ⚠️  Halaman 608 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,533 [WARNING] DocumentExtractor:   ⚠️  Halaman 609 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,539 [WARNING] DocumentExtractor:   ⚠️  Halaman 610 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,544 [WARNING] DocumentExtractor:   ⚠️  Halaman 611 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,550 [WARNING] DocumentExtractor:   ⚠️  Halaman 612 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,555 [WARNING] DocumentExtractor:   ⚠️  Halaman 613 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,561 [WARNING] DocumentExtractor:   ⚠️  Halaman 614 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,568 [WARNING] DocumentExtractor:   ⚠️  Halaman 615 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,573 [WARNING] DocumentExtractor:   ⚠️  Halaman 616 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,580 [WARNING] DocumentExtractor:   ⚠️  Halaman 617 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,586 [WARNING] DocumentExtractor:   ⚠️  Halaman 618 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,591 [WARNING] DocumentExtractor:   ⚠️  Halaman 619 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,597 [WARNING] DocumentExtractor:   ⚠️  Halaman 620 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,602 [WARNING] DocumentExtractor:   ⚠️  Halaman 621 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,608 [WARNING] DocumentExtractor:   ⚠️  Halaman 622 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,615 [WARNING] DocumentExtractor:   ⚠️  Halaman 623 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,620 [WARNING] DocumentExtractor:   ⚠️  Halaman 624 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,625 [WARNING] DocumentExtractor:   ⚠️  Halaman 625 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,631 [WARNING] DocumentExtractor:   ⚠️  Halaman 626 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,637 [WARNING] DocumentExtractor:   ⚠️  Halaman 627 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,643 [WARNING] DocumentExtractor:   ⚠️  Halaman 628 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,649 [WARNING] DocumentExtractor:   ⚠️  Halaman 629 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,654 [WARNING] DocumentExtractor:   ⚠️  Halaman 630 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,659 [WARNING] DocumentExtractor:   ⚠️  Halaman 631 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,665 [WARNING] DocumentExtractor:   ⚠️  Halaman 632 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,670 [WARNING] DocumentExtractor:   ⚠️  Halaman 633 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,676 [WARNING] DocumentExtractor:   ⚠️  Halaman 634 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,682 [WARNING] DocumentExtractor:   ⚠️  Halaman 635 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,687 [WARNING] DocumentExtractor:   ⚠️  Halaman 636 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,695 [WARNING] DocumentExtractor:   ⚠️  Halaman 637 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,701 [WARNING] DocumentExtractor:   ⚠️  Halaman 638 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,710 [WARNING] DocumentExtractor:   ⚠️  Halaman 639 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,717 [WARNING] DocumentExtractor:   ⚠️  Halaman 640 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,726 [WARNING] DocumentExtractor:   ⚠️  Halaman 641 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,731 [WARNING] DocumentExtractor:   ⚠️  Halaman 642 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,738 [WARNING] DocumentExtractor:   ⚠️  Halaman 643 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,744 [WARNING] DocumentExtractor:   ⚠️  Halaman 644 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,750 [WARNING] DocumentExtractor:   ⚠️  Halaman 645 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,756 [WARNING] DocumentExtractor:   ⚠️  Halaman 646 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,761 [WARNING] DocumentExtractor:   ⚠️  Halaman 647 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,767 [WARNING] DocumentExtractor:   ⚠️  Halaman 648 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,773 [WARNING] DocumentExtractor:   ⚠️  Halaman 649 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,778 [WARNING] DocumentExtractor:   ⚠️  Halaman 650 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,779 [INFO] DocumentExtractor:   Progress: 650/739 halaman
+2026-07-04 19:36:50,784 [WARNING] DocumentExtractor:   ⚠️  Halaman 651 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,790 [WARNING] DocumentExtractor:   ⚠️  Halaman 652 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,795 [WARNING] DocumentExtractor:   ⚠️  Halaman 653 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,800 [WARNING] DocumentExtractor:   ⚠️  Halaman 654 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,806 [WARNING] DocumentExtractor:   ⚠️  Halaman 655 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,811 [WARNING] DocumentExtractor:   ⚠️  Halaman 656 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,817 [WARNING] DocumentExtractor:   ⚠️  Halaman 657 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,822 [WARNING] DocumentExtractor:   ⚠️  Halaman 658 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,827 [WARNING] DocumentExtractor:   ⚠️  Halaman 659 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,833 [WARNING] DocumentExtractor:   ⚠️  Halaman 660 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,838 [WARNING] DocumentExtractor:   ⚠️  Halaman 661 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,844 [WARNING] DocumentExtractor:   ⚠️  Halaman 662 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,850 [WARNING] DocumentExtractor:   ⚠️  Halaman 663 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,855 [WARNING] DocumentExtractor:   ⚠️  Halaman 664 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,861 [WARNING] DocumentExtractor:   ⚠️  Halaman 665 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,867 [WARNING] DocumentExtractor:   ⚠️  Halaman 666 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,872 [WARNING] DocumentExtractor:   ⚠️  Halaman 667 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,878 [WARNING] DocumentExtractor:   ⚠️  Halaman 668 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,883 [WARNING] DocumentExtractor:   ⚠️  Halaman 669 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,889 [WARNING] DocumentExtractor:   ⚠️  Halaman 670 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,894 [WARNING] DocumentExtractor:   ⚠️  Halaman 671 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,899 [WARNING] DocumentExtractor:   ⚠️  Halaman 672 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,906 [WARNING] DocumentExtractor:   ⚠️  Halaman 673 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,912 [WARNING] DocumentExtractor:   ⚠️  Halaman 674 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,918 [WARNING] DocumentExtractor:   ⚠️  Halaman 675 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,924 [WARNING] DocumentExtractor:   ⚠️  Halaman 676 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,930 [WARNING] DocumentExtractor:   ⚠️  Halaman 677 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,935 [WARNING] DocumentExtractor:   ⚠️  Halaman 678 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,941 [WARNING] DocumentExtractor:   ⚠️  Halaman 679 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,947 [WARNING] DocumentExtractor:   ⚠️  Halaman 680 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,954 [WARNING] DocumentExtractor:   ⚠️  Halaman 681 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,959 [WARNING] DocumentExtractor:   ⚠️  Halaman 682 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,965 [WARNING] DocumentExtractor:   ⚠️  Halaman 683 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,970 [WARNING] DocumentExtractor:   ⚠️  Halaman 684 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,976 [WARNING] DocumentExtractor:   ⚠️  Halaman 685 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,981 [WARNING] DocumentExtractor:   ⚠️  Halaman 686 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,987 [WARNING] DocumentExtractor:   ⚠️  Halaman 687 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,992 [WARNING] DocumentExtractor:   ⚠️  Halaman 688 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:50,997 [WARNING] DocumentExtractor:   ⚠️  Halaman 689 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,003 [WARNING] DocumentExtractor:   ⚠️  Halaman 690 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,008 [WARNING] DocumentExtractor:   ⚠️  Halaman 691 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,013 [WARNING] DocumentExtractor:   ⚠️  Halaman 692 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,019 [WARNING] DocumentExtractor:   ⚠️  Halaman 693 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,025 [WARNING] DocumentExtractor:   ⚠️  Halaman 694 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,032 [WARNING] DocumentExtractor:   ⚠️  Halaman 695 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,037 [WARNING] DocumentExtractor:   ⚠️  Halaman 696 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,043 [WARNING] DocumentExtractor:   ⚠️  Halaman 697 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,049 [WARNING] DocumentExtractor:   ⚠️  Halaman 698 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,054 [WARNING] DocumentExtractor:   ⚠️  Halaman 699 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,060 [WARNING] DocumentExtractor:   ⚠️  Halaman 700 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,060 [INFO] DocumentExtractor:   Progress: 700/739 halaman
+2026-07-04 19:36:51,066 [WARNING] DocumentExtractor:   ⚠️  Halaman 701 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,073 [WARNING] DocumentExtractor:   ⚠️  Halaman 702 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,079 [WARNING] DocumentExtractor:   ⚠️  Halaman 703 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,084 [WARNING] DocumentExtractor:   ⚠️  Halaman 704 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,089 [WARNING] DocumentExtractor:   ⚠️  Halaman 705 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,095 [WARNING] DocumentExtractor:   ⚠️  Halaman 706 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,100 [WARNING] DocumentExtractor:   ⚠️  Halaman 707 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,106 [WARNING] DocumentExtractor:   ⚠️  Halaman 708 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,111 [WARNING] DocumentExtractor:   ⚠️  Halaman 709 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,117 [WARNING] DocumentExtractor:   ⚠️  Halaman 710 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,122 [WARNING] DocumentExtractor:   ⚠️  Halaman 711 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,129 [WARNING] DocumentExtractor:   ⚠️  Halaman 712 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,134 [WARNING] DocumentExtractor:   ⚠️  Halaman 713 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,140 [WARNING] DocumentExtractor:   ⚠️  Halaman 714 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,146 [WARNING] DocumentExtractor:   ⚠️  Halaman 715 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,151 [WARNING] DocumentExtractor:   ⚠️  Halaman 716 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,158 [WARNING] DocumentExtractor:   ⚠️  Halaman 717 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,163 [WARNING] DocumentExtractor:   ⚠️  Halaman 718 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,169 [WARNING] DocumentExtractor:   ⚠️  Halaman 719 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,177 [WARNING] DocumentExtractor:   ⚠️  Halaman 720 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,182 [WARNING] DocumentExtractor:   ⚠️  Halaman 721 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,187 [WARNING] DocumentExtractor:   ⚠️  Halaman 722 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,192 [WARNING] DocumentExtractor:   ⚠️  Halaman 723 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,198 [WARNING] DocumentExtractor:   ⚠️  Halaman 724 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,204 [WARNING] DocumentExtractor:   ⚠️  Halaman 725 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,209 [WARNING] DocumentExtractor:   ⚠️  Halaman 726 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,215 [WARNING] DocumentExtractor:   ⚠️  Halaman 727 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,220 [WARNING] DocumentExtractor:   ⚠️  Halaman 728 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,226 [WARNING] DocumentExtractor:   ⚠️  Halaman 729 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,231 [WARNING] DocumentExtractor:   ⚠️  Halaman 730 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,237 [WARNING] DocumentExtractor:   ⚠️  Halaman 731 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,242 [WARNING] DocumentExtractor:   ⚠️  Halaman 732 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,247 [WARNING] DocumentExtractor:   ⚠️  Halaman 733 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,253 [WARNING] DocumentExtractor:   ⚠️  Halaman 734 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,258 [WARNING] DocumentExtractor:   ⚠️  Halaman 735 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,264 [WARNING] DocumentExtractor:   ⚠️  Halaman 736 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,269 [WARNING] DocumentExtractor:   ⚠️  Halaman 737 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,275 [WARNING] DocumentExtractor:   ⚠️  Halaman 738 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,280 [WARNING] DocumentExtractor:   ⚠️  Halaman 739 minim konten (34 char nyata). Kemungkinan scan/gambar/kosong.
+2026-07-04 19:36:51,315 [INFO] DocumentExtractor: Tersimpan: 02_extracted_text\pp_5_2021_perizinan_berbasis_risiko_extracted.json
+2026-07-04 19:36:51,315 [INFO] DocumentExtractor: Memproses: uu_11_2020_cipta_kerja.pdf (.pdf)
+2026-07-04 19:36:55,947 [INFO] DocumentExtractor:   Progress: 50/1187 halaman
+2026-07-04 19:36:58,653 [INFO] DocumentExtractor:   Progress: 100/1187 halaman
+2026-07-04 19:37:01,403 [INFO] DocumentExtractor:   Progress: 150/1187 halaman
+2026-07-04 19:37:04,345 [INFO] DocumentExtractor:   Progress: 200/1187 halaman
+2026-07-04 19:37:07,887 [INFO] DocumentExtractor:   Progress: 250/1187 halaman
+2026-07-04 19:37:11,093 [INFO] DocumentExtractor:   Progress: 300/1187 halaman
+2026-07-04 19:37:14,084 [INFO] DocumentExtractor:   Progress: 350/1187 halaman
+2026-07-04 19:37:17,651 [INFO] DocumentExtractor:   Progress: 400/1187 halaman
+2026-07-04 19:37:21,297 [INFO] DocumentExtractor:   Progress: 450/1187 halaman
+2026-07-04 19:37:25,232 [INFO] DocumentExtractor:   Progress: 500/1187 halaman
+2026-07-04 19:37:29,276 [INFO] DocumentExtractor:   Progress: 550/1187 halaman
+2026-07-04 19:37:33,193 [INFO] DocumentExtractor:   Progress: 600/1187 halaman
+2026-07-04 19:37:37,671 [INFO] DocumentExtractor:   Progress: 650/1187 halaman
+2026-07-04 19:37:42,483 [INFO] DocumentExtractor:   Progress: 700/1187 halaman
+2026-07-04 19:37:47,068 [INFO] DocumentExtractor:   Progress: 750/1187 halaman
+2026-07-04 19:37:52,020 [INFO] DocumentExtractor:   Progress: 800/1187 halaman
+2026-07-04 19:37:54,604 [INFO] DocumentExtractor:   Progress: 850/1187 halaman
+2026-07-04 19:37:57,409 [INFO] DocumentExtractor:   Progress: 900/1187 halaman
+2026-07-04 19:38:00,062 [INFO] DocumentExtractor:   Progress: 950/1187 halaman
+2026-07-04 19:38:01,921 [INFO] DocumentExtractor:   Progress: 1000/1187 halaman
+2026-07-04 19:38:05,004 [INFO] DocumentExtractor:   Progress: 1050/1187 halaman
+2026-07-04 19:38:09,761 [INFO] DocumentExtractor:   Progress: 1100/1187 halaman
+2026-07-04 19:38:16,377 [INFO] DocumentExtractor:   Progress: 1150/1187 halaman
+2026-07-04 19:38:18,990 [INFO] DocumentExtractor: Tersimpan: 02_extracted_text\uu_11_2020_cipta_kerja_extracted.json
+2026-07-04 19:38:18,991 [INFO] DocumentExtractor: Memproses: uu_13_2003_ketenagakerjaan.pdf (.pdf)
+2026-07-04 19:38:26,441 [INFO] DocumentExtractor:   Progress: 50/128 halaman
+2026-07-04 19:38:29,136 [INFO] DocumentExtractor:   Progress: 100/128 halaman
+2026-07-04 19:38:30,143 [INFO] DocumentExtractor: Tersimpan: 02_extracted_text\uu_13_2003_ketenagakerjaan_extracted.json
+2026-07-04 19:38:30,144 [INFO] DocumentExtractor: Memproses: uu_20_2016_merek_indikasi_geografis.pdf (.pdf)
+2026-07-04 19:38:33,751 [INFO] DocumentExtractor:   Progress: 50/74 halaman
+2026-07-04 19:38:34,879 [INFO] DocumentExtractor: Tersimpan: 02_extracted_text\uu_20_2016_merek_indikasi_geografis_extracted.json
+2026-07-04 19:38:34,880 [INFO] DocumentExtractor: Memproses: uu_33_2014_jaminan_produk_halal.pdf (.pdf)
+2026-07-04 19:38:36,938 [INFO] DocumentExtractor: Tersimpan: 02_extracted_text\uu_33_2014_jaminan_produk_halal_extracted.json
+2026-07-04 19:38:36,939 [INFO] DocumentExtractor: Memproses: uu_40_2007_perseroan_terbatas.pdf (.pdf)
+2026-07-04 19:38:39,494 [INFO] DocumentExtractor:   Progress: 50/140 halaman
+2026-07-04 19:38:42,006 [INFO] DocumentExtractor:   Progress: 100/140 halaman
+2026-07-04 19:38:43,881 [INFO] DocumentExtractor: Tersimpan: 02_extracted_text\uu_40_2007_perseroan_terbatas_extracted.json
+2026-07-04 19:38:43,881 [INFO] DocumentExtractor: Memproses: uu_8_1999_perlindungan_konsumen.pdf (.pdf)
+2026-07-04 19:38:46,390 [INFO] DocumentExtractor:   Progress: 50/54 halaman
+2026-07-04 19:38:46,485 [INFO] DocumentExtractor: Tersimpan: 02_extracted_text\uu_8_1999_perlindungan_konsumen_extracted.json

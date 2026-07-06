@@ -1,0 +1,3 @@
+2026-07-04 22:24:49,500 [INFO] TextCleaner: [CLEANING] pp28_2025_lampiran_L_pariwisata_extracted.json
+2026-07-04 22:24:49,501 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:24:49,524 [INFO] TextCleaner:   [OK] 64,126 → 60,630 chars (5.5% turun) | safe=105 agg=0

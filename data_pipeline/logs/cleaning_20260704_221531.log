@@ -1,0 +1,54 @@
+2026-07-04 22:15:31,171 [INFO] TextCleaner: [CLEANING] KBLI_2020_extracted.json
+2026-07-04 22:15:31,190 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:15:31,793 [INFO] TextCleaner:   [OK] 1,684,168 → 1,679,501 chars (0.3% turun) | safe=0 agg=833
+2026-07-04 22:15:31,844 [INFO] TextCleaner: [CLEANING] kuhd_extracted.json
+2026-07-04 22:15:31,849 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:15:31,991 [INFO] TextCleaner:   [OK] 441,980 → 435,223 chars (1.5% turun) | safe=0 agg=165
+2026-07-04 22:15:32,006 [INFO] TextCleaner: [CLEANING] kuhperdata_buku_3_perikatan_extracted.json
+2026-07-04 22:15:32,009 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:15:32,091 [INFO] TextCleaner:   [OK] 249,937 → 249,796 chars (0.1% turun) | safe=0 agg=111
+2026-07-04 22:15:32,103 [INFO] TextCleaner: [CLEANING] perbpom_4_2024_sppirt_extracted.json
+2026-07-04 22:15:32,106 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:15:32,150 [INFO] TextCleaner:   [OK] 133,461 → 132,718 chars (0.6% turun) | safe=9 agg=60
+2026-07-04 22:15:32,157 [INFO] TextCleaner: [CLEANING] permenkes_1096_2011_higiene_sanitasi_extracted.json
+2026-07-04 22:15:32,160 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:15:32,199 [INFO] TextCleaner:   [OK] 104,074 → 103,751 chars (0.3% turun) | safe=3 agg=71
+2026-07-04 22:15:32,206 [INFO] TextCleaner: [CLEANING] permenkes_14_2021_standar_kesehatan_extracted.json
+2026-07-04 22:15:32,240 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:15:33,073 [INFO] TextCleaner:   [OK] 2,064,453 → 2,047,791 chars (0.8% turun) | safe=32 agg=1801
+2026-07-04 22:15:33,156 [INFO] TextCleaner: [CLEANING] permenkes_2_2023_tpp_higiene_sanitasi_extracted.json
+2026-07-04 22:15:33,161 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:15:33,304 [INFO] TextCleaner:   [OK] 401,855 → 395,739 chars (1.5% turun) | safe=3 agg=172
+2026-07-04 22:15:33,323 [INFO] TextCleaner: [CLEANING] permenlhk_4_2021_daftar_amdal_sppl_extracted.json
+2026-07-04 22:15:33,329 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:15:33,498 [INFO] TextCleaner:   [OK] 373,614 → 370,657 chars (0.8% turun) | safe=5 agg=314
+2026-07-04 22:15:33,521 [INFO] TextCleaner: [CLEANING] pp28_2025_lampiran_L_pariwisata_extracted.json
+2026-07-04 22:15:33,524 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:15:33,557 [INFO] TextCleaner:   [OK] 64,126 → 60,602 chars (5.5% turun) | safe=0 agg=105
+2026-07-04 22:15:33,565 [INFO] TextCleaner: [CLEANING] pp_22_2021_lingkungan_hidup_extracted.json
+2026-07-04 22:15:33,574 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:15:33,843 [INFO] TextCleaner:   [OK] 624,081 → 605,358 chars (3.0% turun) | safe=7 agg=476
+2026-07-04 22:15:33,877 [INFO] TextCleaner: [CLEANING] pp_28_2025_perizinan_berbasis_risiko_extracted.json
+2026-07-04 22:15:33,883 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:15:34,125 [INFO] TextCleaner:   [OK] 532,631 → 517,630 chars (2.8% turun) | safe=3 agg=380
+2026-07-04 22:15:34,163 [INFO] TextCleaner: [CLEANING] pp_39_2021_jaminan_produk_halal_extracted.json
+2026-07-04 22:15:34,166 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:15:34,232 [INFO] TextCleaner:   [OK] 114,369 → 110,683 chars (3.2% turun) | safe=0 agg=110
+2026-07-04 22:15:34,245 [INFO] TextCleaner: [CLEANING] uu_11_2020_cipta_kerja_extracted.json
+2026-07-04 22:15:34,268 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:15:34,936 [INFO] TextCleaner:   [OK] 1,379,553 → 1,346,880 chars (2.4% turun) | safe=1 agg=1186
+2026-07-04 22:15:35,027 [INFO] TextCleaner: [CLEANING] uu_13_2003_ketenagakerjaan_extracted.json
+2026-07-04 22:15:35,031 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:15:35,117 [INFO] TextCleaner:   [OK] 169,479 → 165,128 chars (2.6% turun) | safe=0 agg=128
+2026-07-04 22:15:35,132 [INFO] TextCleaner: [CLEANING] uu_20_2016_merek_indikasi_geografis_extracted.json
+2026-07-04 22:15:35,135 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:15:35,183 [INFO] TextCleaner:   [OK] 100,100 → 99,271 chars (0.8% turun) | safe=0 agg=74
+2026-07-04 22:15:35,192 [INFO] TextCleaner: [CLEANING] uu_33_2014_jaminan_produk_halal_extracted.json
+2026-07-04 22:15:35,194 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:15:35,213 [INFO] TextCleaner:   [OK] 37,172 → 36,854 chars (0.9% turun) | safe=0 agg=40
+2026-07-04 22:15:35,221 [INFO] TextCleaner: [CLEANING] uu_40_2007_perseroan_terbatas_extracted.json
+2026-07-04 22:15:35,226 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:15:35,326 [INFO] TextCleaner:   [OK] 204,678 → 203,630 chars (0.5% turun) | safe=0 agg=140
+2026-07-04 22:15:35,341 [INFO] TextCleaner: [CLEANING] uu_8_1999_perlindungan_konsumen_extracted.json
+2026-07-04 22:15:35,345 [INFO] TextCleaner:   [META] doc_type=global_uu status=active
+2026-07-04 22:15:35,374 [INFO] TextCleaner:   [OK] 60,022 → 58,079 chars (3.2% turun) | safe=0 agg=54

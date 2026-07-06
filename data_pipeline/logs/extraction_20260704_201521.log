@@ -1,0 +1,4 @@
+2026-07-04 20:15:21,246 [INFO] DocumentExtractor: Memproses: pp28_2025_lampiran_L_pariwisata.pdf (.pdf)
+2026-07-04 20:15:22,630 [INFO] DocumentExtractor:   Progress: 50/105 halaman
+2026-07-04 20:15:23,798 [INFO] DocumentExtractor:   Progress: 100/105 halaman
+2026-07-04 20:15:23,912 [INFO] DocumentExtractor: Tersimpan: 02_extracted_text\pp28_2025_lampiran_L_pariwisata_extracted.json

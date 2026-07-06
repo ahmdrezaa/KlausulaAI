@@ -1,0 +1,9 @@
+2026-07-04 20:14:28,199 [INFO] DocumentExtractor: Memproses: pp_28_2025_perizinan_berbasis_risiko.pdf (.pdf)
+2026-07-04 20:14:31,959 [INFO] DocumentExtractor:   Progress: 50/383 halaman
+2026-07-04 20:14:35,198 [INFO] DocumentExtractor:   Progress: 100/383 halaman
+2026-07-04 20:14:38,512 [INFO] DocumentExtractor:   Progress: 150/383 halaman
+2026-07-04 20:14:43,083 [INFO] DocumentExtractor:   Progress: 200/383 halaman
+2026-07-04 20:14:48,103 [INFO] DocumentExtractor:   Progress: 250/383 halaman
+2026-07-04 20:14:53,454 [INFO] DocumentExtractor:   Progress: 300/383 halaman
+2026-07-04 20:14:56,332 [INFO] DocumentExtractor:   Progress: 350/383 halaman
+2026-07-04 20:14:57,430 [INFO] DocumentExtractor: Tersimpan: 02_extracted_text\pp_28_2025_perizinan_berbasis_risiko_extracted.json
