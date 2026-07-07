@@ -92,6 +92,7 @@ $$;
 """
 
 import json
+import re
 from typing import Optional
 
 import numpy as np
@@ -103,6 +104,49 @@ from core.llm_clients import embeddings
 def embed_query(text: str) -> list[float]:
     """Ubah teks query menjadi embedding vector 768-dimensi."""
     return embeddings.embed_query(text)
+
+
+# ── Query expansion (heuristik, tanpa LLM) ───────────────────────────────────
+# Pertanyaan owner sering CASUAL & pendek ("emang cafe butuh CV atau PT?"),
+# sedangkan korpus berbahasa UU FORMAL ("Perseroan Terbatas didirikan oleh..").
+# Akibatnya embedding query tidak menonjol ke dokumen yang tepat (UU PT/KUHD).
+# Solusi: deteksi TOPIK (scope F&B terkunci → domain kecil & terkurasi), lalu
+# tambahkan istilah formal terkait ke query SEBELUM di-embed, supaya embedding
+# bergerak mendekati teks UU. Hanya untuk sisi VECTOR — BM25 tetap query asli
+# (plainto_tsquery meng-AND-kan token; menambah banyak istilah malah bikin BM25
+# tidak match apa-apa).
+_EXPANSION: list[tuple[re.Pattern, str]] = [
+    # Badan usaha (Tahap 1)
+    (re.compile(r"\b(cv|pt|perseroan|perseorangan|firma|persekutuan|komanditer|badan usaha|pt perorangan|usaha dagang|\bud\b|akta pendirian|anggaran dasar)\b", re.I),
+     "badan usaha perseorangan CV Persekutuan Komanditer Firma PT Perseroan Terbatas PT Perorangan pendirian badan hukum tanggung jawab sekutu modal dasar akta notaris"),
+    # Perizinan (Tahap 1)
+    (re.compile(r"\b(izin|perizinan|nib|oss|kbli|slhs|higiene|sanitasi|pirt|halal|izin edar|bpom|laik|risiko)\b", re.I),
+     "perizinan berusaha Nomor Induk Berusaha NIB OSS KBLI tingkat risiko Sertifikat Laik Higiene Sanitasi PIRT sertifikat halal izin edar BPOM"),
+    # Merek / HKI (Tahap 2)
+    (re.compile(r"\b(merek|logo|hki|haki|brand|ditiru|tiru|indikasi geografis|nama usaha|nama cafe)\b", re.I),
+     "merek dagang pendaftaran merek indikasi geografis perlindungan merek hak kekayaan intelektual pelanggaran peniruan merek"),
+    # Kontrak / perdata (Tahap 3)
+    (re.compile(r"\b(kontrak|perjanjian|sewa|wanprestasi|klausul|ganti rugi|kemitraan|bagi hasil|supplier|ruko|jatuh tempo|penalti)\b", re.I),
+     "perjanjian kontrak sewa menyewa wanprestasi ganti rugi perikatan pemutusan kontrak pengakhiran perjanjian KUHPerdata"),
+    # Ketenagakerjaan (Tahap 3)
+    (re.compile(r"\b(pkwt|pkwtt|karyawan|buruh|pekerja|pegawai|pesangon|upah|phk|barista|kitchen|gaji|kontrak kerja)\b", re.I),
+     "perjanjian kerja PKWT PKWTT ketenagakerjaan pekerja pesangon upah pemutusan hubungan kerja"),
+    # Perlindungan konsumen (Tahap 3)
+    (re.compile(r"\b(konsumen|pelanggan|komplain|keracunan|refund|garansi|klausul baku|dikembalikan|alergen|komposisi)\b", re.I),
+     "perlindungan konsumen hak konsumen pelaku usaha klausul baku tanggung jawab produk kewajiban informasi"),
+]
+
+
+def expand_query(text: str) -> str:
+    """Tambahkan istilah hukum formal yang relevan dengan TOPIK query (kalau
+    terdeteksi) untuk mendekatkan embedding ke teks UU. Kalau tidak ada topik
+    yang cocok, kembalikan query apa adanya (generik → tidak diubah)."""
+    if not text:
+        return text
+    extras = [terms for rx, terms in _EXPANSION if rx.search(text)]
+    if not extras:
+        return text
+    return f"{text} {' '.join(extras)}"
 
 
 def user_doc_vector_search(

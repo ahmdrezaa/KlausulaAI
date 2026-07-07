@@ -112,7 +112,7 @@ export default function NewProjectPage() {
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="cth. Sengketa Lahan Blok A"
+                placeholder="cth. Perizinan Cafe Saya"
                 className="w-full px-4 py-3.5 rounded-xl text-sm outline-none transition-all border focus:border-[var(--accent)]"
                 style={{
                   background: "var(--bg-input)",
@@ -134,7 +134,7 @@ export default function NewProjectPage() {
                 type="text"
                 value={desc}
                 onChange={(e) => setDesc(e.target.value)}
-                placeholder="Ringkasan konteks projek ini ..."
+                placeholder="cth. Cafe di Surabaya — fokus izin & kontrak sewa"
                 className="w-full px-4 py-3.5 rounded-xl text-sm outline-none transition-all border focus:border-[var(--accent)]"
                 style={{
                   background: "var(--bg-input)",
@@ -156,7 +156,7 @@ export default function NewProjectPage() {
                 rows={4}
                 value={masterPrompt}
                 onChange={(e) => setMasterPrompt(e.target.value)}
-                placeholder="Berperanlah sebagai pengacara senior spesialis hukum perdata. Gunakan bahasa formal dan referensi pasal yang akurat..."
+                placeholder="cth. Fokus pada legalitas dan perizinan usaha cafe saya di Surabaya"
                 className="w-full px-4 py-3.5 rounded-xl text-sm outline-none transition-all border focus:border-[var(--accent)] resize-none"
                 style={{
                   background: "var(--bg-input)",

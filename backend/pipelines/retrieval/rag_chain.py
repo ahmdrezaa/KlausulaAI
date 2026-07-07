@@ -22,6 +22,7 @@ from pipelines.retrieval.grader import grade_chunks
 from pipelines.retrieval.retriever import (
     bm25_search,
     embed_query,
+    expand_query,
     user_doc_vector_search,
     vector_search,
 )
@@ -151,7 +152,7 @@ def run_rag(
     chat_history: Optional[list[dict]] = None,
     system_instruction: Optional[str] = None,
 ) -> dict:
-    query_embedding = embed_query(query)
+    query_embedding = embed_query(expand_query(query))
     vector_results = vector_search(query_embedding, top_k=_TOP_K_RETRIEVE, project_id=project_id)
     vector_results = _augment_with_user_docs(query, query_embedding, project_id, vector_results)
     bm25_results = bm25_search(query, top_k=_TOP_K_RETRIEVE, project_id=project_id)
@@ -204,7 +205,7 @@ def run_rag_stream(
 
     _wall = time.perf_counter()
 
-    query_embedding = embed_query(query)
+    query_embedding = embed_query(expand_query(query))
     _lap("embed_query")
 
     vector_results = vector_search(query_embedding, top_k=_TOP_K_RETRIEVE, project_id=project_id)

@@ -96,6 +96,7 @@ export default function DashboardPage() {
   // #5 Auto-scroll: turun ke pesan terbaru setiap kali messages berubah
   // (termasuk tiap token saat streaming, karena array messages ikut berubah).
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLTextAreaElement>(null);
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
@@ -418,6 +419,12 @@ export default function DashboardPage() {
       e.preventDefault();
       handleSend();
     }
+  };
+
+  // #C: klik skenario → isi input (biar user bisa edit / unggah dokумen dulu)
+  const handlePickScenario = (q: string) => {
+    setInput(q);
+    inputRef.current?.focus();
   };
 
   // #7: seleksi dokumen (centang) untuk dihapus — menggantikan toggle aktif/nonaktif
@@ -826,15 +833,9 @@ export default function DashboardPage() {
 
             {/* Messages */}
             <div className="flex-1 overflow-y-auto px-4 md:px-8 py-6 space-y-6">
-              {/* Welcome message (only if no messages) */}
+              {/* #C: skenario siap pakai — hanya saat chat masih kosong */}
               {messages.length === 0 && (
-                <div className="text-center py-16">
-                  <p className="text-sm" style={{ color: "var(--text-muted)" }}>
-                    Saat ini, saya juga telah tersambung dengan dokumen sumber
-                    yang Anda unggah di sidebar kanan. Silakan ajukan pertanyaan
-                    atau berikan instruksi khusus untuk memulai analisis.
-                  </p>
-                </div>
+                <EmptyStateScenarios onPick={handlePickScenario} />
               )}
 
               {messages.map((msg) => (
@@ -854,6 +855,7 @@ export default function DashboardPage() {
                 }}
               >
                 <textarea
+                  ref={inputRef}
                   rows={1}
                   value={input}
                   onChange={(e) => {
@@ -1060,6 +1062,75 @@ export default function DashboardPage() {
 }
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
+
+// #C: skenario siap pakai per tahap siklus usaha F&B (Mendirikan/Melindungi/Menjalankan)
+const SCENARIOS: { stage: string; items: string[] }[] = [
+  {
+    stage: "Mendirikan",
+    items: [
+      "Saya mau buka cafe, izin apa saja yang wajib?",
+      "Sebaiknya cafe saya pakai CV atau PT?",
+      "Bagaimana cara membuat NIB lewat OSS?",
+    ],
+  },
+  {
+    stage: "Melindungi",
+    items: [
+      "Bagaimana cara mendaftarkan merek cafe saya?",
+      "Apa yang bisa saya lakukan kalau merek saya ditiru?",
+    ],
+  },
+  {
+    stage: "Menjalankan",
+    items: [
+      "Tolong tinjau kontrak sewa tempat saya (unggah dokumen dulu)",
+      "Apa tanggung jawab saya kalau pelanggan komplain?",
+      "Bagaimana mengakhiri kontrak sewa sebelum jatuh tempo?",
+    ],
+  },
+];
+
+function EmptyStateScenarios({ onPick }: { onPick: (q: string) => void }) {
+  return (
+    <div className="max-w-3xl mx-auto py-10">
+      <p
+        className="text-center text-sm mb-6"
+        style={{ color: "var(--text-muted)" }}
+      >
+        Bingung mulai dari mana? Pilih salah satu contoh di bawah, atau ketik
+        pertanyaan Anda sendiri.
+      </p>
+      <div className="space-y-5">
+        {SCENARIOS.map((group) => (
+          <div key={group.stage}>
+            <h4
+              className="text-xs font-semibold uppercase tracking-wider mb-2"
+              style={{ color: "var(--accent)" }}
+            >
+              {group.stage}
+            </h4>
+            <div className="flex flex-wrap gap-2">
+              {group.items.map((q) => (
+                <button
+                  key={q}
+                  onClick={() => onPick(q)}
+                  className="text-left text-sm px-3 py-2 rounded-xl border transition-all hover:opacity-80 active:scale-[0.98]"
+                  style={{
+                    background: "var(--bg-card)",
+                    borderColor: "var(--border-light)",
+                    color: "var(--text-primary)",
+                  }}
+                >
+                  {q}
+                </button>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 function ThinkingIndicator() {
   return (
