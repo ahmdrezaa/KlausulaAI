@@ -115,6 +115,32 @@ def is_app_help_question(message: str) -> bool:
     return bool(_APP_HELP.search(message or ""))
 
 
+# ── Intent: META-pertanyaan "dokumen/knowledge base kamu ada apa saja" ────────
+# Meta-pertanyaan tentang CAKUPAN knowledge base sistem (bukan pertanyaan hukum).
+# Harus dijawab langsung dgn deskripsi KB, JANGAN retrieval (dulu ketarik pasal
+# surat wesel KUHD yg tidak relevan). Butuh 3 sinyal sekaligus (order-independent)
+# supaya tidak menabrak pertanyaan hukum "dokumen apa yang WAJIB untuk cafe":
+#   (1) kata-benda-KB, (2) rujukan ke KOLEKSI milik asisten/ketersediaan, (3) "apa".
+_KB_NOUN = re.compile(
+    r"\b(dokumen|sumber|referensi|dasar\s+hukum|knowledge\s*base|basis\s+pengetahuan|korpus|database)\b",
+    re.IGNORECASE,
+)
+_KB_WHAT = re.compile(r"\b(apa|apa\s*aja|apa\s*saja|ada\s+apa|sebutkan|daftar|list)\b", re.IGNORECASE)
+_KB_MINE = re.compile(
+    r"\b(dokumen|sumber|referensi|korpus|database|dasar\s+hukum)\b(?:\s+\w+){0,2}?\s+(anda|kamu|km|kalian)\b"
+    r"|\b(anda|kamu|km|kalian)\s+(punya|memiliki|menyimpan)\b"
+    r"|\btersedia\b"
+    r"|\bknowledge\s*base\b|\bbasis\s+pengetahuan\b",
+    re.IGNORECASE,
+)
+
+
+def is_kb_scope_question(message: str) -> bool:
+    """True jika user menanyakan CAKUPAN knowledge base ("dokumen anda apa saja")."""
+    s = message or ""
+    return bool(_KB_NOUN.search(s) and _KB_MINE.search(s) and _KB_WHAT.search(s))
+
+
 def _normalize(message: str) -> str:
     s = (message or "").strip().lower()
     s = re.sub(r"[!.,?~\-]+$", "", s).strip()  # buang tanda baca di akhir
@@ -241,13 +267,32 @@ def app_help_reply(message: str) -> str:
     )
 
 
-def get_direct_reply(message: str):
-    """Kembalikan jawaban LANGSUNG (tanpa RAG) jika pesan berupa:
-    pertanyaan kemampuan produk, cara pakai fitur, atau sapaan. Selain itu None
-    (artinya perlu pipeline RAG penuh). Semua heuristik regex — instan, 0 kuota.
+def kb_scope_reply() -> str:
+    """Deskripsi cakupan knowledge base (untuk "dokumen anda ada apa saja")."""
+    return (
+        "Saya memiliki dokumen hukum terkurasi khusus usaha F&B yang mencakup:\n\n"
+        "- **Pendirian badan usaha** — UU PT No. 40/2007, KUHD (CV/Firma), UU Cipta Kerja (PT Perorangan)\n"
+        "- **Perizinan usaha** — PP Perizinan Berbasis Risiko (OSS/NIB), KBLI sektor F&B, "
+        "Permenkes Higiene Sanitasi (SLHS), Per-BPOM SPP-IRT, aturan lingkungan (SPPL/AMDAL)\n"
+        "- **Sertifikasi halal** — UU No. 33/2014 & PP No. 39/2021\n"
+        "- **Perlindungan merek** — UU Merek No. 20/2016\n"
+        "- **Ketenagakerjaan & kontrak kerja** — UU No. 13/2003\n"
+        "- **Kontrak & perjanjian** — KUHPerdata (Buku III)\n"
+        "- **Perlindungan konsumen** — UU No. 8/1999\n\n"
+        "Ada pertanyaan spesifik yang ingin Anda tanyakan?"
+    )
 
-    Urutan penting: kemampuan & cara-pakai dicek SEBELUM sapaan (keduanya pasti
-    bukan sapaan karena mengandung kata tanya)."""
+
+def get_direct_reply(message: str):
+    """Kembalikan jawaban LANGSUNG (tanpa RAG) jika pesan berupa: meta-pertanyaan
+    cakupan KB, pertanyaan kemampuan produk, cara pakai fitur, atau sapaan. Selain
+    itu None (artinya perlu pipeline RAG penuh). Semua heuristik regex — instan,
+    0 kuota.
+
+    Urutan penting: intent spesifik (kb-scope, kemampuan, cara-pakai) dicek SEBELUM
+    sapaan (semuanya pasti bukan sapaan karena mengandung kata tanya)."""
+    if is_kb_scope_question(message):
+        return kb_scope_reply()
     if is_capability_question(message):
         return capability_reply()
     if is_app_help_question(message):

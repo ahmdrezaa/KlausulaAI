@@ -30,6 +30,8 @@ from pipelines.retrieval.rrf import reciprocal_rank_fusion
 
 # Konstanta pipeline
 _TOP_K_RETRIEVE = 10   # jumlah kandidat dari tiap retriever
+_VECTOR_OVERFETCH = 30  # over-fetch kandidat vektor sebelum cap per-dokumen
+_PER_DOC_CAP = 3      # maks chunk per DOKUMEN di kandidat vektor (anti-dominasi 1 dok besar)
 _FUSION_POOL = 20    # kandidat hasil fusion SEBELUM prioritas user-doc, lalu dipotong ke _TOP_N_RRF
 _TOP_N_RRF = 6       # jumlah chunk setelah fusion yang masuk ke grader
 _FALLBACK_TOP_N = 4  # jumlah chunk teratas yang dipakai kalau grader kena rate-limit
@@ -87,6 +89,24 @@ def _grade_or_fallback(query: str, fused_chunks: list[dict]) -> list[dict]:
             flush=True,
         )
         return fused_chunks[:_FALLBACK_TOP_N]
+
+
+def _cap_per_document(chunks: list[dict], cap: int, limit: int) -> list[dict]:
+    """Batasi maksimal `cap` chunk per DOKUMEN, lalu ambil `limit` teratas.
+    Mencegah satu dokumen besar (mis. permenkes_14 standar kesehatan, 1231 chunk
+    kode KBLI) memborong seluruh slot kandidat sehingga dokumen lain yang relevan
+    (definisi KBLI, Permenkes SLHS) tidak pernah muncul. Input diasumsикan sudah
+    terurut by score (vector_search mengembalikan urut skor)."""
+    per_doc: dict = {}
+    out: list[dict] = []
+    for c in chunks:
+        did = c.get("document_id")
+        per_doc[did] = per_doc.get(did, 0) + 1
+        if per_doc[did] <= cap:
+            out.append(c)
+            if len(out) >= limit:
+                break
+    return out
 
 
 def _augment_with_user_docs(
@@ -153,7 +173,8 @@ def run_rag(
     system_instruction: Optional[str] = None,
 ) -> dict:
     query_embedding = embed_query(expand_query(query))
-    vector_results = vector_search(query_embedding, top_k=_TOP_K_RETRIEVE, project_id=project_id)
+    vector_results = vector_search(query_embedding, top_k=_VECTOR_OVERFETCH, project_id=project_id)
+    vector_results = _cap_per_document(vector_results, _PER_DOC_CAP, _TOP_K_RETRIEVE)
     vector_results = _augment_with_user_docs(query, query_embedding, project_id, vector_results)
     bm25_results = bm25_search(query, top_k=_TOP_K_RETRIEVE, project_id=project_id)
     fused_pool = reciprocal_rank_fusion(vector_results, bm25_results, top_n=_FUSION_POOL)
@@ -208,8 +229,9 @@ def run_rag_stream(
     query_embedding = embed_query(expand_query(query))
     _lap("embed_query")
 
-    vector_results = vector_search(query_embedding, top_k=_TOP_K_RETRIEVE, project_id=project_id)
-    _lap("vector_search")
+    vector_results = vector_search(query_embedding, top_k=_VECTOR_OVERFETCH, project_id=project_id)
+    vector_results = _cap_per_document(vector_results, _PER_DOC_CAP, _TOP_K_RETRIEVE)
+    _lap("vector_search+cap")
 
     vector_results = _augment_with_user_docs(query, query_embedding, project_id, vector_results)
     _lap("augment_user_docs")

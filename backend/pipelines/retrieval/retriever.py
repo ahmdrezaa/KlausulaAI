@@ -137,16 +137,64 @@ _EXPANSION: list[tuple[re.Pattern, str]] = [
 ]
 
 
+# Akronim → kepanjangan resmi. Owner sering pakai akronim ("apa itu SLHS?"),
+# tapi korpus menuliskannya lengkap ("Sertifikat Laik Higiene Sanitasi"). Tanpa
+# ini, pertanyaan akronim tidak "menyentuh" dokumen yang tepat.
+_ACRONYMS = {
+    "slhs": "Sertifikat Laik Higiene Sanitasi",
+    "kbli": "Klasifikasi Baku Lapangan Usaha Indonesia",
+    "nib": "Nomor Induk Berusaha",
+    "oss": "Online Single Submission",
+    "pirt": "Pangan Industri Rumah Tangga",
+    "sppirt": "Sertifikat Produksi Pangan Industri Rumah Tangga",
+    "sppl": "Surat Pernyataan Kesanggupan Pengelolaan Lingkungan",
+    "amdal": "Analisis Mengenai Dampak Lingkungan",
+    "npwp": "Nomor Pokok Wajib Pajak",
+    "dpmptsp": "Dinas Penanaman Modal Pelayanan Terpadu Satu Pintu",
+    "pkwt": "Perjanjian Kerja Waktu Tertentu",
+    "pkwtt": "Perjanjian Kerja Waktu Tidak Tertentu",
+    "phk": "Pemutusan Hubungan Kerja",
+    "pt": "Perseroan Terbatas",
+    "cv": "Persekutuan Komanditer",
+    "hki": "Hak Kekayaan Intelektual",
+    "haki": "Hak Kekayaan Intelektual",
+    "bpom": "Badan Pengawas Obat dan Makanan",
+}
+
+
 def expand_query(text: str) -> str:
-    """Tambahkan istilah hukum formal yang relevan dengan TOPIK query (kalau
-    terdeteksi) untuk mendekatkan embedding ke teks UU. Kalau tidak ada topik
-    yang cocok, kembalikan query apa adanya (generik → tidak diubah)."""
+    """Tambahkan istilah hukum formal + kepanjangan akronim yang relevan dengan
+    TOPIK query untuk mendekatkan embedding ke teks UU. Kalau tidak ada yang
+    cocok, kembalikan query apa adanya. Kata yang sudah ada di query TIDAK
+    diulang (jaga query tidak membengkak & dilusi)."""
     if not text:
         return text
-    extras = [terms for rx, terms in _EXPANSION if rx.search(text)]
+
+    low = text.lower()
+    # Prioritaskan kepanjangan AKRONIM (presisi, minim noise). Kalau query memuat
+    # akronim (mis. "apa itu SLHS?"), CUKUP tambahkan kepanjangannya — JANGAN
+    # tumpuk cluster topik yang panjang, karena istilah-istilah tambahannya justru
+    # menarik embedding ke dokumen kode/tabel dan mengubur dokumen definisi.
+    acro_adds = [full for acr, full in _ACRONYMS.items() if re.search(rf"\b{re.escape(acr)}\b", low)]
+    if acro_adds:
+        extras: list[str] = acro_adds
+    else:
+        # Tidak ada akronim → pakai cluster topik untuk pertanyaan casual
+        # (mis. "saya mau buka cafe, izin apa saja wajib?").
+        extras = [terms for rx, terms in _EXPANSION if rx.search(text)]
+
     if not extras:
         return text
-    return f"{text} {' '.join(extras)}"
+
+    # Dedup kata (case-insensitive) terhadap query & antar-tambahan.
+    seen = {w.lower() for w in re.findall(r"\w+", text)}
+    add: list[str] = []
+    for chunk in extras:
+        for w in chunk.split():
+            if w.lower() not in seen:
+                seen.add(w.lower())
+                add.append(w)
+    return f"{text} {' '.join(add)}" if add else text
 
 
 def user_doc_vector_search(
